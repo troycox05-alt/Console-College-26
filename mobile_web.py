@@ -124,10 +124,10 @@ _LOGIN = """<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0f14"><link rel="apple-touch-icon" href="icon.png">
 <title>Console College</title><style>
-html,body{margin:0;height:100%;background:#0b0f14;color:#cdd6df;font:16px system-ui,-apple-system,sans-serif}
+html,body{margin:0;height:100%%;background:#0b0f14;color:#cdd6df;font:16px system-ui,-apple-system,sans-serif}
 form{max-width:340px;margin:0 auto;padding:22vh 24px 0}
 h1{font-size:15px;letter-spacing:.14em;color:#f2c14e;margin:0 0 20px}
-input,button{width:100%;box-sizing:border-box;font:16px system-ui;padding:13px;border-radius:10px;margin-top:10px}
+input,button{width:100%%;box-sizing:border-box;font:16px system-ui;padding:13px;border-radius:10px;margin-top:10px}
 input{background:#111821;border:1px solid #243140;color:#cdd6df}
 button{background:#f2c14e;border:0;color:#1a1405;font-weight:700}
 p{color:#ff7b72;font-size:14px;min-height:20px}</style></head><body>
