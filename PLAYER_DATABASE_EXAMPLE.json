@@ -1,0 +1,16 @@
+{
+  "teams": {
+    "Alabama": [
+      {
+        "player": "Example Quarterback",
+        "position": "QB",
+        "year": "JR",
+        "traits": ["Clutch", "Film Junkie"],
+        "ratings": {"overall": 91, "speed": 82, "quickness": 85, "iq": 95, "strength": 70, "playmaker": 90, "durability": 88}
+      }
+    ],
+    "Georgia": [
+      {"name": "Example Receiver", "pos": "WR", "class": "SO", "traits": "Steady, Team Leader", "ratings": {"ovr": 88}}
+    ]
+  }
+}

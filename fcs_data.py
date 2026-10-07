@@ -1,0 +1,102 @@
+"""
+fcs_data.py — FCS opponents.
+
+Seventy FCS programs used to fill out non-conference schedules, the
+way they do in real life: a guarantee game, usually early, usually at the FBS
+team's place, usually against a school from the same part of the country.
+Most sell one or two games a year. They live outside the league (no
+standings, no recruiting, no offseason development) and their rosters are
+rebuilt fresh every year.
+
+Rows: school, nickname, stadium, capacity, chant, offense, defense, coach,
+      athletic director, facilities, academics, tradition, campus
+"""
+
+FCS_TEAMS = [
+    ('Macon', 'Ironhorses', 'Ocmulgee Field', 10200, 'Go Ironhorses!', 44, 45, 46, 42, 48, 66, 38, 62),
+    ('Greenville', 'Gladiators', 'Reedy River Stadium', 16000, 'Go Gladiators!', 46, 47, 50, 44, 50, 78, 52, 70),
+    ('Spartanburg', 'Spinners', 'Pacolet Stadium', 13000, 'Go Spinners!', 43, 44, 45, 42, 46, 76, 46, 66),
+    ('Homewood', 'Shadows', 'Shades Valley Stadium', 6700, 'Go Shadows!', 47, 43, 47, 42, 47, 70, 44, 60),
+    ('Chattanooga', 'Railmen', 'Lookout Valley Stadium', 20668, 'Go Railmen!', 48, 49, 51, 46, 52, 60, 48, 62),
+    ('Lowcountry Military', 'Cadets', 'Ashley River Stadium', 11700, 'Go Cadets!', 42, 46, 46, 44, 48, 68, 56, 60),
+    ('Alamance', 'Regulators', 'Haw River Stadium', 11250, 'Go Regulators!', 45, 44, 46, 44, 52, 72, 40, 66),
+    ('Richmond', 'Rapids', 'Belle Isle Stadium', 8700, 'Go Rapids!', 50, 50, 52, 48, 58, 80, 54, 72),
+    ('Williamsburg', 'Burgesses', 'Peninsula Stadium', 12672, 'Go Burgesses!', 49, 51, 52, 48, 56, 84, 52, 74),
+    ('Main Line', 'Railers', 'Radnor Stadium', 12500, 'Go Railers!', 52, 51, 53, 50, 55, 80, 54, 70),
+    ('Rhode Island', 'Privateers', 'Kingston Stadium', 6555, 'Go Privateers!', 44, 43, 45, 42, 46, 62, 36, 60),
+    ('New Hampshire', 'Moose', 'White Mountain Stadium', 11015, 'Go Moose!', 47, 46, 48, 44, 50, 66, 46, 64),
+    ('Maine', 'Lobstermen', 'Penobscot Stadium', 10000, 'Go Lobstermen!', 43, 44, 45, 42, 45, 62, 40, 60),
+    ('Long Island', 'Baymen', 'Setauket Stadium', 12300, 'Go Baymen!', 44, 45, 46, 44, 50, 66, 34, 60),
+    ('Albany', 'Senators', 'Capital District Stadium', 8500, 'Go Senators!', 45, 45, 46, 43, 48, 62, 36, 58),
+    ('Youngstown State', 'Ironworkers', 'Mahoning Stadium', 20630, 'Go Ironworkers!', 50, 50, 52, 48, 54, 58, 56, 58),
+    ('Illinois State', 'Larks', 'Sugar Creek Stadium', 13391, 'Go Larks!', 49, 50, 51, 47, 54, 60, 48, 62),
+    ('Northern Iowa', 'Cedar Hawks', 'Cedar Valley Dome', 16324, 'Go Cedar Hawks!', 53, 54, 55, 50, 58, 62, 60, 62),
+    ('South Dakota', 'Pheasants', 'Missouri Bluffs Dome', 10000, 'Go Pheasants!', 51, 52, 53, 49, 56, 60, 48, 60),
+    ('South Dakota State', 'Threshers', 'Brookings Stadium', 19340, 'Go Threshers!', 58, 57, 60, 55, 64, 62, 62, 64),
+    ('Montana', 'Hellgates', 'Clark Fork Stadium', 25217, 'Go Hellgates!', 57, 56, 58, 54, 62, 64, 68, 78),
+    ('Montana State', 'Cutthroats', 'Gallatin Stadium', 21650, 'Go Cutthroats!', 57, 56, 58, 54, 62, 62, 64, 74),
+    ('Eastern Washington', 'Ospreys', 'Spokane Plains Stadium', 8600, 'Go Ospreys!', 50, 48, 50, 46, 52, 58, 52, 60),
+    ('Weber State', 'Spikes', 'Ogden Canyon Stadium', 17500, 'Go Spikes!', 51, 52, 53, 48, 54, 58, 50, 62),
+    ('Portland State', 'Bridgemen', 'Steel Bridge Field', 20438, 'Go Bridgemen!', 44, 44, 46, 43, 50, 60, 36, 66),
+    ('Northern Arizona', 'Ponderosas', 'Mount Elden Dome', 11230, 'Go Ponderosas!', 45, 45, 47, 44, 50, 60, 42, 70),
+    ('Lake Charles', 'Shrimpers', 'Calcasieu Stadium', 17410, 'Go Shrimpers!', 48, 49, 50, 46, 52, 56, 48, 58),
+    ('Thibodaux', 'Canecutters', 'Bayou Lafourche Stadium', 10500, 'Go Canecutters!', 47, 48, 49, 45, 50, 54, 42, 56),
+    ('Jackson State', 'Regents', 'Pearl River Stadium', 60492, 'Go Regents!', 52, 51, 53, 49, 52, 56, 60, 60),
+    ('Scotlandville', 'Bluff Kings', "Scott's Bluff Stadium", 28500, 'Go Bluff Kings!', 50, 50, 52, 48, 50, 56, 58, 60),
+    ('North Dakota', 'Polars', 'English Coulee Stadium', 12283, 'Go Polars!', 51, 52, 53, 49, 58, 64, 48, 62),
+    ('Southern Illinois', 'Riverhounds', 'Little Egypt Stadium', 15000, 'Go Riverhounds!', 51, 50, 52, 48, 54, 60, 50, 60),
+    ('Indiana State', 'Highwaymen', 'Terre Haute Stadium', 12764, 'Go Highwaymen!', 43, 43, 45, 42, 46, 58, 36, 56),
+    ('Murray State', 'Lakesiders', 'Kentucky Lake Stadium', 16800, 'Go Lakesiders!', 43, 43, 45, 43, 46, 58, 40, 58),
+    ('Southeast Missouri State', 'Bootheelers', 'Cape Rock Stadium', 11015, 'Go Bootheelers!', 47, 46, 48, 45, 48, 56, 42, 58),
+    ('Idaho', 'Garnets', 'Paradise Creek Dome', 16000, 'Go Garnets!', 51, 50, 52, 48, 52, 62, 50, 64),
+    ('Idaho State', 'Lava Hawks', 'Portneuf Arena', 12000, 'Go Lava Hawks!', 45, 44, 46, 43, 46, 56, 40, 58),
+    ('Davis', 'Farmhands', 'Putah Creek Stadium', 10743, 'Go Farmhands!', 51, 50, 52, 48, 56, 80, 48, 70),
+    ('San Luis Obispo', 'Morros', 'Bishop Peak Stadium', 11075, 'Go Morros!', 45, 44, 46, 44, 52, 76, 40, 76),
+    ('Northern Colorado', 'Prairie Falcons', 'Cache la Poudre Stadium', 8533, 'Go Prairie Falcons!', 42, 42, 44, 42, 46, 58, 34, 62),
+    ('Southern Utah', 'Hoodoos', 'Cedar Breaks Stadium', 8500, 'Go Hoodoos!', 45, 45, 47, 44, 48, 58, 38, 64),
+    ('Stephenville', 'Ropers', 'Bosque River Stadium', 24000, 'Go Ropers!', 53, 51, 54, 50, 56, 56, 42, 58),
+    ('Abilene', 'Trailhands', 'Cedar Creek Stadium', 12000, 'Go Trailhands!', 50, 48, 50, 47, 56, 66, 44, 60),
+    ('Nacogdoches', 'Woodsmen', 'Lanana Creek Stadium', 14575, 'Go Woodsmen!', 48, 47, 49, 46, 50, 58, 50, 62),
+    ('Central Arkansas', 'Cadron Hawks', 'Cadron Stadium', 12000, 'Go Cadron Hawks!', 48, 47, 49, 46, 50, 58, 44, 58),
+    ('Clarksville', 'Stagecoaches', 'Dunbar Cave Stadium', 10000, 'Go Stagecoaches!', 48, 47, 49, 46, 50, 58, 40, 58),
+    ('Eastern Kentucky', 'Long Hunters', 'Kentucky River Stadium', 20000, 'Go Long Hunters!', 48, 48, 49, 46, 50, 58, 56, 60),
+    ('Alamo Heights', 'Bluebonnets', 'Olmos Basin Stadium', 6000, 'Go Bluebonnets!', 52, 47, 51, 46, 52, 64, 36, 62),
+    ('Southeastern Louisiana', 'Spoonbills', 'Hammond Stadium', 7408, 'Go Spoonbills!', 48, 47, 48, 45, 48, 56, 42, 58),
+    ('Beaumont', 'Spindletops', 'Neches River Stadium', 16000, 'Go Spindletops!', 46, 46, 47, 44, 48, 56, 38, 56),
+    ('Tennessee State', 'Thunder', 'Jefferson Street Stadium', 69143, 'Go Thunder!', 47, 47, 49, 45, 54, 56, 58, 60),
+    ('Cookeville', 'Bluffhawks', 'Cane Creek Stadium', 16500, 'Go Bluffhawks!', 47, 47, 48, 45, 48, 60, 42, 60),
+    ('Martin', 'Cotton Kings', 'Obion Stadium', 7500, 'Go Cotton Kings!', 47, 47, 48, 45, 48, 58, 44, 58),
+    ('East Tennessee State', 'Overmountain', 'Buffalo Mountain Stadium', 7694, 'Go Overmountain!', 46, 46, 48, 45, 52, 60, 44, 64),
+    ('Western Carolina', 'Balsams', 'Tuckasegee Stadium', 13742, 'Go Balsams!', 45, 44, 46, 44, 48, 60, 42, 66),
+    ('Buies Creek', 'Sandhillers', 'Cape Fear Stadium', 5500, 'Go Sandhillers!', 44, 43, 45, 43, 46, 62, 32, 58),
+    ('Boiling Springs', 'Geysers', 'Broad River Stadium', 9000, 'Go Geysers!', 43, 43, 45, 42, 44, 60, 34, 58),
+    ('Towson', 'Gunpowders', 'Towson Commons Stadium', 11198, 'Go Gunpowders!', 46, 46, 48, 45, 50, 62, 44, 62),
+    ('West Long Branch', 'Breakwaters', 'Shrewsbury Stadium', 4200, 'Go Breakwaters!', 46, 44, 46, 44, 48, 64, 34, 64),
+    ('Greensboro', 'Gatemen', 'Gate City Stadium', 21500, 'Go Gatemen!', 44, 44, 46, 44, 48, 60, 54, 60),
+    ('Easton', 'Canalers', 'Delaware Forks Stadium', 13132, 'Go Canalers!', 45, 45, 47, 45, 52, 84, 52, 70),
+    ('Bethlehem', 'Stars', 'South Mountain Stadium', 16000, 'Go Stars!', 47, 46, 48, 46, 54, 86, 54, 70),
+    ('Worcester', 'Mill Kings', 'Quinsigamond Stadium', 23500, 'Go Mill Kings!', 47, 47, 48, 46, 52, 86, 50, 70),
+    ('Rose Hill', 'Thornbacks', 'Bronx River Stadium', 7000, 'Go Thornbacks!', 43, 43, 45, 43, 48, 84, 44, 72),
+    ('Tallahassee', 'Canopy Kings', 'Capital Hill Stadium', 25500, 'Go Canopy Kings!', 49, 48, 50, 46, 50, 58, 62, 62),
+    ('Daytona', 'Breakers', 'Halifax River Stadium', 10000, 'Go Breakers!', 43, 43, 45, 42, 44, 54, 50, 60),
+    ('Normal Hill', 'Rocketmen', 'Flint River Stadium', 21000, 'Go Rocketmen!', 44, 44, 46, 43, 46, 54, 50, 56),
+    ('Alabama State', 'Bluefire', 'Alabama River Stadium', 26500, 'Go Bluefire!', 46, 46, 48, 44, 50, 54, 54, 58),
+    ('Prairie View', 'Stormriders', 'Prairie Field', 15000, 'Go Stormriders!', 46, 45, 47, 44, 48, 54, 46, 56),
+    ('Grambling State', 'Pinehawks', 'Lincoln Parish Stadium', 19600, 'Go Pinehawks!', 46, 46, 48, 44, 48, 54, 66, 58),
+]
+
+# Where each FCS program is, so guarantee games stay regional.
+FCS_STATES = {
+    'Macon': 'GA', 'Greenville': 'SC', 'Spartanburg': 'SC', 'Homewood': 'AL', 'Chattanooga': 'TN', 'Lowcountry Military': 'SC',
+    'Alamance': 'NC', 'Richmond': 'VA', 'Williamsburg': 'VA', 'Main Line': 'PA', 'Rhode Island': 'RI', 'New Hampshire': 'NH',
+    'Maine': 'ME', 'Long Island': 'NY', 'Albany': 'NY', 'Youngstown State': 'OH', 'Illinois State': 'IL', 'Northern Iowa': 'IA',
+    'South Dakota': 'SD', 'South Dakota State': 'SD', 'Montana': 'MT', 'Montana State': 'MT', 'Eastern Washington': 'WA', 'Weber State': 'UT',
+    'Portland State': 'OR', 'Northern Arizona': 'AZ', 'Lake Charles': 'LA', 'Thibodaux': 'LA', 'Jackson State': 'MS', 'Scotlandville': 'LA',
+    'North Dakota': 'ND', 'Southern Illinois': 'IL', 'Indiana State': 'IN', 'Murray State': 'KY', 'Southeast Missouri State': 'MO', 'Idaho': 'ID',
+    'Idaho State': 'ID', 'Davis': 'CA', 'San Luis Obispo': 'CA', 'Northern Colorado': 'CO', 'Southern Utah': 'UT', 'Stephenville': 'TX',
+    'Abilene': 'TX', 'Nacogdoches': 'TX', 'Central Arkansas': 'AR', 'Clarksville': 'TN', 'Eastern Kentucky': 'KY', 'Alamo Heights': 'TX',
+    'Southeastern Louisiana': 'LA', 'Beaumont': 'TX', 'Tennessee State': 'TN', 'Cookeville': 'TN', 'Martin': 'TN', 'East Tennessee State': 'TN',
+    'Western Carolina': 'NC', 'Buies Creek': 'NC', 'Boiling Springs': 'NC', 'Towson': 'MD', 'West Long Branch': 'NJ', 'Greensboro': 'NC',
+    'Easton': 'PA', 'Bethlehem': 'PA', 'Worcester': 'MA', 'Rose Hill': 'NY', 'Tallahassee': 'FL', 'Daytona': 'FL',
+    'Normal Hill': 'AL', 'Alabama State': 'AL', 'Prairie View': 'TX', 'Grambling State': 'LA',
+}

@@ -1,0 +1,15 @@
+Console College 26 v52.60 — Mobile Expanded Settings & Clipboard
+
+- Team Context remains the same coach-safe export payload, but mobile now copies it directly to the browser/iPhone clipboard.
+- Dedicated mobile Settings screen translating the console settings menu.
+- World/universe source for new careers.
+- Campus Countdown show, speed and editable cast; alternate/reset crew.
+- Halftime adjustments.
+- Full Big Moments triggers and thresholds.
+- Full Sideline tablet/check-ins/people/situational-call settings.
+- Game view modes.
+- Week hub, default routine, reply-effect hints, weekly wrap and guided week.
+- Coach Career difficulty cycling.
+- Faces, team theme and terminal auto-copy compatibility setting.
+- Existing per-save Universe Rules remain under Program Control.
+- Existing mobile career saves remain compatible.

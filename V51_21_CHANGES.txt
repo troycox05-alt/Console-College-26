@@ -1,0 +1,9 @@
+Console College 26 v51.21 — Preseason Contact Period
+
+• Week 0 now has an 18-hour recruiting contact period for Coach Career.
+• User and CPU programs receive the same preseason opportunity.
+• Legal Week 0 actions: Evaluate Film, Call/Text, Extend Offer.
+• Position-coach recruiting, campus visits, in-home visits and commitment pushes open in Week 1.
+• Leaving fall camp resolves remaining user standing orders and CPU recruiting exactly once.
+• Bulk simulation also resolves the preseason contact period instead of skipping it.
+• Week 1 begins with a fresh normal recruiting budget.

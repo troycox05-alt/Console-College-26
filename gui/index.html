@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console College</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <div class="brand"><span class="ball">🏈</span> CONSOLE COLLEGE</div>
+    <div class="tools">
+      <div class="group" id="histgroup" title="Look back at earlier screens (Alt+← / Alt+→)">
+        <button id="hprev" aria-label="Earlier screen">◀</button>
+        <span id="hlabel">LIVE</span>
+        <button id="hnext" aria-label="Later screen">▶</button>
+      </div>
+      <div class="group" title="Text size (Ctrl + / Ctrl −)">
+        <button id="zout" aria-label="Smaller text">A−</button>
+        <button id="zin" aria-label="Bigger text">A+</button>
+      </div>
+      <button id="copy" title="Copy this screen's text">Copy screen</button>
+      <button id="theme" title="Light / dark">◐</button>
+      <button id="sound" title="Sounds on/off">🔊</button>
+      <button id="side" title="Show/hide the sidebar">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="stage">
+      <div id="banner" hidden>Looking at an earlier screen. <button id="golive">Back to live ▶</button></div>
+      <div id="screenwrap"><pre id="screen" aria-live="polite"></pre></div>
+      <div id="quick"></div>
+      <form id="bar" autocomplete="off">
+        <div id="prompt"></div>
+        <input id="line" spellcheck="false" autocomplete="off" placeholder="Type here, or click a [key] on screen">
+        <button id="send" type="submit" title="Send (Enter)">⏎</button>
+        <span id="busy" hidden>working…</span>
+      </form>
+    </section>
+
+    <aside id="sidebar">
+      <div id="sbgrip" title="Drag to resize"></div>
+      <div id="sb-empty" class="card muted">Your season will show up here once a world is loaded.</div>
+      <div id="sb" hidden>
+        <!-- the hero: always on top -->
+        <div class="hero" id="hero">
+          <div class="stripe"></div>
+          <div class="hrow">
+            <span class="mode" id="h-mode"></span>
+            <span class="live" id="h-live" title="The game is waiting for you"><i></i><b>YOUR MOVE</b></span>
+          </div>
+          <div class="school"><span class="rk" id="h-rank"></span><span id="h-school"></span></div>
+          <div class="sub" id="h-sub"></div>
+          <div class="recrow">
+            <span class="rec" id="h-record"></span>
+            <span class="muted" id="h-conf"></span>
+            <span class="chip" id="h-streak"></span>
+          </div>
+          <div class="form" id="h-form" title="Last five games"></div>
+          <div class="prog"><div id="h-prog"></div></div>
+          <div class="hfoot"><span id="h-when"></span><span id="h-pts"></span></div>
+        </div>
+
+        <nav class="tabs" id="tabs">
+          <button data-tab="home" title="Home (Alt+1)">⌂<span>Home</span></button>
+          <button data-tab="games" title="Games (Alt+2)">📅<span>Games</span></button>
+          <button data-tab="league" title="League (Alt+3)">🏆<span>League</span></button>
+          <button data-tab="team" title="Team (Alt+4)">🏈<span>Team</span></button>
+          <button data-tab="news" title="News (Alt+5)">📰<span>News</span></button>
+        </nav>
+
+        <!-- HOME -->
+        <section class="pane" data-pane="home">
+          <div class="card" data-card="next" id="c-next">
+            <div class="label">NEXT GAME <span class="muted small" id="n-label"></span></div>
+            <div class="matchup">
+              <div class="gauge" id="n-gauge"></div>
+              <div class="mx">
+                <div class="opp"><span class="site" id="n-site"></span> <span class="rk" id="n-rank"></span><span id="n-opp"></span></div>
+                <div class="muted small" id="n-meta"></div>
+                <div class="odds" id="n-odds"></div>
+              </div>
+            </div>
+            <div class="kv" id="n-kv"></div>
+            <div class="riv" id="n-riv"></div>
+          </div>
+          <div class="card" data-card="last" id="c-last">
+            <div class="label">LAST GAME</div>
+            <div class="result" id="l-result"></div>
+          </div>
+          <div class="card" data-card="actions" id="c-actions">
+            <div class="label">SHORTCUTS <span class="muted small" id="a-hint"></span></div>
+            <button class="primary" id="a-primary"></button>
+            <div class="agrid" id="a-grid"></div>
+          </div>
+          <div class="card" data-card="coach" id="c-coach">
+            <div class="label">HEAD COACH</div>
+            <div class="cname"><span id="co-name"></span> <span class="muted small" id="co-age"></span></div>
+            <div class="seatrow"><span class="muted">Hot seat</span><div class="meter heat"><div id="co-seat"></div></div>
+              <span class="seatlbl" id="co-seatlbl"></span></div>
+            <div class="stats" id="co-stats">
+              <div><b id="co-inbox">0</b><span>unread</span></div>
+              <div><b id="co-replies">0</b><span>want a reply</span></div>
+              <div><b id="co-pts">0</b><span>skill points</span></div>
+            </div>
+            <div class="muted small" id="co-contract"></div>
+            <div class="muted small" id="co-ad"></div>
+            <ul class="goals" id="co-goals"></ul>
+          </div>
+          <div class="card" data-card="mail" id="c-mail">
+            <div class="label">INBOX</div>
+            <ul class="mail" id="co-mail"></ul>
+          </div>
+          <div class="card" data-card="ad" id="c-ad">
+            <div class="label">ATHLETIC DIRECTOR <span class="muted small" id="ad-name"></span></div>
+            <div id="ad-meters"></div>
+          </div>
+          <div class="card" data-card="book" id="c-book" hidden>
+            <div class="label">THE WINDOW <span class="muted small" id="bk-sub"></span></div>
+            <div class="bk-top"><b id="bk-bank"></b><span id="bk-delta"></span></div>
+            <svg id="bk-spark" viewBox="0 0 200 36" preserveAspectRatio="none"></svg>
+            <div class="stats" id="bk-stats"></div>
+            <div class="list1" id="bk-open"></div>
+          </div>
+        </section>
+
+        <!-- GAMES -->
+        <section class="pane" data-pane="games">
+          <div class="card" data-card="spark" id="c-spark">
+            <div class="label">POLL RANK, WEEK BY WEEK</div>
+            <div id="g-spark"></div>
+            <div class="trio" id="g-trio"></div>
+          </div>
+          <div class="card" data-card="sched">
+            <div class="label">SCHEDULE</div>
+            <div class="sched" id="g-sched"></div>
+          </div>
+        </section>
+
+        <!-- LEAGUE -->
+        <section class="pane" data-pane="league">
+          <div class="card" data-card="stand">
+            <div class="label" id="s-title">STANDINGS</div>
+            <table class="tbl" id="s-table"></table>
+          </div>
+          <div class="card" data-card="poll">
+            <div class="label">MEDIA TOP 25 <span class="muted small" id="p-label"></span>
+              <button class="mini" id="p-more">All 25</button></div>
+            <div class="poll" id="p-list"></div>
+          </div>
+          <div class="card" data-card="cfp" id="c-cfp">
+            <div class="label">NP RANKINGS</div>
+            <div class="poll" id="cfp-list"></div>
+          </div>
+          <div class="card" data-card="heis">
+            <div class="label">HEISMAN WATCH</div>
+            <div id="hz-list"></div>
+          </div>
+          <div class="card" data-card="tough">
+            <div class="label">TOUGHEST PLACES TO PLAY</div>
+            <div id="t-list"></div>
+          </div>
+        </section>
+
+        <!-- TEAM -->
+        <section class="pane" data-pane="team">
+          <div class="card" data-card="lineup">
+            <div class="label">STARTING LINEUP <span class="muted small">click a name for his card</span></div>
+            <div class="lineup" id="t-lineup"></div>
+          </div>
+          <div class="card" data-card="inj" id="c-inj">
+            <div class="label">INJURY REPORT</div>
+            <div id="t-inj"></div>
+          </div>
+          <div class="card" data-card="leaders">
+            <div class="label">TEAM LEADERS <span class="muted small" id="t-ldyr"></span></div>
+            <div id="t-leaders"></div>
+          </div>
+          <div class="card" data-card="program">
+            <div class="label">PROGRAM</div>
+            <div id="t-program"></div>
+          </div>
+          <div class="card" data-card="rec">
+            <div class="label">RECRUITING CLASS</div>
+            <div id="t-rec"></div>
+          </div>
+          <div class="card roster" data-card="roster">
+            <div class="label">ROSTER</div>
+            <input id="rsearch" placeholder="Find a player or type a position (QB)…" spellcheck="false">
+            <div class="chips" id="rchips"></div>
+            <div id="rlist"></div>
+          </div>
+        </section>
+
+        <!-- NEWS -->
+        <section class="pane" data-pane="news">
+          <div class="card" data-card="scores">
+            <div class="label">SCOREBOARD <span class="muted small" id="sc-label"></span></div>
+            <div class="scores" id="sc-list"></div>
+          </div>
+          <div class="card" data-card="heads">
+            <div class="label">AROUND THE SPORT</div>
+            <ul class="heads" id="nw-heads"></ul>
+          </div>
+          <div class="card" data-card="seats">
+            <div class="label">HOT SEAT WATCH</div>
+            <div id="hs-list"></div>
+          </div>
+          <div class="card" data-card="rnews" id="c-rnews">
+            <div class="label">RECRUITING WIRE</div>
+            <ul class="heads" id="rn-list"></ul>
+          </div>
+          <div class="card" data-card="log" id="c-log">
+            <div class="label">YOUR STORY</div>
+            <ul class="log" id="nw-log"></ul>
+          </div>
+        </section>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div id="modal" hidden>
+  <div class="sheet">
+    <div class="mhead"><button id="mback" title="Back (Backspace)" hidden>◀ Back</button><span id="mtitle"></span><span class="muted small">click any name to open it</span><button id="mclose" title="Close (Esc)">✕ Close</button></div>
+    <pre id="mbody"></pre>
+  </div>
+</div>
+
+<div id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+Console College 26 v51.22 — Customize Your Universe
+
+New Game now includes a per-save Customize Your Universe screen.
+
+Toggles:
+- Inbox & decisions
+- Conference realignment
+- Violations & compliance
+- Player personalities
+- Morale & portal drama
+- Dynamic weather
+- Injuries
+- Coach carousel & firings
+- NIL & booster pressure
+- Media obligations
+
+Includes Balanced, Chaos and Stable presets. Choices are stored on the save; old saves default to all systems enabled. Disabled systems are gated at their runtime entry points rather than merely hidden in the UI.

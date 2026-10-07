@@ -1,0 +1,162 @@
+"""
+gameday_variety.py — More Saturday-morning conversation for the storylines that only had a
+couple of versions, so a long save doesn't hear the same exchange every few weeks.
+Each tag uses only the placeholders the show already fills for it (gameday_show.Show).
+Merged into gameday_scenes.STORY by gameday_show._merge_content().
+"""
+
+STORY_VARIETY = {
+    "big_favorite": [
+        [("host", "{fav} is a big favorite today. Is there any path for {dog}?"),
+         ("boom", "Turnovers. Win the turnover battle by three and anything can happen."),
+         ("defender", "And make it ugly. Ugly games keep underdogs alive."),
+         ("coach", "Shorten the game. Run the ball, burn the clock, take your shot in the fourth quarter.")],
+        [("host", "{dog} comes in as a heavy underdog against {fav}."),
+         ("film", "They're outmanned up front. That's just the truth."),
+         ("boom", "Nobody in that locker room read the betting line, though."),
+         ("defender", "First quarter tells you. If {dog} is still close after fifteen minutes, buckle up.")],
+    ],
+    "bowl_push": [
+        [("host", "{team} is {rec} and fighting for a bowl."),
+         ("coach", "People laugh at the minor bowls. Coaches don't. Those fifteen practices build your next team."),
+         ("defender", "And the seniors get one more game in that jersey. That matters to them.")],
+        [("host", "{team} at {rec}. Every week is a playoff game for them now."),
+         ("film", "Their margin for error is gone. They need their quarterback to play clean."),
+         ("boom", "Bowl eligibility or bust. I love the urgency.")],
+    ],
+    "conf_race": [
+        [("host", "Conference race: {h} is {hcrec} in the {conf}, {a} is {acrec}."),
+         ("coach", "In November the standings are the only thing anybody in either building is looking at."),
+         ("defender", "Win and you control it. Lose and you need help, and help never comes when you need it.")],
+        [("host", "The {conf} picture runs right through this game."),
+         ("boom", "Loser's going to be doing tiebreaker math on Sunday morning."),
+         ("film", "I went through the scenarios. It's simple for the winner. It's ugly for the loser.")],
+    ],
+    "defense_duel": [
+        [("host", "Two defenses: {h} allowing {hpapg} a game, {a} allowing {apapg}."),
+         ("defender", "Finally. A game for the purists."),
+         ("boom", "First team to twenty wins. Maybe first team to seventeen."),
+         ("coach", "Field position. Special teams. One turnover. That's the whole game.")],
+        [("host", "If you like points, this might not be your game. {h} and {a} both play elite defense."),
+         ("film", "The quarterbacks are going to see windows close fast today."),
+         ("boom", "{boom_first} likes a good rock fight. I'll be honest.")],
+    ],
+    "first_visit": [
+        [("host", "We've never been to {town} before, and {h} rolled out the red carpet."),
+         ("defender", "This crowd's been here since sunrise. They wanted this."),
+         ("host", "First time, {defender}. Hopefully not the last.")],
+        [("host", "Welcome to {town}! First time the show's ever been here."),
+         ("defender", "You can feel it. This place has been waiting for a game like this one."),
+         ("host", "Let's give 'em a good one.")],
+    ],
+    "goal_rival": [
+        [("host", "Talk to anyone at {team} and they'll tell you: the season is judged by one game. Beat {rival}."),
+         ("coach", "That's real. You can win nine and still get letters if you lose that one."),
+         ("defender", "And you can win five and be a hero if you win it.")],
+        [("host", "{team} vs {rival}: the one the boosters care about most."),
+         ("boom", "The athletic director circles it. The fans circle it. The coach better circle it too."),
+         ("coach", "He does. Trust me.")],
+    ],
+    "playoff": [
+        [("host", "Playoff football. One and done."),
+         ("coach", "You don't get to have a bad quarter anymore. Not one."),
+         ("defender", "The teams that win these games play like they've been there before."),
+         ("boom", "{boom_first}'s pick? The team with the better quarterback. Every time.")],
+        [("host", "It's win or go home now."),
+         ("film", "Health matters more than anything this time of year. Who's got their guys?"),
+         ("defender", "And depth. December wears you down.")],
+    ],
+    "rematch": [
+        [("host", "These two met in {year}. {winner} won {ws}-{ls}."),
+         ("film", "Different rosters, different coordinators. But the loser hasn't forgotten."),
+         ("boom", "Never do. Players remember the scoreboard and the celebration.")],
+        [("host", "Rematch from {year}: {winner} {ws}, the other side {ls}."),
+         ("coach", "You spend a whole offseason looking at that tape. You'll be ready for it.")],
+    ],
+    "revenge": [
+        [("host", "{year}: {winner} {ws}, {loser} {ls}. That one stung."),
+         ("boom", "{loser} has been waiting twelve months for this kickoff."),
+         ("defender", "I'd have that score on the wall in the weight room. I bet they do.")],
+        [("host", "Payback game. {loser} lost this one {ws}-{ls} in {year}."),
+         ("boom", "Revenge is a powerful motivator, {host}."),
+         ("coach", "It's good for the first quarter. After that you'd better have a game plan.")],
+    ],
+    "shootout": [
+        [("host", "{h} scores {hppg} a game, {a} scores {appg}. Somebody bring extra batteries for the scoreboard."),
+         ("film", "Neither defense has stopped a good offense all year."),
+         ("coach", "Last team with the ball wins. That's my prediction.")],
+        [("host", "Points. Lots of them. {h} at {hppg}, {a} at {appg}."),
+         ("film", "The key is red zone. Field goals lose shootouts."),
+         ("boom", "Overs only, folks. I'm not saying anything else.")],
+    ],
+    "trap": [
+        [("host", "{team} has {next} next week. Are they looking past today?"),
+         ("coach", "Every coach says no. Every coach is a little worried about it."),
+         ("boom", "{boom_first} smells a trap. I'm just saying.")],
+        [("host", "Sandwich game for {team}: {next} is on deck."),
+         ("defender", "Kids are human. They see the schedule. Your leaders have to drag them through today."),
+         ("film", "Watch the first quarter. If they're sloppy early, we were right.")],
+    ],
+    "visit_curse": [
+        [("host", "The show doesn't have a great record when it comes to {town}."),
+         ("crowd", "The crowd is booing us. Fair."),
+         ("defender", "We'll take the jinx with us when we leave.")],
+    ],
+    "riser": [
+        [("host", "{team} was {was} at the start of the year. They're {now} today."),
+         ("coach", "That's coaching. Same roster, better habits."),
+         ("defender", "And confidence. Winning teaches you how to win.")],
+        [("host", "Biggest climb in the country: {team}, from {was} to {now}."),
+         ("boom", "I'll admit it. I had them in the bottom half of the league in August."),
+         ("coach", "Everybody did. That's the fun of this sport.")],
+    ],
+    "faller": [
+        [("host", "{team}: {was} in the preseason, {now} now."),
+         ("film", "It's the lines. They lost too much up front and it's showing every week."),
+         ("boom", "{boom_first} says it's not panic time. It might be a little panic time.")],
+        [("host", "What happened to {team}? {was} to {now}."),
+         ("film", "Injuries, turnovers, and a schedule that didn't give them a break."),
+         ("defender", "They've still got time to save it. Today would be a good start.")],
+    ],
+    "injury": [
+        [("host", "{team} will be without {player} today."),
+         ("defender", "Next man up sounds great on a T-shirt. It's a lot harder on a Saturday."),
+         ("boom", "Watch how they adjust the game plan. That tells you how much they trust the backup.")],
+    ],
+    "new_coach": [
+        [("host", "Year one for {coach} at {team}: {rec} so far."),
+         ("coach", "First year is about installing a culture. Wins come when the players believe the process."),
+         ("defender", "You can already see the difference in how they practice. Players talk.")],
+    ],
+    "ranked": [
+        [("host", "Ranked against ranked: {A} and {H}."),
+         ("coach", "These are the games you remember in December. They show up on the résumé."),
+         ("boom", "Winner moves up. Loser spends the week hearing about it.")],
+        [("host", "{A} at {H}, and both of them are in the Top 25."),
+         ("defender", "These are the Saturdays you play college football for."),
+         ("coach", "Big-game experience matters. Watch which quarterback looks calm early.")],
+    ],
+    "qb_duel": [
+        [("host", "{aqb} with {astats}. {hqb} with {hstats}. Pick one."),
+         ("film", "I'm taking the one who's better on third down. That's where these games are won."),
+         ("defender", "I'm taking whichever one my pass rush is chasing less.")],
+    ],
+    "heisman": [
+        [("host", "{player} of {team}: {stats}. Number {hrank} in the race."),
+         ("boom", "Big stage today. Voters remember the games everybody watched."),
+         ("defender", "Statistics get you on the list. Moments win you the trophy.")],
+    ],
+    "rivalry": [
+        [("host", "{riv}. Nothing else needs to be said."),
+         ("coach", ("You throw out the records. I've seen eight-win teams lose this game to three-win teams. "
+                    "It happens because the underdog plays the best game of its life.")),
+         ("defender", "And the favorite plays tight. That's the whole story of upsets in rivalry games.")],
+        [("host", "{riv} today. {film_first}, how much do the records matter?"),
+         ("film", ("Less than any game all year. I went back through the last ten meetings. The favorite's barely "
+                   "better than a coin flip.")),
+         ("coach", "Emotion carries you for a half. Then it's football.")],
+        [("host", "This is {riv}, and this crowd has been here since before sunrise."),
+         ("defender", "Kids on both sides grew up in the same towns. They know each other. That makes it personal."),
+         ("crowd", "The crowd lets us know exactly how it feels about the other side.")],
+    ],
+}

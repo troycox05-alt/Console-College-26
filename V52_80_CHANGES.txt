@@ -1,0 +1,10 @@
+Console College 26 v52.80 — True Mobile Game Day
+
+- Rebuilt from known-good v52.70, discarding the earlier prototype.
+- Mobile Game Day now bridges directly into the existing interactive console football engine.
+- Every existing input() decision can be answered from Safari, including play calls, defensive calls, fourth downs, fakes, timeouts, substitutions, sideline decisions, halftime, penalties/challenges, and future prompts.
+- Live GameSim state exposes score, quarter, clock, possession, down/distance, and field position.
+- Console headset/menu output is rendered on the phone, so play sheets and prompt context remain available without duplicating football logic.
+- User game resolves first for responsive kickoff; the national slate resolves after the final, then normal finish_week/autosave runs once.
+- Existing v52.70 saves remain compatible.
+- Validation: py_compile passed; fresh career reached live Q1 prompt; full game completed through 837 prompt/decision cycles and advanced to Week 1 with no exception.

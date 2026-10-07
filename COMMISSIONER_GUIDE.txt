@@ -1,0 +1,71 @@
+CONSOLE COLLEGE — COMMISSIONER GUIDE
+====================================
+
+You run the league from one copy of the game. Members play on the website and send you one code per
+cycle; you import the codes, run the cycle, and post the new website. That's the whole job.
+
+SETTING UP (once)
+-----------------
+1. New Game → [5] Commissioner. The world is built and the Commissioner Desk opens.
+2. [N] League setup:
+     a. League title, website address, submission form link (and, optionally, the folder the site is
+        written to: point it at your GitHub Desktop folder for the league's repository).
+     b. Members from a file: a CSV in the game's "imports" folder with a row per member:
+            discord, school, first, last, age, background, offense, defense, fourth, blitz
+        A header row with those names works (export your Discord/Google sign-up form as CSV). Leave first and
+        last blank to have him take over the sitting coach. Or skip this and use [T] → C one program at a time.
+     c. Write the website. NEW passwords are listed on screen and saved in exports/passwords_<league>.txt.
+3. DM each member his password. Never upload the "exports" folder.
+4. Hosting: upload the site folder to GitHub Pages (see the MANUAL, THE LEAGUE WEBSITE). Each cycle after that:
+   GitHub Desktop → Commit → Push.
+5. Make a Google Form with one long-answer question, "Paste your order code" (plus "Your team" if you like).
+
+EVERY CYCLE (the checklist)
+---------------------------
+  1  Download the form's responses (.csv) into the "imports" folder.
+  2  [O] Import order codes → read the report → confirm. Rejected codes land in the inbox with the reason.
+  3  [I] Commissioner Inbox: answer anything open (inactive members, firings, hires).
+  4  [A] Advance one cycle. If a decision needs you (a job offer a member didn't plan for, a contract), you're
+     asked right there. The website is written automatically afterwards.
+  5  GitHub Desktop: Commit, Push. Wait a minute for the site to update.
+  6  Paste exports/discord_cycle<N>.txt into Discord.
+  Something wrong? [U] rolls back to the snapshot taken before the import or before the cycle.
+
+WHAT'S OPEN WHEN
+----------------
+  In season (fall camp, Weeks 1-13, championship week, playoff and bowls): recruiting, depth chart, game plan,
+  play-calling, jobs, staff lists, money.
+  The offseason, nine cycles:
+    1 Coaching carousel and staffs ........ jobs, staff (let coaches go), money, NIL raises and the draft
+    2 Awards, the draft, winter ........... staff, money, NIL raises and the draft
+    3 Portal Window I opens ............... money
+    4 Portal market ....................... portal (retention talks, offers), money
+    5 Signing push ........................ recruiting, money
+    6 National Signing Day ................ recruiting (walk-on invites)
+    7 Roster week ......................... position changes and cuts, money
+    8 Spring ball and A-Day ............... spring emphasis, depth chart
+    9 Portal Window II and summer ......... depth chart
+  Then fall camp → Week 1.
+
+PEOPLE
+------
+  A new member any time:   [T] → C and the program → his Discord name → his coach (sitting, his own, or new
+                           from his form) → [W] so he can log in now.
+  A member leaves:         [T] → R and the program. The program goes CPU with its coach.
+  A lost password:         [K] and the program, then [W]. His old codes stop working.
+  Fired members:           the program goes CPU (inbox tells you). He keeps his coach: hand him an open program
+                           with "his own coach", or let the offseason market find him a job.
+  Inactive members:        after 5 missed in-season cycles the inbox asks you, every cycle, whether to kick him.
+  [E] lists every member, his program or status, and his coach.
+
+RULES THAT ARE SWITCHED OFF
+---------------------------
+  Sanctions, rule-bending, discipline and suspensions, player inboxes, press conferences, rivalry-week moments,
+  skill points. Difficulty is Varsity. Injuries, opt-outs and redshirts happen on their own.
+
+TROUBLESHOOTING
+---------------
+  "signature doesn't match"  the code was edited, made for another team, or his password/key was reset ([K]).
+  "for cycle N"               an old or early code: he needs to build it again after the new site is up.
+  Site shows old data         wait a minute after pushing, then reload; each export is stamped.
+  Nobody can log in           the site must be served over https (GitHub Pages is), and [W] must have run.

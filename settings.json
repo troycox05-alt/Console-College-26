@@ -1,0 +1,27 @@
+{
+  "universe": "real_2026",
+  "gameday": false,
+  "gameday_speed": "normal",
+  "cast_names": {
+    "host": "Phone Host"
+  },
+  "auto_copy": false,
+  "week_hub": true,
+  "reply_hints": true,
+  "halftime": true,
+  "field_view": "wide",
+  "guided_week": true,
+  "faces": true,
+  "team_theme": true,
+  "routines": [],
+  "routine_default": "standard",
+  "moments": {
+    "crunch_minutes": 8
+  },
+  "sideline_checkins": "off",
+  "theme_school": "Alabama",
+  "practice_focus": "balanced",
+  "your_game_mode": "moments",
+  "game_speed": "3",
+  "call_defense": true
+}

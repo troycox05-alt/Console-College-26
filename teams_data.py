@@ -1,0 +1,201 @@
+"""
+teams_data.py — All 138 FBS programs for the 2026 season (the built-in universe).
+
+Original programs on real states, towns and stadium sizes. Ratings are 1-100 (roster
+talent, coaching, resources, history). Tweak freely, or load a universe file
+(universe.py) to play with a different set.
+
+Row format:
+  (school, nickname, stadium, capacity, conference, division, chant,
+   OFF, DEF, COACH, AD, FACILITIES, ACADEMICS, TRADITION, CAMPUS)
+"""
+
+TEAMS = [
+
+    # ── Southern Crown Conference (16) ──
+    ('Alabama', 'Ironclads', 'Black Warrior Stadium', 100077, 'SCC', None, 'Iron Sharpens Iron!', 88, 87, 84, 90, 97, 70, 99, 85),
+    ('Arkansas', 'Bladesmiths', 'Boston Mountain Stadium', 76212, 'SCC', None, "Forge 'Em, Bladesmiths!", 72, 62, 70, 75, 85, 66, 80, 78),
+    ('East Alabama', 'Longleafs', 'Loachapoka Field', 88043, 'SCC', None, 'Stand Tall, Longleafs!', 74, 82, 76, 82, 90, 72, 90, 88),
+    ('Florida', 'Cottonmouths', 'Paynes Prairie Stadium', 88548, 'SCC', None, 'Strike First, Strike Last!', 74, 76, 77, 85, 90, 88, 91, 86),
+    ('Georgia', 'Marauders', 'Oconee Valley Stadium', 92746, 'SCC', None, 'Hold the Line, Marauders!', 88, 92, 96, 92, 95, 82, 93, 90),
+    ('Kentucky', 'Thoroughbreds', 'Bluegrass Stadium', 61000, 'SCC', None, 'Down the Stretch!', 62, 66, 72, 72, 80, 70, 58, 74),
+    ('Bayou State', 'Gars', 'Red Stick Stadium', 102321, 'SCC', None, 'Fear the Gar!', 84, 78, 90, 88, 93, 72, 94, 85),
+    ('Mississippi State', 'Stallions', 'Black Prairie Stadium', 60311, 'SCC', None, 'Ride, Stallions, Ride!', 66, 64, 72, 68, 78, 64, 66, 70),
+    ('Missouri', 'Mules', 'Hinkson Creek Stadium', 57321, 'SCC', None, "Kick 'Em, Mules!", 80, 78, 82, 76, 84, 74, 66, 76),
+    ('Oklahoma', 'Twisters', 'Red Earth Stadium', 80126, 'SCC', None, 'Twister Warning!', 76, 88, 82, 85, 88, 74, 95, 78),
+    ('Mississippi', 'Rivermen', 'Lafayette Hill Stadium', 64038, 'SCC', None, 'Roll On, Rivermen!', 88, 82, 78, 80, 84, 70, 74, 92),
+    ('South Carolina', 'Firebrands', 'Congaree Stadium', 77559, 'SCC', None, 'Burn Bright!', 70, 74, 72, 74, 84, 72, 70, 76),
+    ('Tennessee', 'Frontiersmen', 'Holston River Stadium', 101915, 'SCC', None, 'Blaze the Trail!', 86, 74, 84, 84, 90, 76, 89, 84),
+    ('Texas', 'Stampede', 'Barton Creek Stadium', 100119, 'SCC', None, 'Hear the Stampede!', 86, 90, 88, 95, 97, 88, 94, 86),
+    ('Brazos', 'Wranglers', 'Brazos Valley Stadium', 102733, 'SCC', None, "Rope 'Em, Wranglers!", 86, 84, 85, 88, 96, 80, 84, 80),
+    ('Nashville', 'Troubadours', 'Cumberland Field', 35000, 'SCC', None, 'Sing It Loud!', 82, 72, 84, 78, 80, 97, 50, 90),
+
+    # ── Continental Conference (18) ──
+    ('Illinois', 'Prairie Fire', 'Boneyard Creek Stadium', 60670, 'Continental', None, 'Burn It Down, Prairie Fire!', 80, 74, 82, 74, 80, 86, 66, 76),
+    ('Indiana', 'Quarrymen', 'Limestone Stadium', 52626, 'Continental', None, 'Break Rock!', 92, 90, 95, 82, 82, 84, 50, 86),
+    ('Iowa', 'Harvesters', 'Iowa River Stadium', 69250, 'Continental', None, 'Reap What We Sow!', 64, 86, 85, 80, 82, 82, 76, 76),
+    ('Maryland', 'Watermen', 'Paint Branch Stadium', 51802, 'Continental', None, 'Pull the Pots!', 62, 60, 64, 70, 76, 84, 50, 76),
+    ('Michigan', 'Voyageurs', 'Huron River Stadium', 107601, 'Continental', None, 'Onward, Voyageurs!', 80, 86, 86, 90, 95, 94, 98, 90),
+    ('Michigan State', 'Foresters', 'Red Cedar Stadium', 75005, 'Continental', None, 'Timber!', 62, 60, 72, 70, 82, 80, 76, 82),
+    ('Minnesota', 'Blizzard', 'Mississippi Bluff Stadium', 50805, 'Continental', None, "Snow 'Em Under!", 64, 70, 78, 70, 80, 84, 62, 78),
+    ('Nebraska', 'Sodbusters', 'Salt Creek Stadium', 85458, 'Continental', None, 'Break Ground!', 72, 72, 76, 78, 86, 76, 88, 70),
+    ('Lakeshore', 'Gales', 'Lakefront Field', 35000, 'Continental', None, 'Into the Wind!', 60, 66, 72, 72, 84, 97, 56, 90),
+    ('Ohio State', 'Vanguard', 'Olentangy Stadium', 102780, 'Continental', None, 'Lead the Way!', 94, 94, 92, 95, 98, 86, 98, 88),
+    ('Oregon', 'Rainmakers', 'Willamette Field', 54000, 'Continental', None, 'Make It Rain!', 92, 86, 90, 92, 99, 80, 76, 86),
+    ('Pennsylvania', 'Ironmasters', 'Spring Creek Stadium', 106572, 'Continental', None, 'Fire the Furnace!', 76, 80, 85, 85, 90, 84, 92, 84),
+    ('Tippecanoe', 'Riveters', 'Wabash Stadium', 61441, 'Continental', None, 'Drive the Rivet!', 56, 54, 68, 72, 78, 88, 62, 76),
+    ('New Jersey', 'Pinebarons', 'Raritan Stadium', 52454, 'Continental', None, 'Into the Pines!', 66, 60, 72, 70, 76, 82, 48, 72),
+    ('Los Angeles', 'Riptide', 'Arroyo Stadium', 88565, 'Continental', None, "Pull 'Em Under!", 60, 58, 70, 70, 78, 94, 72, 92),
+    ('Southern California', 'Sundogs', 'Figueroa Coliseum', 77500, 'Continental', None, 'Chase the Sun!', 86, 74, 82, 86, 92, 92, 94, 90),
+    ('Washington', 'Evergreens', 'Union Bay Stadium', 70083, 'Continental', None, 'Ever Green, Ever Strong!', 80, 74, 82, 82, 88, 90, 78, 92),
+    ('Wisconsin', 'Northmen', 'Mendota Stadium', 76057, 'Continental', None, 'Jump, Northmen, Jump!', 56, 68, 70, 76, 86, 88, 80, 90),
+
+    # ── Seaboard Conference (17) ──
+    ('Boston', 'Lamplighters', 'Chestnut Hill Stadium', 44500, 'Seaboard', None, 'One If by Land!', 62, 56, 66, 70, 78, 92, 62, 86),
+    ('California', 'Prospectors', 'Strawberry Canyon Stadium', 62467, 'Seaboard', None, 'Strike Gold!', 70, 64, 66, 64, 78, 96, 58, 90),
+    ('Upcountry', 'Hellcats', 'Hartwell Lake Stadium', 81500, 'Seaboard', None, 'Release the Hellcats!', 74, 76, 83, 84, 94, 78, 86, 86),
+    ('Durham', 'Phantoms', 'Eno River Stadium', 40004, 'Seaboard', None, "Haunt 'Em!", 78, 64, 80, 80, 82, 98, 40, 92),
+    ('Florida State', 'Torchbearers', 'Red Hills Stadium', 67277, 'Seaboard', None, 'Carry the Torch!', 72, 64, 70, 80, 88, 78, 90, 84),
+    ('Atlanta', 'Dynamos', 'Northside Stadium', 51913, 'Seaboard', None, 'Power Up!', 80, 70, 80, 76, 78, 94, 72, 80),
+    ('Louisville', 'Steamers', 'Falls City Stadium', 60800, 'Seaboard', None, 'Full Steam!', 76, 76, 78, 76, 84, 74, 58, 70),
+    ('Miami', 'Barracudas', 'Gardens Stadium', 65326, 'Seaboard', None, 'Bite Down!', 86, 90, 85, 82, 80, 84, 88, 88),
+    ('NC State', 'Ramblers', 'Walnut Creek Stadium', 56919, 'Seaboard', None, 'Ramble On!', 72, 60, 72, 72, 78, 84, 58, 76),
+    ('North Carolina', 'Keepers', 'Morgan Creek Stadium', 50500, 'Seaboard', None, 'Keep the Light!', 56, 66, 72, 74, 82, 90, 60, 92),
+    ('Pittsburgh', 'Smelters', 'Allegheny Stadium', 68400, 'Seaboard', None, 'Pour It On!', 76, 74, 78, 72, 78, 84, 70, 72),
+    ('Dallas', 'Wildcatters', 'Turtle Creek Stadium', 32000, 'Seaboard', None, 'Strike Oil!', 80, 74, 82, 84, 82, 86, 60, 82),
+    ('Palo Alto', 'Redwoods', 'Foothill Stadium', 50424, 'Seaboard', None, 'Grow Tall, Redwoods!', 56, 52, 62, 72, 84, 99, 68, 95),
+    ('Syracuse', 'Saltmen', 'Onondaga Dome', 49057, 'Seaboard', None, 'Salt the Earth!', 62, 56, 68, 70, 78, 82, 60, 74),
+    ('Virginia', 'Statesmen', 'Rivanna Stadium', 61500, 'Seaboard', None, 'Rise, Statesmen!', 76, 76, 80, 72, 78, 94, 52, 92),
+    ('Blacksburg', 'Ridgerunners', 'New River Stadium', 65632, 'Seaboard', None, 'Run the Ridge!', 64, 62, 82, 74, 82, 82, 74, 80),
+    ('Winston-Salem', 'Spires', 'Salem Creek Stadium', 31500, 'Seaboard', None, 'Rise Up, Spires!', 64, 64, 72, 70, 76, 94, 44, 84),
+
+    # ── Meridian Conference (16) ──
+    ('Arizona', 'Gila Monsters', 'Santa Catalina Stadium', 50782, 'Meridian', None, 'Bite and Hold!', 72, 74, 74, 70, 78, 80, 56, 84),
+    ('Arizona State', 'Scorpions', 'Papago Stadium', 53599, 'Meridian', None, 'Tails Up!', 78, 74, 82, 74, 82, 76, 60, 86),
+    ('Waco', 'Mammoths', 'Cameron Park Stadium', 45140, 'Meridian', None, "Stomp 'Em!", 80, 60, 70, 76, 86, 82, 60, 78),
+    ('Provo', 'Peregrines', 'Timpanogos Stadium', 62073, 'Meridian', None, 'Rise and Dive!', 80, 80, 84, 78, 82, 84, 76, 82),
+    ('Cincinnati', 'Sovereigns', 'Queen City Stadium', 38088, 'Meridian', None, 'Long Live the Crown!', 72, 62, 70, 72, 78, 78, 56, 74),
+    ('Colorado', 'Bighorns', 'Flatirons Stadium', 50183, 'Meridian', None, 'Ram It Home!', 64, 62, 74, 72, 80, 78, 62, 90),
+    ('Houston', 'Gushers', 'Brays Bayou Stadium', 40000, 'Meridian', None, 'Let It Gush!', 72, 76, 78, 72, 78, 74, 56, 70),
+    ('Iowa State', 'Thunderheads', 'Skunk River Stadium', 61500, 'Meridian', None, 'Here Comes the Storm!', 66, 70, 70, 70, 78, 80, 50, 72),
+    ('Kansas', 'Free Staters', 'Kaw River Stadium', 41525, 'Meridian', None, 'Free State!', 74, 62, 74, 72, 80, 80, 40, 80),
+    ('Kansas State', 'Bluestems', 'Flint Hills Stadium', 50000, 'Meridian', None, 'Root Down!', 72, 66, 70, 74, 80, 76, 62, 72),
+    ('Oklahoma State', 'Outriders', 'Stillwater Creek Stadium', 53855, 'Meridian', None, 'Ride Out!', 58, 52, 68, 72, 82, 74, 66, 74),
+    ('Fort Worth', 'Cattlemen', 'Trinity River Stadium', 47000, 'Meridian', None, "Drive 'Em!", 78, 68, 76, 76, 84, 82, 64, 82),
+    ('Lubbock', 'Dust Devils', 'Caprock Stadium', 60229, 'Meridian', None, 'Kick Up Dust!', 84, 88, 86, 86, 86, 72, 56, 70),
+    ('Orlando', 'Rocketeers', 'The Launchpad', 45301, 'Meridian', None, 'Liftoff!', 70, 64, 74, 72, 80, 72, 50, 76),
+    ('Utah', 'Rockslides', 'Red Butte Stadium', 51444, 'Meridian', None, 'Bring It Down!', 82, 80, 74, 80, 84, 80, 68, 84),
+    ('West Virginia', 'Highlanders', 'Monongahela Stadium', 60000, 'Meridian', None, 'Light the Lamps!', 64, 60, 76, 72, 78, 70, 68, 72),
+
+    # ── Federal Conference (14) ──
+    ('Hudson', 'Grays', 'Highland Falls Stadium', 38000, 'Federal', None, 'Duty First!', 64, 70, 80, 72, 76, 90, 82, 88),
+    ('Charlotte', 'Goldminers', 'Mallard Creek Stadium', 15314, 'Federal', None, 'Dig Deep!', 40, 40, 56, 56, 62, 68, 20, 64),
+    ('East Carolina', "Nor'easters", 'Tar River Stadium', 50000, 'Federal', None, 'Batten Down!', 60, 58, 64, 62, 68, 62, 56, 66),
+    ('Florida Atlantic', 'Snook', 'Boca Inlet Stadium', 29419, 'Federal', None, 'Snook Attack!', 56, 44, 64, 58, 68, 62, 30, 74),
+    ('Memphis', 'Pharaohs', 'Bluff City Stadium', 58318, 'Federal', None, 'Rule the Bluff!', 70, 62, 68, 72, 72, 62, 54, 62),
+    ('Chesapeake', 'Helmsmen', 'Severn Stadium', 34000, 'Federal', None, 'Steady the Helm!', 76, 62, 80, 72, 76, 92, 84, 90),
+    ('North Texas', 'Northers', 'Pecan Creek Stadium', 30850, 'Federal', None, 'Here Comes the Norther!', 78, 52, 72, 64, 68, 62, 40, 62),
+    ('Montrose', 'Herons', 'Main Street Stadium', 47000, 'Federal', None, 'Wings Out!', 48, 52, 60, 62, 70, 97, 40, 86),
+    ('South Florida', 'Tarpons', 'Hillsborough Stadium', 65618, 'Federal', None, 'Silver Kings!', 72, 58, 70, 70, 72, 72, 40, 70),
+    ('Philadelphia', 'Founders', 'Schuylkill Stadium', 67594, 'Federal', None, 'Ring It Loud!', 50, 46, 60, 58, 64, 68, 40, 62),
+    ('New Orleans', 'Brass', 'Crescent Park Stadium', 30000, 'Federal', None, 'Brass Up!', 70, 70, 72, 70, 72, 86, 54, 82),
+    ('Tulsa', 'Riggers', 'Arkansas River Stadium', 30000, 'Federal', None, 'Rig It Up!', 48, 46, 58, 58, 62, 74, 48, 64),
+    ('Birmingham', 'Vulcans', 'Red Mountain Stadium', 47100, 'Federal', None, 'Hammer and Anvil!', 52, 42, 58, 60, 70, 66, 38, 60),
+    ('San Antonio', 'Javelinas', 'Bexar Dome', 64000, 'Federal', None, 'Tusks Up!', 66, 52, 70, 66, 72, 62, 30, 64),
+
+    # ── Coastal Plains Conference (14) ──
+    ('Appalachian State', 'Pathfinders', 'Rich Mountain Stadium', 30000, 'Coastal Plains', 'East', 'Find the Way!', 58, 52, 62, 64, 70, 66, 62, 78),
+    ('Grand Strand', 'Sand Sharks', 'Waccamaw Stadium', 21000, 'Coastal Plains', 'East', 'Feeding Time!', 52, 50, 60, 62, 66, 60, 32, 72),
+    ('Georgia Southern', 'Kestrels', 'Ogeechee Stadium', 25000, 'Coastal Plains', 'East', 'Talons Up!', 60, 50, 66, 62, 68, 62, 62, 70),
+    ('Georgia State', 'Firebirds', 'Five Points Stadium', 24333, 'Coastal Plains', 'East', 'Rise From the Ashes!', 44, 40, 56, 58, 62, 62, 20, 64),
+    ('Shenandoah', 'Riverhawks', 'Massanutten Stadium', 25000, 'Coastal Plains', 'East', 'Valley Strong!', 74, 76, 70, 70, 72, 72, 60, 82),
+    ('Huntington', 'Rail Barons', 'Ohio River Stadium', 38016, 'Coastal Plains', 'East', 'All Aboard!', 56, 52, 60, 62, 66, 60, 68, 64),
+    ('Norfolk', 'Dreadnoughts', 'Elizabeth River Stadium', 22130, 'Coastal Plains', 'East', 'Full Broadside!', 66, 56, 66, 62, 68, 64, 36, 66),
+    ('Arkansas State', 'Lowlanders', "Crowley's Ridge Stadium", 30406, 'Coastal Plains', 'West', 'Hold the Ridge!', 54, 48, 60, 58, 64, 58, 40, 60),
+    ('Louisiana', 'Zydeco', 'Vermilion Stadium', 41426, 'Coastal Plains', 'West', 'Turn It Up!', 56, 52, 62, 62, 66, 60, 46, 68),
+    ('Ruston', 'Timberjacks', 'Piney Hills Stadium', 28019, 'Coastal Plains', 'West', "Saw 'Em Down!", 50, 56, 60, 58, 62, 60, 52, 60),
+    ('Monroe', 'Egrets', 'Ouachita Stadium', 30427, 'Coastal Plains', 'West', 'Spread the Wings!', 42, 44, 52, 50, 56, 56, 30, 56),
+    ('South Alabama', 'Jubilees', 'Mobile Bay Stadium', 25450, 'Coastal Plains', 'West', "It's a Jubilee!", 56, 50, 58, 62, 70, 58, 26, 66),
+    ('Southern Miss', 'Conductors', 'Leaf River Stadium', 36000, 'Coastal Plains', 'West', 'Full Speed Ahead!', 58, 52, 62, 58, 62, 60, 58, 64),
+    ('Troy', 'Pikemen', 'Conecuh Stadium', 30402, 'Coastal Plains', 'West', 'Pikes Up!', 54, 56, 62, 60, 64, 58, 48, 60),
+
+    # ── Lake Country Conference (13) ──
+    ('Akron', 'Airships', 'Cuyahoga Stadium', 30000, 'Lake Country', None, 'Up, Up, Airships!', 38, 38, 52, 52, 62, 62, 24, 58),
+    ('Muncie', 'Gaslights', 'White River Stadium', 22500, 'Lake Country', None, 'Turn Up the Gas!', 44, 42, 54, 56, 60, 64, 32, 62),
+    ('Bowling Green', 'Marshals', 'Wood County Stadium', 24000, 'Lake Country', None, 'Lay Down the Law!', 46, 54, 58, 58, 60, 66, 50, 62),
+    ('Buffalo', 'Lake Effect', 'Erie Shore Stadium', 25013, 'Lake Country', None, 'Lake Effect!', 52, 50, 60, 56, 60, 70, 28, 60),
+    ('Central Michigan', 'Lumber Barons', 'Pleasant Ridge Stadium', 30255, 'Lake Country', None, 'Timber Rolls!', 48, 50, 60, 56, 60, 62, 50, 62),
+    ('Eastern Michigan', 'Harriers', 'Water Tower Stadium', 30200, 'Lake Country', None, "Run 'Em Down!", 44, 42, 58, 52, 56, 60, 22, 56),
+    ('Kent State', 'Thunderbolts', 'Twin Lakes Stadium', 25319, 'Lake Country', None, 'Strike Twice!', 40, 36, 52, 52, 56, 64, 20, 62),
+    ('Miami (OH)', 'Foxes', 'Four Mile Creek Stadium', 24286, 'Lake Country', None, "Outfox 'Em!", 50, 64, 64, 62, 64, 82, 66, 82),
+    ('Ohio', 'Copperheads', 'Hocking River Stadium', 24000, 'Lake Country', None, 'Strike From the Hills!', 58, 58, 64, 58, 62, 68, 48, 74),
+    ('Sacramento State', 'Express', 'American River Stadium', 21195, 'Lake Country', None, 'Deliver!', 50, 44, 52, 60, 58, 62, 34, 62),
+    ('Toledo', 'Glassmen', 'Maumee Stadium', 26038, 'Lake Country', None, 'Break Glass!', 60, 66, 68, 62, 64, 62, 58, 62),
+    ('Massachusetts', 'Pioneers', 'Holyoke Range Stadium', 17000, 'Lake Country', None, 'Muster Up!', 32, 32, 50, 50, 56, 76, 20, 70),
+    ('Western Michigan', 'Lancers', 'Kalamazoo River Stadium', 30200, 'Lake Country', None, 'Lances High!', 54, 58, 64, 60, 64, 64, 46, 64),
+
+    # ── Crossroads Conference (10) ──
+    ('Delaware', 'Bluecoats', 'White Clay Stadium', 18800, 'Crossroads', None, 'First State, First Place!', 56, 48, 58, 62, 62, 74, 54, 76),
+    ('Biscayne', 'Stingrays', 'Sweetwater Stadium', 20000, 'Crossroads', None, 'Sting and Glide!', 52, 46, 56, 52, 58, 60, 18, 64),
+    ('Jacksonville State', 'Ironhawks', 'Choccolocco Stadium', 24000, 'Crossroads', None, 'Hawks of Iron!', 60, 54, 62, 60, 62, 56, 48, 58),
+    ('Kennesaw State', 'Locomotives', 'Big Shanty Stadium', 8300, 'Crossroads', None, 'Full Throttle!', 60, 56, 64, 58, 58, 60, 20, 62),
+    ('Lynchburg', 'Heralds', 'Seven Hills Stadium', 25000, 'Crossroads', None, 'Sound the Call!', 58, 52, 64, 68, 78, 58, 34, 72),
+    ('Middle Tennessee', 'Cedars', 'Stones River Stadium', 30788, 'Crossroads', None, 'Raise the Cedars!', 40, 42, 54, 56, 60, 60, 40, 62),
+    ('Missouri State', 'Roadsters', 'Ozark Plateau Stadium', 17500, 'Crossroads', None, 'Hit the Road!', 58, 48, 60, 58, 60, 62, 30, 62),
+    ('New Mexico State', 'Chiles', 'Organ Mountain Stadium', 28853, 'Crossroads', None, 'Turn Up the Heat!', 42, 40, 52, 50, 54, 56, 28, 56),
+    ('Huntsville', 'Ironwoods', 'Pineywoods Stadium', 22039, 'Crossroads', None, 'Strong as Ironwood!', 38, 38, 50, 52, 56, 58, 40, 58),
+    ('Western Kentucky', 'Cavers', 'Barren River Stadium', 22113, 'Crossroads', None, 'Go Deep!', 64, 58, 66, 62, 64, 62, 50, 68),
+
+    # ── Golden West Conference (8) ──
+    ('Boise State', 'Smokejumpers', 'Table Rock Stadium', 36387, 'Golden West', None, 'Jump In!', 74, 68, 72, 76, 78, 68, 74, 72),
+    ('Colorado State', 'Elk', 'Horsetooth Stadium', 41000, 'Golden West', None, 'Bugle Up!', 46, 46, 56, 64, 74, 72, 38, 76),
+    ('Fresno State', 'Sequoias', 'San Joaquin Stadium', 40727, 'Golden West', None, 'Stand Like Giants!', 58, 62, 62, 62, 64, 64, 56, 60),
+    ('Oregon State', 'Loggers', 'Marys River Stadium', 35548, 'Golden West', None, 'Log Jam!', 50, 46, 58, 60, 72, 74, 50, 78),
+    ('San Diego State', 'Sea Lions', 'Mission Valley Stadium', 35000, 'Golden West', None, 'Bark and Bite!', 52, 70, 66, 66, 76, 70, 48, 82),
+    ('Texas State', 'Wildfire', 'San Marcos River Stadium', 30000, 'Golden West', None, 'Spread the Fire!', 68, 56, 66, 66, 70, 64, 28, 70),
+    ('Utah State', 'Trappers', 'Cache Valley Stadium', 25100, 'Golden West', None, 'Spring the Trap!', 58, 50, 60, 60, 64, 66, 40, 70),
+    ('Washington State', 'Coulees', 'Palouse Stadium', 32952, 'Golden West', None, 'Into the Coulee!', 54, 54, 60, 62, 68, 72, 58, 70),
+
+    # ── High Country Conference (10) ──
+    ('Front Range', 'Aviators', 'Rampart Stadium', 46692, 'High Country', None, 'Wheels Up!', 58, 50, 72, 66, 74, 90, 74, 82),
+    ("Hawai'i", 'Trade Winds', 'Mānoa Stadium', 15194, 'High Country', None, 'Ride the Trades!', 58, 48, 62, 54, 52, 66, 56, 92),
+    ('Nevada', 'Comstocks', 'Truckee River Stadium', 27000, 'High Country', None, 'Strike Silver!', 44, 42, 54, 56, 62, 64, 40, 64),
+    ('New Mexico', 'Sandias', 'Sandia Stadium', 39224, 'High Country', None, 'Turn the Mountain Pink!', 58, 54, 62, 56, 60, 64, 34, 66),
+    ('North Dakota State', 'Flickertails', 'Prairie Rose Dome', 18700, 'High Country', None, 'Dakota Tough!', 66, 68, 76, 74, 72, 66, 88, 62),
+    ('Northern Illinois', 'Barbs', 'Kishwaukee Stadium', 23595, 'High Country', None, 'Wire Tight!', 48, 58, 62, 58, 62, 62, 52, 58),
+    ('San Jose State', 'Quicksilvers', 'Coyote Creek Stadium', 21520, 'High Country', None, 'Quick as Silver!', 56, 48, 58, 56, 62, 66, 36, 64),
+    ('Las Vegas', 'Neon', 'Spring Mountain Stadium', 65000, 'High Country', None, 'Light It Up!', 68, 56, 70, 68, 78, 60, 30, 70),
+    ('El Paso', 'Sidewinders', 'Franklin Mountain Stadium', 51500, 'High Country', None, "Rattle 'Em!", 44, 42, 54, 52, 58, 58, 34, 58),
+    ('Wyoming', 'Pronghorns', 'Laramie Plains Stadium', 29181, 'High Country', None, 'Fastest on the Plains!', 42, 56, 58, 60, 62, 64, 50, 68),
+
+    # ── Independents (2) ──
+    ('South Bend', 'Sentinels', 'St. Joseph River Stadium', 77622, 'Independent', None, 'Keep the Watch!', 88, 88, 91, 92, 94, 95, 99, 94),
+    ('Connecticut', 'Charter Oaks', 'Connecticut River Stadium', 38066, 'Independent', None, 'Oak Strong!', 58, 48, 64, 64, 64, 78, 24, 70),
+]
+
+
+ABBREVIATIONS = {
+    'Alabama': 'ALA', 'Arkansas': 'ARK', 'East Alabama': 'EAL', 'Florida': 'FLA', 'Georgia': 'GA', 'Kentucky': 'KY',
+    'Bayou State': 'BAYU', 'Mississippi State': 'MSST', 'Missouri': 'MO', 'Oklahoma': 'OKLA', 'Mississippi': 'MISS', 'South Carolina': 'SC',
+    'Tennessee': 'TENN', 'Texas': 'TEX', 'Brazos': 'BRAZ', 'Nashville': 'NASH', 'Illinois': 'ILL', 'Indiana': 'IND',
+    'Iowa': 'IOWA', 'Maryland': 'MD', 'Michigan': 'MICH', 'Michigan State': 'MCST', 'Minnesota': 'MINN', 'Nebraska': 'NEB',
+    'Lakeshore': 'LAKE', 'Ohio State': 'OHST', 'Oregon': 'ORE', 'Pennsylvania': 'PA', 'Tippecanoe': 'TIPP', 'New Jersey': 'NJ',
+    'Los Angeles': 'LA', 'Southern California': 'SCAL', 'Washington': 'WASH', 'Wisconsin': 'WIS', 'Boston': 'BOS', 'California': 'CAL',
+    'Upcountry': 'UPC', 'Durham': 'DUR', 'Florida State': 'FLST', 'Atlanta': 'ATL', 'Louisville': 'LOU', 'Miami': 'MIA',
+    'NC State': 'NCST', 'North Carolina': 'NC', 'Pittsburgh': 'PGH', 'Dallas': 'DAL', 'Palo Alto': 'PALO', 'Syracuse': 'SYR',
+    'Virginia': 'VA', 'Blacksburg': 'BBG', 'Winston-Salem': 'WS', 'Arizona': 'ARIZ', 'Arizona State': 'AZST', 'Waco': 'WACO',
+    'Provo': 'PROV', 'Cincinnati': 'CIN', 'Colorado': 'COLO', 'Houston': 'HOU', 'Iowa State': 'IAST', 'Kansas': 'KAN',
+    'Kansas State': 'KSST', 'Oklahoma State': 'OKST', 'Fort Worth': 'FTW', 'Lubbock': 'LBK', 'Orlando': 'ORL', 'Utah': 'UTAH',
+    'West Virginia': 'WV', 'Hudson': 'HUD', 'Charlotte': 'CLT', 'East Carolina': 'ECU', 'Florida Atlantic': 'FAU', 'Memphis': 'MEM',
+    'Chesapeake': 'CHES', 'North Texas': 'NTX', 'Montrose': 'MTRS', 'South Florida': 'SFLA', 'Philadelphia': 'PHI', 'New Orleans': 'NOLA',
+    'Tulsa': 'TLSA', 'Birmingham': 'BHM', 'San Antonio': 'SATX', 'Appalachian State': 'APST', 'Grand Strand': 'GSTR', 'Georgia Southern': 'GASO',
+    'Georgia State': 'GAST', 'Shenandoah': 'SHEN', 'Huntington': 'HUNT', 'Norfolk': 'NORF', 'Arkansas State': 'ARST', 'Louisiana': 'LAF',
+    'Ruston': 'RUST', 'Monroe': 'MON', 'South Alabama': 'SALA', 'Southern Miss': 'SMS', 'Troy': 'TROY', 'Akron': 'AKR',
+    'Muncie': 'MUN', 'Bowling Green': 'BG', 'Buffalo': 'BUF', 'Central Michigan': 'CMU', 'Eastern Michigan': 'EMU', 'Kent State': 'KENT',
+    'Miami (OH)': 'M-OH', 'Ohio': 'OHIO', 'Sacramento State': 'SAC', 'Toledo': 'TOL', 'Massachusetts': 'MASS', 'Western Michigan': 'WMU',
+    'Delaware': 'DEL', 'Biscayne': 'BISC', 'Jacksonville State': 'JVST', 'Kennesaw State': 'KENN', 'Lynchburg': 'LYN', 'Middle Tennessee': 'MTN',
+    'Missouri State': 'MOST', 'New Mexico State': 'NMST', 'Huntsville': 'HVL', 'Western Kentucky': 'WKU', 'Boise State': 'BOIS', 'Colorado State': 'COST',
+    'Fresno State': 'FRES', 'Oregon State': 'ORST', 'San Diego State': 'SDST', 'Texas State': 'TXST', 'Utah State': 'UTST', 'Washington State': 'WAST',
+    'Front Range': 'FRNG', "Hawai'i": 'HAW', 'Nevada': 'NEV', 'New Mexico': 'NM', 'North Dakota State': 'NDST', 'Northern Illinois': 'NIU',
+    'San Jose State': 'SJST', 'Las Vegas': 'LV', 'El Paso': 'ELP', 'Wyoming': 'WYO', 'South Bend': 'SBND', 'Connecticut': 'CONN',
+}

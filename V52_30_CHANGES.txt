@@ -1,0 +1,10 @@
+Console College 26 v52.30 — Mobile Stage 4
+
+- New Classes tab: recruiting class + incoming transfer class remain visible.
+- New Program tab: coordinators, all position coaches, and per-career universe rules.
+- Universe rules can be toggled from mobile and use the existing world_rules system.
+- Portal tab now becomes interactive whenever a live unresolved portal report exists.
+- Live portal actions: Contact, Pitch, Official Visit, Offer/Withdraw roster spot.
+- Portal hours, one-pitch-per-week rule, visit-once rule, 8-offer cap, market heat and Top 5 retained.
+- Existing Stage 1-3 mobile features preserved.
+- Full terminal offseason is intentionally not auto-run from a web request; future mobile calendar work will split its remaining blocking callbacks into web-safe steps rather than hand decisions to CPU.

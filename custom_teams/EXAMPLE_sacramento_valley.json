@@ -1,0 +1,2009 @@
+{
+  "format": "console-college-team",
+  "version": 1,
+  "school": "Sacramento Valley",
+  "nickname": "Condors",
+  "abbr": "SVU",
+  "short_name": "Sac Valley",
+  "conference": "High Country",
+  "division": null,
+  "chant": "Fly, Condors, fly!",
+  "home_state": "CA",
+  "town": "Sacramento, California",
+  "altitude": 30,
+  "stadium": {
+    "name": "Condor Field",
+    "capacity": 32000,
+    "indoor": false,
+    "parts": {
+      "lower_bowl": 4,
+      "end_zones": 2,
+      "student_section": 3,
+      "video_board": 2,
+      "lights": 2
+    }
+  },
+  "ratings": {
+    "offense": 62,
+    "defense": 58,
+    "coach": 66,
+    "athletic_director": 62,
+    "facilities": 64,
+    "academics": 70,
+    "tradition": 38,
+    "campus": 72
+  },
+  "facilities": {
+    "recruiting": 5,
+    "training": 5,
+    "stadium": 4
+  },
+  "budget": 41000000,
+  "coach": {
+    "name": "Dana Whitfield",
+    "age": 44,
+    "overall": 66,
+    "offense_scheme": "Air Raid",
+    "defense_scheme": "4-2-5 Quarters",
+    "aggression": 62,
+    "personality": "builder",
+    "alma_mater": "Fresno State",
+    "ratings": {
+      "recruiting": 68,
+      "passing_dev": 72,
+      "offense_dev": 64,
+      "trench_dev": 60,
+      "db_dev": 63,
+      "special_dev": 58
+    }
+  },
+  "coordinators": {
+    "oc": {
+      "name": "Marcus Bell",
+      "overall": 63,
+      "offense_scheme": "Air Raid"
+    },
+    "dc": {
+      "name": "Ray Okafor",
+      "overall": 61,
+      "defense_scheme": "4-2-5 Quarters"
+    }
+  },
+  "ad": {
+    "name": "Lou Carver",
+    "style": "patient"
+  },
+  "rival": "Fresno State",
+  "trophy": "the Valley Oar",
+  "lore": [
+    "The Condors moved up from the FCS with a stadium built by the students' own fee vote.",
+    "Condor Field sits on the river levee. When the delta breeze comes in, kickers hate it."
+  ],
+  "tailgate": [
+    "tri-tip",
+    "Santa Maria tri-tip over red oak. Nothing else, and don't ask for sauce."
+  ],
+  "replaces": null,
+  "roster": [
+    {
+      "first_name": "Derek",
+      "last_name": "Munro",
+      "position": "QB",
+      "year": 3,
+      "redshirt": false,
+      "height": 72,
+      "weight": 218,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 34,
+      "prof_ceiling": 0.95,
+      "fundamentals": {
+        "strength": 53,
+        "speed": 46,
+        "quickness": 59,
+        "iq": 76,
+        "injury": 70,
+        "playmaker": 58
+      },
+      "proficiency": {
+        "QB": 0.93,
+        "RB": 0.64,
+        "WR": 0.61,
+        "S": 0.62
+      },
+      "traits": [
+        "maxed",
+        "fragile"
+      ],
+      "number": 17,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Colin",
+      "last_name": "Reed",
+      "position": "QB",
+      "year": 1,
+      "redshirt": false,
+      "height": 73,
+      "weight": 222,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 69,
+      "prof_ceiling": 0.98,
+      "fundamentals": {
+        "strength": 34,
+        "speed": 46,
+        "quickness": 49,
+        "iq": 53,
+        "injury": 80,
+        "playmaker": 59
+      },
+      "proficiency": {
+        "QB": 0.95,
+        "RB": 0.78,
+        "WR": 0.47,
+        "TE": 0.31,
+        "LB": 0.3,
+        "S": 0.72
+      },
+      "traits": [
+        "streaky"
+      ],
+      "number": 6,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Grady",
+      "last_name": "Aumavae",
+      "position": "QB",
+      "year": 0,
+      "redshirt": false,
+      "height": 75,
+      "weight": 223,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 45,
+      "prof_ceiling": 0.96,
+      "fundamentals": {
+        "strength": 48,
+        "speed": 43,
+        "quickness": 51,
+        "iq": 51,
+        "injury": 75,
+        "playmaker": 53
+      },
+      "proficiency": {
+        "QB": 0.75,
+        "RB": 0.41,
+        "WR": 0.66,
+        "LB": 0.39,
+        "S": 0.66
+      },
+      "traits": [],
+      "number": 9,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Michael",
+      "last_name": "Gagnon",
+      "position": "RB",
+      "year": 3,
+      "redshirt": false,
+      "height": 68,
+      "weight": 208,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 64,
+      "prof_ceiling": 0.97,
+      "fundamentals": {
+        "strength": 66,
+        "speed": 65,
+        "quickness": 62,
+        "iq": 62,
+        "injury": 49,
+        "playmaker": 75
+      },
+      "proficiency": {
+        "QB": 0.31,
+        "RB": 0.89,
+        "WR": 0.58,
+        "LB": 0.51,
+        "CB": 0.47,
+        "S": 0.56
+      },
+      "traits": [
+        "slow_start"
+      ],
+      "number": 23,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Damien",
+      "last_name": "O'Brien",
+      "position": "RB",
+      "year": 0,
+      "redshirt": true,
+      "height": 71,
+      "weight": 207,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 33,
+      "prof_ceiling": 0.99,
+      "fundamentals": {
+        "strength": 45,
+        "speed": 51,
+        "quickness": 57,
+        "iq": 53,
+        "injury": 82,
+        "playmaker": 56
+      },
+      "proficiency": {
+        "RB": 0.87,
+        "WR": 0.59,
+        "LB": 0.7,
+        "CB": 0.52,
+        "S": 0.43
+      },
+      "traits": [
+        "disciplined",
+        "homebody_p",
+        "emotional"
+      ],
+      "number": 19,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Luke",
+      "last_name": "Wisniewski",
+      "position": "RB",
+      "year": 2,
+      "redshirt": false,
+      "height": 69,
+      "weight": 208,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 59,
+      "prof_ceiling": 1.03,
+      "fundamentals": {
+        "strength": 68,
+        "speed": 73,
+        "quickness": 73,
+        "iq": 66,
+        "injury": 78,
+        "playmaker": 68
+      },
+      "proficiency": {
+        "QB": 0.32,
+        "RB": 0.93,
+        "WR": 0.69,
+        "LB": 0.71,
+        "CB": 0.53,
+        "S": 0.7
+      },
+      "traits": [
+        "clutch",
+        "humble"
+      ],
+      "number": 30,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Julius",
+      "last_name": "Doyle",
+      "position": "RB",
+      "year": 3,
+      "redshirt": false,
+      "height": 69,
+      "weight": 203,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 71,
+      "prof_ceiling": 0.99,
+      "fundamentals": {
+        "strength": 64,
+        "speed": 68,
+        "quickness": 73,
+        "iq": 44,
+        "injury": 72,
+        "playmaker": 63
+      },
+      "proficiency": {
+        "RB": 0.94,
+        "WR": 0.68,
+        "LB": 0.63,
+        "CB": 0.54,
+        "S": 0.44
+      },
+      "traits": [
+        "stubborn",
+        "maxed",
+        "emotional"
+      ],
+      "number": 12,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Lathan",
+      "last_name": "Little",
+      "position": "WR",
+      "year": 1,
+      "redshirt": false,
+      "height": 69,
+      "weight": 212,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 86,
+      "prof_ceiling": 0.99,
+      "fundamentals": {
+        "strength": 43,
+        "speed": 70,
+        "quickness": 70,
+        "iq": 58,
+        "injury": 72,
+        "playmaker": 61
+      },
+      "proficiency": {
+        "RB": 0.53,
+        "WR": 0.84,
+        "TE": 0.63,
+        "CB": 0.66,
+        "S": 0.78
+      },
+      "traits": [
+        "glass"
+      ],
+      "number": 4,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Isaiah",
+      "last_name": "Donnelly",
+      "position": "WR",
+      "year": 0,
+      "redshirt": false,
+      "height": 75,
+      "weight": 201,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 54,
+      "prof_ceiling": 0.88,
+      "fundamentals": {
+        "strength": 41,
+        "speed": 64,
+        "quickness": 64,
+        "iq": 36,
+        "injury": 75,
+        "playmaker": 58
+      },
+      "proficiency": {
+        "RB": 0.69,
+        "WR": 0.71,
+        "TE": 0.74,
+        "CB": 0.75,
+        "S": 0.78
+      },
+      "traits": [
+        "grinder",
+        "raw"
+      ],
+      "number": 8,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Omar",
+      "last_name": "Esposito",
+      "position": "WR",
+      "year": 0,
+      "redshirt": true,
+      "height": 69,
+      "weight": 174,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 13,
+      "prof_ceiling": 0.96,
+      "fundamentals": {
+        "strength": 25,
+        "speed": 49,
+        "quickness": 48,
+        "iq": 33,
+        "injury": 75,
+        "playmaker": 39
+      },
+      "proficiency": {
+        "RB": 0.53,
+        "WR": 0.81,
+        "TE": 0.47,
+        "CB": 0.61,
+        "S": 0.59
+      },
+      "traits": [
+        "family_guy"
+      ],
+      "number": 10,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Aiden",
+      "last_name": "McKenna",
+      "position": "WR",
+      "year": 0,
+      "redshirt": false,
+      "height": 72,
+      "weight": 215,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 60,
+      "prof_ceiling": 1.06,
+      "fundamentals": {
+        "strength": 37,
+        "speed": 51,
+        "quickness": 58,
+        "iq": 39,
+        "injury": 72,
+        "playmaker": 59
+      },
+      "proficiency": {
+        "QB": 0.42,
+        "RB": 0.63,
+        "WR": 0.87,
+        "TE": 0.59,
+        "CB": 0.42,
+        "S": 0.7,
+        "P": 0.3
+      },
+      "traits": [
+        "conditioned"
+      ],
+      "number": 16,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Victor",
+      "last_name": "Ryan",
+      "position": "WR",
+      "year": 1,
+      "redshirt": false,
+      "height": 75,
+      "weight": 211,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 65,
+      "prof_ceiling": 1.03,
+      "fundamentals": {
+        "strength": 46,
+        "speed": 61,
+        "quickness": 64,
+        "iq": 50,
+        "injury": 63,
+        "playmaker": 60
+      },
+      "proficiency": {
+        "RB": 0.65,
+        "WR": 0.88,
+        "TE": 0.41,
+        "LB": 0.34,
+        "CB": 0.57,
+        "S": 0.78
+      },
+      "traits": [
+        "homebody_p",
+        "clutch",
+        "cold"
+      ],
+      "number": 15,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Manny",
+      "last_name": "Gregory",
+      "position": "WR",
+      "year": 3,
+      "redshirt": true,
+      "height": 75,
+      "weight": 191,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 63,
+      "prof_ceiling": 1.04,
+      "fundamentals": {
+        "strength": 65,
+        "speed": 78,
+        "quickness": 76,
+        "iq": 70,
+        "injury": 77,
+        "playmaker": 75
+      },
+      "proficiency": {
+        "QB": 0.34,
+        "RB": 0.79,
+        "WR": 1.01,
+        "TE": 0.59,
+        "CB": 0.53,
+        "S": 0.78
+      },
+      "traits": [
+        "rivalry",
+        "film_junkie"
+      ],
+      "number": 18,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Jordan",
+      "last_name": "Lindqvist",
+      "position": "WR",
+      "year": 2,
+      "redshirt": true,
+      "height": 73,
+      "weight": 206,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 27,
+      "prof_ceiling": 0.93,
+      "fundamentals": {
+        "strength": 46,
+        "speed": 73,
+        "quickness": 66,
+        "iq": 58,
+        "injury": 61,
+        "playmaker": 70
+      },
+      "proficiency": {
+        "RB": 0.82,
+        "WR": 0.87,
+        "TE": 0.68,
+        "CB": 0.65,
+        "S": 0.68
+      },
+      "traits": [
+        "gym_rat"
+      ],
+      "number": 11,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Caleb",
+      "last_name": "Cole",
+      "position": "TE",
+      "year": 0,
+      "redshirt": true,
+      "height": 77,
+      "weight": 251,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 22,
+      "prof_ceiling": 1.02,
+      "fundamentals": {
+        "strength": 51,
+        "speed": 58,
+        "quickness": 44,
+        "iq": 55,
+        "injury": 77,
+        "playmaker": 48
+      },
+      "proficiency": {
+        "WR": 0.71,
+        "TE": 0.92,
+        "OL": 0.45,
+        "DL": 0.67,
+        "LB": 0.53
+      },
+      "traits": [],
+      "number": 83,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Miles",
+      "last_name": "Early",
+      "position": "TE",
+      "year": 2,
+      "redshirt": true,
+      "height": 78,
+      "weight": 249,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 61,
+      "prof_ceiling": 1.06,
+      "fundamentals": {
+        "strength": 79,
+        "speed": 65,
+        "quickness": 61,
+        "iq": 70,
+        "injury": 90,
+        "playmaker": 58
+      },
+      "proficiency": {
+        "WR": 0.79,
+        "TE": 0.94,
+        "OL": 0.55,
+        "DL": 0.79,
+        "LB": 0.77
+      },
+      "traits": [],
+      "number": 87,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Andrew",
+      "last_name": "O'Neal",
+      "position": "TE",
+      "year": 2,
+      "redshirt": false,
+      "height": 75,
+      "weight": 262,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 67,
+      "prof_ceiling": 1.05,
+      "fundamentals": {
+        "strength": 85,
+        "speed": 77,
+        "quickness": 75,
+        "iq": 80,
+        "injury": 57,
+        "playmaker": 76
+      },
+      "proficiency": {
+        "WR": 0.48,
+        "TE": 0.93,
+        "OL": 0.44,
+        "DL": 0.77,
+        "LB": 0.76
+      },
+      "traits": [
+        "flat",
+        "heavy_legs"
+      ],
+      "number": 82,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Cade",
+      "last_name": "McCray",
+      "position": "OL",
+      "year": 3,
+      "redshirt": false,
+      "height": 76,
+      "weight": 329,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 68,
+      "prof_ceiling": 1.02,
+      "fundamentals": {
+        "strength": 82,
+        "speed": 40,
+        "quickness": 62,
+        "iq": 69,
+        "injury": 92,
+        "playmaker": 32
+      },
+      "proficiency": {
+        "TE": 0.55,
+        "OL": 0.97,
+        "DL": 0.8
+      },
+      "traits": [],
+      "number": 77,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Desmond",
+      "last_name": "Garland",
+      "position": "OL",
+      "year": 3,
+      "redshirt": true,
+      "height": 76,
+      "weight": 300,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 52,
+      "prof_ceiling": 1.07,
+      "fundamentals": {
+        "strength": 87,
+        "speed": 32,
+        "quickness": 62,
+        "iq": 82,
+        "injury": 84,
+        "playmaker": 28
+      },
+      "proficiency": {
+        "TE": 0.48,
+        "OL": 1.03,
+        "DL": 0.73
+      },
+      "traits": [
+        "coachable",
+        "showman"
+      ],
+      "number": 53,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Terrance",
+      "last_name": "Bishop",
+      "position": "OL",
+      "year": 2,
+      "redshirt": false,
+      "height": 75,
+      "weight": 315,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 71,
+      "prof_ceiling": 0.95,
+      "fundamentals": {
+        "strength": 82,
+        "speed": 46,
+        "quickness": 67,
+        "iq": 80,
+        "injury": 53,
+        "playmaker": 39
+      },
+      "proficiency": {
+        "TE": 0.44,
+        "OL": 0.93,
+        "DL": 0.79
+      },
+      "traits": [
+        "captain"
+      ],
+      "number": 61,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Bryce",
+      "last_name": "Hahn",
+      "position": "OL",
+      "year": 3,
+      "redshirt": true,
+      "height": 76,
+      "weight": 332,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 64,
+      "prof_ceiling": 1.04,
+      "fundamentals": {
+        "strength": 84,
+        "speed": 28,
+        "quickness": 53,
+        "iq": 61,
+        "injury": 76,
+        "playmaker": 24
+      },
+      "proficiency": {
+        "TE": 0.71,
+        "OL": 1.01,
+        "DL": 0.78
+      },
+      "traits": [
+        "stubborn",
+        "heavy_legs"
+      ],
+      "number": 76,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Derek",
+      "last_name": "Quintero",
+      "position": "OL",
+      "year": 1,
+      "redshirt": true,
+      "height": 75,
+      "weight": 297,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 82,
+      "prof_ceiling": 1.11,
+      "fundamentals": {
+        "strength": 78,
+        "speed": 32,
+        "quickness": 46,
+        "iq": 66,
+        "injury": 55,
+        "playmaker": 30
+      },
+      "proficiency": {
+        "TE": 0.56,
+        "OL": 0.99,
+        "DL": 0.75
+      },
+      "traits": [],
+      "number": 67,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Kyle",
+      "last_name": "Pfeiffer",
+      "position": "OL",
+      "year": 0,
+      "redshirt": false,
+      "height": 80,
+      "weight": 316,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 69,
+      "prof_ceiling": 1.0,
+      "fundamentals": {
+        "strength": 72,
+        "speed": 38,
+        "quickness": 52,
+        "iq": 56,
+        "injury": 49,
+        "playmaker": 28
+      },
+      "proficiency": {
+        "TE": 0.72,
+        "OL": 0.89,
+        "DL": 0.73,
+        "P": 0.3
+      },
+      "traits": [
+        "chippy",
+        "mentor",
+        "underdog"
+      ],
+      "number": 56,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Makai",
+      "last_name": "Kavanagh",
+      "position": "OL",
+      "year": 1,
+      "redshirt": false,
+      "height": 76,
+      "weight": 315,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 30,
+      "prof_ceiling": 0.96,
+      "fundamentals": {
+        "strength": 57,
+        "speed": 21,
+        "quickness": 43,
+        "iq": 46,
+        "injury": 63,
+        "playmaker": 19
+      },
+      "proficiency": {
+        "TE": 0.72,
+        "OL": 0.87,
+        "DL": 0.49
+      },
+      "traits": [
+        "rehab"
+      ],
+      "number": 50,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Keith",
+      "last_name": "Kamara",
+      "position": "OL",
+      "year": 3,
+      "redshirt": false,
+      "height": 77,
+      "weight": 329,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 25,
+      "prof_ceiling": 1.07,
+      "fundamentals": {
+        "strength": 71,
+        "speed": 26,
+        "quickness": 59,
+        "iq": 60,
+        "injury": 58,
+        "playmaker": 33
+      },
+      "proficiency": {
+        "TE": 0.71,
+        "OL": 0.92,
+        "DL": 0.6
+      },
+      "traits": [
+        "coaster",
+        "emotional",
+        "soft"
+      ],
+      "number": 58,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Sam",
+      "last_name": "Whitley",
+      "position": "OL",
+      "year": 1,
+      "redshirt": false,
+      "height": 77,
+      "weight": 299,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 27,
+      "prof_ceiling": 1.09,
+      "fundamentals": {
+        "strength": 63,
+        "speed": 30,
+        "quickness": 47,
+        "iq": 52,
+        "injury": 71,
+        "playmaker": 17
+      },
+      "proficiency": {
+        "TE": 0.77,
+        "OL": 0.87,
+        "DL": 0.79
+      },
+      "traits": [
+        "grinder",
+        "impatient",
+        "practice_all"
+      ],
+      "number": 72,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Tanner",
+      "last_name": "Chapman",
+      "position": "OL",
+      "year": 0,
+      "redshirt": false,
+      "height": 76,
+      "weight": 326,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 50,
+      "prof_ceiling": 1.08,
+      "fundamentals": {
+        "strength": 68,
+        "speed": 34,
+        "quickness": 47,
+        "iq": 58,
+        "injury": 75,
+        "playmaker": 39
+      },
+      "proficiency": {
+        "TE": 0.56,
+        "OL": 0.92,
+        "DL": 0.63
+      },
+      "traits": [
+        "clutch"
+      ],
+      "number": 71,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Santana",
+      "last_name": "Bowden",
+      "position": "DL",
+      "year": 0,
+      "redshirt": false,
+      "height": 75,
+      "weight": 292,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 40,
+      "prof_ceiling": 0.99,
+      "fundamentals": {
+        "strength": 76,
+        "speed": 69,
+        "quickness": 72,
+        "iq": 62,
+        "injury": 49,
+        "playmaker": 62
+      },
+      "proficiency": {
+        "TE": 0.59,
+        "OL": 0.42,
+        "DL": 0.93,
+        "LB": 0.57
+      },
+      "traits": [],
+      "number": 93,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Brock",
+      "last_name": "Gordon",
+      "position": "DL",
+      "year": 1,
+      "redshirt": true,
+      "height": 74,
+      "weight": 309,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 38,
+      "prof_ceiling": 0.92,
+      "fundamentals": {
+        "strength": 60,
+        "speed": 40,
+        "quickness": 47,
+        "iq": 37,
+        "injury": 66,
+        "playmaker": 39
+      },
+      "proficiency": {
+        "TE": 0.61,
+        "OL": 0.7,
+        "DL": 0.86,
+        "LB": 0.5
+      },
+      "traits": [
+        "coaster",
+        "jitters",
+        "family_guy"
+      ],
+      "number": 91,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Bryce",
+      "last_name": "Stokes",
+      "position": "DL",
+      "year": 2,
+      "redshirt": true,
+      "height": 74,
+      "weight": 289,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 48,
+      "prof_ceiling": 0.89,
+      "fundamentals": {
+        "strength": 74,
+        "speed": 46,
+        "quickness": 61,
+        "iq": 65,
+        "injury": 52,
+        "playmaker": 49
+      },
+      "proficiency": {
+        "TE": 0.56,
+        "OL": 0.62,
+        "DL": 0.85,
+        "LB": 0.66
+      },
+      "traits": [
+        "big_game",
+        "gym_rat"
+      ],
+      "number": 98,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Brayden",
+      "last_name": "Butler",
+      "position": "DL",
+      "year": 2,
+      "redshirt": true,
+      "height": 79,
+      "weight": 279,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 76,
+      "prof_ceiling": 0.94,
+      "fundamentals": {
+        "strength": 57,
+        "speed": 34,
+        "quickness": 57,
+        "iq": 43,
+        "injury": 77,
+        "playmaker": 31
+      },
+      "proficiency": {
+        "TE": 0.73,
+        "OL": 0.65,
+        "DL": 0.91,
+        "LB": 0.43
+      },
+      "traits": [
+        "grinder",
+        "captain",
+        "stubborn"
+      ],
+      "number": 94,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Christian",
+      "last_name": "DeVries",
+      "position": "DL",
+      "year": 1,
+      "redshirt": false,
+      "height": 76,
+      "weight": 296,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 50,
+      "prof_ceiling": 1.14,
+      "fundamentals": {
+        "strength": 63,
+        "speed": 55,
+        "quickness": 68,
+        "iq": 48,
+        "injury": 71,
+        "playmaker": 41
+      },
+      "proficiency": {
+        "TE": 0.57,
+        "OL": 0.61,
+        "DL": 0.95,
+        "LB": 0.65
+      },
+      "traits": [],
+      "number": 95,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Reid",
+      "last_name": "Logan",
+      "position": "DL",
+      "year": 0,
+      "redshirt": false,
+      "height": 74,
+      "weight": 309,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 48,
+      "prof_ceiling": 0.93,
+      "fundamentals": {
+        "strength": 66,
+        "speed": 32,
+        "quickness": 63,
+        "iq": 46,
+        "injury": 77,
+        "playmaker": 34
+      },
+      "proficiency": {
+        "TE": 0.52,
+        "OL": 0.43,
+        "DL": 0.84,
+        "LB": 0.55
+      },
+      "traits": [
+        "iron"
+      ],
+      "number": 99,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Fabian",
+      "last_name": "Halvorsen",
+      "position": "DL",
+      "year": 2,
+      "redshirt": false,
+      "height": 74,
+      "weight": 290,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 66,
+      "prof_ceiling": 0.98,
+      "fundamentals": {
+        "strength": 73,
+        "speed": 52,
+        "quickness": 62,
+        "iq": 61,
+        "injury": 78,
+        "playmaker": 53
+      },
+      "proficiency": {
+        "TE": 0.56,
+        "OL": 0.43,
+        "DL": 0.9,
+        "LB": 0.55
+      },
+      "traits": [],
+      "number": 96,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Shane",
+      "last_name": "Beck",
+      "position": "DL",
+      "year": 3,
+      "redshirt": true,
+      "height": 77,
+      "weight": 278,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 54,
+      "prof_ceiling": 1.08,
+      "fundamentals": {
+        "strength": 85,
+        "speed": 57,
+        "quickness": 76,
+        "iq": 61,
+        "injury": 55,
+        "playmaker": 62
+      },
+      "proficiency": {
+        "TE": 0.68,
+        "OL": 0.6,
+        "DL": 1.03,
+        "LB": 0.71
+      },
+      "traits": [
+        "emotional"
+      ],
+      "number": 97,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Ahmad",
+      "last_name": "Holmes",
+      "position": "DL",
+      "year": 2,
+      "redshirt": false,
+      "height": 78,
+      "weight": 289,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 78,
+      "prof_ceiling": 1.1,
+      "fundamentals": {
+        "strength": 87,
+        "speed": 66,
+        "quickness": 75,
+        "iq": 73,
+        "injury": 76,
+        "playmaker": 53
+      },
+      "proficiency": {
+        "TE": 0.46,
+        "OL": 0.81,
+        "DL": 0.96,
+        "LB": 0.67
+      },
+      "traits": [],
+      "number": 90,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Anthony",
+      "last_name": "Cummings",
+      "position": "LB",
+      "year": 3,
+      "redshirt": true,
+      "height": 75,
+      "weight": 243,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 48,
+      "prof_ceiling": 0.94,
+      "fundamentals": {
+        "strength": 85,
+        "speed": 70,
+        "quickness": 73,
+        "iq": 78,
+        "injury": 64,
+        "playmaker": 65
+      },
+      "proficiency": {
+        "RB": 0.62,
+        "TE": 0.75,
+        "DL": 0.63,
+        "LB": 0.92,
+        "S": 0.5
+      },
+      "traits": [
+        "headcase",
+        "system_fit",
+        "streaky"
+      ],
+      "number": 21,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Isaiah",
+      "last_name": "Tanaka",
+      "position": "LB",
+      "year": 1,
+      "redshirt": false,
+      "height": 76,
+      "weight": 249,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 73,
+      "prof_ceiling": 0.96,
+      "fundamentals": {
+        "strength": 67,
+        "speed": 57,
+        "quickness": 66,
+        "iq": 68,
+        "injury": 89,
+        "playmaker": 53
+      },
+      "proficiency": {
+        "RB": 0.66,
+        "TE": 0.42,
+        "DL": 0.59,
+        "LB": 0.91,
+        "S": 0.49
+      },
+      "traits": [
+        "weight_room"
+      ],
+      "number": 45,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Cayden",
+      "last_name": "Leon",
+      "position": "LB",
+      "year": 3,
+      "redshirt": false,
+      "height": 76,
+      "weight": 234,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 90,
+      "prof_ceiling": 1.05,
+      "fundamentals": {
+        "strength": 81,
+        "speed": 76,
+        "quickness": 85,
+        "iq": 85,
+        "injury": 90,
+        "playmaker": 74
+      },
+      "proficiency": {
+        "RB": 0.48,
+        "TE": 0.54,
+        "DL": 0.74,
+        "LB": 1.01,
+        "S": 0.63
+      },
+      "traits": [
+        "system_fit"
+      ],
+      "number": 55,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Jeremiah",
+      "last_name": "Tyler",
+      "position": "LB",
+      "year": 3,
+      "redshirt": false,
+      "height": 75,
+      "weight": 230,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 45,
+      "prof_ceiling": 0.96,
+      "fundamentals": {
+        "strength": 72,
+        "speed": 62,
+        "quickness": 75,
+        "iq": 79,
+        "injury": 58,
+        "playmaker": 66
+      },
+      "proficiency": {
+        "RB": 0.48,
+        "TE": 0.46,
+        "DL": 0.51,
+        "LB": 0.95,
+        "S": 0.82
+      },
+      "traits": [
+        "patient",
+        "mercenary"
+      ],
+      "number": 48,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Chase",
+      "last_name": "Jolly",
+      "position": "LB",
+      "year": 2,
+      "redshirt": false,
+      "height": 73,
+      "weight": 248,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 48,
+      "prof_ceiling": 1.03,
+      "fundamentals": {
+        "strength": 53,
+        "speed": 51,
+        "quickness": 66,
+        "iq": 59,
+        "injury": 78,
+        "playmaker": 48
+      },
+      "proficiency": {
+        "RB": 0.44,
+        "TE": 0.56,
+        "DL": 0.74,
+        "LB": 0.94,
+        "S": 0.68
+      },
+      "traits": [
+        "mentor",
+        "hothead",
+        "family_guy"
+      ],
+      "number": 3,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Khalil",
+      "last_name": "Watson",
+      "position": "LB",
+      "year": 0,
+      "redshirt": false,
+      "height": 76,
+      "weight": 248,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 35,
+      "prof_ceiling": 0.86,
+      "fundamentals": {
+        "strength": 55,
+        "speed": 42,
+        "quickness": 52,
+        "iq": 49,
+        "injury": 46,
+        "playmaker": 45
+      },
+      "proficiency": {
+        "RB": 0.67,
+        "TE": 0.75,
+        "DL": 0.7,
+        "LB": 0.73,
+        "S": 0.55
+      },
+      "traits": [
+        "cold",
+        "conditioned"
+      ],
+      "number": 24,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Tavion",
+      "last_name": "Vargas",
+      "position": "LB",
+      "year": 1,
+      "redshirt": false,
+      "height": 73,
+      "weight": 224,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 68,
+      "prof_ceiling": 0.98,
+      "fundamentals": {
+        "strength": 77,
+        "speed": 73,
+        "quickness": 65,
+        "iq": 79,
+        "injury": 70,
+        "playmaker": 61
+      },
+      "proficiency": {
+        "RB": 0.67,
+        "TE": 0.72,
+        "DL": 0.56,
+        "LB": 0.93,
+        "S": 0.74
+      },
+      "traits": [
+        "grinder",
+        "family_guy"
+      ],
+      "number": 1,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Asher",
+      "last_name": "Amadi",
+      "position": "CB",
+      "year": 3,
+      "redshirt": false,
+      "height": 74,
+      "weight": 175,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 59,
+      "prof_ceiling": 0.99,
+      "fundamentals": {
+        "strength": 59,
+        "speed": 80,
+        "quickness": 84,
+        "iq": 74,
+        "injury": 73,
+        "playmaker": 77
+      },
+      "proficiency": {
+        "WR": 0.79,
+        "CB": 0.95,
+        "S": 0.74
+      },
+      "traits": [
+        "coaster"
+      ],
+      "number": 29,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Cade",
+      "last_name": "Rousseau",
+      "position": "CB",
+      "year": 1,
+      "redshirt": false,
+      "height": 70,
+      "weight": 177,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 75,
+      "prof_ceiling": 0.95,
+      "fundamentals": {
+        "strength": 43,
+        "speed": 69,
+        "quickness": 55,
+        "iq": 54,
+        "injury": 92,
+        "playmaker": 60
+      },
+      "proficiency": {
+        "WR": 0.45,
+        "CB": 0.87,
+        "S": 0.7
+      },
+      "traits": [
+        "leader",
+        "flat"
+      ],
+      "number": 25,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Tyler",
+      "last_name": "Love",
+      "position": "CB",
+      "year": 2,
+      "redshirt": false,
+      "height": 73,
+      "weight": 195,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 61,
+      "prof_ceiling": 0.92,
+      "fundamentals": {
+        "strength": 42,
+        "speed": 70,
+        "quickness": 69,
+        "iq": 56,
+        "injury": 46,
+        "playmaker": 55
+      },
+      "proficiency": {
+        "WR": 0.5,
+        "CB": 0.87,
+        "S": 0.58
+      },
+      "traits": [
+        "emotional",
+        "chippy",
+        "leader"
+      ],
+      "number": 20,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Malachi",
+      "last_name": "Barlow",
+      "position": "CB",
+      "year": 2,
+      "redshirt": false,
+      "height": 73,
+      "weight": 194,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 77,
+      "prof_ceiling": 1.0,
+      "fundamentals": {
+        "strength": 46,
+        "speed": 76,
+        "quickness": 63,
+        "iq": 70,
+        "injury": 46,
+        "playmaker": 51
+      },
+      "proficiency": {
+        "RB": 0.31,
+        "WR": 0.68,
+        "CB": 0.98,
+        "S": 0.48,
+        "P": 0.3
+      },
+      "traits": [
+        "stubborn",
+        "maxed",
+        "family_guy"
+      ],
+      "number": 33,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Kyle",
+      "last_name": "Pippin",
+      "position": "CB",
+      "year": 2,
+      "redshirt": false,
+      "height": 74,
+      "weight": 176,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 56,
+      "prof_ceiling": 0.94,
+      "fundamentals": {
+        "strength": 56,
+        "speed": 83,
+        "quickness": 78,
+        "iq": 74,
+        "injury": 73,
+        "playmaker": 73
+      },
+      "proficiency": {
+        "WR": 0.5,
+        "CB": 0.9,
+        "S": 0.57
+      },
+      "traits": [
+        "quiet_pro"
+      ],
+      "number": 34,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Nico",
+      "last_name": "Knox",
+      "position": "CB",
+      "year": 0,
+      "redshirt": false,
+      "height": 74,
+      "weight": 183,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 63,
+      "prof_ceiling": 1.02,
+      "fundamentals": {
+        "strength": 36,
+        "speed": 59,
+        "quickness": 65,
+        "iq": 49,
+        "injury": 69,
+        "playmaker": 51
+      },
+      "proficiency": {
+        "RB": 0.35,
+        "WR": 0.74,
+        "CB": 0.82,
+        "S": 0.63
+      },
+      "traits": [
+        "headcase",
+        "diva"
+      ],
+      "number": 35,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Jalen",
+      "last_name": "Merritt",
+      "position": "S",
+      "year": 0,
+      "redshirt": false,
+      "height": 70,
+      "weight": 195,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 81,
+      "prof_ceiling": 0.99,
+      "fundamentals": {
+        "strength": 52,
+        "speed": 54,
+        "quickness": 53,
+        "iq": 53,
+        "injury": 58,
+        "playmaker": 49
+      },
+      "proficiency": {
+        "WR": 0.49,
+        "LB": 0.7,
+        "CB": 0.56,
+        "S": 0.8,
+        "K": 0.3
+      },
+      "traits": [
+        "gamer",
+        "family_guy"
+      ],
+      "number": 36,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Jaxon",
+      "last_name": "Taamu",
+      "position": "S",
+      "year": 1,
+      "redshirt": false,
+      "height": 74,
+      "weight": 199,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 63,
+      "prof_ceiling": 1.01,
+      "fundamentals": {
+        "strength": 49,
+        "speed": 55,
+        "quickness": 60,
+        "iq": 57,
+        "injury": 81,
+        "playmaker": 55
+      },
+      "proficiency": {
+        "QB": 0.38,
+        "WR": 0.72,
+        "LB": 0.54,
+        "CB": 0.53,
+        "S": 0.83
+      },
+      "traits": [
+        "mercenary",
+        "quiet_pro"
+      ],
+      "number": 46,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Leo",
+      "last_name": "Samuels",
+      "position": "S",
+      "year": 2,
+      "redshirt": false,
+      "height": 70,
+      "weight": 190,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 52,
+      "prof_ceiling": 1.0,
+      "fundamentals": {
+        "strength": 52,
+        "speed": 65,
+        "quickness": 58,
+        "iq": 72,
+        "injury": 68,
+        "playmaker": 71
+      },
+      "proficiency": {
+        "RB": 0.3,
+        "WR": 0.69,
+        "LB": 0.56,
+        "CB": 0.64,
+        "S": 0.93
+      },
+      "traits": [
+        "cold"
+      ],
+      "number": 2,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Leo",
+      "last_name": "Pelletier",
+      "position": "S",
+      "year": 3,
+      "redshirt": true,
+      "height": 75,
+      "weight": 194,
+      "home_state": null,
+      "hs_stars": 4,
+      "potential": 88,
+      "prof_ceiling": 1.01,
+      "fundamentals": {
+        "strength": 70,
+        "speed": 83,
+        "quickness": 75,
+        "iq": 80,
+        "injury": 98,
+        "playmaker": 79
+      },
+      "proficiency": {
+        "WR": 0.44,
+        "LB": 0.75,
+        "CB": 0.7,
+        "S": 1.01
+      },
+      "traits": [
+        "mentor"
+      ],
+      "number": 42,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Aiden",
+      "last_name": "Gibson",
+      "position": "K",
+      "year": 0,
+      "redshirt": false,
+      "height": 74,
+      "weight": 174,
+      "home_state": null,
+      "hs_stars": 3,
+      "potential": 63,
+      "prof_ceiling": 0.97,
+      "fundamentals": {
+        "strength": 60,
+        "speed": 43,
+        "quickness": 35,
+        "iq": 62,
+        "injury": 65,
+        "playmaker": 55
+      },
+      "proficiency": {
+        "RB": 0.32,
+        "K": 0.94,
+        "P": 0.73
+      },
+      "traits": [
+        "conditioned",
+        "gym_rat"
+      ],
+      "number": 28,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Terrell",
+      "last_name": "Witherspoon",
+      "position": "K",
+      "year": 2,
+      "redshirt": true,
+      "height": 69,
+      "weight": 174,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 52,
+      "prof_ceiling": 0.92,
+      "fundamentals": {
+        "strength": 71,
+        "speed": 26,
+        "quickness": 45,
+        "iq": 62,
+        "injury": 80,
+        "playmaker": 72
+      },
+      "proficiency": {
+        "K": 0.92,
+        "P": 0.74
+      },
+      "traits": [
+        "cold"
+      ],
+      "number": 7,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Rashad",
+      "last_name": "Soto",
+      "position": "P",
+      "year": 3,
+      "redshirt": false,
+      "height": 74,
+      "weight": 203,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 51,
+      "prof_ceiling": 0.97,
+      "fundamentals": {
+        "strength": 60,
+        "speed": 27,
+        "quickness": 32,
+        "iq": 59,
+        "injury": 98,
+        "playmaker": 54
+      },
+      "proficiency": {
+        "QB": 0.34,
+        "WR": 0.31,
+        "CB": 0.34,
+        "K": 0.56,
+        "P": 0.9
+      },
+      "traits": [],
+      "number": 13,
+      "morale": 50,
+      "nil": 0
+    },
+    {
+      "first_name": "Ryan",
+      "last_name": "Holloway",
+      "position": "P",
+      "year": 2,
+      "redshirt": false,
+      "height": 72,
+      "weight": 194,
+      "home_state": null,
+      "hs_stars": 2,
+      "potential": 33,
+      "prof_ceiling": 1.02,
+      "fundamentals": {
+        "strength": 66,
+        "speed": 27,
+        "quickness": 37,
+        "iq": 54,
+        "injury": 79,
+        "playmaker": 54
+      },
+      "proficiency": {
+        "RB": 0.31,
+        "WR": 0.39,
+        "K": 0.74,
+        "P": 0.94
+      },
+      "traits": [
+        "late_bloom"
+      ],
+      "number": 40,
+      "morale": 50,
+      "nil": 0
+    }
+  ]
+}

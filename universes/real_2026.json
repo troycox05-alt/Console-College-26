@@ -1,0 +1,9926 @@
+{
+ "format": "console-college-universe",
+ "version": 1,
+ "name": "Real 2026",
+ "description": "real programs, conferences, coaches, rivalries, bowls, CFP, AP Poll, GameDay",
+ "tables": {
+  "world.POWER": [
+   "SEC",
+   "Big Ten",
+   "ACC",
+   "Big 12"
+  ],
+  "world.BIG_TWO": [
+   "SEC",
+   "Big Ten"
+  ],
+  "world.NIGHT_CONF": "SEC",
+  "world.WEEKNIGHT_CONF": "MAC",
+  "world.WEST_COAST_CONF": "Pac-12",
+  "world.FLAGSHIP_INDEPENDENT": "Notre Dame",
+  "world.MAYO_BOWL": "Duke's Mayo Bowl",
+  "world.SHOW_NAME": "College GameDay",
+  "world.UNIVERSE_NAME": "Console College",
+  "teams_data.TEAMS": [
+   [
+    "Alabama",
+    "Crimson Tide",
+    "Bryant-Denny Stadium",
+    100077,
+    "SEC",
+    null,
+    "Roll Tide!",
+    88,
+    87,
+    84,
+    90,
+    97,
+    70,
+    99,
+    85
+   ],
+   [
+    "Arkansas",
+    "Razorbacks",
+    "Donald W. Reynolds Razorback Stadium",
+    76212,
+    "SEC",
+    null,
+    "Woo Pig Sooie!",
+    72,
+    62,
+    70,
+    75,
+    85,
+    66,
+    80,
+    78
+   ],
+   [
+    "Auburn",
+    "Tigers",
+    "Jordan-Hare Stadium",
+    88043,
+    "SEC",
+    null,
+    "War Eagle!",
+    74,
+    82,
+    76,
+    82,
+    90,
+    72,
+    90,
+    88
+   ],
+   [
+    "Florida",
+    "Gators",
+    "Ben Hill Griffin Stadium",
+    88548,
+    "SEC",
+    null,
+    "Go Gators!",
+    74,
+    76,
+    77,
+    85,
+    90,
+    88,
+    91,
+    86
+   ],
+   [
+    "Georgia",
+    "Bulldogs",
+    "Sanford Stadium",
+    92746,
+    "SEC",
+    null,
+    "Go Dawgs!",
+    88,
+    92,
+    96,
+    92,
+    95,
+    82,
+    93,
+    90
+   ],
+   [
+    "Kentucky",
+    "Wildcats",
+    "Kroger Field",
+    61000,
+    "SEC",
+    null,
+    "Go Cats!",
+    62,
+    66,
+    72,
+    72,
+    80,
+    70,
+    58,
+    74
+   ],
+   [
+    "LSU",
+    "Tigers",
+    "Tiger Stadium",
+    102321,
+    "SEC",
+    null,
+    "Geaux Tigers!",
+    84,
+    78,
+    90,
+    88,
+    93,
+    72,
+    94,
+    85
+   ],
+   [
+    "Mississippi State",
+    "Bulldogs",
+    "Davis Wade Stadium",
+    60311,
+    "SEC",
+    null,
+    "Hail State!",
+    66,
+    64,
+    72,
+    68,
+    78,
+    64,
+    66,
+    70
+   ],
+   [
+    "Missouri",
+    "Tigers",
+    "Faurot Field",
+    57321,
+    "SEC",
+    null,
+    "M-I-Z! Z-O-U!",
+    80,
+    78,
+    82,
+    76,
+    84,
+    74,
+    66,
+    76
+   ],
+   [
+    "Oklahoma",
+    "Sooners",
+    "Gaylord Family Oklahoma Memorial Stadium",
+    80126,
+    "SEC",
+    null,
+    "Boomer Sooner!",
+    76,
+    88,
+    82,
+    85,
+    88,
+    74,
+    95,
+    78
+   ],
+   [
+    "Ole Miss",
+    "Rebels",
+    "Vaught-Hemingway Stadium",
+    64038,
+    "SEC",
+    null,
+    "Hotty Toddy!",
+    88,
+    82,
+    78,
+    80,
+    84,
+    70,
+    74,
+    92
+   ],
+   [
+    "South Carolina",
+    "Gamecocks",
+    "Williams-Brice Stadium",
+    77559,
+    "SEC",
+    null,
+    "Go Cocks!",
+    70,
+    74,
+    72,
+    74,
+    84,
+    72,
+    70,
+    76
+   ],
+   [
+    "Tennessee",
+    "Volunteers",
+    "Neyland Stadium",
+    101915,
+    "SEC",
+    null,
+    "Go Vols!",
+    86,
+    74,
+    84,
+    84,
+    90,
+    76,
+    89,
+    84
+   ],
+   [
+    "Texas",
+    "Longhorns",
+    "Darrell K Royal-Texas Memorial Stadium",
+    100119,
+    "SEC",
+    null,
+    "Hook 'em!",
+    86,
+    90,
+    88,
+    95,
+    97,
+    88,
+    94,
+    86
+   ],
+   [
+    "Texas A&M",
+    "Aggies",
+    "Kyle Field",
+    102733,
+    "SEC",
+    null,
+    "Gig 'em!",
+    86,
+    84,
+    85,
+    88,
+    96,
+    80,
+    84,
+    80
+   ],
+   [
+    "Vanderbilt",
+    "Commodores",
+    "FirstBank Stadium",
+    35000,
+    "SEC",
+    null,
+    "Anchor Down!",
+    82,
+    72,
+    84,
+    78,
+    80,
+    97,
+    50,
+    90
+   ],
+   [
+    "Illinois",
+    "Fighting Illini",
+    "Memorial Stadium",
+    60670,
+    "Big Ten",
+    null,
+    "I-L-L! I-N-I!",
+    80,
+    74,
+    82,
+    74,
+    80,
+    86,
+    66,
+    76
+   ],
+   [
+    "Indiana",
+    "Hoosiers",
+    "Memorial Stadium",
+    52626,
+    "Big Ten",
+    null,
+    "Go Hoosiers!",
+    92,
+    90,
+    95,
+    82,
+    82,
+    84,
+    50,
+    86
+   ],
+   [
+    "Iowa",
+    "Hawkeyes",
+    "Kinnick Stadium",
+    69250,
+    "Big Ten",
+    null,
+    "Go Hawks!",
+    64,
+    86,
+    85,
+    80,
+    82,
+    82,
+    76,
+    76
+   ],
+   [
+    "Maryland",
+    "Terrapins",
+    "SECU Stadium",
+    51802,
+    "Big Ten",
+    null,
+    "Fear the Turtle!",
+    62,
+    60,
+    64,
+    70,
+    76,
+    84,
+    50,
+    76
+   ],
+   [
+    "Michigan",
+    "Wolverines",
+    "Michigan Stadium",
+    107601,
+    "Big Ten",
+    null,
+    "Go Blue!",
+    80,
+    86,
+    86,
+    90,
+    95,
+    94,
+    98,
+    90
+   ],
+   [
+    "Michigan State",
+    "Spartans",
+    "Spartan Stadium",
+    75005,
+    "Big Ten",
+    null,
+    "Go Green! Go White!",
+    62,
+    60,
+    72,
+    70,
+    82,
+    80,
+    76,
+    82
+   ],
+   [
+    "Minnesota",
+    "Golden Gophers",
+    "Huntington Bank Stadium",
+    50805,
+    "Big Ten",
+    null,
+    "Ski-U-Mah!",
+    64,
+    70,
+    78,
+    70,
+    80,
+    84,
+    62,
+    78
+   ],
+   [
+    "Nebraska",
+    "Cornhuskers",
+    "Memorial Stadium",
+    85458,
+    "Big Ten",
+    null,
+    "Go Big Red!",
+    72,
+    72,
+    76,
+    78,
+    86,
+    76,
+    88,
+    70
+   ],
+   [
+    "Northwestern",
+    "Wildcats",
+    "Martin Stadium",
+    35000,
+    "Big Ten",
+    null,
+    "Go 'Cats!",
+    60,
+    66,
+    72,
+    72,
+    84,
+    97,
+    56,
+    90
+   ],
+   [
+    "Ohio State",
+    "Buckeyes",
+    "Ohio Stadium",
+    102780,
+    "Big Ten",
+    null,
+    "O-H! I-O!",
+    94,
+    94,
+    92,
+    95,
+    98,
+    86,
+    98,
+    88
+   ],
+   [
+    "Oregon",
+    "Ducks",
+    "Autzen Stadium",
+    54000,
+    "Big Ten",
+    null,
+    "Go Ducks!",
+    92,
+    86,
+    90,
+    92,
+    99,
+    80,
+    76,
+    86
+   ],
+   [
+    "Penn State",
+    "Nittany Lions",
+    "Beaver Stadium",
+    106572,
+    "Big Ten",
+    null,
+    "We Are! Penn State!",
+    76,
+    80,
+    85,
+    85,
+    90,
+    84,
+    92,
+    84
+   ],
+   [
+    "Purdue",
+    "Boilermakers",
+    "Ross-Ade Stadium",
+    61441,
+    "Big Ten",
+    null,
+    "Boiler Up!",
+    56,
+    54,
+    68,
+    72,
+    78,
+    88,
+    62,
+    76
+   ],
+   [
+    "Rutgers",
+    "Scarlet Knights",
+    "SHI Stadium",
+    52454,
+    "Big Ten",
+    null,
+    "R-U Rah Rah!",
+    66,
+    60,
+    72,
+    70,
+    76,
+    82,
+    48,
+    72
+   ],
+   [
+    "UCLA",
+    "Bruins",
+    "Rose Bowl",
+    88565,
+    "Big Ten",
+    null,
+    "8-Clap! Go Bruins!",
+    60,
+    58,
+    70,
+    70,
+    78,
+    94,
+    72,
+    92
+   ],
+   [
+    "USC",
+    "Trojans",
+    "Los Angeles Memorial Coliseum",
+    77500,
+    "Big Ten",
+    null,
+    "Fight On!",
+    86,
+    74,
+    82,
+    86,
+    92,
+    92,
+    94,
+    90
+   ],
+   [
+    "Washington",
+    "Huskies",
+    "Husky Stadium",
+    70083,
+    "Big Ten",
+    null,
+    "Bow Down to Washington!",
+    80,
+    74,
+    82,
+    82,
+    88,
+    90,
+    78,
+    92
+   ],
+   [
+    "Wisconsin",
+    "Badgers",
+    "Camp Randall Stadium",
+    76057,
+    "Big Ten",
+    null,
+    "On, Wisconsin!",
+    56,
+    68,
+    70,
+    76,
+    86,
+    88,
+    80,
+    90
+   ],
+   [
+    "Boston College",
+    "Eagles",
+    "Alumni Stadium",
+    44500,
+    "ACC",
+    null,
+    "Go Eagles!",
+    62,
+    56,
+    66,
+    70,
+    78,
+    92,
+    62,
+    86
+   ],
+   [
+    "California",
+    "Golden Bears",
+    "California Memorial Stadium",
+    62467,
+    "ACC",
+    null,
+    "Go Bears!",
+    70,
+    64,
+    66,
+    64,
+    78,
+    96,
+    58,
+    90
+   ],
+   [
+    "Clemson",
+    "Tigers",
+    "Memorial Stadium",
+    81500,
+    "ACC",
+    null,
+    "Go Tigers!",
+    74,
+    76,
+    83,
+    84,
+    94,
+    78,
+    86,
+    86
+   ],
+   [
+    "Duke",
+    "Blue Devils",
+    "Wallace Wade Stadium",
+    40004,
+    "ACC",
+    null,
+    "Go Duke!",
+    78,
+    64,
+    80,
+    80,
+    82,
+    98,
+    40,
+    92
+   ],
+   [
+    "Florida State",
+    "Seminoles",
+    "Doak Campbell Stadium",
+    67277,
+    "ACC",
+    null,
+    "Go Noles!",
+    72,
+    64,
+    70,
+    80,
+    88,
+    78,
+    90,
+    84
+   ],
+   [
+    "Georgia Tech",
+    "Yellow Jackets",
+    "Bobby Dodd Stadium",
+    51913,
+    "ACC",
+    null,
+    "To Hell With Georgia!",
+    80,
+    70,
+    80,
+    76,
+    78,
+    94,
+    72,
+    80
+   ],
+   [
+    "Louisville",
+    "Cardinals",
+    "L&N Federal Credit Union Stadium",
+    60800,
+    "ACC",
+    null,
+    "Go Cards!",
+    76,
+    76,
+    78,
+    76,
+    84,
+    74,
+    58,
+    70
+   ],
+   [
+    "Miami",
+    "Hurricanes",
+    "Hard Rock Stadium",
+    65326,
+    "ACC",
+    null,
+    "It's All About the U!",
+    86,
+    90,
+    85,
+    82,
+    80,
+    84,
+    88,
+    88
+   ],
+   [
+    "NC State",
+    "Wolfpack",
+    "Carter-Finley Stadium",
+    56919,
+    "ACC",
+    null,
+    "Go Pack!",
+    72,
+    60,
+    72,
+    72,
+    78,
+    84,
+    58,
+    76
+   ],
+   [
+    "North Carolina",
+    "Tar Heels",
+    "Kenan Stadium",
+    50500,
+    "ACC",
+    null,
+    "Go Heels!",
+    56,
+    66,
+    72,
+    74,
+    82,
+    90,
+    60,
+    92
+   ],
+   [
+    "Pitt",
+    "Panthers",
+    "Acrisure Stadium",
+    68400,
+    "ACC",
+    null,
+    "H2P!",
+    76,
+    74,
+    78,
+    72,
+    78,
+    84,
+    70,
+    72
+   ],
+   [
+    "SMU",
+    "Mustangs",
+    "Gerald J. Ford Stadium",
+    32000,
+    "ACC",
+    null,
+    "Pony Up!",
+    80,
+    74,
+    82,
+    84,
+    82,
+    86,
+    60,
+    82
+   ],
+   [
+    "Stanford",
+    "Cardinal",
+    "Stanford Stadium",
+    50424,
+    "ACC",
+    null,
+    "Go Card!",
+    56,
+    52,
+    62,
+    72,
+    84,
+    99,
+    68,
+    95
+   ],
+   [
+    "Syracuse",
+    "Orange",
+    "JMA Wireless Dome",
+    49057,
+    "ACC",
+    null,
+    "Let's Go Orange!",
+    62,
+    56,
+    68,
+    70,
+    78,
+    82,
+    60,
+    74
+   ],
+   [
+    "Virginia",
+    "Cavaliers",
+    "Scott Stadium",
+    61500,
+    "ACC",
+    null,
+    "Wahoowa!",
+    76,
+    76,
+    80,
+    72,
+    78,
+    94,
+    52,
+    92
+   ],
+   [
+    "Virginia Tech",
+    "Hokies",
+    "Lane Stadium",
+    65632,
+    "ACC",
+    null,
+    "Let's Go Hokies!",
+    64,
+    62,
+    82,
+    74,
+    82,
+    82,
+    74,
+    80
+   ],
+   [
+    "Wake Forest",
+    "Demon Deacons",
+    "Allegacy Federal Credit Union Stadium",
+    31500,
+    "ACC",
+    null,
+    "Go Deacs!",
+    64,
+    64,
+    72,
+    70,
+    76,
+    94,
+    44,
+    84
+   ],
+   [
+    "Arizona",
+    "Wildcats",
+    "Arizona Stadium",
+    50782,
+    "Big 12",
+    null,
+    "Bear Down!",
+    72,
+    74,
+    74,
+    70,
+    78,
+    80,
+    56,
+    84
+   ],
+   [
+    "Arizona State",
+    "Sun Devils",
+    "Mountain America Stadium",
+    53599,
+    "Big 12",
+    null,
+    "Forks Up!",
+    78,
+    74,
+    82,
+    74,
+    82,
+    76,
+    60,
+    86
+   ],
+   [
+    "Baylor",
+    "Bears",
+    "McLane Stadium",
+    45140,
+    "Big 12",
+    null,
+    "Sic 'em, Bears!",
+    80,
+    60,
+    70,
+    76,
+    86,
+    82,
+    60,
+    78
+   ],
+   [
+    "BYU",
+    "Cougars",
+    "LaVell Edwards Stadium",
+    62073,
+    "Big 12",
+    null,
+    "Rise and Shout!",
+    80,
+    80,
+    84,
+    78,
+    82,
+    84,
+    76,
+    82
+   ],
+   [
+    "Cincinnati",
+    "Bearcats",
+    "Nippert Stadium",
+    38088,
+    "Big 12",
+    null,
+    "Down the Drive!",
+    72,
+    62,
+    70,
+    72,
+    78,
+    78,
+    56,
+    74
+   ],
+   [
+    "Colorado",
+    "Buffaloes",
+    "Folsom Field",
+    50183,
+    "Big 12",
+    null,
+    "Sko Buffs!",
+    64,
+    62,
+    74,
+    72,
+    80,
+    78,
+    62,
+    90
+   ],
+   [
+    "Houston",
+    "Cougars",
+    "TDECU Stadium",
+    40000,
+    "Big 12",
+    null,
+    "Go Coogs!",
+    72,
+    76,
+    78,
+    72,
+    78,
+    74,
+    56,
+    70
+   ],
+   [
+    "Iowa State",
+    "Cyclones",
+    "Jack Trice Stadium",
+    61500,
+    "Big 12",
+    null,
+    "Go Cyclones!",
+    66,
+    70,
+    70,
+    70,
+    78,
+    80,
+    50,
+    72
+   ],
+   [
+    "Kansas",
+    "Jayhawks",
+    "David Booth Kansas Memorial Stadium",
+    41525,
+    "Big 12",
+    null,
+    "Rock Chalk, Jayhawk!",
+    74,
+    62,
+    74,
+    72,
+    80,
+    80,
+    40,
+    80
+   ],
+   [
+    "Kansas State",
+    "Wildcats",
+    "Bill Snyder Family Stadium",
+    50000,
+    "Big 12",
+    null,
+    "EMAW!",
+    72,
+    66,
+    70,
+    74,
+    80,
+    76,
+    62,
+    72
+   ],
+   [
+    "Oklahoma State",
+    "Cowboys",
+    "Boone Pickens Stadium",
+    53855,
+    "Big 12",
+    null,
+    "Go Pokes!",
+    58,
+    52,
+    68,
+    72,
+    82,
+    74,
+    66,
+    74
+   ],
+   [
+    "TCU",
+    "Horned Frogs",
+    "Amon G. Carter Stadium",
+    47000,
+    "Big 12",
+    null,
+    "Riff Ram, Bah Bah!",
+    78,
+    68,
+    76,
+    76,
+    84,
+    82,
+    64,
+    82
+   ],
+   [
+    "Texas Tech",
+    "Red Raiders",
+    "Jones AT&T Stadium",
+    60229,
+    "Big 12",
+    null,
+    "Guns Up!",
+    84,
+    88,
+    86,
+    86,
+    86,
+    72,
+    56,
+    70
+   ],
+   [
+    "UCF",
+    "Knights",
+    "FBC Mortgage Stadium",
+    45301,
+    "Big 12",
+    null,
+    "Charge On!",
+    70,
+    64,
+    74,
+    72,
+    80,
+    72,
+    50,
+    76
+   ],
+   [
+    "Utah",
+    "Utes",
+    "Rice-Eccles Stadium",
+    51444,
+    "Big 12",
+    null,
+    "Go Utes!",
+    82,
+    80,
+    74,
+    80,
+    84,
+    80,
+    68,
+    84
+   ],
+   [
+    "West Virginia",
+    "Mountaineers",
+    "Milan Puskar Stadium",
+    60000,
+    "Big 12",
+    null,
+    "Let's Go, Mountaineers!",
+    64,
+    60,
+    76,
+    72,
+    78,
+    70,
+    68,
+    72
+   ],
+   [
+    "Army",
+    "Black Knights",
+    "Michie Stadium",
+    38000,
+    "American",
+    null,
+    "Go Army!",
+    64,
+    70,
+    80,
+    72,
+    76,
+    90,
+    82,
+    88
+   ],
+   [
+    "Charlotte",
+    "49ers",
+    "Jerry Richardson Stadium",
+    15314,
+    "American",
+    null,
+    "Go Niners!",
+    40,
+    40,
+    56,
+    56,
+    62,
+    68,
+    20,
+    64
+   ],
+   [
+    "East Carolina",
+    "Pirates",
+    "Dowdy-Ficklen Stadium",
+    50000,
+    "American",
+    null,
+    "Arrgh!",
+    60,
+    58,
+    64,
+    62,
+    68,
+    62,
+    56,
+    66
+   ],
+   [
+    "Florida Atlantic",
+    "Owls",
+    "FAU Stadium",
+    29419,
+    "American",
+    null,
+    "Go Owls!",
+    56,
+    44,
+    64,
+    58,
+    68,
+    62,
+    30,
+    74
+   ],
+   [
+    "Memphis",
+    "Tigers",
+    "Simmons Bank Liberty Stadium",
+    58318,
+    "American",
+    null,
+    "Go Tigers Go!",
+    70,
+    62,
+    68,
+    72,
+    72,
+    62,
+    54,
+    62
+   ],
+   [
+    "Navy",
+    "Midshipmen",
+    "Navy-Marine Corps Memorial Stadium",
+    34000,
+    "American",
+    null,
+    "Go Navy!",
+    76,
+    62,
+    80,
+    72,
+    76,
+    92,
+    84,
+    90
+   ],
+   [
+    "North Texas",
+    "Mean Green",
+    "DATCU Stadium",
+    30850,
+    "American",
+    null,
+    "Go Mean Green!",
+    78,
+    52,
+    72,
+    64,
+    68,
+    62,
+    40,
+    62
+   ],
+   [
+    "Rice",
+    "Owls",
+    "Rice Stadium",
+    47000,
+    "American",
+    null,
+    "Go Owls!",
+    48,
+    52,
+    60,
+    62,
+    70,
+    97,
+    40,
+    86
+   ],
+   [
+    "South Florida",
+    "Bulls",
+    "Raymond James Stadium",
+    65618,
+    "American",
+    null,
+    "Horns Up!",
+    72,
+    58,
+    70,
+    70,
+    72,
+    72,
+    40,
+    70
+   ],
+   [
+    "Temple",
+    "Owls",
+    "Lincoln Financial Field",
+    67594,
+    "American",
+    null,
+    "T for Temple U!",
+    50,
+    46,
+    60,
+    58,
+    64,
+    68,
+    40,
+    62
+   ],
+   [
+    "Tulane",
+    "Green Wave",
+    "Yulman Stadium",
+    30000,
+    "American",
+    null,
+    "Roll Wave!",
+    70,
+    70,
+    72,
+    70,
+    72,
+    86,
+    54,
+    82
+   ],
+   [
+    "Tulsa",
+    "Golden Hurricane",
+    "H.A. Chapman Stadium",
+    30000,
+    "American",
+    null,
+    "Go Canes!",
+    48,
+    46,
+    58,
+    58,
+    62,
+    74,
+    48,
+    64
+   ],
+   [
+    "UAB",
+    "Blazers",
+    "Protective Stadium",
+    47100,
+    "American",
+    null,
+    "Go Blazers!",
+    52,
+    42,
+    58,
+    60,
+    70,
+    66,
+    38,
+    60
+   ],
+   [
+    "UTSA",
+    "Roadrunners",
+    "Alamodome",
+    64000,
+    "American",
+    null,
+    "Birds Up!",
+    66,
+    52,
+    70,
+    66,
+    72,
+    62,
+    30,
+    64
+   ],
+   [
+    "Appalachian State",
+    "Mountaineers",
+    "Kidd Brewer Stadium",
+    30000,
+    "Sun Belt",
+    "East",
+    "Hold That Line!",
+    58,
+    52,
+    62,
+    64,
+    70,
+    66,
+    62,
+    78
+   ],
+   [
+    "Coastal Carolina",
+    "Chanticleers",
+    "Brooks Stadium",
+    21000,
+    "Sun Belt",
+    "East",
+    "Teal Nation!",
+    52,
+    50,
+    60,
+    62,
+    66,
+    60,
+    32,
+    72
+   ],
+   [
+    "Georgia Southern",
+    "Eagles",
+    "Paulson Stadium",
+    25000,
+    "Sun Belt",
+    "East",
+    "Hail Southern!",
+    60,
+    50,
+    66,
+    62,
+    68,
+    62,
+    62,
+    70
+   ],
+   [
+    "Georgia State",
+    "Panthers",
+    "Center Parc Stadium",
+    24333,
+    "Sun Belt",
+    "East",
+    "Go Panthers!",
+    44,
+    40,
+    56,
+    58,
+    62,
+    62,
+    20,
+    64
+   ],
+   [
+    "James Madison",
+    "Dukes",
+    "Bridgeforth Stadium",
+    25000,
+    "Sun Belt",
+    "East",
+    "Go Dukes!",
+    74,
+    76,
+    70,
+    70,
+    72,
+    72,
+    60,
+    82
+   ],
+   [
+    "Marshall",
+    "Thundering Herd",
+    "Joan C. Edwards Stadium",
+    38016,
+    "Sun Belt",
+    "East",
+    "We Are... Marshall!",
+    56,
+    52,
+    60,
+    62,
+    66,
+    60,
+    68,
+    64
+   ],
+   [
+    "Old Dominion",
+    "Monarchs",
+    "S.B. Ballard Stadium",
+    22130,
+    "Sun Belt",
+    "East",
+    "Go Monarchs!",
+    66,
+    56,
+    66,
+    62,
+    68,
+    64,
+    36,
+    66
+   ],
+   [
+    "Arkansas State",
+    "Red Wolves",
+    "Centennial Bank Stadium",
+    30406,
+    "Sun Belt",
+    "West",
+    "Wolves Up!",
+    54,
+    48,
+    60,
+    58,
+    64,
+    58,
+    40,
+    60
+   ],
+   [
+    "Louisiana",
+    "Ragin' Cajuns",
+    "Cajun Field",
+    41426,
+    "Sun Belt",
+    "West",
+    "Geaux Cajuns!",
+    56,
+    52,
+    62,
+    62,
+    66,
+    60,
+    46,
+    68
+   ],
+   [
+    "Louisiana Tech",
+    "Bulldogs",
+    "Joe Aillet Stadium",
+    28019,
+    "Sun Belt",
+    "West",
+    "Go Dawgs!",
+    50,
+    56,
+    60,
+    58,
+    62,
+    60,
+    52,
+    60
+   ],
+   [
+    "ULM",
+    "Warhawks",
+    "Malone Stadium",
+    30427,
+    "Sun Belt",
+    "West",
+    "Go Hawks!",
+    42,
+    44,
+    52,
+    50,
+    56,
+    56,
+    30,
+    56
+   ],
+   [
+    "South Alabama",
+    "Jaguars",
+    "Hancock Whitney Stadium",
+    25450,
+    "Sun Belt",
+    "West",
+    "Go Jags!",
+    56,
+    50,
+    58,
+    62,
+    70,
+    58,
+    26,
+    66
+   ],
+   [
+    "Southern Miss",
+    "Golden Eagles",
+    "M.M. Roberts Stadium",
+    36000,
+    "Sun Belt",
+    "West",
+    "To the Top!",
+    58,
+    52,
+    62,
+    58,
+    62,
+    60,
+    58,
+    64
+   ],
+   [
+    "Troy",
+    "Trojans",
+    "Veterans Memorial Stadium",
+    30402,
+    "Sun Belt",
+    "West",
+    "Go Trojans!",
+    54,
+    56,
+    62,
+    60,
+    64,
+    58,
+    48,
+    60
+   ],
+   [
+    "Akron",
+    "Zips",
+    "InfoCision Stadium",
+    30000,
+    "MAC",
+    null,
+    "Go Zips!",
+    38,
+    38,
+    52,
+    52,
+    62,
+    62,
+    24,
+    58
+   ],
+   [
+    "Ball State",
+    "Cardinals",
+    "Scheumann Stadium",
+    22500,
+    "MAC",
+    null,
+    "Chirp Chirp!",
+    44,
+    42,
+    54,
+    56,
+    60,
+    64,
+    32,
+    62
+   ],
+   [
+    "Bowling Green",
+    "Falcons",
+    "Doyt L. Perry Stadium",
+    24000,
+    "MAC",
+    null,
+    "Ay Ziggy Zoomba!",
+    46,
+    54,
+    58,
+    58,
+    60,
+    66,
+    50,
+    62
+   ],
+   [
+    "Buffalo",
+    "Bulls",
+    "UB Stadium",
+    25013,
+    "MAC",
+    null,
+    "Horns Up!",
+    52,
+    50,
+    60,
+    56,
+    60,
+    70,
+    28,
+    60
+   ],
+   [
+    "Central Michigan",
+    "Chippewas",
+    "Kelly/Shorts Stadium",
+    30255,
+    "MAC",
+    null,
+    "Fire Up Chips!",
+    48,
+    50,
+    60,
+    56,
+    60,
+    62,
+    50,
+    62
+   ],
+   [
+    "Eastern Michigan",
+    "Eagles",
+    "Rynearson Stadium",
+    30200,
+    "MAC",
+    null,
+    "Go Eagles!",
+    44,
+    42,
+    58,
+    52,
+    56,
+    60,
+    22,
+    56
+   ],
+   [
+    "Kent State",
+    "Golden Flashes",
+    "Dix Stadium",
+    25319,
+    "MAC",
+    null,
+    "Go Flashes!",
+    40,
+    36,
+    52,
+    52,
+    56,
+    64,
+    20,
+    62
+   ],
+   [
+    "Miami (OH)",
+    "RedHawks",
+    "Yager Stadium",
+    24286,
+    "MAC",
+    null,
+    "Love and Honor!",
+    50,
+    64,
+    64,
+    62,
+    64,
+    82,
+    66,
+    82
+   ],
+   [
+    "Ohio",
+    "Bobcats",
+    "Peden Stadium",
+    24000,
+    "MAC",
+    null,
+    "Go Bobcats!",
+    58,
+    58,
+    64,
+    58,
+    62,
+    68,
+    48,
+    74
+   ],
+   [
+    "Sacramento State",
+    "Hornets",
+    "Hornet Stadium",
+    21195,
+    "MAC",
+    null,
+    "Sting 'Em!",
+    50,
+    44,
+    52,
+    60,
+    58,
+    62,
+    34,
+    62
+   ],
+   [
+    "Toledo",
+    "Rockets",
+    "Glass Bowl",
+    26038,
+    "MAC",
+    null,
+    "Go Rockets!",
+    60,
+    66,
+    68,
+    62,
+    64,
+    62,
+    58,
+    62
+   ],
+   [
+    "UMass",
+    "Minutemen",
+    "Warren McGuirk Alumni Stadium",
+    17000,
+    "MAC",
+    null,
+    "Go U!",
+    32,
+    32,
+    50,
+    50,
+    56,
+    76,
+    20,
+    70
+   ],
+   [
+    "Western Michigan",
+    "Broncos",
+    "Waldo Stadium",
+    30200,
+    "MAC",
+    null,
+    "Ride the Broncos!",
+    54,
+    58,
+    64,
+    60,
+    64,
+    64,
+    46,
+    64
+   ],
+   [
+    "Delaware",
+    "Fightin' Blue Hens",
+    "Delaware Stadium",
+    18800,
+    "CUSA",
+    null,
+    "Go Hens!",
+    56,
+    48,
+    58,
+    62,
+    62,
+    74,
+    54,
+    76
+   ],
+   [
+    "FIU",
+    "Panthers",
+    "Pitbull Stadium",
+    20000,
+    "CUSA",
+    null,
+    "Go Panthers!",
+    52,
+    46,
+    56,
+    52,
+    58,
+    60,
+    18,
+    64
+   ],
+   [
+    "Jacksonville State",
+    "Gamecocks",
+    "AmFirst Stadium",
+    24000,
+    "CUSA",
+    null,
+    "Go Gamecocks!",
+    60,
+    54,
+    62,
+    60,
+    62,
+    56,
+    48,
+    58
+   ],
+   [
+    "Kennesaw State",
+    "Owls",
+    "Fifth Third Stadium",
+    8300,
+    "CUSA",
+    null,
+    "Hooty Hoo!",
+    60,
+    56,
+    64,
+    58,
+    58,
+    60,
+    20,
+    62
+   ],
+   [
+    "Liberty",
+    "Flames",
+    "Williams Stadium",
+    25000,
+    "CUSA",
+    null,
+    "Go Flames!",
+    58,
+    52,
+    64,
+    68,
+    78,
+    58,
+    34,
+    72
+   ],
+   [
+    "Middle Tennessee",
+    "Blue Raiders",
+    "Floyd Stadium",
+    30788,
+    "CUSA",
+    null,
+    "Go Blue!",
+    40,
+    42,
+    54,
+    56,
+    60,
+    60,
+    40,
+    62
+   ],
+   [
+    "Missouri State",
+    "Bears",
+    "Plaster Stadium",
+    17500,
+    "CUSA",
+    null,
+    "Go Bears!",
+    58,
+    48,
+    60,
+    58,
+    60,
+    62,
+    30,
+    62
+   ],
+   [
+    "New Mexico State",
+    "Aggies",
+    "Aggie Memorial Stadium",
+    28853,
+    "CUSA",
+    null,
+    "Go Aggies!",
+    42,
+    40,
+    52,
+    50,
+    54,
+    56,
+    28,
+    56
+   ],
+   [
+    "Sam Houston",
+    "Bearkats",
+    "Bowers Stadium",
+    22039,
+    "CUSA",
+    null,
+    "Eat 'em up, Kats!",
+    38,
+    38,
+    50,
+    52,
+    56,
+    58,
+    40,
+    58
+   ],
+   [
+    "Western Kentucky",
+    "Hilltoppers",
+    "Houchens-Smith Stadium",
+    22113,
+    "CUSA",
+    null,
+    "Go Tops!",
+    64,
+    58,
+    66,
+    62,
+    64,
+    62,
+    50,
+    68
+   ],
+   [
+    "Boise State",
+    "Broncos",
+    "Albertsons Stadium",
+    36387,
+    "Pac-12",
+    null,
+    "Go Broncos!",
+    74,
+    68,
+    72,
+    76,
+    78,
+    68,
+    74,
+    72
+   ],
+   [
+    "Colorado State",
+    "Rams",
+    "Canvas Stadium",
+    41000,
+    "Pac-12",
+    null,
+    "Go Rams!",
+    46,
+    46,
+    56,
+    64,
+    74,
+    72,
+    38,
+    76
+   ],
+   [
+    "Fresno State",
+    "Bulldogs",
+    "Valley Children's Stadium",
+    40727,
+    "Pac-12",
+    null,
+    "Go Dogs!",
+    58,
+    62,
+    62,
+    62,
+    64,
+    64,
+    56,
+    60
+   ],
+   [
+    "Oregon State",
+    "Beavers",
+    "Reser Stadium",
+    35548,
+    "Pac-12",
+    null,
+    "Go Beavs!",
+    50,
+    46,
+    58,
+    60,
+    72,
+    74,
+    50,
+    78
+   ],
+   [
+    "San Diego State",
+    "Aztecs",
+    "Snapdragon Stadium",
+    35000,
+    "Pac-12",
+    null,
+    "I Believe That We Will Win!",
+    52,
+    70,
+    66,
+    66,
+    76,
+    70,
+    48,
+    82
+   ],
+   [
+    "Texas State",
+    "Bobcats",
+    "UFCU Stadium",
+    30000,
+    "Pac-12",
+    null,
+    "Eat 'em up, Cats!",
+    68,
+    56,
+    66,
+    66,
+    70,
+    64,
+    28,
+    70
+   ],
+   [
+    "Utah State",
+    "Aggies",
+    "Maverik Stadium",
+    25100,
+    "Pac-12",
+    null,
+    "Go Aggies!",
+    58,
+    50,
+    60,
+    60,
+    64,
+    66,
+    40,
+    70
+   ],
+   [
+    "Washington State",
+    "Cougars",
+    "Gesa Field",
+    32952,
+    "Pac-12",
+    null,
+    "Go Cougs!",
+    54,
+    54,
+    60,
+    62,
+    68,
+    72,
+    58,
+    70
+   ],
+   [
+    "Air Force",
+    "Falcons",
+    "Falcon Stadium",
+    46692,
+    "Mountain West",
+    null,
+    "Fly, Fight, Win!",
+    58,
+    50,
+    72,
+    66,
+    74,
+    90,
+    74,
+    82
+   ],
+   [
+    "Hawai'i",
+    "Rainbow Warriors",
+    "Clarence T.C. Ching Athletics Complex",
+    15194,
+    "Mountain West",
+    null,
+    "Go Bows!",
+    58,
+    48,
+    62,
+    54,
+    52,
+    66,
+    56,
+    92
+   ],
+   [
+    "Nevada",
+    "Wolf Pack",
+    "Mackay Stadium",
+    27000,
+    "Mountain West",
+    null,
+    "Go Pack!",
+    44,
+    42,
+    54,
+    56,
+    62,
+    64,
+    40,
+    64
+   ],
+   [
+    "New Mexico",
+    "Lobos",
+    "University Stadium",
+    39224,
+    "Mountain West",
+    null,
+    "Go Lobos!",
+    58,
+    54,
+    62,
+    56,
+    60,
+    64,
+    34,
+    66
+   ],
+   [
+    "North Dakota State",
+    "Bison",
+    "Fargodome",
+    18700,
+    "Mountain West",
+    null,
+    "Go Bison!",
+    66,
+    68,
+    76,
+    74,
+    72,
+    66,
+    88,
+    62
+   ],
+   [
+    "Northern Illinois",
+    "Huskies",
+    "Huskie Stadium",
+    23595,
+    "Mountain West",
+    null,
+    "Go Huskies!",
+    48,
+    58,
+    62,
+    58,
+    62,
+    62,
+    52,
+    58
+   ],
+   [
+    "San Jose State",
+    "Spartans",
+    "CEFCU Stadium",
+    21520,
+    "Mountain West",
+    null,
+    "Go Spartans!",
+    56,
+    48,
+    58,
+    56,
+    62,
+    66,
+    36,
+    64
+   ],
+   [
+    "UNLV",
+    "Rebels",
+    "Allegiant Stadium",
+    65000,
+    "Mountain West",
+    null,
+    "Go Rebels!",
+    68,
+    56,
+    70,
+    68,
+    78,
+    60,
+    30,
+    70
+   ],
+   [
+    "UTEP",
+    "Miners",
+    "Sun Bowl Stadium",
+    51500,
+    "Mountain West",
+    null,
+    "Picks Up!",
+    44,
+    42,
+    54,
+    52,
+    58,
+    58,
+    34,
+    58
+   ],
+   [
+    "Wyoming",
+    "Cowboys",
+    "War Memorial Stadium",
+    29181,
+    "Mountain West",
+    null,
+    "Go Pokes!",
+    42,
+    56,
+    58,
+    60,
+    62,
+    64,
+    50,
+    68
+   ],
+   [
+    "Notre Dame",
+    "Fighting Irish",
+    "Notre Dame Stadium",
+    77622,
+    "Independent",
+    null,
+    "Go Irish!",
+    88,
+    88,
+    91,
+    92,
+    94,
+    95,
+    99,
+    94
+   ],
+   [
+    "UConn",
+    "Huskies",
+    "Pratt & Whitney Stadium at Rentschler Field",
+    38066,
+    "Independent",
+    null,
+    "Go Huskies!",
+    58,
+    48,
+    64,
+    64,
+    64,
+    78,
+    24,
+    70
+   ]
+  ],
+  "teams_data.ABBREVIATIONS": {
+   "Alabama": "ALA",
+   "Arkansas": "ARK",
+   "Auburn": "AUB",
+   "Florida": "FLA",
+   "Georgia": "UGA",
+   "Kentucky": "UK",
+   "LSU": "LSU",
+   "Mississippi State": "MSST",
+   "Missouri": "MIZ",
+   "Oklahoma": "OU",
+   "Ole Miss": "MISS",
+   "South Carolina": "SC",
+   "Tennessee": "TENN",
+   "Texas": "TEX",
+   "Texas A&M": "TAMU",
+   "Vanderbilt": "VAN",
+   "Illinois": "ILL",
+   "Indiana": "IND",
+   "Iowa": "IOWA",
+   "Maryland": "MD",
+   "Michigan": "MICH",
+   "Michigan State": "MSU",
+   "Minnesota": "MINN",
+   "Nebraska": "NEB",
+   "Northwestern": "NU",
+   "Ohio State": "OSU",
+   "Oregon": "ORE",
+   "Penn State": "PSU",
+   "Purdue": "PUR",
+   "Rutgers": "RUTG",
+   "UCLA": "UCLA",
+   "USC": "USC",
+   "Washington": "WASH",
+   "Wisconsin": "WIS",
+   "Boston College": "BC",
+   "California": "CAL",
+   "Clemson": "CLEM",
+   "Duke": "DUKE",
+   "Florida State": "FSU",
+   "Georgia Tech": "GT",
+   "Louisville": "LOU",
+   "Miami": "MIA",
+   "NC State": "NCST",
+   "North Carolina": "UNC",
+   "Pitt": "PITT",
+   "SMU": "SMU",
+   "Stanford": "STAN",
+   "Syracuse": "SYR",
+   "Virginia": "UVA",
+   "Virginia Tech": "VT",
+   "Wake Forest": "WAKE",
+   "Arizona": "ARIZ",
+   "Arizona State": "ASU",
+   "Baylor": "BAY",
+   "BYU": "BYU",
+   "Cincinnati": "CIN",
+   "Colorado": "COLO",
+   "Houston": "HOU",
+   "Iowa State": "ISU",
+   "Kansas": "KU",
+   "Kansas State": "KSU",
+   "Oklahoma State": "OKST",
+   "TCU": "TCU",
+   "Texas Tech": "TTU",
+   "UCF": "UCF",
+   "Utah": "UTAH",
+   "West Virginia": "WVU",
+   "Army": "ARMY",
+   "Charlotte": "CLT",
+   "East Carolina": "ECU",
+   "Florida Atlantic": "FAU",
+   "Memphis": "MEM",
+   "Navy": "NAVY",
+   "North Texas": "UNT",
+   "Rice": "RICE",
+   "South Florida": "USF",
+   "Temple": "TEM",
+   "Tulane": "TULN",
+   "Tulsa": "TLSA",
+   "UAB": "UAB",
+   "UTSA": "UTSA",
+   "Appalachian State": "APP",
+   "Coastal Carolina": "CCU",
+   "Georgia Southern": "GASO",
+   "Georgia State": "GAST",
+   "James Madison": "JMU",
+   "Marshall": "MRSH",
+   "Old Dominion": "ODU",
+   "Arkansas State": "ARST",
+   "Louisiana": "ULL",
+   "Louisiana Tech": "LT",
+   "ULM": "ULM",
+   "South Alabama": "USA",
+   "Southern Miss": "USM",
+   "Troy": "TROY",
+   "Akron": "AKR",
+   "Ball State": "BALL",
+   "Bowling Green": "BGSU",
+   "Buffalo": "BUFF",
+   "Central Michigan": "CMU",
+   "Eastern Michigan": "EMU",
+   "Kent State": "KENT",
+   "Miami (OH)": "M-OH",
+   "Ohio": "OHIO",
+   "Sacramento State": "SAC",
+   "Toledo": "TOL",
+   "UMass": "MASS",
+   "Western Michigan": "WMU",
+   "Delaware": "DEL",
+   "FIU": "FIU",
+   "Jacksonville State": "JVST",
+   "Kennesaw State": "KENN",
+   "Liberty": "LIB",
+   "Middle Tennessee": "MTSU",
+   "Missouri State": "MOST",
+   "New Mexico State": "NMSU",
+   "Sam Houston": "SHSU",
+   "Western Kentucky": "WKU",
+   "Boise State": "BSU",
+   "Colorado State": "CSU",
+   "Fresno State": "FRES",
+   "Oregon State": "ORST",
+   "San Diego State": "SDSU",
+   "Texas State": "TXST",
+   "Utah State": "USU",
+   "Washington State": "WSU",
+   "Air Force": "AF",
+   "Hawai'i": "HAW",
+   "Nevada": "NEV",
+   "New Mexico": "UNM",
+   "North Dakota State": "NDSU",
+   "Northern Illinois": "NIU",
+   "San Jose State": "SJSU",
+   "UNLV": "UNLV",
+   "UTEP": "UTEP",
+   "Wyoming": "WYO",
+   "Notre Dame": "ND",
+   "UConn": "CONN"
+  },
+  "coaches_data.HEAD_COACHES": {
+   "Alabama": "Kalen DeBoer",
+   "Arkansas": "Ryan Silverfield",
+   "Auburn": "Alex Golesh",
+   "Florida": "Jon Sumrall",
+   "Georgia": "Kirby Smart",
+   "Kentucky": "Will Stein",
+   "LSU": "Lane Kiffin",
+   "Mississippi State": "Jeff Lebby",
+   "Missouri": "Eli Drinkwitz",
+   "Oklahoma": "Brent Venables",
+   "Ole Miss": "Pete Golding",
+   "South Carolina": "Shane Beamer",
+   "Tennessee": "Josh Heupel",
+   "Texas": "Steve Sarkisian",
+   "Texas A&M": "Mike Elko",
+   "Vanderbilt": "Clark Lea",
+   "Illinois": "Bret Bielema",
+   "Indiana": "Curt Cignetti",
+   "Iowa": "Kirk Ferentz",
+   "Maryland": "Mike Locksley",
+   "Michigan": "Kyle Whittingham",
+   "Michigan State": "Pat Fitzgerald",
+   "Minnesota": "P.J. Fleck",
+   "Nebraska": "Matt Rhule",
+   "Northwestern": "David Braun",
+   "Ohio State": "Ryan Day",
+   "Oregon": "Dan Lanning",
+   "Penn State": "Matt Campbell",
+   "Purdue": "Barry Odom",
+   "Rutgers": "Greg Schiano",
+   "UCLA": "Bob Chesney",
+   "USC": "Lincoln Riley",
+   "Washington": "Jedd Fisch",
+   "Wisconsin": "Luke Fickell",
+   "Boston College": "Bill O'Brien",
+   "California": "Tosh Lupoi",
+   "Clemson": "Dabo Swinney",
+   "Duke": "Manny Diaz",
+   "Florida State": "Mike Norvell",
+   "Georgia Tech": "Brent Key",
+   "Louisville": "Jeff Brohm",
+   "Miami": "Mario Cristobal",
+   "NC State": "Dave Doeren",
+   "North Carolina": "Bill Belichick",
+   "Pitt": "Pat Narduzzi",
+   "SMU": "Rhett Lashlee",
+   "Stanford": "Tavita Pritchard",
+   "Syracuse": "Fran Brown",
+   "Virginia": "Tony Elliott",
+   "Virginia Tech": "James Franklin",
+   "Wake Forest": "Jake Dickert",
+   "Arizona": "Brent Brennan",
+   "Arizona State": "Kenny Dillingham",
+   "Baylor": "Dave Aranda",
+   "BYU": "Kalani Sitake",
+   "Cincinnati": "Scott Satterfield",
+   "Colorado": "Deion Sanders",
+   "Houston": "Willie Fritz",
+   "Iowa State": "Jimmy Rogers",
+   "Kansas": "Lance Leipold",
+   "Kansas State": "Collin Klein",
+   "Oklahoma State": "Eric Morris",
+   "TCU": "Sonny Dykes",
+   "Texas Tech": "Joey McGuire",
+   "UCF": "Scott Frost",
+   "Utah": "Morgan Scalley",
+   "West Virginia": "Rich Rodriguez",
+   "Army": "Jeff Monken",
+   "Charlotte": "Tim Albin",
+   "East Carolina": "Blake Harrell",
+   "Florida Atlantic": "Zach Kittley",
+   "Memphis": "Charles Huff",
+   "Navy": "Brian Newberry",
+   "North Texas": "Neal Brown",
+   "Rice": "Scott Abell",
+   "South Florida": "Brian Hartline",
+   "Temple": "K.C. Keeler",
+   "Tulane": "Will Hall",
+   "Tulsa": "Tre Lamb",
+   "UAB": "Alex Mortensen",
+   "UTSA": "Jeff Traylor",
+   "Appalachian State": "Dowell Loggains",
+   "Coastal Carolina": "Tim Beck",
+   "Georgia Southern": "Clay Helton",
+   "Georgia State": "Dell McGee",
+   "James Madison": "Billy Napier",
+   "Marshall": "Tony Gibson",
+   "Old Dominion": "Ricky Rahne",
+   "Arkansas State": "Butch Jones",
+   "Louisiana": "Michael Desormeaux",
+   "Louisiana Tech": "Sonny Cumbie",
+   "ULM": "Bryant Vincent",
+   "South Alabama": "Major Applewhite",
+   "Southern Miss": "Blake Anderson",
+   "Troy": "Gerad Parker",
+   "Akron": "Joe Moorhead",
+   "Ball State": "Mike Uremovich",
+   "Bowling Green": "Eddie George",
+   "Buffalo": "Pete Lembo",
+   "Central Michigan": "Matt Drinkall",
+   "Eastern Michigan": "Chris Creighton",
+   "Kent State": "Mark Carney",
+   "Miami (OH)": "Chuck Martin",
+   "Ohio": "Brian Smith",
+   "Sacramento State": "Brennan Marion",
+   "Toledo": "Mike Jacobs",
+   "UMass": "Joe Harasymiak",
+   "Western Michigan": "Lance Taylor",
+   "Delaware": "Ryan Carty",
+   "FIU": "Willie Simmons",
+   "Jacksonville State": "Charles Kelly",
+   "Kennesaw State": "Jerry Mack",
+   "Liberty": "Jamey Chadwell",
+   "Middle Tennessee": "Derek Mason",
+   "Missouri State": "Ryan Beard",
+   "New Mexico State": "Tony Sanchez",
+   "Sam Houston": "Phil Longo",
+   "Western Kentucky": "Tyson Helton",
+   "Boise State": "Spencer Danielson",
+   "Colorado State": "Jim Mora",
+   "Fresno State": "Matt Entz",
+   "Oregon State": "JaMarcus Shephard",
+   "San Diego State": "Sean Lewis",
+   "Texas State": "G.J. Kinne",
+   "Utah State": "Bronco Mendenhall",
+   "Washington State": "Zac Alley",
+   "Air Force": "Troy Calhoun",
+   "Hawai'i": "Timmy Chang",
+   "Nevada": "Jeff Choate",
+   "New Mexico": "Jason Eck",
+   "North Dakota State": "Tim Polasek",
+   "Northern Illinois": "Thomas Hammock",
+   "San Jose State": "Ken Niumatalolo",
+   "UNLV": "Dan Mullen",
+   "UTEP": "Scotty Walden",
+   "Wyoming": "Jay Sawvel",
+   "Notre Dame": "Marcus Freeman",
+   "UConn": "Jason Candle"
+  },
+  "coaches_data.COACH_OVERRIDES": {
+   "Everett Kline": {
+    "recruiting": 98,
+    "trench_dev": 94,
+    "db_dev": 96
+   },
+   "Bennett Crowley": {
+    "recruiting": 94,
+    "passing_dev": 94
+   },
+   "Garrett Holloway": {
+    "recruiting": 95,
+    "passing_dev": 95
+   },
+   "Remy Thibodeaux": {
+    "recruiting": 92,
+    "passing_dev": 95
+   },
+   "Silas Wendt": {
+    "recruiting": 74,
+    "passing_dev": 93,
+    "offense_dev": 92,
+    "trench_dev": 92,
+    "db_dev": 93
+   },
+   "Kai Lindgren": {
+    "recruiting": 95,
+    "db_dev": 91,
+    "trench_dev": 90
+   },
+   "Patrick Dunleavy": {
+    "recruiting": 93,
+    "db_dev": 91
+   },
+   "Luis Arrondo": {
+    "recruiting": 92,
+    "trench_dev": 95
+   },
+   "Carson Wexley": {
+    "recruiting": 88,
+    "passing_dev": 91
+   },
+   "Conrad Vail": {
+    "recruiting": 76,
+    "trench_dev": 90,
+    "db_dev": 89
+   },
+   "Wyatt Strand": {
+    "recruiting": 74,
+    "trench_dev": 88,
+    "offense_dev": 86
+   },
+   "Mason Ehrlich": {
+    "recruiting": 62,
+    "trench_dev": 96,
+    "special_dev": 95
+   },
+   "Rhett Calloway": {
+    "passing_dev": 91
+   },
+   "Jarrett Coyle": {
+    "db_dev": 91
+   },
+   "Lyle Ostrander": {
+    "db_dev": 89,
+    "trench_dev": 87
+   },
+   "Jace Whitlock": {
+    "recruiting": 88,
+    "db_dev": 90
+   },
+   "Bradford Lyle": {
+    "recruiting": 70,
+    "db_dev": 92,
+    "special_dev": 90
+   },
+   "Darnell Wicks": {
+    "recruiting": 90,
+    "passing_dev": 93
+   },
+   "Julian Ashcroft": {
+    "recruiting": 90,
+    "trench_dev": 86
+   },
+   "Joel Mahaffey": {
+    "recruiting": 88
+   },
+   "Walker Brantley": {
+    "recruiting": 88
+   },
+   "Bryce Haldane": {
+    "recruiting": 84
+   },
+   "Kendall Ruark": {
+    "passing_dev": 88
+   },
+   "Preston Albee": {
+    "db_dev": 85
+   },
+   "Brooks Whitfield": {
+    "passing_dev": 88
+   },
+   "Robert Kessler": {
+    "offense_dev": 85,
+    "recruiting": 58
+   }
+  },
+  "coaches_data.COACH_STYLES": {
+   "Robert Kessler": [
+    "Triple Option",
+    "4-3 Zone",
+    45
+   ],
+   "William Hargrove": [
+    "Triple Option",
+    "Pressure 3-4",
+    55
+   ],
+   "Mitchell Dorrance": [
+    "Triple Option",
+    "Pressure 3-4",
+    45
+   ],
+   "Patrick Ellery": [
+    "Triple Option",
+    null,
+    55
+   ],
+   "Andre Velasco": [
+    "Air Raid",
+    null,
+    70
+   ],
+   "Grady Pettigrew": [
+    "Air Raid",
+    null,
+    65
+   ],
+   "Rusty Calder": [
+    "Air Raid",
+    null,
+    60
+   ],
+   "Darius Kemp": [
+    "Air Raid",
+    null,
+    70
+   ],
+   "Kyle Duhon": [
+    "Air Raid",
+    null,
+    60
+   ],
+   "Bo Kittredge": [
+    "Air Raid",
+    null,
+    65
+   ],
+   "Tate Morrow": [
+    "Air Raid",
+    null,
+    65
+   ],
+   "Tomas Quintero": [
+    "Air Raid",
+    "3-3-5 Stack",
+    80
+   ],
+   "Jace Whitlock": [
+    "Air Raid",
+    "Multiple Man",
+    60
+   ],
+   "Mason Ehrlich": [
+    "Pro Style",
+    "4-2-5 Quarters",
+    25
+   ],
+   "Bram Lofgren": [
+    "Smashmouth",
+    "Pressure 3-4",
+    45
+   ],
+   "Conrad Vail": [
+    "Smashmouth",
+    "Multiple Man",
+    45
+   ],
+   "Everett Kline": [
+    "Pro Style",
+    "Pressure 3-4",
+    60
+   ],
+   "Remy Thibodeaux": [
+    "Spread RPO",
+    "Multiple Man",
+    85
+   ],
+   "Garrett Holloway": [
+    "Pro Style",
+    "Multiple Man",
+    60
+   ],
+   "Bennett Crowley": [
+    "Spread RPO",
+    "4-2-5 Quarters",
+    55
+   ],
+   "Silas Wendt": [
+    "Pro Style",
+    "4-2-5 Quarters",
+    70
+   ],
+   "Kai Lindgren": [
+    "Spread RPO",
+    "Pressure 3-4",
+    80
+   ],
+   "Patrick Dunleavy": [
+    "Pro Style",
+    "4-2-5 Quarters",
+    55
+   ],
+   "Carson Wexley": [
+    "West Coast",
+    "Multiple Man",
+    60
+   ],
+   "Rhett Calloway": [
+    "Spread RPO",
+    null,
+    70
+   ],
+   "Jarrett Coyle": [
+    "Spread RPO",
+    "Pressure 3-4",
+    65
+   ],
+   "Bradford Lyle": [
+    "Pro Style",
+    "Multiple Man",
+    40
+   ],
+   "Lyle Ostrander": [
+    "Pro Style",
+    "4-2-5 Quarters",
+    50
+   ],
+   "Luis Arrondo": [
+    "Pro Style",
+    "4-2-5 Quarters",
+    45
+   ],
+   "Kendall Ruark": [
+    "Spread RPO",
+    null,
+    85
+   ],
+   "Wyatt Strand": [
+    "Pro Style",
+    "3-3-5 Stack",
+    50
+   ],
+   "Dale Shumate": [
+    "Spread RPO",
+    "3-3-5 Stack",
+    70
+   ],
+   "Brooks Whitfield": [
+    "Pro Style",
+    null,
+    60
+   ],
+   "Rowan Hesketh": [
+    "West Coast",
+    null,
+    60
+   ],
+   "Travis Keener": [
+    null,
+    "Pressure 3-4",
+    50
+   ],
+   "Anders Thorsgaard": [
+    "Pro Style",
+    null,
+    45
+   ],
+   "Gunnar Pohl": [
+    "Pro Style",
+    null,
+    50
+   ],
+   "Torsten Haugen": [
+    "Pro Style",
+    "Pressure 3-4",
+    45
+   ],
+   "Vincent Albanese": [
+    "Pro Style",
+    null,
+    40
+   ],
+   "Frank Kozlowski": [
+    null,
+    "4-3 Zone",
+    50
+   ],
+   "Walker Brantley": [
+    "Spread RPO",
+    "4-3 Zone",
+    50
+   ],
+   "Dallin Merrill": [
+    null,
+    "Pressure 3-4",
+    45
+   ],
+   "Josiah Breckin": [
+    "Spread RPO",
+    null,
+    70
+   ],
+   "Vince Fortunato": [
+    "Spread RPO",
+    null,
+    55
+   ],
+   "Tyler Brennick": [
+    "Spread RPO",
+    null,
+    60
+   ],
+   "Simon Whitaker": [
+    null,
+    "Pressure 3-4",
+    75
+   ],
+   "Ned Ostrowski": [
+    "Pro Style",
+    null,
+    50
+   ],
+   "Joel Mahaffey": [
+    "Spread RPO",
+    "Multiple Man",
+    70
+   ],
+   "Cody Rasmussen": [
+    "Spread RPO",
+    null,
+    55
+   ],
+   "Darnell Wicks": [
+    "Spread RPO",
+    null,
+    60
+   ],
+   "Beau Hartsell": [
+    "Spread RPO",
+    null,
+    75
+   ],
+   "Ashby Vance": [
+    "Spread RPO",
+    "Multiple Man",
+    65
+   ],
+   "Wade Lindqvist": [
+    "Pro Style",
+    "4-2-5 Quarters",
+    60
+   ]
+  },
+  "coach_facts.FACTS": {},
+  "coach_facts.ALMA": {},
+  "coach_facts.STOPS": {},
+  "coach_facts.RECENT_WINNERS": {
+   "__set__": []
+  },
+  "fcs_data.FCS_TEAMS": [
+   [
+    "Mercer",
+    "Bears",
+    "Five Star Stadium",
+    10200,
+    "Go Bears!",
+    44,
+    45,
+    46,
+    42,
+    48,
+    66,
+    38,
+    62
+   ],
+   [
+    "Furman",
+    "Paladins",
+    "Paladin Stadium",
+    16000,
+    "Go Paladins!",
+    46,
+    47,
+    50,
+    44,
+    50,
+    78,
+    52,
+    70
+   ],
+   [
+    "Wofford",
+    "Terriers",
+    "Gibbs Stadium",
+    13000,
+    "Go Terriers!",
+    43,
+    44,
+    45,
+    42,
+    46,
+    76,
+    46,
+    66
+   ],
+   [
+    "Samford",
+    "Bulldogs",
+    "Seibert Stadium",
+    6700,
+    "Go Bulldogs!",
+    47,
+    43,
+    47,
+    42,
+    47,
+    70,
+    44,
+    60
+   ],
+   [
+    "Chattanooga",
+    "Mocs",
+    "Finley Stadium",
+    20668,
+    "Go Mocs!",
+    48,
+    49,
+    51,
+    46,
+    52,
+    60,
+    48,
+    62
+   ],
+   [
+    "The Citadel",
+    "Bulldogs",
+    "Johnson Hagood Stadium",
+    11700,
+    "Go Bulldogs!",
+    42,
+    46,
+    46,
+    44,
+    48,
+    68,
+    56,
+    60
+   ],
+   [
+    "Elon",
+    "Phoenix",
+    "Rhodes Stadium",
+    11250,
+    "Go Phoenix!",
+    45,
+    44,
+    46,
+    44,
+    52,
+    72,
+    40,
+    66
+   ],
+   [
+    "Richmond",
+    "Spiders",
+    "E. Claiborne Robins Stadium",
+    8700,
+    "Go Spiders!",
+    50,
+    50,
+    52,
+    48,
+    58,
+    80,
+    54,
+    72
+   ],
+   [
+    "William & Mary",
+    "Tribe",
+    "Zable Stadium",
+    12672,
+    "Go Tribe!",
+    49,
+    51,
+    52,
+    48,
+    56,
+    84,
+    52,
+    74
+   ],
+   [
+    "Villanova",
+    "Wildcats",
+    "Villanova Stadium",
+    12500,
+    "Go Wildcats!",
+    52,
+    51,
+    53,
+    50,
+    55,
+    80,
+    54,
+    70
+   ],
+   [
+    "Rhode Island",
+    "Rams",
+    "Meade Stadium",
+    6555,
+    "Go Rams!",
+    44,
+    43,
+    45,
+    42,
+    46,
+    62,
+    36,
+    60
+   ],
+   [
+    "New Hampshire",
+    "Wildcats",
+    "Wildcat Stadium",
+    11015,
+    "Go Wildcats!",
+    47,
+    46,
+    48,
+    44,
+    50,
+    66,
+    46,
+    64
+   ],
+   [
+    "Maine",
+    "Black Bears",
+    "Alfond Stadium",
+    10000,
+    "Go Black Bears!",
+    43,
+    44,
+    45,
+    42,
+    45,
+    62,
+    40,
+    60
+   ],
+   [
+    "Stony Brook",
+    "Seawolves",
+    "Kenneth P. LaValle Stadium",
+    12300,
+    "Go Seawolves!",
+    44,
+    45,
+    46,
+    44,
+    50,
+    66,
+    34,
+    60
+   ],
+   [
+    "Albany",
+    "Great Danes",
+    "Tom & Mary Casey Stadium",
+    8500,
+    "Go Great Danes!",
+    45,
+    45,
+    46,
+    43,
+    48,
+    62,
+    36,
+    58
+   ],
+   [
+    "Youngstown State",
+    "Penguins",
+    "Stambaugh Stadium",
+    20630,
+    "Go Penguins!",
+    50,
+    50,
+    52,
+    48,
+    54,
+    58,
+    56,
+    58
+   ],
+   [
+    "Illinois State",
+    "Redbirds",
+    "Hancock Stadium",
+    13391,
+    "Go Redbirds!",
+    49,
+    50,
+    51,
+    47,
+    54,
+    60,
+    48,
+    62
+   ],
+   [
+    "Northern Iowa",
+    "Panthers",
+    "UNI-Dome",
+    16324,
+    "Go Panthers!",
+    53,
+    54,
+    55,
+    50,
+    58,
+    62,
+    60,
+    62
+   ],
+   [
+    "South Dakota",
+    "Coyotes",
+    "DakotaDome",
+    10000,
+    "Go Coyotes!",
+    51,
+    52,
+    53,
+    49,
+    56,
+    60,
+    48,
+    60
+   ],
+   [
+    "South Dakota State",
+    "Jackrabbits",
+    "Dana J. Dykhouse Stadium",
+    19340,
+    "Go Jackrabbits!",
+    58,
+    57,
+    60,
+    55,
+    64,
+    62,
+    62,
+    64
+   ],
+   [
+    "Montana",
+    "Grizzlies",
+    "Washington-Grizzly Stadium",
+    25217,
+    "Go Grizzlies!",
+    57,
+    56,
+    58,
+    54,
+    62,
+    64,
+    68,
+    78
+   ],
+   [
+    "Montana State",
+    "Bobcats",
+    "Bobcat Stadium",
+    21650,
+    "Go Bobcats!",
+    57,
+    56,
+    58,
+    54,
+    62,
+    62,
+    64,
+    74
+   ],
+   [
+    "Eastern Washington",
+    "Eagles",
+    "Roos Field",
+    8600,
+    "Go Eagles!",
+    50,
+    48,
+    50,
+    46,
+    52,
+    58,
+    52,
+    60
+   ],
+   [
+    "Weber State",
+    "Wildcats",
+    "Stewart Stadium",
+    17500,
+    "Go Wildcats!",
+    51,
+    52,
+    53,
+    48,
+    54,
+    58,
+    50,
+    62
+   ],
+   [
+    "Portland State",
+    "Vikings",
+    "Hillsboro Stadium",
+    20438,
+    "Go Vikings!",
+    44,
+    44,
+    46,
+    43,
+    50,
+    60,
+    36,
+    66
+   ],
+   [
+    "Northern Arizona",
+    "Lumberjacks",
+    "Walkup Skydome",
+    11230,
+    "Go Lumberjacks!",
+    45,
+    45,
+    47,
+    44,
+    50,
+    60,
+    42,
+    70
+   ],
+   [
+    "McNeese",
+    "Cowboys",
+    "Cowboy Stadium",
+    17410,
+    "Go Cowboys!",
+    48,
+    49,
+    50,
+    46,
+    52,
+    56,
+    48,
+    58
+   ],
+   [
+    "Nicholls",
+    "Colonels",
+    "Manning Field at John L. Guidry Stadium",
+    10500,
+    "Go Colonels!",
+    47,
+    48,
+    49,
+    45,
+    50,
+    54,
+    42,
+    56
+   ],
+   [
+    "Jackson State",
+    "Tigers",
+    "Mississippi Veterans Memorial Stadium",
+    60492,
+    "Go Tigers!",
+    52,
+    51,
+    53,
+    49,
+    52,
+    56,
+    60,
+    60
+   ],
+   [
+    "Southern",
+    "Jaguars",
+    "A.W. Mumford Stadium",
+    28500,
+    "Go Jaguars!",
+    50,
+    50,
+    52,
+    48,
+    50,
+    56,
+    58,
+    60
+   ],
+   [
+    "North Dakota",
+    "Fighting Hawks",
+    "Alerus Center Dome",
+    12283,
+    "Go Fighting Hawks!",
+    51,
+    52,
+    53,
+    49,
+    58,
+    64,
+    48,
+    62
+   ],
+   [
+    "Southern Illinois",
+    "Salukis",
+    "Saluki Stadium",
+    15000,
+    "Go Salukis!",
+    51,
+    50,
+    52,
+    48,
+    54,
+    60,
+    50,
+    60
+   ],
+   [
+    "Indiana State",
+    "Sycamores",
+    "Memorial Stadium",
+    12764,
+    "Go Sycamores!",
+    43,
+    43,
+    45,
+    42,
+    46,
+    58,
+    36,
+    56
+   ],
+   [
+    "Murray State",
+    "Racers",
+    "Roy Stewart Stadium",
+    16800,
+    "Go Racers!",
+    43,
+    43,
+    45,
+    43,
+    46,
+    58,
+    40,
+    58
+   ],
+   [
+    "Southeast Missouri State",
+    "Redhawks",
+    "Houck Stadium",
+    11015,
+    "Go Redhawks!",
+    47,
+    46,
+    48,
+    45,
+    48,
+    56,
+    42,
+    58
+   ],
+   [
+    "Idaho",
+    "Vandals",
+    "Kibbie Dome",
+    16000,
+    "Go Vandals!",
+    51,
+    50,
+    52,
+    48,
+    52,
+    62,
+    50,
+    64
+   ],
+   [
+    "Idaho State",
+    "Bengals",
+    "Holt Arena",
+    12000,
+    "Go Bengals!",
+    45,
+    44,
+    46,
+    43,
+    46,
+    56,
+    40,
+    58
+   ],
+   [
+    "UC Davis",
+    "Aggies",
+    "UC Davis Health Stadium",
+    10743,
+    "Go Aggies!",
+    51,
+    50,
+    52,
+    48,
+    56,
+    80,
+    48,
+    70
+   ],
+   [
+    "Cal Poly",
+    "Mustangs",
+    "Alex G. Spanos Stadium",
+    11075,
+    "Go Mustangs!",
+    45,
+    44,
+    46,
+    44,
+    52,
+    76,
+    40,
+    76
+   ],
+   [
+    "Northern Colorado",
+    "Bears",
+    "Nottingham Field",
+    8533,
+    "Go Bears!",
+    42,
+    42,
+    44,
+    42,
+    46,
+    58,
+    34,
+    62
+   ],
+   [
+    "Southern Utah",
+    "Thunderbirds",
+    "Eccles Coliseum",
+    8500,
+    "Go Thunderbirds!",
+    45,
+    45,
+    47,
+    44,
+    48,
+    58,
+    38,
+    64
+   ],
+   [
+    "Tarleton State",
+    "Texans",
+    "Memorial Stadium",
+    24000,
+    "Go Texans!",
+    53,
+    51,
+    54,
+    50,
+    56,
+    56,
+    42,
+    58
+   ],
+   [
+    "Abilene Christian",
+    "Wildcats",
+    "Wildcat Stadium",
+    12000,
+    "Go Wildcats!",
+    50,
+    48,
+    50,
+    47,
+    56,
+    66,
+    44,
+    60
+   ],
+   [
+    "Stephen F. Austin",
+    "Lumberjacks",
+    "Homer Bryce Stadium",
+    14575,
+    "Go Lumberjacks!",
+    48,
+    47,
+    49,
+    46,
+    50,
+    58,
+    50,
+    62
+   ],
+   [
+    "Central Arkansas",
+    "Bears",
+    "Estes Stadium",
+    12000,
+    "Go Bears!",
+    48,
+    47,
+    49,
+    46,
+    50,
+    58,
+    44,
+    58
+   ],
+   [
+    "Austin Peay",
+    "Governors",
+    "Fortera Stadium",
+    10000,
+    "Go Governors!",
+    48,
+    47,
+    49,
+    46,
+    50,
+    58,
+    40,
+    58
+   ],
+   [
+    "Eastern Kentucky",
+    "Colonels",
+    "Roy Kidd Stadium",
+    20000,
+    "Go Colonels!",
+    48,
+    48,
+    49,
+    46,
+    50,
+    58,
+    56,
+    60
+   ],
+   [
+    "Incarnate Word",
+    "Cardinals",
+    "Gayle and Tom Benson Stadium",
+    6000,
+    "Go Cardinals!",
+    52,
+    47,
+    51,
+    46,
+    52,
+    64,
+    36,
+    62
+   ],
+   [
+    "Southeastern Louisiana",
+    "Lions",
+    "Strawberry Stadium",
+    7408,
+    "Go Lions!",
+    48,
+    47,
+    48,
+    45,
+    48,
+    56,
+    42,
+    58
+   ],
+   [
+    "Lamar",
+    "Cardinals",
+    "Provost Umphrey Stadium",
+    16000,
+    "Go Cardinals!",
+    46,
+    46,
+    47,
+    44,
+    48,
+    56,
+    38,
+    56
+   ],
+   [
+    "Tennessee State",
+    "Tigers",
+    "Hale Stadium",
+    69143,
+    "Go Tigers!",
+    47,
+    47,
+    49,
+    45,
+    54,
+    56,
+    58,
+    60
+   ],
+   [
+    "Tennessee Tech",
+    "Golden Eagles",
+    "Tucker Stadium",
+    16500,
+    "Go Golden Eagles!",
+    47,
+    47,
+    48,
+    45,
+    48,
+    60,
+    42,
+    60
+   ],
+   [
+    "UT Martin",
+    "Skyhawks",
+    "Hardy M. Graham Stadium",
+    7500,
+    "Go Skyhawks!",
+    47,
+    47,
+    48,
+    45,
+    48,
+    58,
+    44,
+    58
+   ],
+   [
+    "East Tennessee State",
+    "Buccaneers",
+    "William B. Greene Jr. Stadium",
+    7694,
+    "Go Buccaneers!",
+    46,
+    46,
+    48,
+    45,
+    52,
+    60,
+    44,
+    64
+   ],
+   [
+    "Western Carolina",
+    "Catamounts",
+    "E.J. Whitmire Stadium",
+    13742,
+    "Go Catamounts!",
+    45,
+    44,
+    46,
+    44,
+    48,
+    60,
+    42,
+    66
+   ],
+   [
+    "Campbell",
+    "Fighting Camels",
+    "Barker-Lane Stadium",
+    5500,
+    "Go Fighting Camels!",
+    44,
+    43,
+    45,
+    43,
+    46,
+    62,
+    32,
+    58
+   ],
+   [
+    "Gardner-Webb",
+    "Runnin' Bulldogs",
+    "Ernest W. Spangler Stadium",
+    9000,
+    "Go Runnin' Bulldogs!",
+    43,
+    43,
+    45,
+    42,
+    44,
+    60,
+    34,
+    58
+   ],
+   [
+    "Towson",
+    "Tigers",
+    "Johnny Unitas Stadium",
+    11198,
+    "Go Tigers!",
+    46,
+    46,
+    48,
+    45,
+    50,
+    62,
+    44,
+    62
+   ],
+   [
+    "Monmouth",
+    "Hawks",
+    "Kessler Stadium",
+    4200,
+    "Go Hawks!",
+    46,
+    44,
+    46,
+    44,
+    48,
+    64,
+    34,
+    64
+   ],
+   [
+    "North Carolina A&T",
+    "Aggies",
+    "Truist Stadium",
+    21500,
+    "Go Aggies!",
+    44,
+    44,
+    46,
+    44,
+    48,
+    60,
+    54,
+    60
+   ],
+   [
+    "Lafayette",
+    "Leopards",
+    "Fisher Stadium",
+    13132,
+    "Go Leopards!",
+    45,
+    45,
+    47,
+    45,
+    52,
+    84,
+    52,
+    70
+   ],
+   [
+    "Lehigh",
+    "Mountain Hawks",
+    "Goodman Stadium",
+    16000,
+    "Go Mountain Hawks!",
+    47,
+    46,
+    48,
+    46,
+    54,
+    86,
+    54,
+    70
+   ],
+   [
+    "Holy Cross",
+    "Crusaders",
+    "Fitton Field",
+    23500,
+    "Go Crusaders!",
+    47,
+    47,
+    48,
+    46,
+    52,
+    86,
+    50,
+    70
+   ],
+   [
+    "Fordham",
+    "Rams",
+    "Coffey Field",
+    7000,
+    "Go Rams!",
+    43,
+    43,
+    45,
+    43,
+    48,
+    84,
+    44,
+    72
+   ],
+   [
+    "Florida A&M",
+    "Rattlers",
+    "Bragg Memorial Stadium",
+    25500,
+    "Go Rattlers!",
+    49,
+    48,
+    50,
+    46,
+    50,
+    58,
+    62,
+    62
+   ],
+   [
+    "Bethune-Cookman",
+    "Wildcats",
+    "Daytona Stadium",
+    10000,
+    "Go Wildcats!",
+    43,
+    43,
+    45,
+    42,
+    44,
+    54,
+    50,
+    60
+   ],
+   [
+    "Alabama A&M",
+    "Bulldogs",
+    "Louis Crews Stadium",
+    21000,
+    "Go Bulldogs!",
+    44,
+    44,
+    46,
+    43,
+    46,
+    54,
+    50,
+    56
+   ],
+   [
+    "Alabama State",
+    "Hornets",
+    "ASU Stadium",
+    26500,
+    "Go Hornets!",
+    46,
+    46,
+    48,
+    44,
+    50,
+    54,
+    54,
+    58
+   ],
+   [
+    "Prairie View A&M",
+    "Panthers",
+    "Panther Stadium at Blackshear Field",
+    15000,
+    "Go Panthers!",
+    46,
+    45,
+    47,
+    44,
+    48,
+    54,
+    46,
+    56
+   ],
+   [
+    "Grambling State",
+    "Tigers",
+    "Eddie G. Robinson Memorial Stadium",
+    19600,
+    "Go Tigers!",
+    46,
+    46,
+    48,
+    44,
+    48,
+    54,
+    66,
+    58
+   ]
+  ],
+  "fcs_data.FCS_STATES": {
+   "Mercer": "GA",
+   "Furman": "SC",
+   "Wofford": "SC",
+   "Samford": "AL",
+   "Chattanooga": "TN",
+   "The Citadel": "SC",
+   "Elon": "NC",
+   "Richmond": "VA",
+   "William & Mary": "VA",
+   "Villanova": "PA",
+   "Rhode Island": "RI",
+   "New Hampshire": "NH",
+   "Maine": "ME",
+   "Stony Brook": "NY",
+   "Albany": "NY",
+   "Youngstown State": "OH",
+   "Illinois State": "IL",
+   "Northern Iowa": "IA",
+   "South Dakota": "SD",
+   "South Dakota State": "SD",
+   "Montana": "MT",
+   "Montana State": "MT",
+   "Eastern Washington": "WA",
+   "Weber State": "UT",
+   "Portland State": "OR",
+   "Northern Arizona": "AZ",
+   "McNeese": "LA",
+   "Nicholls": "LA",
+   "Jackson State": "MS",
+   "Southern": "LA",
+   "North Dakota": "ND",
+   "Southern Illinois": "IL",
+   "Indiana State": "IN",
+   "Murray State": "KY",
+   "Southeast Missouri State": "MO",
+   "Idaho": "ID",
+   "Idaho State": "ID",
+   "UC Davis": "CA",
+   "Cal Poly": "CA",
+   "Northern Colorado": "CO",
+   "Southern Utah": "UT",
+   "Tarleton State": "TX",
+   "Abilene Christian": "TX",
+   "Stephen F. Austin": "TX",
+   "Central Arkansas": "AR",
+   "Austin Peay": "TN",
+   "Eastern Kentucky": "KY",
+   "Incarnate Word": "TX",
+   "Southeastern Louisiana": "LA",
+   "Lamar": "TX",
+   "Tennessee State": "TN",
+   "Tennessee Tech": "TN",
+   "UT Martin": "TN",
+   "East Tennessee State": "TN",
+   "Western Carolina": "NC",
+   "Campbell": "NC",
+   "Gardner-Webb": "NC",
+   "Towson": "MD",
+   "Monmouth": "NJ",
+   "North Carolina A&T": "NC",
+   "Lafayette": "PA",
+   "Lehigh": "PA",
+   "Holy Cross": "MA",
+   "Fordham": "NY",
+   "Florida A&M": "FL",
+   "Bethune-Cookman": "FL",
+   "Alabama A&M": "AL",
+   "Alabama State": "AL",
+   "Prairie View A&M": "TX",
+   "Grambling State": "LA"
+  },
+  "campus_towns.TOWNS": {
+   "Air Force": "Colorado Springs, Colorado",
+   "Akron": "Akron, Ohio",
+   "Alabama": "Tuscaloosa, Alabama",
+   "Appalachian State": "Boone, North Carolina",
+   "Arizona": "Tucson, Arizona",
+   "Arizona State": "Tempe, Arizona",
+   "Arkansas": "Fayetteville, Arkansas",
+   "Arkansas State": "Jonesboro, Arkansas",
+   "Army": "West Point, New York",
+   "Auburn": "Auburn, Alabama",
+   "BYU": "Provo, Utah",
+   "Ball State": "Muncie, Indiana",
+   "Baylor": "Waco, Texas",
+   "Boise State": "Boise, Idaho",
+   "Boston College": "Chestnut Hill, Massachusetts",
+   "Bowling Green": "Bowling Green, Ohio",
+   "Buffalo": "Buffalo, New York",
+   "California": "Berkeley, California",
+   "Central Michigan": "Mount Pleasant, Michigan",
+   "Charlotte": "Charlotte, North Carolina",
+   "Cincinnati": "Cincinnati, Ohio",
+   "Clemson": "Clemson, South Carolina",
+   "Coastal Carolina": "Conway, South Carolina",
+   "Colorado": "Boulder, Colorado",
+   "Colorado State": "Fort Collins, Colorado",
+   "Delaware": "Newark, Delaware",
+   "Duke": "Durham, North Carolina",
+   "East Carolina": "Greenville, North Carolina",
+   "Eastern Michigan": "Ypsilanti, Michigan",
+   "FIU": "Miami, Florida",
+   "Florida": "Gainesville, Florida",
+   "Florida Atlantic": "Boca Raton, Florida",
+   "Florida State": "Tallahassee, Florida",
+   "Fresno State": "Fresno, California",
+   "Georgia": "Athens, Georgia",
+   "Georgia Southern": "Statesboro, Georgia",
+   "Georgia State": "Atlanta, Georgia",
+   "Georgia Tech": "Atlanta, Georgia",
+   "Hawai'i": "Honolulu, Hawai'i",
+   "Houston": "Houston, Texas",
+   "Illinois": "Champaign, Illinois",
+   "Indiana": "Bloomington, Indiana",
+   "Iowa": "Iowa City, Iowa",
+   "Iowa State": "Ames, Iowa",
+   "Jacksonville State": "Jacksonville, Alabama",
+   "James Madison": "Harrisonburg, Virginia",
+   "Kansas": "Lawrence, Kansas",
+   "Kansas State": "Manhattan, Kansas",
+   "Kennesaw State": "Kennesaw, Georgia",
+   "Kent State": "Kent, Ohio",
+   "Kentucky": "Lexington, Kentucky",
+   "LSU": "Baton Rouge, Louisiana",
+   "Liberty": "Lynchburg, Virginia",
+   "Louisiana": "Lafayette, Louisiana",
+   "Louisiana Tech": "Ruston, Louisiana",
+   "Louisville": "Louisville, Kentucky",
+   "Marshall": "Huntington, West Virginia",
+   "Maryland": "College Park, Maryland",
+   "Memphis": "Memphis, Tennessee",
+   "Miami": "Miami, Florida",
+   "Miami (OH)": "Oxford, Ohio",
+   "Michigan": "Ann Arbor, Michigan",
+   "Michigan State": "East Lansing, Michigan",
+   "Middle Tennessee": "Murfreesboro, Tennessee",
+   "Minnesota": "Minneapolis, Minnesota",
+   "Mississippi State": "Starkville, Mississippi",
+   "Missouri": "Columbia, Missouri",
+   "Missouri State": "Springfield, Missouri",
+   "NC State": "Raleigh, North Carolina",
+   "Navy": "Annapolis, Maryland",
+   "Nebraska": "Lincoln, Nebraska",
+   "Nevada": "Reno, Nevada",
+   "New Mexico": "Albuquerque, New Mexico",
+   "New Mexico State": "Las Cruces, New Mexico",
+   "North Carolina": "Chapel Hill, North Carolina",
+   "North Dakota State": "Fargo, North Dakota",
+   "North Texas": "Denton, Texas",
+   "Northern Illinois": "DeKalb, Illinois",
+   "Northwestern": "Evanston, Illinois",
+   "Notre Dame": "South Bend, Indiana",
+   "Ohio": "Athens, Ohio",
+   "Ohio State": "Columbus, Ohio",
+   "Oklahoma": "Norman, Oklahoma",
+   "Oklahoma State": "Stillwater, Oklahoma",
+   "Old Dominion": "Norfolk, Virginia",
+   "Ole Miss": "Oxford, Mississippi",
+   "Oregon": "Eugene, Oregon",
+   "Oregon State": "Corvallis, Oregon",
+   "Penn State": "State College, Pennsylvania",
+   "Pitt": "Pittsburgh, Pennsylvania",
+   "Purdue": "West Lafayette, Indiana",
+   "Rice": "Houston, Texas",
+   "Rutgers": "Piscataway, New Jersey",
+   "SMU": "Dallas, Texas",
+   "Sacramento State": "Sacramento, California",
+   "Sam Houston": "Huntsville, Texas",
+   "San Diego State": "San Diego, California",
+   "San Jose State": "San Jose, California",
+   "South Alabama": "Mobile, Alabama",
+   "South Carolina": "Columbia, South Carolina",
+   "South Florida": "Tampa, Florida",
+   "Southern Miss": "Hattiesburg, Mississippi",
+   "Stanford": "Palo Alto, California",
+   "Syracuse": "Syracuse, New York",
+   "TCU": "Fort Worth, Texas",
+   "Temple": "Philadelphia, Pennsylvania",
+   "Tennessee": "Knoxville, Tennessee",
+   "Texas": "Austin, Texas",
+   "Texas A&M": "College Station, Texas",
+   "Texas State": "San Marcos, Texas",
+   "Texas Tech": "Lubbock, Texas",
+   "Toledo": "Toledo, Ohio",
+   "Troy": "Troy, Alabama",
+   "Tulane": "New Orleans, Louisiana",
+   "Tulsa": "Tulsa, Oklahoma",
+   "UAB": "Birmingham, Alabama",
+   "UCF": "Orlando, Florida",
+   "UCLA": "Pasadena, California",
+   "UConn": "East Hartford, Connecticut",
+   "ULM": "Monroe, Louisiana",
+   "UMass": "Amherst, Massachusetts",
+   "UNLV": "Las Vegas, Nevada",
+   "USC": "Los Angeles, California",
+   "UTEP": "El Paso, Texas",
+   "UTSA": "San Antonio, Texas",
+   "Utah": "Salt Lake City, Utah",
+   "Utah State": "Logan, Utah",
+   "Vanderbilt": "Nashville, Tennessee",
+   "Virginia": "Charlottesville, Virginia",
+   "Virginia Tech": "Blacksburg, Virginia",
+   "Wake Forest": "Winston-Salem, North Carolina",
+   "Washington": "Seattle, Washington",
+   "Washington State": "Pullman, Washington",
+   "West Virginia": "Morgantown, West Virginia",
+   "Western Kentucky": "Bowling Green, Kentucky",
+   "Western Michigan": "Kalamazoo, Michigan",
+   "Wisconsin": "Madison, Wisconsin",
+   "Wyoming": "Laramie, Wyoming"
+  },
+  "recruiting_data.TEAM_STATES": {
+   "Alabama": "AL",
+   "Arkansas": "AR",
+   "Auburn": "AL",
+   "Florida": "FL",
+   "Georgia": "GA",
+   "Kentucky": "KY",
+   "LSU": "LA",
+   "Mississippi State": "MS",
+   "Missouri": "MO",
+   "Oklahoma": "OK",
+   "Ole Miss": "MS",
+   "South Carolina": "SC",
+   "Tennessee": "TN",
+   "Texas": "TX",
+   "Texas A&M": "TX",
+   "Vanderbilt": "TN",
+   "Illinois": "IL",
+   "Indiana": "IN",
+   "Iowa": "IA",
+   "Maryland": "MD",
+   "Michigan": "MI",
+   "Michigan State": "MI",
+   "Minnesota": "MN",
+   "Nebraska": "NE",
+   "Northwestern": "IL",
+   "Ohio State": "OH",
+   "Oregon": "OR",
+   "Penn State": "PA",
+   "Purdue": "IN",
+   "Rutgers": "NJ",
+   "UCLA": "CA",
+   "USC": "CA",
+   "Washington": "WA",
+   "Wisconsin": "WI",
+   "Boston College": "MA",
+   "California": "CA",
+   "Clemson": "SC",
+   "Duke": "NC",
+   "Florida State": "FL",
+   "Georgia Tech": "GA",
+   "Louisville": "KY",
+   "Miami": "FL",
+   "NC State": "NC",
+   "North Carolina": "NC",
+   "Pitt": "PA",
+   "SMU": "TX",
+   "Stanford": "CA",
+   "Syracuse": "NY",
+   "Virginia": "VA",
+   "Virginia Tech": "VA",
+   "Wake Forest": "NC",
+   "Arizona": "AZ",
+   "Arizona State": "AZ",
+   "Baylor": "TX",
+   "BYU": "UT",
+   "Cincinnati": "OH",
+   "Colorado": "CO",
+   "Houston": "TX",
+   "Iowa State": "IA",
+   "Kansas": "KS",
+   "Kansas State": "KS",
+   "Oklahoma State": "OK",
+   "TCU": "TX",
+   "Texas Tech": "TX",
+   "UCF": "FL",
+   "Utah": "UT",
+   "West Virginia": "WV",
+   "Army": "NY",
+   "Charlotte": "NC",
+   "East Carolina": "NC",
+   "Florida Atlantic": "FL",
+   "Memphis": "TN",
+   "Navy": "MD",
+   "North Texas": "TX",
+   "Rice": "TX",
+   "South Florida": "FL",
+   "Temple": "PA",
+   "Tulane": "LA",
+   "Tulsa": "OK",
+   "UAB": "AL",
+   "UTSA": "TX",
+   "Appalachian State": "NC",
+   "Coastal Carolina": "SC",
+   "Georgia Southern": "GA",
+   "Georgia State": "GA",
+   "James Madison": "VA",
+   "Marshall": "WV",
+   "Old Dominion": "VA",
+   "Arkansas State": "AR",
+   "Louisiana": "LA",
+   "Louisiana Tech": "LA",
+   "ULM": "LA",
+   "South Alabama": "AL",
+   "Southern Miss": "MS",
+   "Troy": "AL",
+   "Akron": "OH",
+   "Ball State": "IN",
+   "Bowling Green": "OH",
+   "Buffalo": "NY",
+   "Central Michigan": "MI",
+   "Eastern Michigan": "MI",
+   "Kent State": "OH",
+   "Miami (OH)": "OH",
+   "Ohio": "OH",
+   "Sacramento State": "CA",
+   "Toledo": "OH",
+   "UMass": "MA",
+   "Western Michigan": "MI",
+   "Delaware": "DE",
+   "FIU": "FL",
+   "Jacksonville State": "AL",
+   "Kennesaw State": "GA",
+   "Liberty": "VA",
+   "Middle Tennessee": "TN",
+   "Missouri State": "MO",
+   "New Mexico State": "NM",
+   "Sam Houston": "TX",
+   "Western Kentucky": "KY",
+   "Boise State": "ID",
+   "Colorado State": "CO",
+   "Fresno State": "CA",
+   "Oregon State": "OR",
+   "San Diego State": "CA",
+   "Texas State": "TX",
+   "Utah State": "UT",
+   "Washington State": "WA",
+   "Air Force": "CO",
+   "Hawai'i": "HI",
+   "Nevada": "NV",
+   "New Mexico": "NM",
+   "North Dakota State": "ND",
+   "Northern Illinois": "IL",
+   "San Jose State": "CA",
+   "UNLV": "NV",
+   "UTEP": "TX",
+   "Wyoming": "WY",
+   "Notre Dame": "IN",
+   "UConn": "CT"
+  },
+  "league.CONFERENCES": [
+   [
+    "SEC",
+    "Southeastern Conference",
+    "\u001b[93m"
+   ],
+   [
+    "Big Ten",
+    "Big Ten Conference",
+    "\u001b[94m"
+   ],
+   [
+    "ACC",
+    "Atlantic Coast Conference",
+    "\u001b[96m"
+   ],
+   [
+    "Big 12",
+    "Big 12 Conference",
+    "\u001b[91m"
+   ],
+   [
+    "American",
+    "American Conference",
+    "\u001b[31m"
+   ],
+   [
+    "Sun Belt",
+    "Sun Belt Conference",
+    "\u001b[33m"
+   ],
+   [
+    "MAC",
+    "Mid-American Conference",
+    "\u001b[32m"
+   ],
+   [
+    "CUSA",
+    "Conference USA",
+    "\u001b[34m"
+   ],
+   [
+    "Pac-12",
+    "Pac-12 Conference",
+    "\u001b[95m"
+   ],
+   [
+    "Mountain West",
+    "Mountain West Conference",
+    "\u001b[36m"
+   ],
+   [
+    "Independent",
+    "Independents",
+    "\u001b[97m"
+   ]
+  ],
+  "team_lore.TEAM_LORE": {
+   "Alabama": [
+    [
+     "pregame",
+     "P",
+     "The Million Dollar Band strikes up 'Yea Alabama' as the Tide come out of the tunnel."
+    ],
+    [
+     "win",
+     "P",
+     "Rammer Jammer, Yellowhammer — the student section lets the visitors have it."
+    ],
+    [
+     "any",
+     "A",
+     "Six national titles under Bear Bryant, six more under Nick Saban. That's the standard in Tuscaloosa."
+    ],
+    [
+     "q3",
+     "P",
+     "Here comes 'Dixieland Delight' — the whole stadium's singing along."
+    ],
+    [
+     "first_td",
+     "P",
+     "Big Al's on the sideline, and the student section is waving the shakers."
+    ],
+    [
+     "any",
+     "A",
+     "Coaches have to touch the Walk of Champions' handprints — every Alabama captain since the '40s is in the concrete outside the stadium."
+    ]
+   ],
+   "Arkansas": [
+    [
+     "pregame",
+     "P",
+     "Listen to it — the Hog Call. Wooo, Pig, Sooie!"
+    ],
+    [
+     "home",
+     "A",
+     "Fayetteville gets loud when the Hogs have a lead."
+    ],
+    [
+     "any",
+     "A",
+     "The 1964 Razorbacks went unbeaten and claimed a national title. Still the high-water mark."
+    ],
+    [
+     "home",
+     "A",
+     "Tusk, a live Russian boar, is at every home game."
+    ]
+   ],
+   "Auburn": [
+    [
+     "pregame",
+     "P",
+     "The eagle circles Jordan-Hare before kickoff — War Eagle!"
+    ],
+    [
+     "win",
+     "P",
+     "They'll roll Toomer's Corner tonight. Toilet paper in the oaks all the way down College Street."
+    ],
+    [
+     "any",
+     "A",
+     "Kick Six. Prayer at Jordan-Hare. Nobody does chaos like Auburn in the Iron Bowl."
+    ],
+    [
+     "td",
+     "P",
+     "Touchdown Auburn — and the Tiger Walk crowd from this morning is still hoarse."
+    ],
+    [
+     "home",
+     "A",
+     "Two hours before kickoff the players come down Donahue Drive on the Tiger Walk, through a tunnel of fans."
+    ]
+   ],
+   "Florida": [
+    [
+     "pregame",
+     "P",
+     "Welcome to The Swamp. 'Only Gators get out alive.'"
+    ],
+    [
+     "q3",
+     "P",
+     "Between the third and fourth, they lock arms for 'We Are the Boys from Old Florida.'"
+    ],
+    [
+     "any",
+     "A",
+     "Spurrier's Fun 'n' Gun, Meyer and Tebow — three national titles in Gainesville."
+    ],
+    [
+     "td",
+     "P",
+     "Albert and Alberta are doing the Gator Chomp down the sideline."
+    ],
+    [
+     "win",
+     "P",
+     "They'll be singing 'Orange and Blue' until the stadium lights go off."
+    ]
+   ],
+   "Georgia": [
+    [
+     "pregame",
+     "P",
+     "Uga's in his doghouse and the Redcoat Band is playing 'Glory, Glory.'"
+    ],
+    [
+     "win",
+     "P",
+     "Ring the Chapel Bell — the Dawgs won, and the students will be at it till midnight."
+    ],
+    [
+     "any",
+     "A",
+     "Back-to-back national titles in 2021 and '22 put Georgia at the top of the sport."
+    ],
+    [
+     "home",
+     "A",
+     "Between the hedges, the visitors don't get much sleep."
+    ],
+    [
+     "q1",
+     "P",
+     "'Battle Hymn of the Bulldog Nation' rang out from the trumpet in the stands before kickoff — the lone trumpeter's a tradition."
+    ],
+    [
+     "td",
+     "P",
+     "Touchdown Georgia, and the Redcoats strike up 'Glory, Glory to Ole Georgia.'"
+    ]
+   ],
+   "Kentucky": [
+    [
+     "pregame",
+     "P",
+     "The Wildcats come out to a big Kroger Field crowd."
+    ],
+    [
+     "any",
+     "A",
+     "Kentucky's a basketball school, but this football program has been to a lot of bowl games lately."
+    ],
+    [
+     "home",
+     "A",
+     "The Wildcat, Scratch, and 'Blue! White!' going back and forth across Kroger Field."
+    ]
+   ],
+   "LSU": [
+    [
+     "pregame",
+     "P",
+     "The band marches down Victory Hill. Saturday night in Death Valley."
+    ],
+    [
+     "home",
+     "A",
+     "They say the crowd here once registered on a seismograph — the Earthquake Game in '88."
+    ],
+    [
+     "any",
+     "A",
+     "Four national titles, the latest with Joe Burrow's 2019 team."
+    ],
+    [
+     "td",
+     "P",
+     "Mike the Tiger's habitat sits right by the stadium — you can bet he heard that one."
+    ],
+    [
+     "q3",
+     "P",
+     "The band plays the pregame 'Tiger Rag' four-note riff again and the whole place chants 'Geaux Tigers.'"
+    ]
+   ],
+   "Mississippi State": [
+    [
+     "pregame",
+     "P",
+     "Cowbells. Everywhere. You can't hear yourself think in Starkville."
+    ],
+    [
+     "td",
+     "P",
+     "Ring those cowbells!"
+    ],
+    [
+     "any",
+     "A",
+     "Dak Prescott made this place No. 1 in the country back in 2014."
+    ],
+    [
+     "home",
+     "A",
+     "Bully the bulldog — and the cowbells, which the SEC finally allowed back in 2010."
+    ]
+   ],
+   "Missouri": [
+    [
+     "pregame",
+     "P",
+     "Tigers come out past the giant rock 'M' on the north hill."
+    ],
+    [
+     "any",
+     "A",
+     "Missouri invented Homecoming back in 1911, or so they'll tell you."
+    ],
+    [
+     "pregame",
+     "P",
+     "Truman the Tiger leads the team out. M-I-Z! Z-O-U!"
+    ]
+   ],
+   "Oklahoma": [
+    [
+     "pregame",
+     "P",
+     "The Sooner Schooner races across the field — Boomer and Sooner pulling."
+    ],
+    [
+     "any",
+     "A",
+     "Seven Heisman winners and seven national titles. Bud Wilkinson's 47-game winning streak still stands."
+    ],
+    [
+     "td",
+     "P",
+     "Boomer Sooner on the loop and the RUF/NEKS are firing their shotguns."
+    ],
+    [
+     "home",
+     "A",
+     "They paint the Sooner Schooner's wheels red and white before every home game."
+    ]
+   ],
+   "Ole Miss": [
+    [
+     "pregame",
+     "P",
+     "They've been in The Grove since early morning. 'Hotty Toddy, gosh almighty...'"
+    ],
+    [
+     "win",
+     "P",
+     "The Grove will be full till late tonight."
+    ],
+    [
+     "any",
+     "A",
+     "Archie Manning, Eli Manning — this is quarterback royalty."
+    ],
+    [
+     "home",
+     "A",
+     "The Walk of Champions through the Grove — two hours before kickoff, the players come right through the tailgates."
+    ],
+    [
+     "td",
+     "P",
+     "Hotty Toddy echoing around Vaught-Hemingway."
+    ]
+   ],
+   "South Carolina": [
+    [
+     "pregame",
+     "P",
+     "Here comes '2001' — the Gamecocks storm out and Williams-Brice is shaking."
+    ],
+    [
+     "q3",
+     "P",
+     "'Sandstorm' on the speakers — the whole place is waving towels."
+    ],
+    [
+     "any",
+     "A",
+     "Steve Spurrier won 11 games three straight years here."
+    ],
+    [
+     "pregame",
+     "P",
+     "Cocky's out on the field — he's won national mascot titles."
+    ],
+    [
+     "win",
+     "P",
+     "They'll ring the victory bell in the Horseshoe tonight."
+    ]
+   ],
+   "Tennessee": [
+    [
+     "pregame",
+     "P",
+     "The Vols run through the T. 'Rocky Top' on a loop."
+    ],
+    [
+     "home",
+     "A",
+     "Over a hundred thousand in orange-and-white checkerboard."
+    ],
+    [
+     "any",
+     "A",
+     "Peyton Manning, and the 1998 national title under Phillip Fulmer."
+    ],
+    [
+     "home",
+     "A",
+     "They sailgate here too — the Vol Navy ties up on the Tennessee River right outside Neyland."
+    ],
+    [
+     "td",
+     "P",
+     "Smokey the bluetick hound is howling on the sideline."
+    ]
+   ],
+   "Texas": [
+    [
+     "pregame",
+     "P",
+     "Bevo's on the sideline and Big Bertha is booming."
+    ],
+    [
+     "win",
+     "P",
+     "'The Eyes of Texas' and the Tower is lit up burnt orange."
+    ],
+    [
+     "any",
+     "A",
+     "Darrell Royal's titles, then Vince Young in the Rose Bowl."
+    ],
+    [
+     "home",
+     "A",
+     "The Hook 'em Horns hand sign started at a pep rally in 1955. Now you see it everywhere."
+    ],
+    [
+     "first_td",
+     "P",
+     "Smokey the Cannon fires after that score — they set it off after every Texas touchdown."
+    ]
+   ],
+   "Texas A&M": [
+    [
+     "pregame",
+     "P",
+     "The Twelfth Man is standing — they stand the whole game."
+    ],
+    [
+     "q3",
+     "P",
+     "Kyle Field is swaying. The whole stadium moves when they saw varsity's horns off."
+    ],
+    [
+     "any",
+     "A",
+     "Johnny Manziel's Heisman in 2012 was the first ever for a freshman."
+    ],
+    [
+     "pregame",
+     "P",
+     "Reveille, the collie, is on the sideline. She outranks every cadet in the Corps."
+    ],
+    [
+     "home",
+     "A",
+     "Midnight Yell — thousands of students in the stadium the night before, practicing their yells."
+    ],
+    [
+     "td",
+     "P",
+     "Score — and the Aggies' dates kiss. That's the deal here: when A&M scores, you kiss your date."
+    ]
+   ],
+   "Vanderbilt": [
+    [
+     "pregame",
+     "P",
+     "Anchor Down — the Commodores come out to a growing Nashville crowd."
+    ],
+    [
+     "any",
+     "A",
+     "Clark Lea's rebuild has made Vandy a tough out in the SEC."
+    ],
+    [
+     "home",
+     "A",
+     "Mr. Commodore — and the students who carried the goalposts into the Cumberland River after beating Alabama."
+    ]
+   ],
+   "Illinois": [
+    [
+     "pregame",
+     "P",
+     "The Marching Illini, the oldest of the big college bands, are on the field."
+    ],
+    [
+     "any",
+     "A",
+     "Red Grange, the Galloping Ghost, ran wild here in 1924."
+    ],
+    [
+     "home",
+     "A",
+     "Memorial Stadium's columns carry the names of Illinois students who died in World War I."
+    ]
+   ],
+   "Indiana": [
+    [
+     "pregame",
+     "P",
+     "Hoosier fans have filled Memorial Stadium — a sight unthinkable a few years ago."
+    ],
+    [
+     "any",
+     "A",
+     "Curt Cignetti turned the Hoosiers into a national champion. One of the great turnarounds in the sport."
+    ],
+    [
+     "home",
+     "A",
+     "The Old Oaken Bucket goes to the winner of Indiana-Purdue. The chain of 'I' and 'P' links hangs off it."
+    ]
+   ],
+   "Iowa": [
+    [
+     "q1",
+     "P",
+     "The Kinnick Wave — everyone turns to wave at the kids in the children's hospital next door."
+    ],
+    [
+     "home",
+     "A",
+     "Visitors' locker room is painted pink. Hayden Fry's idea."
+    ],
+    [
+     "any",
+     "A",
+     "Kirk Ferentz has been here since 1999. Defense and special teams, every year."
+    ],
+    [
+     "home",
+     "A",
+     "Herky the Hawk, the black-and-gold stripes, and a pink visitors' locker room."
+    ],
+    [
+     "td",
+     "P",
+     "The Iowa Fight Song from the Hawkeye Marching Band, and Herky's leading the swarm."
+    ]
+   ],
+   "Maryland": [
+    [
+     "pregame",
+     "P",
+     "Testudo looks on as the Terps take the field."
+    ],
+    [
+     "any",
+     "A",
+     "Maryland won a share of the national title in 1953 under Jim Tatum."
+    ],
+    [
+     "home",
+     "A",
+     "Rub Testudo's nose for luck. Every student does."
+    ]
+   ],
+   "Michigan": [
+    [
+     "pregame",
+     "P",
+     "The Wolverines leap to touch the Go Blue banner. The Big House — over 107,000."
+    ],
+    [
+     "win",
+     "P",
+     "'The Victors' — the band'll play it till the stadium empties."
+    ],
+    [
+     "any",
+     "A",
+     "The winningest program in college football history, and the 2023 national champs."
+    ],
+    [
+     "home",
+     "A",
+     "The Little Brown Jug — the oldest trophy in college football, since 1903."
+    ],
+    [
+     "td",
+     "P",
+     "The Michigan Marching Band hits 'The Victors' — 'Hail to the victors valiant...'"
+    ]
+   ],
+   "Michigan State": [
+    [
+     "pregame",
+     "P",
+     "Sparty's out front and the Spartan Marching Band is blaring the fight song."
+    ],
+    [
+     "any",
+     "A",
+     "Mark Dantonio's teams won three Big Ten titles and reached the Playoff in 2015."
+    ],
+    [
+     "home",
+     "A",
+     "They've been running the Spartan Walk from the Kellogg Center for decades."
+    ]
+   ],
+   "Minnesota": [
+    [
+     "pregame",
+     "P",
+     "Goldy Gopher leads the team out. 'Ski-U-Mah!'"
+    ],
+    [
+     "any",
+     "A",
+     "Six national titles, most of them in the 1930s and '40s."
+    ],
+    [
+     "pregame",
+     "P",
+     "The 'Minnesota Rouser' from the band — 'Minnesota, hats off to thee.'"
+    ]
+   ],
+   "Nebraska": [
+    [
+     "pregame",
+     "P",
+     "The Tunnel Walk — 'Sirius' is playing and Memorial Stadium is a sea of red."
+    ],
+    [
+     "td",
+     "P",
+     "Red balloons are flying after that first touchdown!"
+    ],
+    [
+     "any",
+     "A",
+     "The sellout streak started in 1962. Tom Osborne's three titles in four years."
+    ],
+    [
+     "home",
+     "A",
+     "The Blackshirts — Nebraska's starting defense — get black practice jerseys. It's an honor."
+    ],
+    [
+     "q3",
+     "P",
+     "The Husker Power chant going back and forth across Memorial Stadium."
+    ]
+   ],
+   "Northwestern": [
+    [
+     "pregame",
+     "P",
+     "The Wildcats take the field on the shores of Lake Michigan."
+    ],
+    [
+     "any",
+     "A",
+     "The 1995 Rose Bowl run under Gary Barnett is still the stuff of legend."
+    ],
+    [
+     "home",
+     "A",
+     "They call Northwestern the Big Ten's Ivy — and they love beating schools ten times their size."
+    ]
+   ],
+   "Ohio State": [
+    [
+     "pregame",
+     "P",
+     "Script Ohio — and some lucky sousaphone player is dotting the 'i'."
+    ],
+    [
+     "win",
+     "P",
+     "They'll ring the Victory Bell over in the stadium's southeast tower."
+    ],
+    [
+     "any",
+     "A",
+     "Woody Hayes, Jim Tressel, and Ryan Day's 2024 title. Seven Heisman winners in Columbus."
+    ],
+    [
+     "win",
+     "P",
+     "The team walks to the south stands and sings 'Carmen Ohio' with the students. They do it win or lose."
+    ],
+    [
+     "pregame",
+     "P",
+     "Ramp entrance by The Best Damn Band in the Land, high-stepping out of the north tunnel."
+    ],
+    [
+     "home",
+     "A",
+     "Brutus Buckeye's been the mascot since 1965. Players earn buckeye leaf stickers on their helmets."
+    ]
+   ],
+   "Oregon": [
+    [
+     "pregame",
+     "P",
+     "The Duck rides in on the back of a motorcycle."
+    ],
+    [
+     "home",
+     "A",
+     "Autzen's the loudest place in the country for its size — they built it to hold the noise in."
+    ],
+    [
+     "any",
+     "A",
+     "Nike money and Uniforms of the week — and Marcus Mariota's Heisman."
+    ],
+    [
+     "td",
+     "P",
+     "The Duck's doing push-ups in the end zone — one for every point."
+    ],
+    [
+     "home",
+     "A",
+     "Phil Knight's Nike money paid for a lot of this place, and it shows."
+    ]
+   ],
+   "Penn State": [
+    [
+     "pregame",
+     "P",
+     "'Zombie Nation' starts and the student section is jumping."
+    ],
+    [
+     "home",
+     "A",
+     "A White Out at Beaver Stadium is as loud as it gets in college football."
+    ],
+    [
+     "any",
+     "A",
+     "Joe Paterno's two national titles. Linebacker U."
+    ],
+    [
+     "home",
+     "A",
+     "The Nittany Lion does one push-up for every point Penn State has after each score."
+    ],
+    [
+     "q3",
+     "P",
+     "'Sweet Caroline' and a hundred thousand people singing 'so good, so good.'"
+    ]
+   ],
+   "Purdue": [
+    [
+     "pregame",
+     "P",
+     "The Boilermaker Special rolls onto the field."
+    ],
+    [
+     "any",
+     "A",
+     "The Cradle of Quarterbacks — Griese, Dawson, Brees."
+    ],
+    [
+     "home",
+     "A",
+     "Purdue Pete and the world's largest drum, rolled out on the field before kickoff."
+    ]
+   ],
+   "Rutgers": [
+    [
+     "pregame",
+     "P",
+     "Rutgers played in the first college football game ever — 1869, against Princeton."
+    ],
+    [
+     "any",
+     "A",
+     "Greg Schiano's teams are tough. Always have been."
+    ],
+    [
+     "home",
+     "A",
+     "The R-U chant: one side yells 'R-U,' the other answers 'RAH RAH.'"
+    ]
+   ],
+   "UCLA": [
+    [
+     "pregame",
+     "P",
+     "The Bruins play at the Rose Bowl. Pasadena, the San Gabriels behind it."
+    ],
+    [
+     "any",
+     "A",
+     "Troy Aikman, Gary Beban's Heisman, and a 1954 national title."
+    ],
+    [
+     "pregame",
+     "P",
+     "The 8-Clap — UCLA's signature cheer, eight claps and 'U-C-L-A, fight, fight, fight!'"
+    ]
+   ],
+   "USC": [
+    [
+     "pregame",
+     "P",
+     "Traveler, the white horse, gallops past the Trojan Marching Band."
+    ],
+    [
+     "td",
+     "P",
+     "Tribute to Troy — the band plays it after every score."
+    ],
+    [
+     "any",
+     "A",
+     "Eleven national titles and seven Heismans. Tailback U."
+    ],
+    [
+     "home",
+     "A",
+     "Tommy Trojan's statue gets wrapped in duct tape the week of the UCLA game to keep Bruins from painting it."
+    ]
+   ],
+   "Washington": [
+    [
+     "pregame",
+     "P",
+     "The Dawg Pack is ready. Husky Stadium on the shore of Lake Washington."
+    ],
+    [
+     "home",
+     "A",
+     "They sailgate here — fans pull right up to the stadium by boat."
+    ],
+    [
+     "any",
+     "A",
+     "The 1991 national champions under Don James."
+    ],
+    [
+     "home",
+     "A",
+     "They claim the wave started here at Husky Stadium in 1981."
+    ]
+   ],
+   "Wisconsin": [
+    [
+     "q3",
+     "P",
+     "'Jump Around' — Camp Randall is bouncing between the third and fourth."
+    ],
+    [
+     "any",
+     "A",
+     "Ron Dayne, Melvin Gordon, Jonathan Taylor. They run the football in Madison."
+    ],
+    [
+     "win",
+     "P",
+     "The Fifth Quarter — the band plays for an hour after the game and nobody leaves."
+    ],
+    [
+     "pregame",
+     "P",
+     "Bucky Badger's at midfield; the band's ready to run out at full speed."
+    ]
+   ],
+   "Boston College": [
+    [
+     "pregame",
+     "P",
+     "The Eagles come out at Alumni Stadium on the Heights."
+    ],
+    [
+     "any",
+     "A",
+     "Doug Flutie's Hail Mary against Miami in 1984 — still the greatest play in school history."
+    ],
+    [
+     "home",
+     "A",
+     "The Red Bandanna game honors Welles Crowther, a BC lacrosse player who saved lives on 9/11."
+    ]
+   ],
+   "California": [
+    [
+     "pregame",
+     "P",
+     "Cal Band takes the field in Strawberry Canyon."
+    ],
+    [
+     "any",
+     "A",
+     "The Play, 1982 — five laterals and a trombone player run over in the end zone."
+    ],
+    [
+     "home",
+     "A",
+     "Tightwad Hill — fans watch Cal games for free from the hillside above the stadium."
+    ]
+   ],
+   "Clemson": [
+    [
+     "pregame",
+     "P",
+     "They rub Howard's Rock and run down the Hill. Most exciting 25 seconds in college football."
+    ],
+    [
+     "any",
+     "A",
+     "Dabo Swinney's two national titles. Death Valley rocks."
+    ],
+    [
+     "td",
+     "P",
+     "The Tiger Band strikes up 'Tiger Rag' — and the Tiger does push-ups for every point."
+    ],
+    [
+     "q3",
+     "P",
+     "'Tiger Rag' and the whole stadium shaking their orange shakers."
+    ]
+   ],
+   "Duke": [
+    [
+     "pregame",
+     "P",
+     "The Blue Devils take the field at Wallace Wade."
+    ],
+    [
+     "any",
+     "A",
+     "Duke hosted the Rose Bowl in 1942 — the only time it's been played outside Pasadena."
+    ],
+    [
+     "home",
+     "A",
+     "The Blue Devil mascot does push-ups for every point... when Duke scores enough of them."
+    ]
+   ],
+   "Florida State": [
+    [
+     "pregame",
+     "P",
+     "Chief Osceola plants the flaming spear at midfield. Doak Campbell erupts."
+    ],
+    [
+     "home",
+     "A",
+     "The War Chant — eighty thousand tomahawk chops."
+    ],
+    [
+     "any",
+     "A",
+     "Bobby Bowden's dynasty. Three national titles, the latest in 2013."
+    ],
+    [
+     "td",
+     "P",
+     "The War Chant again — the whole stadium in tomahawk-chop rhythm."
+    ],
+    [
+     "win",
+     "P",
+     "Unconquered — the Seminoles' statue outside the stadium is lit up."
+    ]
+   ],
+   "Georgia Tech": [
+    [
+     "pregame",
+     "P",
+     "The Ramblin' Wreck, a 1930 Ford Model A, leads the team out."
+    ],
+    [
+     "any",
+     "A",
+     "Tech once beat Cumberland 222 to nothing. John Heisman was the coach."
+    ],
+    [
+     "win",
+     "P",
+     "'Ramblin' Wreck from Georgia Tech' — and they'll ring the bell."
+    ]
+   ],
+   "Louisville": [
+    [
+     "pregame",
+     "P",
+     "The Cardinals come out through a cloud of smoke."
+    ],
+    [
+     "any",
+     "A",
+     "Lamar Jackson's Heisman in 2016. The best player in the country that year by a mile."
+    ],
+    [
+     "home",
+     "A",
+     "The Cardinal Bird and 'C-A-R-D-S!' The Ville comes out for Saturday nights."
+    ]
+   ],
+   "Miami": [
+    [
+     "pregame",
+     "P",
+     "Through the smoke — the U."
+    ],
+    [
+     "td",
+     "P",
+     "The turnover chain is coming out!"
+    ],
+    [
+     "any",
+     "A",
+     "Five national titles. Swagger built in the Orange Bowl."
+    ],
+    [
+     "home",
+     "A",
+     "Sebastian the Ibis, the U hand sign — and Hard Rock Stadium full of orange and green."
+    ]
+   ],
+   "NC State": [
+    [
+     "pregame",
+     "P",
+     "The Wolfpack come out at Carter-Finley."
+    ],
+    [
+     "any",
+     "A",
+     "Philip Rivers threw for over 13,000 yards here."
+    ],
+    [
+     "home",
+     "A",
+     "Tuffy the wolf — a real Tamaskan dog — is on the sidelines at Carter-Finley."
+    ]
+   ],
+   "North Carolina": [
+    [
+     "pregame",
+     "P",
+     "Ramses the ram is on the sideline in Chapel Hill."
+    ],
+    [
+     "any",
+     "A",
+     "Lawrence Taylor, Julius Peppers — and now Bill Belichick on the sideline."
+    ],
+    [
+     "home",
+     "A",
+     "The Old Well on campus — drink from it on the first day of classes, they say, and you'll get a 4.0."
+    ]
+   ],
+   "Pitt": [
+    [
+     "pregame",
+     "P",
+     "Pitt takes the field across the river from downtown."
+    ],
+    [
+     "any",
+     "A",
+     "Tony Dorsett's 1976 national title and Heisman. Dan Marino. Larry Fitzgerald."
+    ],
+    [
+     "home",
+     "A",
+     "They play at Acrisure Stadium with the Steelers — downtown Pittsburgh across the river."
+    ]
+   ],
+   "SMU": [
+    [
+     "pregame",
+     "P",
+     "The Mustang Band — 'The Best Little Band in the Land.'"
+    ],
+    [
+     "any",
+     "A",
+     "The Pony Express and the death penalty. Rhett Lashlee's had them back near the top."
+    ],
+    [
+     "home",
+     "A",
+     "Peruna, the black Shetland pony, races across the field after every Mustang score."
+    ]
+   ],
+   "Stanford": [
+    [
+     "pregame",
+     "P",
+     "The Stanford Band — a little chaos is part of the show."
+    ],
+    [
+     "any",
+     "A",
+     "Elway, Plunkett, Andrew Luck. A quarterback school."
+    ],
+    [
+     "home",
+     "A",
+     "The Stanford Tree mascot is a student who campaigns for the job. Every year's tree is different."
+    ]
+   ],
+   "Syracuse": [
+    [
+     "pregame",
+     "P",
+     "The Orange take the field under the Dome."
+    ],
+    [
+     "any",
+     "A",
+     "Jim Brown, Ernie Davis, Floyd Little — the 44 jersey means something here."
+    ],
+    [
+     "home",
+     "A",
+     "Otto the Orange — the only piece of fruit mascot in big-time college football."
+    ]
+   ],
+   "Virginia": [
+    [
+     "pregame",
+     "P",
+     "The Cavaliers come out to 'The Good Old Song.'"
+    ],
+    [
+     "any",
+     "A",
+     "The Wahoos sing after every score — 'Wah-hoo-wah!'"
+    ],
+    [
+     "home",
+     "A",
+     "At Scott Stadium the students wear shirt-and-tie or sundresses to games. Guys in ties and girls in pearls."
+    ]
+   ],
+   "Virginia Tech": [
+    [
+     "pregame",
+     "P",
+     "'Enter Sandman.' Lane Stadium is bouncing."
+    ],
+    [
+     "any",
+     "A",
+     "Frank Beamer's Beamer Ball, and Michael Vick in the 2000 title game."
+    ],
+    [
+     "pregame",
+     "P",
+     "They touch the Hokie Stone above the tunnel on the way out to 'Enter Sandman.'"
+    ],
+    [
+     "home",
+     "A",
+     "The Skipper cannon fires after every Virginia Tech score."
+    ]
+   ],
+   "Wake Forest": [
+    [
+     "pregame",
+     "P",
+     "The Demon Deacon rides in on a motorcycle."
+    ],
+    [
+     "any",
+     "A",
+     "Jim Grobe's 2006 ACC title still stands out."
+    ],
+    [
+     "win",
+     "P",
+     "They'll roll the Quad at Wake Forest tonight — toilet paper in the trees after every big win."
+    ]
+   ],
+   "Arizona": [
+    [
+     "pregame",
+     "P",
+     "'Bear Down' — painted on the gym roof since the 1920s."
+    ],
+    [
+     "any",
+     "A",
+     "The 1998 Desert Swarm defense. Tucson's proudest team."
+    ],
+    [
+     "home",
+     "A",
+     "Wilbur and Wilma Wildcat. And 'Bear Down,' written by a dying quarterback's words in 1926."
+    ]
+   ],
+   "Arizona State": [
+    [
+     "pregame",
+     "P",
+     "Sparky leads the Sun Devils out to a Tempe night game."
+    ],
+    [
+     "any",
+     "A",
+     "Pat Tillman played here. They still run through Tillman Tunnel."
+    ],
+    [
+     "home",
+     "A",
+     "'Forks Up' — the pitchfork hand sign — Sun Devil Stadium's between two buttes."
+    ]
+   ],
+   "Baylor": [
+    [
+     "pregame",
+     "P",
+     "The Baylor Line sprints onto the field before kickoff."
+    ],
+    [
+     "any",
+     "A",
+     "Robert Griffin III's Heisman in 2011."
+    ],
+    [
+     "home",
+     "A",
+     "The Baylor Line — freshmen in gold jerseys sprint onto the field before kickoff, and real bears live on campus."
+    ]
+   ],
+   "BYU": [
+    [
+     "pregame",
+     "P",
+     "The Cougars come out under the mountains in Provo."
+    ],
+    [
+     "any",
+     "A",
+     "The 1984 national champions under LaVell Edwards. Ty Detmer's Heisman."
+    ],
+    [
+     "home",
+     "A",
+     "No games on Sunday, ever. The Cougars' rule since day one."
+    ]
+   ],
+   "Cincinnati": [
+    [
+     "pregame",
+     "P",
+     "Nippert Stadium, one of the oldest in the sport, tucked into campus."
+    ],
+    [
+     "any",
+     "A",
+     "The first Group of Five team in the Playoff — 2021."
+    ],
+    [
+     "home",
+     "A",
+     "Nippert's been home since 1924 — the fifth-oldest stadium in college football."
+    ]
+   ],
+   "Colorado": [
+    [
+     "pregame",
+     "P",
+     "Ralphie the buffalo charges across Folsom Field."
+    ],
+    [
+     "any",
+     "A",
+     "The 1990 national title under Bill McCartney. And Coach Prime."
+    ],
+    [
+     "td",
+     "P",
+     "Ralphie's handlers run her around the field again — five people, one buffalo."
+    ],
+    [
+     "home",
+     "A",
+     "Ralphie is a 1,200-pound American bison. She runs the field before each half."
+    ]
+   ],
+   "Houston": [
+    [
+     "pregame",
+     "P",
+     "The Coogs come out to a big Houston crowd."
+    ],
+    [
+     "any",
+     "A",
+     "Andre Ware's Heisman and the Run and Shoot."
+    ],
+    [
+     "home",
+     "A",
+     "Shasta the Cougar, and 'Whose House? Coogs' House!'"
+    ]
+   ],
+   "Iowa State": [
+    [
+     "pregame",
+     "P",
+     "Jack Trice Stadium — named for the school's first Black athlete."
+    ],
+    [
+     "any",
+     "A",
+     "Matt Campbell turned the Cyclones into a contender. Brock Purdy."
+    ],
+    [
+     "home",
+     "A",
+     "Cy the Cardinal and the Cyclones' 'Sweet Caroline' sing-along."
+    ]
+   ],
+   "Kansas": [
+    [
+     "pregame",
+     "P",
+     "'Rock Chalk, Jayhawk' — the chant is slow, and it carries."
+    ],
+    [
+     "any",
+     "A",
+     "Gale Sayers, the Kansas Comet."
+    ],
+    [
+     "home",
+     "A",
+     "Big Jay and Baby Jay. And the 'Rock Chalk' chant — Teddy Roosevelt called it the best college chant he'd ever heard."
+    ]
+   ],
+   "Kansas State": [
+    [
+     "pregame",
+     "P",
+     "Bill Snyder Family Stadium. The Wabash Cannonball is playing."
+    ],
+    [
+     "any",
+     "A",
+     "Bill Snyder took the worst program in America and made it a Big 12 champion."
+    ],
+    [
+     "home",
+     "A",
+     "Willie the Wildcat. And 'Wabash Cannonball' — the whole stadium leans side to side."
+    ]
+   ],
+   "Oklahoma State": [
+    [
+     "pregame",
+     "P",
+     "Pistol Pete and Bullet the horse run the sideline after scores."
+    ],
+    [
+     "any",
+     "A",
+     "Barry Sanders' 1988 season — maybe the greatest ever."
+    ],
+    [
+     "home",
+     "A",
+     "Orange Power — and Pistol Pete, based on a real Oklahoma frontiersman."
+    ]
+   ],
+   "TCU": [
+    [
+     "pregame",
+     "P",
+     "The Frogs come out to 'Riff Ram.'"
+    ],
+    [
+     "any",
+     "A",
+     "The 2010 Rose Bowl champions, and the 2022 run to the title game."
+    ],
+    [
+     "home",
+     "A",
+     "Super Frog — and the 'Riff Ram' cheer is older than the stadium."
+    ]
+   ],
+   "Texas Tech": [
+    [
+     "pregame",
+     "P",
+     "The Masked Rider gallops onto the field."
+    ],
+    [
+     "home",
+     "A",
+     "They throw tortillas here. Don't ask."
+    ],
+    [
+     "any",
+     "A",
+     "Mike Leach's Air Raid — and Patrick Mahomes."
+    ],
+    [
+     "td",
+     "P",
+     "The Masked Rider's gallop again after that score — Tech's oldest tradition."
+    ],
+    [
+     "home",
+     "A",
+     "The Goin' Band from Raiderland and the Saddle Tramps' bell ringing."
+    ]
+   ],
+   "UCF": [
+    [
+     "pregame",
+     "P",
+     "The Bounce House is living up to its name."
+    ],
+    [
+     "any",
+     "A",
+     "The 2017 Knights went 13-0 and hung a national title banner."
+    ],
+    [
+     "home",
+     "A",
+     "Knightro and the 'Charge On!' chant. The Bounce House earns its name — the stands literally move."
+    ]
+   ],
+   "Utah": [
+    [
+     "pregame",
+     "P",
+     "The Utes come out at Rice-Eccles."
+    ],
+    [
+     "any",
+     "A",
+     "Two undefeated seasons and Sugar and Fiesta Bowl wins under Kyle Whittingham."
+    ],
+    [
+     "home",
+     "A",
+     "The MUSS student section — and 'Third Down for What.'"
+    ]
+   ],
+   "West Virginia": [
+    [
+     "win",
+     "P",
+     "'Country Roads' — they're all singing it."
+    ],
+    [
+     "any",
+     "A",
+     "Pat White and Steve Slaton. Morgantown on a Saturday night."
+    ],
+    [
+     "td",
+     "P",
+     "The Mountaineer fires his musket after that score."
+    ],
+    [
+     "home",
+     "A",
+     "The Mountaineer mascot carries a real flintlock rifle — he fires it after every score."
+    ]
+   ],
+   "Notre Dame": [
+    [
+     "pregame",
+     "P",
+     "The team touches the 'Play Like a Champion Today' sign on the way out."
+    ],
+    [
+     "home",
+     "A",
+     "Touchdown Jesus watching over the north end zone."
+    ],
+    [
+     "any",
+     "A",
+     "Eleven consensus national titles, seven Heismans, Knute Rockne."
+    ],
+    [
+     "q3",
+     "P",
+     "The Victory March — 'Cheer, cheer for old Notre Dame...'"
+    ],
+    [
+     "pregame",
+     "P",
+     "The Band of the Fighting Irish marches out of the Main Building, under the Golden Dome."
+    ],
+    [
+     "home",
+     "A",
+     "Players touch the 'Play Like a Champion' sign; the leprechaun's on the sideline."
+    ]
+   ],
+   "Army": [
+    [
+     "pregame",
+     "P",
+     "The Corps of Cadets marches onto the field before kickoff at Michie."
+    ],
+    [
+     "win",
+     "P",
+     "Both teams face the losing team's alma mater first, then the winner's. The loser sings first."
+    ]
+   ],
+   "Navy": [
+    [
+     "pregame",
+     "P",
+     "The Brigade of Midshipmen marches in. Bill the Goat is on the sideline."
+    ],
+    [
+     "win",
+     "P",
+     "Navy sings 'Blue and Gold' with the Brigade after every game, win or lose."
+    ]
+   ],
+   "Air Force": [
+    [
+     "pregame",
+     "P",
+     "The Wings of Blue parachute team drops in before kickoff."
+    ],
+    [
+     "home",
+     "A",
+     "A trained falcon flies over the field at halftime."
+    ]
+   ],
+   "Boise State": [
+    [
+     "home",
+     "A",
+     "The Blue — the blue turf, since 1986. The Broncos almost never lose on it."
+    ]
+   ],
+   "Appalachian State": [
+    [
+     "home",
+     "A",
+     "The Rock — Kidd Brewer Stadium in the mountains. They beat Michigan in 2007 and nobody here forgets it."
+    ]
+   ],
+   "Memphis": [
+    [
+     "home",
+     "A",
+     "TOM, a live tiger, used to live on campus. The Liberty Bowl's been home since 1965."
+    ]
+   ],
+   "Marshall": [
+    [
+     "home",
+     "A",
+     "November 14, 1970 — the plane crash. The memorial fountain on campus is shut off every year on that date."
+    ]
+   ],
+   "Tulane": [
+    [
+     "home",
+     "A",
+     "The Green Wave play on campus at Yulman. Riptide the pelican is the mascot."
+    ]
+   ],
+   "Rice": [
+    [
+     "home",
+     "A",
+     "The Marching Owl Band — the MOB — the most irreverent halftime show in college football."
+    ]
+   ],
+   "Hawai'i": [
+    [
+     "pregame",
+     "P",
+     "The team performs a haka before kickoff."
+    ],
+    [
+     "home",
+     "A",
+     "Rainbow Warriors — and the mountains above Mānoa."
+    ]
+   ],
+   "Coastal Carolina": [
+    [
+     "home",
+     "A",
+     "Teal turf at Brooks Stadium — they call it the Surf Turf."
+    ]
+   ],
+   "James Madison": [
+    [
+     "home",
+     "A",
+     "The Dukes' Marching Royal Dukes — one of the biggest bands in the country."
+    ]
+   ],
+   "Liberty": [
+    [
+     "home",
+     "A",
+     "Sparky the eagle, and the Flames' fans light up Williams Stadium."
+    ]
+   ],
+   "Toledo": [
+    [
+     "home",
+     "A",
+     "The Glass Bowl — named for the city's glass industry, built in 1937."
+    ]
+   ],
+   "Wyoming": [
+    [
+     "home",
+     "A",
+     "War Memorial Stadium is the highest stadium in Division I — over 7,200 feet."
+    ]
+   ],
+   "Nevada": [
+    [
+     "home",
+     "A",
+     "The Fremont Cannon — the heaviest trophy in college football — painted the winner's color."
+    ]
+   ],
+   "UNLV": [
+    [
+     "home",
+     "A",
+     "Allegiant Stadium, off the Strip — the Raiders' home and the Rebels'."
+    ]
+   ],
+   "San Diego State": [
+    [
+     "home",
+     "A",
+     "The Aztec warrior, and Snapdragon Stadium where the old Qualcomm used to be."
+    ]
+   ],
+   "Fresno State": [
+    [
+     "home",
+     "A",
+     "The Bulldogs' 'Red Wave' — and they'll play anybody, anywhere, anytime."
+    ]
+   ],
+   "Utah State": [
+    [
+     "home",
+     "A",
+     "Big Blue the bull and 'Scotsman' — the students' fight song."
+    ]
+   ],
+   "Washington State": [
+    [
+     "home",
+     "A",
+     "Ol' Crimson, the Cougar flag, has flown at every College GameDay since 2003."
+    ]
+   ],
+   "Oregon State": [
+    [
+     "home",
+     "A",
+     "Benny the Beaver, and Reser Stadium in Corvallis."
+    ]
+   ],
+   "Colorado State": [
+    [
+     "home",
+     "A",
+     "CAM the Ram — a real Rambouillet sheep — on the sideline at Canvas Stadium."
+    ]
+   ],
+   "New Mexico": [
+    [
+     "home",
+     "A",
+     "Lobo Louie and Lobo Lucy — and the Pit's just across the street."
+    ]
+   ],
+   "UTEP": [
+    [
+     "home",
+     "A",
+     "The Franklin Mountains rise behind the Sun Bowl Stadium — the 'Picks Up' Miners salute."
+    ]
+   ],
+   "Louisiana Tech": [
+    [
+     "home",
+     "A",
+     "Tech the bulldog, and the Ruston faithful at Joe Aillet."
+    ]
+   ],
+   "Southern Miss": [
+    [
+     "home",
+     "A",
+     "Seymour d'Campus and 'The Rock' at M.M. Roberts."
+    ]
+   ],
+   "Troy": [
+    [
+     "home",
+     "A",
+     "The Sound of the South — Troy's band — is famous across the Southeast."
+    ]
+   ],
+   "Georgia Southern": [
+    [
+     "home",
+     "A",
+     "Paulson Stadium's 'Hugh' — and the Eagles' triple-option heritage under Erk Russell."
+    ]
+   ],
+   "Arkansas State": [
+    [
+     "home",
+     "A",
+     "Howl the Red Wolf — and the Red Wolves' 'Wolves Up.'"
+    ]
+   ],
+   "Louisiana": [
+    [
+     "home",
+     "A",
+     "Cajun Field — 'Geaux Cajuns' — and the best tailgate food in the Sun Belt."
+    ]
+   ],
+   "Western Kentucky": [
+    [
+     "home",
+     "A",
+     "Big Red — a red blob mascot — beloved in Bowling Green."
+    ]
+   ],
+   "Kent State": [
+    [
+     "home",
+     "A",
+     "Flash the golden eagle, and Dix Stadium on a cold November Tuesday night."
+    ]
+   ],
+   "Bowling Green": [
+    [
+     "home",
+     "A",
+     "Freddie and Frieda Falcon, and Doyt Perry Stadium."
+    ]
+   ],
+   "Miami (OH)": [
+    [
+     "home",
+     "A",
+     "The Cradle of Coaches — Bo Schembechler, Ara Parseghian, Paul Brown all came through Oxford."
+    ]
+   ],
+   "Ohio": [
+    [
+     "home",
+     "A",
+     "Rufus the Bobcat, and the Marching 110 — 'The Most Exciting Band in the Land.'"
+    ]
+   ],
+   "Central Michigan": [
+    [
+     "home",
+     "A",
+     "Kelly/Shorts Stadium and 'Fire Up Chips!'"
+    ]
+   ],
+   "Western Michigan": [
+    [
+     "home",
+     "A",
+     "Buster Bronco at Waldo Stadium, the Broncos' home since 1939."
+    ]
+   ],
+   "Northern Illinois": [
+    [
+     "home",
+     "A",
+     "Huskie Stadium, and the 2012 Orange Bowl team that crashed the BCS."
+    ]
+   ],
+   "Buffalo": [
+    [
+     "home",
+     "A",
+     "Victor E. Bull — and the UB Bulls in Amherst."
+    ]
+   ],
+   "Akron": [
+    [
+     "home",
+     "A",
+     "Zippy the kangaroo — the only kangaroo mascot in major college football."
+    ]
+   ],
+   "Ball State": [
+    [
+     "home",
+     "A",
+     "Charlie Cardinal — and 'Chirp Chirp!' at Scheumann."
+    ]
+   ],
+   "Eastern Michigan": [
+    [
+     "home",
+     "A",
+     "Gray turf at Rynearson — 'The Factory.'"
+    ]
+   ],
+   "North Texas": [
+    [
+     "home",
+     "A",
+     "Scrappy the Eagle, and the Mean Green — a name that came from Joe Greene's defense."
+    ]
+   ],
+   "South Florida": [
+    [
+     "home",
+     "A",
+     "Rocky D. Bull and the 'Horns Up' sign at Raymond James."
+    ]
+   ],
+   "Temple": [
+    [
+     "home",
+     "A",
+     "Hooter the Owl, and the Owls play downtown at the Linc."
+    ]
+   ],
+   "Tulsa": [
+    [
+     "home",
+     "A",
+     "Captain Cane, and H.A. Chapman Stadium on campus."
+    ]
+   ],
+   "East Carolina": [
+    [
+     "home",
+     "A",
+     "PeeDee the Pirate and the cannon at Dowdy-Ficklen — 'Purple Reign.'"
+    ]
+   ],
+   "Charlotte": [
+    [
+     "home",
+     "A",
+     "Norm the Niner, and Jerry Richardson Stadium."
+    ]
+   ],
+   "UTSA": [
+    [
+     "home",
+     "A",
+     "Rowdy the Roadrunner — 'Birds Up!' — and big crowds in the Alamodome."
+    ]
+   ],
+   "UAB": [
+    [
+     "home",
+     "A",
+     "Blaze the Dragon and Protective Stadium downtown in Birmingham."
+    ]
+   ],
+   "FIU": [
+    [
+     "home",
+     "A",
+     "Roary the Panther at Pitbull Stadium."
+    ]
+   ],
+   "Florida Atlantic": [
+    [
+     "home",
+     "A",
+     "Owlsley — and FAU Stadium, where you can see the ocean from the press box."
+    ]
+   ],
+   "Middle Tennessee": [
+    [
+     "home",
+     "A",
+     "Lightning the Pegasus and Floyd Stadium in Murfreesboro."
+    ]
+   ],
+   "Old Dominion": [
+    [
+     "home",
+     "A",
+     "Big Blue — and the Monarchs brought football back to Norfolk in 2009."
+    ]
+   ],
+   "Georgia State": [
+    [
+     "home",
+     "A",
+     "Pounce the Panther at Center Parc — the old Olympic stadium, later Turner Field."
+    ]
+   ],
+   "ULM": [
+    [
+     "home",
+     "A",
+     "Ace the Warhawk at Malone Stadium."
+    ]
+   ],
+   "South Alabama": [
+    [
+     "home",
+     "A",
+     "South the Jaguar — and Hancock Whitney Stadium on campus in Mobile."
+    ]
+   ],
+   "Texas State": [
+    [
+     "home",
+     "A",
+     "Boko the Bobcat, and the Strutters dance team — older than the Dallas Cowboys Cheerleaders."
+    ]
+   ],
+   "Sam Houston": [
+    [
+     "home",
+     "A",
+     "Sammy Bearkat, and two FCS national titles before moving up."
+    ]
+   ],
+   "Jacksonville State": [
+    [
+     "home",
+     "A",
+     "Cocky the Gamecock, and the Marching Southerners."
+    ]
+   ],
+   "Kennesaw State": [
+    [
+     "home",
+     "A",
+     "Scrappy the Owl — Kennesaw only started football in 2015."
+    ]
+   ],
+   "New Mexico State": [
+    [
+     "home",
+     "A",
+     "Pistol Pete — and Aggie Memorial Stadium with the Organ Mountains behind it."
+    ]
+   ],
+   "Delaware": [
+    [
+     "home",
+     "A",
+     "YoUDee the Blue Hen — and Tubby Raymond's Delaware Wing-T."
+    ]
+   ],
+   "Missouri State": [
+    [
+     "home",
+     "A",
+     "Boomer the Bear at Plaster Stadium in Springfield."
+    ]
+   ],
+   "Sacramento State": [
+    [
+     "home",
+     "A",
+     "Herky the Hornet — Sac State's newest chapter is FBS football."
+    ]
+   ],
+   "UMass": [
+    [
+     "home",
+     "A",
+     "Sam the Minuteman, and the Minuteman Marching Band — the Power and Class of New England."
+    ]
+   ],
+   "UConn": [
+    [
+     "home",
+     "A",
+     "Jonathan the Husky — a real husky, and the 'Jonathan' line goes back to the 1930s."
+    ]
+   ],
+   "North Dakota State": [
+    [
+     "home",
+     "A",
+     "The Fargodome — 'Thundar' the bison — and more FCS titles than anybody."
+    ]
+   ],
+   "San Jose State": [
+    [
+     "home",
+     "A",
+     "Sammy the Spartan — and the Spartans' 1939 unbeaten team."
+    ]
+   ]
+  },
+  "rivalries.TROPHIES": {
+   "__pairs__": [
+    [
+     {
+      "__frozenset__": [
+       "Michigan",
+       "Minnesota"
+      ]
+     },
+     "the Little Brown Jug"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Minnesota",
+       "Wisconsin"
+      ]
+     },
+     "Paul Bunyan's Axe"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Iowa",
+       "Minnesota"
+      ]
+     },
+     "Floyd of Rosedale"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Indiana",
+       "Purdue"
+      ]
+     },
+     "the Old Oaken Bucket"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Michigan State",
+       "Michigan"
+      ]
+     },
+     "the Paul Bunyan Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Iowa",
+       "Nebraska"
+      ]
+     },
+     "the Heroes Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Illinois",
+       "Northwestern"
+      ]
+     },
+     "the Land of Lincoln Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Indiana",
+       "Michigan State"
+      ]
+     },
+     "the Old Brass Spittoon"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Iowa",
+       "Wisconsin"
+      ]
+     },
+     "the Heartland Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Nebraska",
+       "Wisconsin"
+      ]
+     },
+     "the Freedom Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Minnesota",
+       "Penn State"
+      ]
+     },
+     "the Governor's Victory Bell"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Michigan State",
+       "Penn State"
+      ]
+     },
+     "the Land Grant Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Minnesota",
+       "Nebraska"
+      ]
+     },
+     "the $5 Bits of Broken Chair Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Illinois",
+       "Purdue"
+      ]
+     },
+     "the Purdue Cannon"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Iowa State",
+       "Iowa"
+      ]
+     },
+     "the Cy-Hawk Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Mississippi State",
+       "Ole Miss"
+      ]
+     },
+     "the Egg Bowl"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Arkansas",
+       "LSU"
+      ]
+     },
+     "the Golden Boot"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Kentucky",
+       "Louisville"
+      ]
+     },
+     "the Governor's Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Georgia Tech",
+       "Georgia"
+      ]
+     },
+     "the Governor's Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Oklahoma",
+       "Texas"
+      ]
+     },
+     "the Golden Hat"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Florida",
+       "Georgia"
+      ]
+     },
+     "the Okefenokee Oar"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Oklahoma State",
+       "Oklahoma"
+      ]
+     },
+     "the Bedlam Bell"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Arizona State",
+       "Arizona"
+      ]
+     },
+     "the Territorial Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "California",
+       "Stanford"
+      ]
+     },
+     "the Stanford Axe"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "UCLA",
+       "USC"
+      ]
+     },
+     "the Victory Bell"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Duke",
+       "North Carolina"
+      ]
+     },
+     "the Victory Bell"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Washington State",
+       "Washington"
+      ]
+     },
+     "the Apple Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Oregon State",
+       "Oregon"
+      ]
+     },
+     "the Platypus Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Notre Dame",
+       "USC"
+      ]
+     },
+     "the Jeweled Shillelagh"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Michigan State",
+       "Notre Dame"
+      ]
+     },
+     "the Megaphone Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Notre Dame",
+       "Purdue"
+      ]
+     },
+     "the Shillelagh Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Virginia Tech",
+       "Virginia"
+      ]
+     },
+     "the Commonwealth Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "SMU",
+       "TCU"
+      ]
+     },
+     "the Iron Skillet"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Houston",
+       "Rice"
+      ]
+     },
+     "the Bayou Bucket"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Cincinnati",
+       "Louisville"
+      ]
+     },
+     "the Keg of Nails"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Tulane",
+       "Southern Miss"
+      ]
+     },
+     "the Battle for the Bell"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Bowling Green",
+       "Toledo"
+      ]
+     },
+     "the Battle of I-75 Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Akron",
+       "Kent State"
+      ]
+     },
+     "the Wagon Wheel"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Central Michigan",
+       "Western Michigan"
+      ]
+     },
+     "the Victory Cannon"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Boise State",
+       "Fresno State"
+      ]
+     },
+     "the Milk Can"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Fresno State",
+       "San Diego State"
+      ]
+     },
+     "the Oil Can"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "UNLV",
+       "Nevada"
+      ]
+     },
+     "the Fremont Cannon"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Arkansas",
+       "Missouri"
+      ]
+     },
+     "the Battle Line Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Kansas State",
+       "Kansas"
+      ]
+     },
+     "the Governor's Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "TCU",
+       "Texas Tech"
+      ]
+     },
+     "the West Texas Championship"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Colorado State",
+       "Colorado"
+      ]
+     },
+     "the Centennial Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Colorado State",
+       "Wyoming"
+      ]
+     },
+     "the Bronze Boot"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Utah State",
+       "Wyoming"
+      ]
+     },
+     "the Bridger's Rifle"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Alabama",
+       "Auburn"
+      ]
+     },
+     "the Foy-ODK Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Clemson",
+       "South Carolina"
+      ]
+     },
+     "the Hardee's Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Army",
+       "Navy"
+      ]
+     },
+     "the Thompson Cup"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "LSU",
+       "Ole Miss"
+      ]
+     },
+     "the Magnolia Bowl Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Illinois",
+       "Ohio State"
+      ]
+     },
+     "the Illibuck"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Notre Dame",
+       "Stanford"
+      ]
+     },
+     "the Legends Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Air Force",
+       "Colorado State"
+      ]
+     },
+     "the Ram-Falcon Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Hawai'i",
+       "Wyoming"
+      ]
+     },
+     "the Paniolo Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "BYU",
+       "Utah"
+      ]
+     },
+     "the Beehive Boot"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Texas",
+       "Texas A&M"
+      ]
+     },
+     "the Lone Star Showdown Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Cincinnati",
+       "Miami (OH)"
+      ]
+     },
+     "the Victory Bell"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Navy",
+       "SMU"
+      ]
+     },
+     "the Gansz Trophy"
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Michigan",
+       "Northwestern"
+      ]
+     },
+     "the George Jewett Trophy"
+    ]
+   ]
+  },
+  "commentary.RIVALRIES": {
+   "__pairs__": [
+    [
+     [
+      "Alabama",
+      "Auburn"
+     ],
+     "the Iron Bowl"
+    ],
+    [
+     [
+      "Michigan",
+      "Ohio State"
+     ],
+     "The Game"
+    ],
+    [
+     [
+      "Oklahoma",
+      "Texas"
+     ],
+     "the Red River Rivalry"
+    ],
+    [
+     [
+      "Florida",
+      "Georgia"
+     ],
+     "the World's Largest Outdoor Cocktail Party"
+    ],
+    [
+     [
+      "Army",
+      "Navy"
+     ],
+     "Army-Navy"
+    ],
+    [
+     [
+      "Mississippi State",
+      "Ole Miss"
+     ],
+     "the Egg Bowl"
+    ],
+    [
+     [
+      "Washington",
+      "Washington State"
+     ],
+     "the Apple Cup"
+    ],
+    [
+     [
+      "Georgia",
+      "Georgia Tech"
+     ],
+     "Clean, Old-Fashioned Hate"
+    ],
+    [
+     [
+      "Clemson",
+      "South Carolina"
+     ],
+     "the Palmetto Bowl"
+    ],
+    [
+     [
+      "Florida",
+      "Florida State"
+     ],
+     "the Sunshine Showdown"
+    ],
+    [
+     [
+      "Michigan",
+      "Michigan State"
+     ],
+     "the battle for the Paul Bunyan Trophy"
+    ],
+    [
+     [
+      "Indiana",
+      "Purdue"
+     ],
+     "the battle for the Old Oaken Bucket"
+    ],
+    [
+     [
+      "Minnesota",
+      "Wisconsin"
+     ],
+     "the battle for Paul Bunyan's Axe"
+    ],
+    [
+     [
+      "BYU",
+      "Utah"
+     ],
+     "the Holy War"
+    ],
+    [
+     [
+      "Arizona",
+      "Arizona State"
+     ],
+     "the Territorial Cup"
+    ],
+    [
+     [
+      "Pitt",
+      "West Virginia"
+     ],
+     "the Backyard Brawl"
+    ],
+    [
+     [
+      "California",
+      "Stanford"
+     ],
+     "the Big Game"
+    ],
+    [
+     [
+      "Iowa",
+      "Iowa State"
+     ],
+     "the Cy-Hawk game"
+    ],
+    [
+     [
+      "Kansas",
+      "Kansas State"
+     ],
+     "the Sunflower Showdown"
+    ],
+    [
+     [
+      "Alabama",
+      "Tennessee"
+     ],
+     "the Third Saturday in October"
+    ],
+    [
+     [
+      "Texas",
+      "Texas A&M"
+     ],
+     "the Lone Star Showdown"
+    ],
+    [
+     [
+      "Auburn",
+      "Georgia"
+     ],
+     "the Deep South's Oldest Rivalry"
+    ],
+    [
+     [
+      "Kentucky",
+      "Louisville"
+     ],
+     "the Governor's Cup game"
+    ],
+    [
+     [
+      "Virginia",
+      "Virginia Tech"
+     ],
+     "the Commonwealth Clash"
+    ],
+    [
+     [
+      "Duke",
+      "North Carolina"
+     ],
+     "the Victory Bell game"
+    ],
+    [
+     [
+      "UCLA",
+      "USC"
+     ],
+     "the Crosstown Showdown"
+    ],
+    [
+     [
+      "Oregon",
+      "Oregon State"
+     ],
+     "the Civil War"
+    ],
+    [
+     [
+      "Nebraska",
+      "Iowa"
+     ],
+     "the Heroes Game"
+    ],
+    [
+     [
+      "Alabama",
+      "LSU"
+     ],
+     "the First Saturday in November"
+    ],
+    [
+     [
+      "Florida State",
+      "Miami"
+     ],
+     "Miami-Florida State"
+    ],
+    [
+     [
+      "Notre Dame",
+      "USC"
+     ],
+     "the Notre Dame-USC rivalry"
+    ],
+    [
+     [
+      "Army",
+      "Air Force"
+     ],
+     "the Commander-in-Chief's series"
+    ],
+    [
+     [
+      "Navy",
+      "Air Force"
+     ],
+     "the Commander-in-Chief's series"
+    ],
+    [
+     [
+      "Navy",
+      "Notre Dame"
+     ],
+     "Navy-Notre Dame"
+    ],
+    [
+     [
+      "LSU",
+      "Ole Miss"
+     ],
+     "the Magnolia Bowl"
+    ],
+    [
+     [
+      "Illinois",
+      "Ohio State"
+     ],
+     "the battle for the Illibuck"
+    ],
+    [
+     [
+      "Tennessee",
+      "Florida"
+     ],
+     "Tennessee-Florida"
+    ],
+    [
+     [
+      "Penn State",
+      "Ohio State"
+     ],
+     "Penn State-Ohio State"
+    ],
+    [
+     [
+      "Oklahoma",
+      "Oklahoma State"
+     ],
+     "Bedlam"
+    ],
+    [
+     [
+      "Nevada",
+      "UNLV"
+     ],
+     "the battle for the Fremont Cannon"
+    ],
+    [
+     [
+      "Boise State",
+      "Fresno State"
+     ],
+     "the Milk Can game"
+    ],
+    [
+     [
+      "Texas Tech",
+      "TCU"
+     ],
+     "the West Texas Championship"
+    ],
+    [
+     [
+      "SMU",
+      "TCU"
+     ],
+     "the Battle for the Iron Skillet"
+    ],
+    [
+     [
+      "Colorado",
+      "Colorado State"
+     ],
+     "the Rocky Mountain Showdown"
+    ],
+    [
+     [
+      "Arkansas",
+      "LSU"
+     ],
+     "the Battle for the Golden Boot"
+    ],
+    [
+     [
+      "Arkansas",
+      "Missouri"
+     ],
+     "the Battle Line Rivalry"
+    ],
+    [
+     [
+      "Cincinnati",
+      "Louisville"
+     ],
+     "the Keg of Nails game"
+    ],
+    [
+     [
+      "Clemson",
+      "Florida State"
+     ],
+     "Clemson-Florida State"
+    ],
+    [
+     [
+      "Auburn",
+      "LSU"
+     ],
+     "the Tiger Bowl"
+    ]
+   ]
+  },
+  "commentary.KNOWN_ACRONYMS": {
+   "__set__": [
+    "AAC",
+    "ACC",
+    "ACL",
+    "AP",
+    "AT&T",
+    "BYU",
+    "CAB",
+    "CB",
+    "CFP",
+    "CMU",
+    "CUSA",
+    "DL",
+    "ECU",
+    "EMU",
+    "ER",
+    "ESPN",
+    "FAU",
+    "FBS",
+    "FCS",
+    "FIU",
+    "GPS",
+    "GT",
+    "HBCU",
+    "JMU",
+    "LA",
+    "LB",
+    "LSU",
+    "LV",
+    "MAC",
+    "MRI",
+    "MTSU",
+    "MVP",
+    "NC",
+    "NDSU",
+    "NFL",
+    "NIL",
+    "NIU",
+    "NJ",
+    "NMSU",
+    "NP",
+    "OL",
+    "OSU",
+    "OT",
+    "OU",
+    "PSU",
+    "QB",
+    "RB",
+    "RPO",
+    "RV",
+    "SCC",
+    "SDSU",
+    "SEC",
+    "SJSU",
+    "SMU",
+    "SUV",
+    "TCU",
+    "TE",
+    "TV",
+    "UAB",
+    "UCF",
+    "UCLA",
+    "UGA",
+    "ULM",
+    "UNC",
+    "UNLV",
+    "USC",
+    "USF",
+    "UTEP",
+    "UTSA",
+    "VT",
+    "WKU",
+    "WMU",
+    "WR"
+   ]
+  },
+  "carousel.KNOWN_ALMA": {},
+  "carousel.PRIMARY_RIVAL": {
+   "Auburn": "Alabama",
+   "Alabama": "Auburn",
+   "Georgia": "Florida",
+   "Florida": "Georgia",
+   "Ohio State": "Michigan",
+   "Michigan": "Ohio State",
+   "Texas": "Oklahoma",
+   "Oklahoma": "Texas",
+   "Texas A&M": "Texas",
+   "LSU": "Alabama",
+   "Ole Miss": "Mississippi State",
+   "Mississippi State": "Ole Miss",
+   "Tennessee": "Alabama",
+   "Kentucky": "Louisville",
+   "Louisville": "Kentucky",
+   "South Carolina": "Clemson",
+   "Clemson": "South Carolina",
+   "Florida State": "Florida",
+   "Miami": "Florida State",
+   "UCLA": "USC",
+   "USC": "UCLA",
+   "Notre Dame": "USC",
+   "Oregon": "Washington",
+   "Washington": "Oregon",
+   "Penn State": "Ohio State",
+   "Michigan State": "Michigan",
+   "Iowa": "Iowa State",
+   "Iowa State": "Iowa",
+   "Wisconsin": "Minnesota",
+   "Minnesota": "Wisconsin",
+   "Nebraska": "Iowa",
+   "Indiana": "Purdue",
+   "Purdue": "Indiana",
+   "Georgia Tech": "Georgia",
+   "Virginia": "Virginia Tech",
+   "Virginia Tech": "Virginia",
+   "Duke": "North Carolina",
+   "North Carolina": "NC State",
+   "NC State": "North Carolina",
+   "Pitt": "West Virginia",
+   "West Virginia": "Pitt",
+   "California": "Stanford",
+   "Stanford": "California",
+   "Arizona": "Arizona State",
+   "Arizona State": "Arizona",
+   "BYU": "Utah",
+   "Utah": "BYU",
+   "Kansas": "Kansas State",
+   "Kansas State": "Kansas",
+   "Oklahoma State": "Oklahoma",
+   "Arkansas": "LSU",
+   "Missouri": "Arkansas",
+   "Vanderbilt": "Tennessee",
+   "Baylor": "TCU",
+   "TCU": "SMU",
+   "SMU": "TCU",
+   "Army": "Navy",
+   "Navy": "Army",
+   "Illinois": "Northwestern",
+   "Northwestern": "Illinois",
+   "Colorado": "Utah"
+  },
+  "carousel.PROTECTED": [
+   [
+    "Clemson",
+    "South Carolina"
+   ],
+   [
+    "Florida",
+    "Florida State"
+   ],
+   [
+    "Georgia",
+    "Georgia Tech"
+   ],
+   [
+    "Kentucky",
+    "Louisville"
+   ],
+   [
+    "Iowa",
+    "Iowa State"
+   ],
+   [
+    "Notre Dame",
+    "USC"
+   ],
+   [
+    "TCU",
+    "SMU"
+   ],
+   [
+    "Pitt",
+    "West Virginia"
+   ],
+   [
+    "Washington",
+    "Washington State"
+   ],
+   [
+    "Oregon",
+    "Oregon State"
+   ]
+  ],
+  "carousel.NY6": {
+   "__set__": [
+    "Rose Bowl",
+    "Orange Bowl",
+    "Sugar Bowl",
+    "Cotton Bowl",
+    "Peach Bowl",
+    "Fiesta Bowl"
+   ]
+  },
+  "carousel.SIGNATURE": {
+   "Ohio State": [
+    "beat_rival",
+    1,
+    "Michigan"
+   ],
+   "Michigan": [
+    "beat_rival",
+    2,
+    "Ohio State"
+   ],
+   "Alabama": [
+    "title",
+    4,
+    null
+   ],
+   "Georgia": [
+    "title",
+    5,
+    null
+   ],
+   "Texas": [
+    "beat_rival",
+    1,
+    "Oklahoma"
+   ],
+   "Oklahoma": [
+    "beat_rival",
+    2,
+    "Texas"
+   ],
+   "Notre Dame": [
+    "wins",
+    3,
+    11
+   ],
+   "USC": [
+    "top10",
+    3,
+    null
+   ],
+   "Miami": [
+    "top10",
+    3,
+    null
+   ],
+   "Indiana": [
+    "cfp",
+    3,
+    null
+   ],
+   "Vanderbilt": [
+    "bowl_win",
+    3,
+    null
+   ],
+   "Kansas State": [
+    "beat_rival",
+    1,
+    "Kansas"
+   ],
+   "Iowa": [
+    "conf_record",
+    1,
+    null
+   ],
+   "Wisconsin": [
+    "conf_record",
+    1,
+    null
+   ],
+   "Northwestern": [
+    "bowl",
+    3,
+    null
+   ],
+   "Boise State": [
+    "ny6",
+    4,
+    null
+   ],
+   "BYU": [
+    "ranked_wins",
+    3,
+    2
+   ],
+   "Army": [
+    "beat_rival",
+    1,
+    "Navy"
+   ],
+   "Navy": [
+    "beat_rival",
+    1,
+    "Army"
+   ],
+   "Appalachian State": [
+    "p4_win",
+    2,
+    null
+   ],
+   "James Madison": [
+    "p4_win",
+    2,
+    null
+   ],
+   "Tulane": [
+    "ny6",
+    5,
+    null
+   ],
+   "Memphis": [
+    "p4_win",
+    2,
+    null
+   ],
+   "UCF": [
+    "ranked_wins",
+    3,
+    1
+   ],
+   "Florida State": [
+    "state",
+    2,
+    null
+   ],
+   "Clemson": [
+    "state",
+    1,
+    null
+   ],
+   "Auburn": [
+    "beat_rival",
+    3,
+    "Alabama"
+   ],
+   "Texas A&M": [
+    "beat_rival",
+    3,
+    "Texas"
+   ],
+   "Florida": [
+    "state",
+    3,
+    null
+   ],
+   "LSU": [
+    "title",
+    5,
+    null
+   ],
+   "Oregon": [
+    "cfp_win",
+    3,
+    null
+   ],
+   "Penn State": [
+    "cfp_win",
+    3,
+    null
+   ],
+   "Utah": [
+    "home",
+    2,
+    null
+   ],
+   "Washington": [
+    "beat_rival",
+    3,
+    "Oregon"
+   ],
+   "Tennessee": [
+    "beat_rival",
+    3,
+    "Alabama"
+   ],
+   "Kentucky": [
+    "bowl_win",
+    2,
+    null
+   ],
+   "Ole Miss": [
+    "ppg",
+    2,
+    34
+   ],
+   "Kansas": [
+    "improve",
+    2,
+    null
+   ],
+   "Duke": [
+    "close",
+    2,
+    null
+   ],
+   "Minnesota": [
+    "no_blowouts",
+    2,
+    null
+   ],
+   "Air Force": [
+    "ranked_road",
+    4,
+    null
+   ]
+  },
+  "carousel.KNOWN": {},
+  "staff.KNOWN_MENTORS": {},
+  "season.BIG_CONFERENCES": {
+   "SEC": 9,
+   "Big Ten": 9,
+   "ACC": 9,
+   "Big 12": 9
+  },
+  "season.POWER_INDEPENDENTS": {
+   "__set__": [
+    "Notre Dame"
+   ]
+  },
+  "season.P4_REQUIRED": {
+   "__set__": [
+    "SEC"
+   ]
+  },
+  "season.FCS_ODDS": {
+   "SEC": 0.95,
+   "ACC": 0.9,
+   "Big 12": 0.9,
+   "Big Ten": 0.6
+  },
+  "season.NEUTRAL_SITES": {
+   "__pairs__": [
+    [
+     {
+      "__frozenset__": [
+       "Florida",
+       "Georgia"
+      ]
+     },
+     {
+      "__pairs__": [
+       [
+        2026,
+        "Mercedes-Benz Stadium, Atlanta"
+       ],
+       [
+        2027,
+        "Raymond James Stadium, Tampa"
+       ],
+       [
+        null,
+        "EverBank Stadium, Jacksonville"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Oklahoma",
+       "Texas"
+      ]
+     },
+     {
+      "__pairs__": [
+       [
+        null,
+        "Cotton Bowl Stadium, Dallas"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Navy",
+       "Army"
+      ]
+     },
+     {
+      "__pairs__": [
+       [
+        2026,
+        "MetLife Stadium, East Rutherford"
+       ],
+       [
+        2027,
+        "Lincoln Financial Field, Philadelphia"
+       ],
+       [
+        null,
+        "Lincoln Financial Field, Philadelphia"
+       ]
+      ]
+     }
+    ]
+   ]
+  },
+  "season.RIVALRY_WEEK": [
+   [
+    "Alabama",
+    "Auburn"
+   ],
+   [
+    "Michigan",
+    "Ohio State"
+   ],
+   [
+    "Ole Miss",
+    "Mississippi State"
+   ],
+   [
+    "Texas",
+    "Texas A&M"
+   ],
+   [
+    "Tennessee",
+    "Vanderbilt"
+   ],
+   [
+    "Arkansas",
+    "Missouri"
+   ],
+   [
+    "LSU",
+    "Oklahoma"
+   ],
+   [
+    "Iowa",
+    "Nebraska"
+   ],
+   [
+    "Minnesota",
+    "Wisconsin"
+   ],
+   [
+    "Indiana",
+    "Purdue"
+   ],
+   [
+    "Illinois",
+    "Northwestern"
+   ],
+   [
+    "Penn State",
+    "Michigan State"
+   ],
+   [
+    "UCLA",
+    "USC"
+   ],
+   [
+    "Oregon",
+    "Washington"
+   ],
+   [
+    "Arizona",
+    "Arizona State"
+   ],
+   [
+    "Kansas",
+    "Kansas State"
+   ],
+   [
+    "Baylor",
+    "TCU"
+   ],
+   [
+    "BYU",
+    "Utah"
+   ],
+   [
+    "Iowa State",
+    "Oklahoma State"
+   ],
+   [
+    "Virginia",
+    "Virginia Tech"
+   ],
+   [
+    "North Carolina",
+    "NC State"
+   ],
+   [
+    "California",
+    "Stanford"
+   ],
+   [
+    "Boston College",
+    "Syracuse"
+   ],
+   [
+    "Duke",
+    "Wake Forest"
+   ],
+   [
+    "Clemson",
+    "South Carolina"
+   ],
+   [
+    "Florida",
+    "Florida State"
+   ],
+   [
+    "Georgia",
+    "Georgia Tech"
+   ],
+   [
+    "Kentucky",
+    "Louisville"
+   ],
+   [
+    "Army",
+    "Navy"
+   ],
+   [
+    "Cincinnati",
+    "West Virginia"
+   ],
+   [
+    "Houston",
+    "Texas Tech"
+   ],
+   [
+    "Colorado",
+    "UCF"
+   ]
+  ],
+  "season.EARLY_RIVALRIES": {
+   "__set__": [
+    {
+     "__frozenset__": [
+      "Iowa State",
+      "Iowa"
+     ]
+    },
+    {
+     "__frozenset__": [
+      "Pitt",
+      "West Virginia"
+     ]
+    }
+   ]
+  },
+  "season.FIXED_WEEKS": {
+   "__pairs__": [
+    [
+     {
+      "__frozenset__": [
+       "Oklahoma",
+       "Texas"
+      ]
+     },
+     7
+    ],
+    [
+     {
+      "__frozenset__": [
+       "Florida",
+       "Georgia"
+      ]
+     },
+     10
+    ]
+   ]
+  },
+  "broadcast.THANKSGIVING": {
+   "__set__": [
+    {
+     "__frozenset__": [
+      "Mississippi State",
+      "Ole Miss"
+     ]
+    }
+   ]
+  },
+  "broadcast.BLACK_FRIDAY": {
+   "__set__": [
+    {
+     "__frozenset__": [
+      "Arizona State",
+      "Arizona"
+     ]
+    },
+    {
+     "__frozenset__": [
+      "Arkansas",
+      "Missouri"
+     ]
+    },
+    {
+     "__frozenset__": [
+      "Colorado",
+      "Utah"
+     ]
+    },
+    {
+     "__frozenset__": [
+      "Iowa",
+      "Nebraska"
+     ]
+    }
+   ]
+  },
+  "broadcast.WEEKNIGHT_CONFS": [
+   "Sun Belt",
+   "American",
+   "CUSA",
+   "ACC",
+   "Mountain West",
+   "Big Ten",
+   "Pac-12"
+  ],
+  "broadcast.NOON_SHOWCASE": [
+   "Michigan",
+   "Ohio State"
+  ],
+  "realignment.START_PAYOUT": {
+   "Big Ten": 60000000,
+   "SEC": 55000000,
+   "ACC": 40000000,
+   "Big 12": 32000000,
+   "Pac-12": 10000000,
+   "American": 7000000,
+   "Mountain West": 5000000,
+   "Sun Belt": 3000000,
+   "CUSA": 1500000.0,
+   "MAC": 1500000.0,
+   "Independent": 2000000
+  },
+  "realignment.INDEPENDENT_DEALS": {
+   "Notre Dame": 25000000
+  },
+  "realignment.START_RENEWAL": {
+   "Big Ten": 2030,
+   "SEC": 2034,
+   "ACC": 2036,
+   "Big 12": 2031,
+   "Pac-12": 2031,
+   "American": 2031,
+   "Mountain West": 2032,
+   "Sun Belt": 2031,
+   "CUSA": 2029,
+   "MAC": 2027,
+   "Independent": 2029
+  },
+  "realignment.EXIT_YEARS": {
+   "SEC": 3.0,
+   "Big Ten": 3.0,
+   "ACC": 3.0,
+   "Big 12": 2.0
+  },
+  "rankings.POWER_LEAGUES": {
+   "__set__": [
+    "Big Ten",
+    "Independent",
+    "Big 12",
+    "SEC",
+    "ACC"
+   ]
+  },
+  "halloffame.REGIONS": {
+   "SEC": "South",
+   "ACC": "East",
+   "Big Ten": "Midwest",
+   "Big 12": "Plains",
+   "Pac-12": "West",
+   "American": "South",
+   "Mountain West": "West",
+   "Sun Belt": "South",
+   "MAC": "Midwest",
+   "CUSA": "South",
+   "Independent": "East"
+  },
+  "coach_screens.CONF_SHORT": {
+   "Mountain West": "MW",
+   "CUSA": "CUSA",
+   "American": "AAC",
+   "Sun Belt": "SBC",
+   "MAC": "MAC",
+   "Pac-12": "PAC",
+   "Big Ten": "B1G",
+   "ACC": "ACC",
+   "Big 12": "B12",
+   "Independent": "Ind"
+  },
+  "postseason.CFP_BOWLS": {
+   "Rose Bowl": [
+    "Rose Bowl",
+    "Pasadena, CA",
+    "Rose Bowl"
+   ],
+   "Sugar Bowl": [
+    "Caesars Superdome",
+    "New Orleans, LA",
+    "Sugar Bowl"
+   ],
+   "Orange Bowl": [
+    "Hard Rock Stadium",
+    "Miami Gardens, FL",
+    "Orange Bowl"
+   ],
+   "Cotton Bowl": [
+    "AT&T Stadium",
+    "Arlington, TX",
+    "Cotton Bowl"
+   ],
+   "Fiesta Bowl": [
+    "State Farm Stadium",
+    "Glendale, AZ",
+    "Fiesta Bowl"
+   ],
+   "Peach Bowl": [
+    "Mercedes-Benz Stadium",
+    "Atlanta, GA",
+    "Peach Bowl"
+   ]
+  },
+  "postseason.CFP_ROTATION": {
+   "__pairs__": [
+    [
+     2026,
+     [
+      [
+       [
+        "Rose Bowl",
+        1,
+        1
+       ],
+       [
+        "Cotton Bowl",
+        1,
+        1
+       ],
+       [
+        "Peach Bowl",
+        1,
+        1
+       ],
+       [
+        "Fiesta Bowl",
+        12,
+        30
+       ]
+      ],
+      [
+       "Orange Bowl",
+       "Sugar Bowl"
+      ]
+     ]
+    ]
+   ]
+  },
+  "postseason._ALT_ROTATION": [
+   [
+    [
+     [
+      "Rose Bowl",
+      1,
+      1
+     ],
+     [
+      "Sugar Bowl",
+      12,
+      31
+     ],
+     [
+      "Orange Bowl",
+      12,
+      31
+     ],
+     [
+      "Cotton Bowl",
+      1,
+      1
+     ]
+    ],
+    [
+     "Fiesta Bowl",
+     "Peach Bowl"
+    ]
+   ],
+   [
+    [
+     [
+      "Rose Bowl",
+      1,
+      1
+     ],
+     [
+      "Cotton Bowl",
+      1,
+      1
+     ],
+     [
+      "Peach Bowl",
+      1,
+      1
+     ],
+     [
+      "Fiesta Bowl",
+      12,
+      31
+     ]
+    ],
+    [
+     "Orange Bowl",
+     "Sugar Bowl"
+    ]
+   ]
+  ],
+  "postseason.TITLE_SITES": {
+   "__pairs__": [
+    [
+     2025,
+     [
+      "Hard Rock Stadium",
+      "Miami Gardens, FL"
+     ]
+    ],
+    [
+     2026,
+     [
+      "Allegiant Stadium",
+      "Las Vegas, NV"
+     ]
+    ]
+   ]
+  },
+  "postseason._TITLE_ROTATION": [
+   [
+    "Caesars Superdome",
+    "New Orleans, LA"
+   ],
+   [
+    "NRG Stadium",
+    "Houston, TX"
+   ],
+   [
+    "Mercedes-Benz Stadium",
+    "Atlanta, GA"
+   ],
+   [
+    "SoFi Stadium",
+    "Inglewood, CA"
+   ],
+   [
+    "Lucas Oil Stadium",
+    "Indianapolis, IN"
+   ],
+   [
+    "AT&T Stadium",
+    "Arlington, TX"
+   ]
+  ],
+  "postseason.CCG_SITES": {
+   "SEC": [
+    "Mercedes-Benz Stadium",
+    "Atlanta, GA"
+   ],
+   "Big Ten": [
+    "Lucas Oil Stadium",
+    "Indianapolis, IN"
+   ],
+   "ACC": [
+    "Bank of America Stadium",
+    "Charlotte, NC"
+   ],
+   "Big 12": [
+    "AT&T Stadium",
+    "Arlington, TX"
+   ],
+   "MAC": [
+    "Ford Field",
+    "Detroit, MI"
+   ]
+  },
+  "postseason.BOWLS": {
+   "Citrus Bowl": [
+    "Camping World Stadium",
+    "Orlando, FL",
+    1,
+    [
+     12,
+     31
+    ]
+   ],
+   "ReliaQuest Bowl": [
+    "Raymond James Stadium",
+    "Tampa, FL",
+    1,
+    [
+     12,
+     31
+    ]
+   ],
+   "Alamo Bowl": [
+    "Alamodome",
+    "San Antonio, TX",
+    1,
+    [
+     12,
+     29
+    ]
+   ],
+   "Gator Bowl": [
+    "EverBank Stadium",
+    "Jacksonville, FL",
+    1,
+    [
+     12,
+     30
+    ]
+   ],
+   "Pop-Tarts Bowl": [
+    "Camping World Stadium",
+    "Orlando, FL",
+    1,
+    [
+     12,
+     28
+    ]
+   ],
+   "Holiday Bowl": [
+    "Snapdragon Stadium",
+    "San Diego, CA",
+    1,
+    [
+     12,
+     27
+    ]
+   ],
+   "Las Vegas Bowl": [
+    "Allegiant Stadium",
+    "Las Vegas, NV",
+    1,
+    [
+     12,
+     27
+    ]
+   ],
+   "Texas Bowl": [
+    "NRG Stadium",
+    "Houston, TX",
+    1,
+    [
+     12,
+     31
+    ]
+   ],
+   "Music City Bowl": [
+    "Nissan Stadium",
+    "Nashville, TN",
+    1,
+    [
+     12,
+     30
+    ]
+   ],
+   "Sun Bowl": [
+    "Sun Bowl Stadium",
+    "El Paso, TX",
+    2,
+    [
+     12,
+     31
+    ]
+   ],
+   "Liberty Bowl": [
+    "Simmons Bank Liberty Stadium",
+    "Memphis, TN",
+    2,
+    [
+     12,
+     30
+    ]
+   ],
+   "Duke's Mayo Bowl": [
+    "Bank of America Stadium",
+    "Charlotte, NC",
+    2,
+    [
+     1,
+     2
+    ]
+   ],
+   "Pinstripe Bowl": [
+    "Yankee Stadium",
+    "Bronx, NY",
+    2,
+    [
+     12,
+     27
+    ]
+   ],
+   "Military Bowl": [
+    "Navy-Marine Corps Memorial Stadium",
+    "Annapolis, MD",
+    2,
+    [
+     12,
+     28
+    ]
+   ],
+   "Fenway Bowl": [
+    "Fenway Park",
+    "Boston, MA",
+    2,
+    [
+     12,
+     28
+    ]
+   ],
+   "Arizona Bowl": [
+    "Arizona Stadium",
+    "Tucson, AZ",
+    2,
+    [
+     12,
+     28
+    ]
+   ],
+   "First Responder Bowl": [
+    "Gerald J. Ford Stadium",
+    "Dallas, TX",
+    2,
+    [
+     1,
+     2
+    ]
+   ],
+   "Armed Forces Bowl": [
+    "Amon G. Carter Stadium",
+    "Fort Worth, TX",
+    2,
+    [
+     12,
+     27
+    ]
+   ],
+   "Birmingham Bowl": [
+    "Protective Stadium",
+    "Birmingham, AL",
+    2,
+    [
+     12,
+     27
+    ]
+   ],
+   "Rate Bowl": [
+    "Chase Field",
+    "Phoenix, AZ",
+    2,
+    [
+     12,
+     26
+    ]
+   ],
+   "GameAbove Sports Bowl": [
+    "Ford Field",
+    "Detroit, MI",
+    2,
+    [
+     12,
+     26
+    ]
+   ],
+   "Independence Bowl": [
+    "Independence Stadium",
+    "Shreveport, LA",
+    2,
+    [
+     12,
+     28
+    ]
+   ],
+   "LA Bowl": [
+    "SoFi Stadium",
+    "Inglewood, CA",
+    3,
+    [
+     12,
+     19
+    ]
+   ],
+   "Hawai'i Bowl": [
+    "Clarence T.C. Ching Athletics Complex",
+    "Honolulu, HI",
+    3,
+    [
+     12,
+     24
+    ]
+   ],
+   "Gasparilla Bowl": [
+    "Raymond James Stadium",
+    "Tampa, FL",
+    3,
+    [
+     12,
+     20
+    ]
+   ],
+   "New Mexico Bowl": [
+    "University Stadium",
+    "Albuquerque, NM",
+    3,
+    [
+     12,
+     19
+    ]
+   ],
+   "Famous Idaho Potato Bowl": [
+    "Albertsons Stadium",
+    "Boise, ID",
+    3,
+    [
+     12,
+     23
+    ]
+   ],
+   "Cure Bowl": [
+    "Camping World Stadium",
+    "Orlando, FL",
+    3,
+    [
+     12,
+     19
+    ]
+   ],
+   "Myrtle Beach Bowl": [
+    "Brooks Stadium",
+    "Conway, SC",
+    3,
+    [
+     12,
+     22
+    ]
+   ],
+   "New Orleans Bowl": [
+    "Caesars Superdome",
+    "New Orleans, LA",
+    3,
+    [
+     12,
+     19
+    ]
+   ],
+   "68 Ventures Bowl": [
+    "Hancock Whitney Stadium",
+    "Mobile, AL",
+    3,
+    [
+     12,
+     18
+    ]
+   ],
+   "Frisco Bowl": [
+    "Toyota Stadium",
+    "Frisco, TX",
+    3,
+    [
+     12,
+     17
+    ]
+   ],
+   "Boca Raton Bowl": [
+    "FAU Stadium",
+    "Boca Raton, FL",
+    3,
+    [
+     12,
+     18
+    ]
+   ],
+   "Salute to Veterans Bowl": [
+    "Cramton Bowl",
+    "Montgomery, AL",
+    3,
+    [
+     12,
+     16
+    ]
+   ],
+   "Bahamas Bowl": [
+    "Thomas Robinson Stadium",
+    "Nassau, Bahamas",
+    3,
+    [
+     12,
+     21
+    ]
+   ]
+  },
+  "postseason.BOWL_LORE": {
+   "Rose Bowl": [
+    "The Granddaddy of Them All — first played in 1902.",
+    "The sun sets behind the San Gabriel Mountains. No prettier setting in the sport.",
+    "Every kid on both sidelines grew up watching the Rose Bowl on New Year's Day."
+   ],
+   "Sugar Bowl": [
+    "The Sugar Bowl goes back to 1935, and it's lived in the Superdome since '75.",
+    "New Orleans in January — Bourbon Street was packed with both fan bases last night."
+   ],
+   "Orange Bowl": [
+    "The Orange Bowl first kicked off in 1935. South Florida in winter.",
+    "Neither team minds trading a winter coat for Miami."
+   ],
+   "Cotton Bowl": [
+    "The Cotton Bowl started at Fair Park in 1937. Now it's under the roof in Arlington."
+   ],
+   "Fiesta Bowl": [
+    "The Fiesta Bowl gave us Boise State's Statue of Liberty in 2007.",
+    "Glendale, Arizona — the desert in winter."
+   ],
+   "Peach Bowl": [
+    "The Peach Bowl, Atlanta's game, at Mercedes-Benz Stadium."
+   ],
+   "Citrus Bowl": [
+    "The Citrus Bowl's been played in Orlando since 1947 — it used to be the Tangerine Bowl."
+   ],
+   "Gator Bowl": [
+    "The Gator Bowl goes back to 1946 in Jacksonville."
+   ],
+   "Sun Bowl": [
+    "The Sun Bowl, the second-oldest bowl game, in El Paso since 1935.",
+    "The Franklin Mountains watching over Sun Bowl Stadium."
+   ],
+   "Liberty Bowl": [
+    "The Liberty Bowl started in Philadelphia in 1959 before it found a home in Memphis."
+   ],
+   "Duke's Mayo Bowl": [
+    "The winning coach gets a bucket of mayonnaise dumped on his head. Yes, really."
+   ],
+   "Pop-Tarts Bowl": [
+    "The Pop-Tarts Bowl, where the mascot gets lowered into a giant toaster. Edible mascot."
+   ],
+   "Pinstripe Bowl": [
+    "The Pinstripe Bowl, played at Yankee Stadium in the Bronx."
+   ],
+   "Fenway Bowl": [
+    "College football at Fenway Park — the Green Monster in left."
+   ],
+   "Famous Idaho Potato Bowl": [
+    "The blue turf in Boise for the Famous Idaho Potato Bowl."
+   ],
+   "Hawai'i Bowl": [
+    "Christmas Eve in Honolulu."
+   ],
+   "Bahamas Bowl": [
+    "Football in Nassau — the first bowl played outside the U.S."
+   ],
+   "Holiday Bowl": [
+    "The Holiday Bowl — known for wild finishes. BYU's 1980 Miracle Bowl."
+   ],
+   "Las Vegas Bowl": [
+    "The Las Vegas Bowl at Allegiant Stadium, right off the Strip."
+   ],
+   "Alamo Bowl": [
+    "The Alamo Bowl, played in San Antonio's Alamodome."
+   ]
+  },
+  "postseason.REAL_CHAMPIONS": [],
+  "gameday_history.REAL_HOSTS": {
+   "__set__": []
+  },
+  "gameday_cast.CAST": {
+   "host": {
+    "name": "Rece Davis",
+    "role": "Host",
+    "bio": "Anchor of the show since 2015, the steady hand at the desk",
+    "weights": {
+     "talent": 0.8,
+     "qb": 0.4,
+     "defense": 0.3,
+     "coach": 0.3,
+     "home": 0.5,
+     "form": 0.6
+    },
+    "lean": "contrarian"
+   },
+   "film": {
+    "name": "Kirk Herbstreit",
+    "role": "Former QB, lead analyst",
+    "bio": "Ohio State quarterback turned the sport's most-watched analyst",
+    "weights": {
+     "talent": 1.0,
+     "qb": 1.2,
+     "defense": 0.6,
+     "coach": 0.2,
+     "home": 0.3,
+     "form": 0.3
+    },
+    "lean": null
+   },
+   "coach": {
+    "name": "Nick Saban",
+    "role": "Legendary coach",
+    "bio": "Seven national titles, now picking games on Saturday mornings",
+    "weights": {
+     "talent": 0.8,
+     "qb": 0.3,
+     "defense": 0.9,
+     "coach": 1.2,
+     "home": 0.4,
+     "form": 0.4
+    },
+    "lean": null
+   },
+   "boom": {
+    "name": "Pat McAfee",
+    "role": "Entertainer",
+    "bio": "Former WVU and NFL punter, the loudest man on the set",
+    "weights": {
+     "talent": 0.5,
+     "qb": 0.3,
+     "defense": 0.2,
+     "coach": 0.1,
+     "home": 1.4,
+     "form": 1.0
+    },
+    "lean": "upset"
+   },
+   "defender": {
+    "name": "Desmond Howard",
+    "role": "Former Heisman winner",
+    "bio": "Michigan's 1991 Heisman winner and kick-return legend",
+    "weights": {
+     "talent": 0.8,
+     "qb": 0.3,
+     "defense": 1.4,
+     "coach": 0.3,
+     "home": 0.4,
+     "form": 0.5
+    },
+    "lean": null
+   }
+  },
+  "tailgate.EAT_THE_OPPONENT": {
+   "Tigers": [
+    "tiger-striped cupcakes",
+    "Orange and black icing. It's the closest thing to tiger we're allowed."
+   ],
+   "Bulldogs": [
+    "bulldog chili dogs",
+    "Two hot dogs, chili, slaw. Bulldog food."
+   ],
+   "Wildcats": [
+    "kitty litter cake",
+    "Looks gross. Tastes great. That's the point."
+   ],
+   "Gators": [
+    "fried gator bites",
+    "Tastes like chicken. Tastes like winning."
+   ],
+   "Longhorns": [
+    "a sixteen-hour brisket",
+    "Salt, pepper, post oak. Ain't no Longhorns leaving here."
+   ],
+   "Razorbacks": [
+    "pulled pork sliders",
+    "Whole hog. Sorry, Arkansas."
+   ],
+   "Volunteers": [
+    "smoked orange-glazed ribs",
+    "We roasted the Vols. Literally."
+   ],
+   "Sooners": [
+    "chicken-fried steak",
+    "Okie comfort food, but we're eating it, not them."
+   ],
+   "Aggies": [
+    "Aggie-maroon velvet cupcakes",
+    "Red velvet. Gig 'em, we ate 'em."
+   ],
+   "Commodores": [
+    "hot chicken",
+    "Nashville hot, and Vandy's going down."
+   ],
+   "Gamecocks": [
+    "fried chicken",
+    "Gamecock? Fried. That's all."
+   ],
+   "Rebels": [
+    "fried catfish",
+    "Grove-style, but they won't be partying tonight."
+   ],
+   "Crimson Tide": [
+    "red velvet cake",
+    "Rolled the Tide right into frosting."
+   ],
+   "Buckeyes": [
+    "peanut-butter buckeyes",
+    "Ohio's candy. We're eating every one."
+   ],
+   "Wolverines": [
+    "Michigan cherry pie",
+    "Cherries from up north. Wolverines go down easy."
+   ],
+   "Spartans": [
+    "Greek gyros",
+    "Spartans were Greek. Close enough."
+   ],
+   "Hawkeyes": [
+    "corn on the cob",
+    "Iowa corn. Grilled. Done."
+   ],
+   "Cornhuskers": [
+    "Runza sandwiches",
+    "Husk 'em and eat 'em."
+   ],
+   "Badgers": [
+    "cheese curds",
+    "Squeaky. Wisconsin's, now ours."
+   ],
+   "Nittany Lions": [
+    "Creamery ice cream sundaes",
+    "Penn State's own scoop, eaten by us."
+   ],
+   "Ducks": [
+    "smoked duck",
+    "Duck for the Ducks. Simple."
+   ],
+   "Huskies": [
+    "salmon on a cedar plank",
+    "Pacific Northwest, on our grill."
+   ],
+   "Trojans": [
+    "Greek salad",
+    "Trojan horse? Salad. We win."
+   ],
+   "Bruins": [
+    "bear claws",
+    "The pastry kind. Bruins never stood a chance."
+   ],
+   "Hoosiers": [
+    "breaded pork tenderloin",
+    "Bigger than the bun. Like our lead's gonna be."
+   ],
+   "Boilermakers": [
+    "boiled peanuts",
+    "Boil 'em. That's the joke."
+   ],
+   "Terrapins": [
+    "Maryland crab cakes",
+    "Turtle's safe. The crabs aren't."
+   ],
+   "Golden Gophers": [
+    "Juicy Lucy burgers",
+    "Molten cheese, Minneapolis style."
+   ],
+   "Fighting Illini": [
+    "Chicago dogs",
+    "Everything but ketchup."
+   ],
+   "Scarlet Knights": [
+    "Taylor ham sandwiches",
+    "Or pork roll. Don't start."
+   ],
+   "Seminoles": [
+    "fried green tomatoes",
+    "Tallahassee green, frying tonight."
+   ],
+   "Hurricanes": [
+    "Cuban sandwiches",
+    "Miami's sandwich, our win."
+   ],
+   "Yellow Jackets": [
+    "honey-glazed wings",
+    "Bees, jackets, whatever. Sweet."
+   ],
+   "Cardinals": [
+    "cardinal-red hot wings",
+    "Redbirds, wings — get it?"
+   ],
+   "Tar Heels": [
+    "Carolina pulled pork",
+    "Eastern vinegar sauce. Heels go down."
+   ],
+   "Blue Devils": [
+    "deviled eggs",
+    "Blue Devils. Deviled eggs. Can't make this up."
+   ],
+   "Demon Deacons": [
+    "more deviled eggs",
+    "Deacons get the deviled eggs too."
+   ],
+   "Wolfpack": [
+    "Carolina barbecue",
+    "Wolves don't get barbecue. We do."
+   ],
+   "Panthers": [
+    "pierogies",
+    "Steel City, our plates."
+   ],
+   "Cavaliers": [
+    "Virginia ham biscuits",
+    "Old Dominion's finest."
+   ],
+   "Hokies": [
+    "turkey legs",
+    "HokieBird's a turkey. We ate it."
+   ],
+   "Orange": [
+    "orange chicken",
+    "Too easy."
+   ],
+   "Eagles": [
+    "chicken wings",
+    "Eagle wings, technically."
+   ],
+   "Golden Bears": [
+    "sourdough bread bowls",
+    "Bay Area bread. Bears go in the bowl."
+   ],
+   "Cardinal": [
+    "redwood-smoked tri-tip",
+    "Stanford's Cardinal is a color. Tri-tip isn't."
+   ],
+   "Mustangs": [
+    "Tex-Mex fajitas",
+    "Pony up for the platter."
+   ],
+   "Bears": [
+    "gummy bears",
+    "Bite their heads off first."
+   ],
+   "Cougars": [
+    "cougar cheese",
+    "It's a real cheese, from Washington State. Who knew."
+   ],
+   "Buffaloes": [
+    "buffalo wings",
+    "Obviously."
+   ],
+   "Cyclones": [
+    "tornado potatoes",
+    "Spiral-cut, deep fried."
+   ],
+   "Jayhawks": [
+    "Kansas City burnt ends",
+    "KC on our grill."
+   ],
+   "Cowboys": [
+    "cowboy beans",
+    "Pot of beans, hold the horse."
+   ],
+   "Horned Frogs": [
+    "frog legs",
+    "Fried. Crunchy. Texas."
+   ],
+   "Red Raiders": [
+    "Lubbock tortilla chips",
+    "They throw 'em, we dip 'em."
+   ],
+   "Knights": [
+    "giant turkey legs",
+    "Renaissance-fair food."
+   ],
+   "Utes": [
+    "Utah fry sauce on everything",
+    "Ketchup and mayo. Don't argue."
+   ],
+   "Mountaineers": [
+    "pepperoni rolls",
+    "West Virginia's snack, gone."
+   ],
+   "Sun Devils": [
+    "Sonoran hot dogs",
+    "Bacon-wrapped, beans, salsa."
+   ],
+   "Bearcats": [
+    "Cincinnati chili",
+    "Three-way. Bearcats on the side."
+   ],
+   "Fighting Irish": [
+    "Irish stew",
+    "Lamb, potatoes, Guinness. Shamrock it."
+   ]
+  },
+  "tailgate.SCHOOL_COOKING": {
+   "Buffalo": [
+    "real Buffalo wings",
+    "Wings, hot sauce and butter, blue cheese. If you bring ranch I'm calling security."
+   ],
+   "Memphis": [
+    "dry-rub ribs",
+    "Memphis dry rub, no sauce. Sauce is for people with something to hide."
+   ],
+   "Baylor": [
+    "cherry-cola-glazed ribs",
+    "Ribs glazed with cherry cola. It works, I promise."
+   ],
+   "Pitt": [
+    "a pierogi and fries sandwich bar",
+    "Sandwiches with the fries and slaw right on 'em. Pittsburgh style."
+   ],
+   "Fresno State": [
+    "Santa Maria tri-tip",
+    "Tri-tip, red oak, and a whole flat of Central Valley peaches."
+   ],
+   "Hawai'i": [
+    "kalua pig and poke",
+    "Kalua pig and fresh poke from this morning's market."
+   ],
+   "LSU": [
+    "jambalaya in a paddle pot",
+    "Jambalaya stirred with a boat paddle in a pot big enough to bathe in. Feeds two hundred."
+   ],
+   "Wisconsin": [
+    "beer brats and fried cheese curds",
+    "Brats in a beer-and-onion bath, then on the grill. Curds so fresh they squeak."
+   ],
+   "Maryland": [
+    "crab cakes with all the seasoning",
+    "Jumbo lump, broiled, not fried, and crab seasoning on literally everything."
+   ],
+   "West Virginia": [
+    "pepperoni rolls and a pot of beans",
+    "Pepperoni rolls and soup beans with cornbread. Mountain food."
+   ],
+   "Cincinnati": [
+    "Cincinnati-style chili dip",
+    "Cream cheese, chili, cheddar, broiled. Scoop it with crackers and don't look back."
+   ],
+   "Georgia Tech": [
+    "drive-in chili dogs",
+    "Chili dogs and onion rings. Drive-in style, like my dad made 'em."
+   ],
+   "Kansas State": [
+    "burnt ends and bierocks",
+    "Burnt ends, and bierocks — beef and cabbage buns — my grandma's Volga German recipe."
+   ]
+  },
+  "draft.NFL_TEAMS": [
+   "Arizona",
+   "Atlanta",
+   "Baltimore",
+   "Buffalo",
+   "Carolina",
+   "Chicago",
+   "Cincinnati",
+   "Cleveland",
+   "Dallas",
+   "Denver",
+   "Detroit",
+   "Green Bay",
+   "Houston",
+   "Indianapolis",
+   "Jacksonville",
+   "Kansas City",
+   "Las Vegas",
+   "LA Chargers",
+   "LA Rams",
+   "Miami",
+   "Minnesota",
+   "New England",
+   "New Orleans",
+   "NY Giants",
+   "NY Jets",
+   "Philadelphia",
+   "Pittsburgh",
+   "San Francisco",
+   "Seattle",
+   "Tampa Bay",
+   "Tennessee",
+   "Washington"
+  ],
+  "weather.SCHOOL_CLIMATE": {
+   "Fresno State": [
+    92,
+    56,
+    0.03,
+    6,
+    0,
+    0.0
+   ],
+   "San Diego State": [
+    80,
+    66,
+    0.05,
+    7,
+    0,
+    0.0
+   ],
+   "UCLA": [
+    80,
+    67,
+    0.05,
+    6,
+    0,
+    0.0
+   ],
+   "USC": [
+    83,
+    68,
+    0.05,
+    6,
+    0,
+    0.0
+   ],
+   "California": [
+    73,
+    57,
+    0.1,
+    9,
+    0,
+    0.0
+   ],
+   "Stanford": [
+    78,
+    58,
+    0.08,
+    7,
+    0,
+    0.0
+   ],
+   "San Jose State": [
+    80,
+    59,
+    0.07,
+    7,
+    0,
+    0.0
+   ],
+   "Washington": [
+    71,
+    48,
+    0.32,
+    8,
+    1,
+    0.2
+   ],
+   "Washington State": [
+    75,
+    36,
+    0.12,
+    9,
+    0,
+    1.2
+   ],
+   "Buffalo": [
+    72,
+    34,
+    0.28,
+    12,
+    1,
+    2.0
+   ],
+   "Army": [
+    74,
+    38,
+    0.23,
+    9,
+    1,
+    1.0
+   ],
+   "Texas Tech": [
+    84,
+    55,
+    0.1,
+    15,
+    0,
+    0.3
+   ],
+   "UTEP": [
+    90,
+    58,
+    0.05,
+    8,
+    0,
+    0.1
+   ],
+   "North Texas": [
+    91,
+    58,
+    0.13,
+    11,
+    1,
+    0.1
+   ],
+   "Houston": [
+    91,
+    66,
+    0.24,
+    8,
+    2,
+    0.0
+   ],
+   "Rice": [
+    91,
+    66,
+    0.24,
+    8,
+    2,
+    0.0
+   ],
+   "Texas State": [
+    92,
+    63,
+    0.12,
+    8,
+    2,
+    0.0
+   ],
+   "Nevada": [
+    82,
+    46,
+    0.06,
+    8,
+    0,
+    0.7
+   ],
+   "UNLV": [
+    95,
+    58,
+    0.03,
+    8,
+    0,
+    0.0
+   ],
+   "Wyoming": [
+    70,
+    35,
+    0.07,
+    18,
+    0,
+    1.5
+   ],
+   "Air Force": [
+    74,
+    44,
+    0.08,
+    10,
+    0,
+    1.2
+   ],
+   "Colorado": [
+    78,
+    47,
+    0.09,
+    9,
+    0,
+    1.0
+   ],
+   "Colorado State": [
+    77,
+    43,
+    0.08,
+    9,
+    0,
+    1.0
+   ],
+   "New Mexico": [
+    81,
+    48,
+    0.07,
+    9,
+    0,
+    0.3
+   ],
+   "New Mexico State": [
+    87,
+    58,
+    0.05,
+    8,
+    0,
+    0.1
+   ],
+   "Miami": [
+    89,
+    77,
+    0.28,
+    9,
+    2,
+    0.0
+   ],
+   "FIU": [
+    89,
+    77,
+    0.28,
+    9,
+    2,
+    0.0
+   ],
+   "Florida Atlantic": [
+    88,
+    76,
+    0.27,
+    9,
+    2,
+    0.0
+   ],
+   "South Florida": [
+    90,
+    74,
+    0.25,
+    8,
+    2,
+    0.0
+   ],
+   "Northern Illinois": [
+    78,
+    32,
+    0.2,
+    12,
+    1,
+    1.2
+   ],
+   "Minnesota": [
+    72,
+    25,
+    0.19,
+    11,
+    1,
+    1.5
+   ],
+   "Iowa State": [
+    78,
+    31,
+    0.18,
+    12,
+    1,
+    1.2
+   ],
+   "Kansas State": [
+    83,
+    42,
+    0.15,
+    14,
+    1,
+    0.6
+   ],
+   "Appalachian State": [
+    75,
+    45,
+    0.24,
+    9,
+    1,
+    0.8
+   ],
+   "West Virginia": [
+    76,
+    40,
+    0.24,
+    7,
+    1,
+    0.9
+   ],
+   "Penn State": [
+    74,
+    36,
+    0.22,
+    9,
+    1,
+    1.1
+   ],
+   "Oregon": [
+    79,
+    47,
+    0.22,
+    6,
+    1,
+    0.1
+   ],
+   "Oregon State": [
+    79,
+    47,
+    0.24,
+    6,
+    1,
+    0.1
+   ]
+  },
+  "weather.ALTITUDE": {
+   "Wyoming": 7220,
+   "Air Force": 7250,
+   "Colorado": 5360,
+   "Colorado State": 5000,
+   "New Mexico": 5100,
+   "Utah": 4650,
+   "BYU": 4550,
+   "Utah State": 4700,
+   "Nevada": 4500,
+   "UTEP": 3900,
+   "New Mexico State": 3900,
+   "Texas Tech": 3250,
+   "Boise State": 2700,
+   "UNLV": 2000,
+   "Arizona": 2400,
+   "Washington State": 2350,
+   "Montana": 3200,
+   "Montana State": 4800,
+   "Northern Colorado": 4700,
+   "Idaho": 2600,
+   "Weber State": 4400,
+   "Idaho State": 4450,
+   "Northern Arizona": 7000,
+   "Southern Utah": 5800
+  },
+  "weather.CITY_STATE": {
+   "Atlanta": "GA",
+   "Tampa": "FL",
+   "Jacksonville": "FL",
+   "Dallas": "TX",
+   "East Rutherford": "NJ",
+   "Philadelphia": "PA",
+   "Charlotte": "NC",
+   "Indianapolis": "IN",
+   "Arlington": "TX",
+   "Detroit": "MI",
+   "Las Vegas": "NV",
+   "Orlando": "FL",
+   "Houston": "TX",
+   "Nashville": "TN",
+   "Baltimore": "MD",
+   "Chicago": "IL",
+   "New Orleans": "LA",
+   "Glendale": "AZ",
+   "Pasadena": "CA",
+   "Miami Gardens": "FL",
+   "Memphis": "TN",
+   "San Antonio": "TX",
+   "Boston": "MA",
+   "Bronx": "NY",
+   "Annapolis": "MD"
+  },
+  "weather.INDOOR": [
+   "Dome",
+   "dome",
+   "Arena",
+   "Alerus Center",
+   "NRG Stadium",
+   "SoFi Stadium",
+   "Allegiant Stadium",
+   "Chase Field",
+   "AT&T Stadium",
+   "Ford Field",
+   "Mercedes-Benz Stadium",
+   "Lucas Oil Stadium",
+   "State Farm Stadium"
+  ],
+  "stadium.KNOWN_PARTS": {
+   "Washington": {
+    "canopy": 1
+   },
+   "Oregon": {
+    "canopy": 1,
+    "sound": 3
+   },
+   "Iowa": {
+    "visitor_locker": 2
+   },
+   "LSU": {
+    "student_section": 4,
+    "lights": 2
+   },
+   "Clemson": {
+    "tunnel": 2
+   },
+   "Texas A&M": {
+    "student_section": 4
+   }
+  },
+  "ui._SHORTEN": [
+   [
+    "Georgia Southern",
+    "Ga. Southern"
+   ],
+   [
+    "Mississippi State",
+    "Miss. State"
+   ],
+   [
+    "Northern Illinois",
+    "N. Illinois"
+   ],
+   [
+    "Western Michigan",
+    "W. Michigan"
+   ],
+   [
+    "Central Michigan",
+    "C. Michigan"
+   ],
+   [
+    "Eastern Michigan",
+    "E. Michigan"
+   ],
+   [
+    "Western Kentucky",
+    "W. Kentucky"
+   ],
+   [
+    "Middle Tennessee",
+    "Middle Tenn."
+   ],
+   [
+    "USC",
+    "S. California"
+   ],
+   [
+    "South Carolina",
+    "S. Carolina"
+   ],
+   [
+    "North Carolina",
+    "N. Carolina"
+   ],
+   [
+    "East Carolina",
+    "E. Carolina"
+   ],
+   [
+    "Florida Atlantic",
+    "Fla. Atlantic"
+   ],
+   [
+    "San Diego State",
+    "SD State"
+   ],
+   [
+    "San Jose State",
+    "San José St."
+   ],
+   [
+    "Sacramento State",
+    "Sac State"
+   ],
+   [
+    "Jacksonville State",
+    "Jax State"
+   ],
+   [
+    "Kennesaw State",
+    "Kennesaw St."
+   ],
+   [
+    "Appalachian State",
+    "App. State"
+   ],
+   [
+    "New Mexico State",
+    "NM State"
+   ],
+   [
+    "Oklahoma State",
+    "Okla. State"
+   ],
+   [
+    "Michigan State",
+    "Mich. State"
+   ],
+   [
+    "Washington State",
+    "Wash. State"
+   ],
+   [
+    "Arizona State",
+    "Ariz. State"
+   ],
+   [
+    "Ole Miss",
+    "Miss."
+   ],
+   [
+    "The Citadel",
+    "Lowcountry"
+   ],
+   [
+    " State",
+    " St."
+   ],
+   [
+    "Southern ",
+    "S. "
+   ],
+   [
+    "Northern ",
+    "N. "
+   ],
+   [
+    "Western ",
+    "W. "
+   ],
+   [
+    "Eastern ",
+    "E. "
+   ],
+   [
+    "Central ",
+    "C. "
+   ]
+  ],
+  "ui.SHORT_NAMES": {
+   "Mississippi State": "Miss. State",
+   "South Carolina": "S. Carolina",
+   "Michigan State": "Michigan St.",
+   "USC": "S. California",
+   "North Carolina": "N. Carolina",
+   "Oklahoma State": "Oklahoma St.",
+   "Florida Atlantic": "Fla. Atlantic",
+   "Appalachian State": "App. State",
+   "Georgia Southern": "Ga. Southern",
+   "Arkansas State": "Arkansas St.",
+   "Central Michigan": "C. Michigan",
+   "Eastern Michigan": "E. Michigan",
+   "Sacramento State": "Sac State",
+   "Western Michigan": "W. Michigan",
+   "Jacksonville State": "Jax State",
+   "Kennesaw State": "Kennesaw St.",
+   "Middle Tennessee": "Middle Tenn.",
+   "Missouri State": "Missouri St.",
+   "New Mexico State": "NM State",
+   "Western Kentucky": "W. Kentucky",
+   "Colorado State": "Colorado St.",
+   "San Diego State": "San Diego St.",
+   "Washington State": "Wash. State",
+   "North Dakota State": "N. Dakota St.",
+   "Northern Illinois": "N. Illinois",
+   "San Jose State": "San José St.",
+   "The Citadel": "Lowcountry",
+   "Youngstown State": "Youngstown",
+   "Illinois State": "Illinois St.",
+   "South Dakota State": "S. Dakota St.",
+   "Eastern Washington": "E. Washington",
+   "Portland State": "Portland St.",
+   "Northern Arizona": "N. Arizona",
+   "Southern Illinois": "S. Illinois",
+   "Southeast Missouri State": "SE Missouri",
+   "Cal Poly": "SLO",
+   "Northern Colorado": "N. Colorado",
+   "Central Arkansas": "C. Arkansas",
+   "Eastern Kentucky": "E. Kentucky",
+   "Southeastern Louisiana": "SE Louisiana",
+   "Tennessee State": "Tennessee St.",
+   "East Tennessee State": "E. Tenn. State",
+   "Western Carolina": "W. Carolina",
+   "Gardner-Webb": "Boiling Spr.",
+   "Monmouth": "W. Long Branch",
+   "Grambling State": "Grambling",
+   "Virginia Tech": "Virginia Tech",
+   "West Virginia": "West Virginia",
+   "East Carolina": "East Carolina",
+   "South Florida": "South Florida",
+   "Georgia State": "Georgia State",
+   "South Alabama": "South Alabama",
+   "Southern Miss": "Southern Miss",
+   "Bowling Green": "Bowling Green",
+   "Arizona State": "Arizona St.",
+   "Florida State": "Florida St.",
+   "New Hampshire": "New Hampshire",
+   "Alabama State": "Alabama St.",
+   "Murray State": "Murray State",
+   "Montana State": "Montana St.",
+   "Indiana State": "Indiana St.",
+   "Wake Forest": "Wake Forest",
+   "Chattanooga": "Chattanooga"
+  },
+  "ui._SQUEEZE": [
+   [
+    " State",
+    " St."
+   ],
+   [
+    "South ",
+    "S. "
+   ],
+   [
+    "North ",
+    "N. "
+   ],
+   [
+    "Eastern ",
+    "E. "
+   ],
+   [
+    "Western ",
+    "W. "
+   ],
+   [
+    "Central ",
+    "C. "
+   ],
+   [
+    "Northern ",
+    "N. "
+   ],
+   [
+    "Southern ",
+    "S. "
+   ],
+   [
+    "Southeast ",
+    "SE "
+   ],
+   [
+    "Southeastern ",
+    "SE "
+   ],
+   [
+    "College",
+    "Coll."
+   ],
+   [
+    "Tennessee",
+    "Tenn."
+   ],
+   [
+    "Carolina",
+    "Car."
+   ],
+   [
+    "Virginia",
+    "Va."
+   ],
+   [
+    "Georgia",
+    "Ga."
+   ],
+   [
+    "Louisiana",
+    "La."
+   ],
+   [
+    "Military",
+    "Mil."
+   ],
+   [
+    "Washington",
+    "Wash."
+   ],
+   [
+    "Kentucky",
+    "Ky."
+   ],
+   [
+    "Missouri",
+    "Mo."
+   ],
+   [
+    "Alabama",
+    "Ala."
+   ],
+   [
+    "Florida",
+    "Fla."
+   ],
+   [
+    "Dakota",
+    "Dak."
+   ],
+   [
+    "Illinois",
+    "Ill."
+   ],
+   [
+    "Colorado",
+    "Colo."
+   ],
+   [
+    "Michigan",
+    "Mich."
+   ],
+   [
+    "Arkansas",
+    "Ark."
+   ],
+   [
+    "Arizona",
+    "Ariz."
+   ],
+   [
+    "Hampshire",
+    "Hamp."
+   ],
+   [
+    "Island",
+    "Isl."
+   ],
+   [
+    "Texas",
+    "Tex."
+   ],
+   [
+    "Chattanooga",
+    "Chatt."
+   ],
+   [
+    "Montana",
+    "Mont."
+   ],
+   [
+    "Portland",
+    "Port."
+   ],
+   [
+    "Kennesaw",
+    "Kenn."
+   ],
+   [
+    "Jackson",
+    "Jax."
+   ],
+   [
+    "Springs",
+    "Spr."
+   ],
+   [
+    "Branch",
+    "Br."
+   ]
+  ],
+  "career.OFFENSE_NOTES": {
+   "Air Raid": [
+    "Spread the field with four receivers and throw it — quick, short passes that add up, with deep shots when the defense creeps up.",
+    "An accurate QB and lots of receivers. Linemen pass-block more than they maul.",
+    "The pass-happy programs out on the High Plains."
+   ],
+   "Spread RPO": [
+    "Spread out, then let the QB read one defender and hand off, keep it, or throw — run-pass options put a linebacker in a bind on every snap.",
+    "A quick-thinking QB who can run a little, and a running back who hits the hole.",
+    "The modern college default — most of the top programs live here."
+   ],
+   "Pro Style": [
+    "The pro look: tight ends, sometimes a fullback, a real run game that sets up play-action.",
+    "A pocket QB, a tight end who can block and catch, and big linemen.",
+    "Old-school powers that win at the line of scrimmage."
+   ],
+   "West Coast": [
+    "Short, timed throws used almost like runs — get the ball to playmakers in space and move the chains.",
+    "A smart, accurate QB and receivers and backs who are good after the catch.",
+    "Lots of pro-influenced college staffs."
+   ],
+   "Smashmouth": [
+    "Line up with extra blockers and run it down their throat. Play-action when they load the box. Shortens the game.",
+    "Big offensive linemen, tight ends, and a bruising running back. Receivers matter less.",
+    "Classic cold-weather Midwest football."
+   ],
+   "Triple Option": [
+    "The QB reads two defenders on every run — hand off, keep, or pitch. Very hard to prepare for; rarely throws.",
+    "A tough QB who runs, disciplined linemen, and backs who hold onto the ball. Receivers barely matter (and won't want to come).",
+    "The service academies and a few stubborn programs."
+   ],
+   "Power Spread": [
+    "Spread formations with gap-scheme power runs and a running QB — physical, but with space to work.",
+    "A big dual-threat QB, strong linemen, and a tight end who blocks.",
+    "The dual-threat powers of the 2000s and 2010s."
+   ],
+   "Veer & Shoot": [
+    "Go fast and go vertical — receivers read the coverage and adjust routes on the fly. The fastest tempo in the game.",
+    "A QB with a big arm and fast receivers who read defenses. Gets you more possessions.",
+    "The run-and-shoot family tree, still alive in Texas."
+   ]
+  },
+  "career.DEFENSE_COMPS": {
+   "4-3 Zone": "The classic sound defense — a generation of Midwest and Southern teams.",
+   "4-2-5 Quarters": "The defense built in Texas to stop the spread.",
+   "Pressure 3-4": "The zone-blitz 3-4 of the pros; blitz-happy college staffs everywhere.",
+   "3-3-5 Stack": "The odd stack — undersized, fast, and always moving.",
+   "Multiple Man": "The modern powerhouse look — press corners and match-up coverage.",
+   "Tite Front": "The Plains' answer to spread-to-run offenses."
+  }
+ },
+ "terms": {
+  "Golden Helmet": "Heisman",
+  "Campus Countdown": "College GameDay",
+  "Countdown crew": "GameDay crew",
+  "National Playoff": "College Football Playoff",
+  "NP": "CFP",
+  "Pro League": "NFL",
+  "media poll": "AP Poll",
+  "Media Poll": "AP Poll",
+  "Playoff Rankings": "CFP Rankings",
+  "High Noon": "Big Noon",
+  "Lake Country Lights": "MACtion",
+  "Southern Crown Conference": "Southeastern Conference",
+  "Continental Conference": "Big Ten Conference",
+  "Seaboard Conference": "Atlantic Coast Conference",
+  "Meridian Conference": "Big 12 Conference",
+  "Federal Conference": "American Conference",
+  "Coastal Plains Conference": "Sun Belt Conference",
+  "Lake Country Conference": "Mid-American Conference",
+  "Crossroads Conference": "Conference USA",
+  "Golden West Conference": "Pac-12 Conference",
+  "High Country Conference": "Mountain West Conference",
+  "SCC": "SEC",
+  "Continental": "Big Ten",
+  "Seaboard": "ACC",
+  "Meridian": "Big 12",
+  "Coastal Plains": "Sun Belt",
+  "Lake Country": "MAC",
+  "Crossroads": "CUSA",
+  "Golden West": "Pac-12",
+  "High Country": "Mountain West",
+  "East Alabama": "Auburn",
+  "Bayou State": "LSU",
+  "Upcountry": "Clemson",
+  "Tippecanoe": "Purdue",
+  "Lakeshore": "Northwestern"
+ }
+}
