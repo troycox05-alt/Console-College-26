@@ -403,6 +403,23 @@ def tree_screen(league):
         if msg:
             print(paint("   " + msg, C.BCYAN))
             msg = ""
+        import webview
+        if webview.on():
+            try:
+                br = []
+                for i, (b, lab) in enumerate(BRANCHES, 1):
+                    perks = []
+                    for k, v in PERKS.items():
+                        if v[0] != b:
+                            continue
+                        perks.append({"name": v[2], "tier": v[1], "status": status(coach, k), "ranks": v[5],
+                                      "have": st["have"].get(k, 0)})
+                    br.append({"key": str(i), "label": lab, "spent": spent_in(coach, b), "perks": perks})
+                webview.emit("tree", {"name": coach.name, "points": st["points"], "spent": st["spent"],
+                                      "free": bool(st.get("free_respec")), "born": born, "group": st.get("group") or "",
+                                      "recent": recent, "branches": br, "gates": list(GATES), "msg": webview.plain(msg)})
+            except Exception:
+                pass
         c = ask("Branch # to open, [R] reset the tree, Enter = back:").strip().lower()
         if c == "":
             return
@@ -436,6 +453,18 @@ def _branch(league, coach, branch):
         print(f"   {paint(f'[{i}]', C.BYELLOW, C.BOLD)} {paint('T' + str(tier), C.GRAY)} "
               f"{paint(pad(name, 24), col, C.BOLD)}{paint(pad(tag, 30), C.GRAY)}{fork_tag}")
         print(paint(f"        {what}", C.GRAY))
+    import webview
+    if webview.on():
+        try:
+            rows = []
+            for i, k in enumerate(keys, 1):
+                _, tier, name, what, fork, ranks = PERKS[k]
+                rows.append({"key": str(i), "tier": tier, "name": name, "what": what, "fork": bool(fork),
+                             "status": status(coach, k), "cost": COST[tier], "ranks": ranks, "have": st["have"].get(k, 0),
+                             "gate": GATES[tier - 1]})
+            webview.emit("branch", {"label": label, "spent": spent_in(coach, b), "points": st["points"], "rows": rows})
+        except Exception:
+            pass
     c = ask("Learn which? (Enter = back):").strip()
     if not (c.isdigit() and 1 <= int(c) <= len(keys)):
         return ""

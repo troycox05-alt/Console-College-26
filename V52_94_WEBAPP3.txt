@@ -1,0 +1,15 @@
+Console College 26 — v52.94 · Web app, stage 3
+==============================================
+New app screens on the web version:
+  Player card (full screen with Prev/Next through the position room, and the pop-up card everywhere)
+  Depth chart, both screens: one-tap ▲/▼ to move a player (new U#/D# commands), staff boards,
+    position chips, staff ideas, collapsible staff reads
+  Inbox and messages: reply options as buttons, "answer the next one" queue
+  Press conferences (Thursday and postgame): reporter questions and your answers as a conversation,
+    every answer a button with its upside and cost
+  After the game: the week's work report, week results (tap a game for its box score), box score
+  Offseason hub (week, deadline, desk, program, national board, the 17-week calendar) and the
+    weekly agenda (handle the task, advance the week)
+
+Changed: webview.py, play.py, screens.py, week.py, depth_ui.py, people.py, podium.py, presser.py,
+         postgame.py, offseason_cal.py, gui/native.js, gui/native.css

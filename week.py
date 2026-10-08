@@ -567,6 +567,15 @@ def week_report(league, g, team):
     else:
         line = f"{res_w} by {abs(m)} — more than anything the week decided."
     print(paint("   " + line, C.BWHITE))
+    import webview
+    if webview.on():
+        webview.emit("report", {"title": f"{team.school} {g.score_for(team)}, {opp.school} {g.score_for(opp)}",
+                                "won": m > 0, "routine": res.get("routine") or "",
+                                "rows": [{"day": day, "what": webview.plain(what), "lift": round(lift, 2),
+                                          "pts": round(_pts(lift), 1), "notes": [webview.plain(b) for b in note.split("; ") if b]}
+                                         for day, what, lift, note in res["rows"]],
+                                "plan": [{"name": webview.plain(n), "verdict": webview.plain(v)} for n, v, _ in (res["plan"] or [])],
+                                "whose": res.get("whose", ""), "total": round(tot, 2), "pts": round(pts, 1), "line": line})
     pause()
     return res
 
@@ -626,6 +635,18 @@ def game_plan_screen(league, team, opp, cur=None):
         print(paint("   A key that fits the matchup is worth more. 'Game-plan heavy' practice sharpens both keys.", C.GRAY))
         print("   " + "   ".join([key("O#", "offense"), key("D#", "defense"), key("S", "script"),
                                   key("Enter", "done", C.BGREEN), key("R", "take the staff's plan")]))
+        import webview
+        if webview.on():
+            try:
+                webview.emit("plan", {"opp": opp.school, "film": list(lines), "script": bool(script),
+                                      "lift": sideline.SCRIPT_LIFT, "cost": sideline.SCRIPT_COST, "sides": [
+                    {"title": t_, "options": [{"key": f"{kc}{i}", "label": lab, "blurb": bl, "worth": webview.plain(worth(k)),
+                                               "on": k == pk, "staff": k == rc}
+                                              for i, (k, (lab, bl)) in enumerate(tb.items(), 1)]}
+                    for t_, tb, pk, rc, kc in (("Offense", sideline.OFF_KEYS, off, s_off, "o"),
+                                               ("Defense", sideline.DEF_KEYS, dfk, s_def, "d"))]})
+            except Exception:
+                pass
         c = ask("Game plan:").strip().lower()
         if c == "":
             return {"off": off, "def": dfk, "script": script}
@@ -823,6 +844,24 @@ def hub(league):
                key("M", "press conference"), key("R", "practice report"), key("O", f"film on {opp.school}"),
                key("T", f"{opp.school} page & schedule"), key("W", "weather"), key("S", "my schedule"),
                key("B", "back", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                nb_ = len(practice.battles(league, team))
+            except Exception:
+                nb_ = None
+            mail_ = [{"text": webview.plain(f"{people.sender_label(m, short=True)}: {m['subject']}"), "unread": not m["read"]}
+                     for m in list(reversed(people.inbox(league)))[:3]]
+            webview.week(league, team, g, label, blurb, routine,
+                         [{"key": str(i), "name": r["name"], "default": k == dflt,
+                           "on": bool(routine and routine.startswith(r["name"]))} for i, (k, r) in enumerate(rl, 1)],
+                         ", ".join(presser.get("said", [])) if presser else "",
+                         film_lines, {"unread": n_un, "waiting": n_wait, "mail": mail_},
+                         [x for x in inj if "Plan:" not in webview.plain(x)],
+                         (f"{sideline.OFF_KEYS[gplan['off']][0]} / {sideline.DEF_KEYS[gplan['def']][0]}"
+                          + (" · scripted" if gplan.get("script") else "")) if gplan else "",
+                         fc["headline"] + (f" · {fc['temp']}°" if not fc["indoor"] else ""), nb_,
+                         (f"{banked:+.2f}" + (f" · them {theirs:+.2f}" if theirs else "")) if (banked or theirs) else "")
         c = ask("This week:").strip().lower()
         if c == "":
             apply_prep(league, team, focus, presser, routine=routine)

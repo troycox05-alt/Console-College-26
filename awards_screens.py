@@ -72,6 +72,23 @@ def awards_screen(league, year=None):
                     grp, p, t = r
                     cells.append(f"{paint(f'{grp:<3}', C.GRAY)}{pad(truncate(p.name, 20), 21)}{pad(truncate(t.school, 16), 17)}{mark(t)}")
             print("   " + pad(cells[0], 46) + (cells[1] if len(cells) > 1 else ""))
+    import webview
+    if webview.on():
+        try:
+            me = lambda t: you is not None and t is you
+            d = {"year": aw["year"], "positional": [{"award": n, "name": p.name, "id": webview.pid(p), "school": t.school,
+                                                    "line": webview.plain(line), "me": me(t)} for n, p, t, line in aw["positional"]],
+                 "extra": [{"award": l, "name": w, "school": t.school, "line": webview.plain(str(ln)), "me": me(t)} for l, w, t, ln in extra]}
+            if aw["heisman"]:
+                p, t, line = aw["heisman"]
+                d["heisman"] = {"name": p.name, "id": webview.pid(p), "pos": p.position, "school": t.school,
+                                "line": webview.plain(line), "me": me(t), "color": webview._color(league, t)}
+            for which in ("first", "second"):
+                d[which] = [{"grp": g, "name": p.name, "id": webview.pid(p), "school": t.school, "me": me(t)}
+                            for g, p, t in sorted(aw[which], key=lambda x: GROUP_ORDER.index(x[0]))]
+            webview.emit("awards", d)
+        except Exception:
+            pass
     pause()
 
 
@@ -129,6 +146,29 @@ def draft_screen(league, year=None):
         print(f"   {paint('[1-7]', C.BYELLOW)} a round   {paint('[S]', C.BYELLOW)} by school"
               + (f"   {paint('[Y]', C.BYELLOW)} your picks" if you is not None else "")
               + f"   {paint('[B]', C.GRAY)} back")
+        import webview
+        if webview.on():
+            try:
+                from collections import Counter
+                d = {"year": year, "view": view, "n": len(picks), "early": early, "schools": len({x["school"] for x in picks}),
+                     "you": you.school if you is not None else ""}
+                if view == "round1" or view.startswith("r"):
+                    rnd = 1 if view == "round1" else int(view[1:])
+                    d["round"] = rnd
+                    d["picks"] = [{"pick": x["overall_pick"], "nfl": x["nfl"], "name": x["name"], "pos": x["pos"], "school": x["school"],
+                                   "cls": x["cls"], "early": bool(x["early"]), "me": you is not None and x["school"] == you.school}
+                                  for x in picks if x["round"] == rnd]
+                elif view == "schools":
+                    n = Counter(x["school"] for x in picks)
+                    r1 = Counter(x["school"] for x in picks if x["round"] == 1)
+                    d["bySchool"] = [{"school": s, "n": k, "r1": r1[s], "me": you is not None and s == you.school} for s, k in n.most_common(20)]
+                elif view == "yours" and you is not None:
+                    d["mine"] = [{"round": x["round"], "pick": x["overall_pick"], "nfl": x["nfl"], "name": x["name"], "pos": x["pos"]}
+                                 for x in picks if x["school"] == you.school]
+                    d["bonus"] = round(getattr(you, "draft_bonus", 0), 1)
+                webview.emit("draft", d)
+            except Exception:
+                pass
         c = ask("Select:").strip().lower()
         if c.isdigit() and 1 <= int(c) <= 7:
             view = f"r{c}"

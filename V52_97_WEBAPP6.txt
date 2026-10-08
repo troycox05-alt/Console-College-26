@@ -1,0 +1,10 @@
+Console College 26 — v52.97 · Web app, stage 6
+==============================================
+New hand-built screens:
+  Rankings menu · Media Top 25 (movement, points and first-place votes, last result, your team
+  highlighted, tap a team for its page) · Golden Helmet race (tap a player for his card) ·
+  National champions · League scoreboard (results and scheduled games as score cards, week
+  Prev/Next, tap a result for its box score) · NIL payroll (every deal with its share and how long
+  it runs, tap a player for his card)
+
+Changed: screens.py, finance_screens.py, gui/native.js, gui/native.css

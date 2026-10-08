@@ -843,6 +843,8 @@ def render(league, tab):
                   key("Q", "title screen", C.GRAY)]
     for ln in command_bar(bar_items):
         print(ln)
+    import webview
+    webview.home(league, team, tab)
     return team
 
 

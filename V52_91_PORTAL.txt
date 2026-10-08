@@ -1,0 +1,36 @@
+Console College 26 — v52.91 · Transfer Portal rebuild
+======================================================
+
+MORE TIME
+  * Opening week: 3x a normal staff week of hours (post-spring window: 2.6x). Every later portal week
+    adds 1.6x more. Costs dropped: Contact 4, Pitch 8, Visit 16, Push to commit 4, Keep 10.
+
+STRATEGY INSTEAD OF ONE GENERIC PITCH
+  * Seven pitch angles [P1-P7]: Day-one starter, Win now, NFL development, Built for our system,
+    Closer to home, The program, The NIL deal.
+  * Each player card grades YOUR case on every angle (A-F) from your real situation: open starting
+    jobs at his position, your record and ranking, development record, schemes, distance from his
+    home, facilities/tradition, and your NIL offer vs his market.
+  * Every player has a public priority (★) and a hidden second priority (☆) that contact reveals.
+    A pitch works when he cares about it AND you can back it up. Pitching what he wants from a
+    position of weakness backfires; repeating the same angle lands softer each time; talking NIL
+    without an offer on the table hurts.
+  * Your work matters much more in his decision, and a small program's work counts a little less.
+
+DYNAMIC, CONTEXTUAL MARKET
+  * After contact the board shows where you stand (Leader / close / behind, and who leads) and his
+    timeline (deciding this week, next week, or taking his time).
+  * Push to commit [C]: once a week per player. If you're leading, he can sign on the spot.
+  * Weekly briefing: targets who signed elsewhere, backouts, and who on your board decides now.
+  * Board tools: [T] my targets, [H] fits my needs, [S] sort by overall / fit / deciding soonest,
+    plus a staff short list of the best fits for your roster.
+
+YOUR OWN PLAYERS
+  * Once a week each: talk, offer a raise, and/or promise a starting role. The staff shows the
+    odds first. Promises are binding: if he isn't starting next year, he's gone.
+
+PORTAL WINDOW II
+  * Bigger post-spring pool, a fresh 8 spots, more staff time, and decent winter players who
+    went unsigned come back on the board.
+
+Files: portal.py, portal_screens.py, offseason_cycle.py, MANUAL.txt

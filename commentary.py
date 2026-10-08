@@ -339,6 +339,8 @@ class Narrator:
         print("  " + paint(head, C.BOLD, color) + (paint(lines[0], *styles) if styles else lines[0]))
         for ln in lines[1:]:
             print("  " + " " * len(head) + (paint(ln, *styles) if styles else ln))
+        import webview
+        webview.emit("booth", {"who": name, "pbp": who == "P", "text": webview.plain(text)}, add=True)
         self.wait(1.0 if who == "A" else 0.7)
 
     def pbp(self, text, *styles, must=False):
@@ -387,6 +389,8 @@ class Narrator:
     def note(self, text):
         if not self.muted:
             print("  " + paint(text, C.GRAY))
+            import webview
+            webview.emit("note", {"text": webview.plain(text)}, add=True)
 
     def out(self, text="", *styles, indent=4):
         if self.muted:
@@ -3166,6 +3170,8 @@ class Narrator:
         print(f"  {paint(label, C.BOLD, C.BWHITE)}    {self.scoreline(sim)}")
         print(f"  {self.momentum_meter(sim)}")
         print(rule("─", C.GRAY))
+        import webview
+        webview.emit("qbreak", {"label": label, "score": webview.plain(self.scoreline(sim))}, add=True)
         if q in (1, 3):
             self.pbp(self.line("quarter_break", label=label, score=self.score_words(sim)))
             self._lore(sim, sim.home, ("q1",) if q == 1 else ("q3",))
@@ -3233,6 +3239,13 @@ class Narrator:
         opts += ["[S] skip to final", f"[1-4] speed slow→instant (now {speed_now})", "[C] calls"]
         if ctl is not None:
             opts.append("[B] big moments only" if ctl.mode == "full" else "[E] every snap")
+        import webview
+        wv = [("Enter", "Go on", "")] + ([("q", f"Skip {nxt}", "the staff calls it")] if nxt else []) \
+            + [("s", "Skip to the final", "")] + [(k, f"Speed: {nm}" + (" ✓" if nm == speed_now else ""), "") for k, (nm, _) in SPEEDS.items()] \
+            + [("c", "Show / hide play calls", "")]
+        if ctl is not None:
+            wv.append(("b", "Big moments only", "") if ctl.mode == "full" else ("e", "Every snap", ""))
+        webview.opts("Between quarters", wv)
         while True:
             try:
                 choice = input(paint("\n  " + "   ".join(opts) + "  > ", C.GRAY)).strip().lower()

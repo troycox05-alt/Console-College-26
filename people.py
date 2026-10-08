@@ -1355,6 +1355,22 @@ def inbox_screen(league):
             for i, m in enumerate(msgs[shown_todo:], shown_todo + 1):
                 row(i, m)
         print(rule())
+        import webview
+        if webview.on():
+            try:
+                def wrow(i, m):
+                    said = next((lab for k, lab in m.get("replies", []) if k == m.get("answered")), "") \
+                        if m.get("answered") not in (None, "silence") else ""
+                    return {"i": i, "unread": not m.get("read", False), "kind": faces_ui.who_kind(m)[0],
+                            "from": webview.plain(sender_label(m)), "subject": m["subject"],
+                            "when": ("camp" if m["week"] == 0 else f"wk {m['week']}") if m["year"] == league.year else str(m["year"]),
+                            "reply": bool(m.get("replies") and m.get("answered") is None),
+                            "missed": m.get("answered") == "silence", "said": said}
+                webview.emit("inbox", {"unread": unread(league), "waiting": len(todo),
+                                       "todo": [wrow(i, m) for i, m in enumerate(msgs[:shown_todo], 1)],
+                                       "rest": [wrow(i, m) for i, m in enumerate(msgs[shown_todo:], shown_todo + 1)]})
+            except Exception:
+                pass
         c = ask("Open # (Enter = back, A = open the next one that needs a reply):").strip().lower()
         if c == "":
             return
@@ -1366,6 +1382,25 @@ def inbox_screen(league):
                     break
         elif c.isdigit() and 1 <= int(c) <= len(msgs):
             read_message(league, msgs[int(c) - 1])
+
+
+def _wv_message(league, m, opts, queue):
+    import webview
+    if not webview.on():
+        return
+    try:
+        said = next((lab for k, lab in m.get("replies", []) if k == m.get("answered")), "") \
+            if m.get("answered") not in (None, "silence") else ""
+        due = m.get("due")
+        webview.emit("message", {"subject": m["subject"], "from": webview.plain(m.get("sender", "")),
+                                 "role": webview.plain(m.get("role", "")), "body": webview.plain(m.get("body", "")),
+                                 "options": [{"key": o["key"], "label": webview.plain(o["label"]), "hint": webview.plain(o["hint"])}
+                                             for o in opts],
+                                 "said": said, "missed": m.get("answered") == "silence",
+                                 "missedText": webview.plain(m.get("silence_text") or "The moment passed."),
+                                 "last": bool(due and tuple(due) == (league.year, league.week)), "queue": queue or 0})
+    except Exception:
+        pass
 
 
 @moments.moment("read")
@@ -1389,6 +1424,7 @@ def read_message(league, m, queue=None):
                 print("   " + paint(ln, C.BWHITE))
         print()
         if not (m["replies"] and m["answered"] is None):
+            _wv_message(league, m, [], None)
             if m.get("answered") == "silence":
                 print(paint("   You never answered. " + (m.get("silence_text") or "The moment passed."), C.GRAY))
             elif m["answered"] is not None:
@@ -1398,11 +1434,14 @@ def read_message(league, m, queue=None):
             pause()
             return False
         hints = fx.show_hints()
+        wv_opts = []
         for i, (k, label) in enumerate(m["replies"], 1):
             print(f"   {paint(f'[{i}]', C.BYELLOW, C.BOLD)} {label}")
             h = _option_hint(m, k) if hints else ""
             if h:
                 print("       " + h)
+            wv_opts.append({"key": str(i), "label": label, "hint": h})
+        _wv_message(league, m, wv_opts, queue)
         due = m.get("due")
         if due and tuple(due) == (league.year, league.week):
             print(paint("\n   Last chance to answer this one.", C.BRED))

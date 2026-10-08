@@ -1477,13 +1477,37 @@
   finds a home; the rest are out of the sport. The market prices immediate help: being better
   than the man starting now is worth more than a rating, and quarterbacks move the market.
 
-  YOUR WINDOW (Coach Career): the portal pauses after everyone enters and before anyone
-  lands. You get two weeks' worth of recruiting hours to contact entrants (learn their
-  interest), pitch them, host official visits, and offer roster spots (up to 8 — a player can
-  only choose you if you offered). Put NIL on top of a roster offer ([N]); open offers are
-  held against your budget. You can also try to talk your own players out of leaving (a raise
-  helps). Your staff doesn't bid on its own, so the players you land are the ones you went
-  after. A results screen shows who you landed and who got away.
+  YOUR WINDOW (Coach Career): every portal week you get fresh staff hours (opening week is the
+  big one) to work the board. The portal is a negotiation, not a lottery:
+
+    Contact         4 hrs   where you stand, his second priority, and when he'll decide
+    Pitch [P1-P7]   8 hrs   pick an angle: Day-one starter, Win now, NFL development, Built for
+                            our system, Closer to home, The program, The NIL deal
+    Official visit 16 hrs   once per player; a bigger jump if your campus sells
+    Push to commit  4 hrs   once a week; if you're leading, he can sign on the spot
+    Offer a spot    free    he can only choose you if you offered (8 per window, signings count)
+    NIL offer [N]   free    money on top of the spot, held against your budget until he picks
+
+  Each player's card grades your case on every angle (A-F) from your real situation: an open
+  starting job at his position, your record and ranking, your staff's development record, your
+  schemes, the distance from his home, your facilities and tradition, your NIL offer against
+  his market. ★ marks what he wants most and ☆ his second priority (contact reveals it). A pitch
+  works when he cares about it AND you can back it up; pitching what he wants from a position of
+  weakness backfires, and repeating the same angle lands softer every time.
+
+  Once you've contacted him, the board shows where you stand (Leader / close / behind, and who's
+  in front) and his timeline (deciding this week, next week, or taking his time). Use [T] for your
+  targets, [H] for players who fit your needs, and [S] to sort by fit or by who decides soonest.
+  Each new portal week opens with a briefing: targets who signed elsewhere, backouts, and who's
+  deciding now. Small programs can win big recruitments, but their work counts for a little less.
+
+  YOUR OWN PLAYERS ([Y], 10 hrs, once a week each): talk, offer a raise, or promise a starting
+  role. The staff tells you the odds first. A promise is binding: if he isn't starting next
+  year, he's gone.
+
+  The post-spring window (Portal Window II) is a real second chance: a bigger share of staff time,
+  a fresh 8 spots, spring depth-chart losers, and any decent winter players still unsigned.
+  A results screen shows who you landed and who got away.
 
 ================================================================================================
  CHAPTER 16 · MONEY: BUDGETS, CONTRACTS, NIL AND NEGOTIATING

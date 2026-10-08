@@ -430,6 +430,20 @@ def _draw(league, st, week, msg=""):
         for x in desk[:5]:
             print(paint(f"   • {x}", C.BYELLOW))
     print(rule())
+    import webview
+    if webview.on():
+        try:
+            pl = lambda xs: [webview.plain(x) for x in xs if webview.plain(x)]
+            webview.emit("offhub", {
+                "week": week, "label": w["label"], "mon": w["mon"], "blurb": w["blurb"], "deadline": w["deadline"],
+                "school": team.school, "season": f"{season}-{str(season + 1)[2:]}", "msg": webview.plain(msg),
+                "color": webview._color(league, team),
+                "weeks": [{"n": x["n"], "mon": x["mon"], "label": x["label"], "done": x["n"] in st["completed_weeks"],
+                           "now": x["n"] == week} for x in WEEKS],
+                "program": pl(_program_lines(league, st, team)), "national": pl(_national_lines(league, st, week)),
+                "last": pl(_last_year_lines(st)), "desk": pl(desk[:6])})
+        except Exception:
+            pass
     print("   " + "   ".join([key("A", "week agenda", C.BGREEN), key("I", "inbox"), key("R", "roster"),
                                   key("C", "recruiting class"), key("T", "transfer class"), key("$", "budget"), key("S", "staff"), key("V", "save")]))
 
@@ -453,6 +467,12 @@ def _agenda(league, st, week, action_label=None, action=None, required=False):
             for x in extras[:6]:
                 print(f"   • {x}")
         print()
+        import webview
+        if webview.on():
+            webview.emit("agenda", {"week": week, "label": w["label"], "school": team.school,
+                                    "task": (action_label or w["label"]) if action is not None else "",
+                                    "status": "done" if done else "required" if required else "available",
+                                    "watch": [webview.plain(x) for x in extras[:6]]})
         print("   " + "   ".join([key("1", "re-enter primary task" if done else "handle primary task", dim=action is None),
                                       key("A", "advance week", C.BGREEN), key("Enter", "back to hub")]))
         c = ask("Agenda:").strip().lower()
@@ -1070,6 +1090,19 @@ def a_day(league, team):
         print(f"   {pad(p.position, 4)}{p.name}{tag}")
     league.__dict__.setdefault("a_days", {})[league.year] = (g.home_score, g.away_score,
                                                              [p.name for _, p in standouts[:5]])
+    import webview
+    if webview.on():
+        try:
+            snap = []
+            for side, label in ((blue, "Blue"), (white, "White")):
+                ts = sim.team_stats[side]
+                snap.append({"label": label, "yds": ts.get("total_yds", 0), "first": ts.get("first_downs", 0),
+                             "explosive": ts.get("explosive_plays", 0), "to": ts.get("turnovers", 0)})
+            webview.emit("aday", {"school": team.school, "stadium": team.stadium, "blue": g.home_score, "white": g.away_score,
+                                  "snap": snap, "standouts": [{"id": webview.pid(p), "pos": p.position, "name": p.name,
+                                                               "battle": p.position in focus} for _, p in standouts[:5]]})
+        except Exception:
+            pass
     _a_day_recruits(league, team)
     show = ask("View the full A-Day box score? (y/n):").strip().lower()
     if show in ("y", "yes"):

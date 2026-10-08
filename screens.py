@@ -277,6 +277,12 @@ def standings_menu(league: League):
         print(f"   {paint('[ A]', C.BYELLOW)}  {paint('All Conferences', C.BWHITE, C.BOLD)}")
         print(f"   {paint('[ B]', C.GRAY, C.BOLD)}  Back")
 
+        import webview
+        if webview.on():
+            webview.emit("confs", {"rows": [{"key": str(i), "name": full, "short": short,
+                                             "count": len(league.conference_teams(short)),
+                                             "color": webview._color(league, type("T", (), {"conference": short})())}
+                                            for i, (short, full, color) in enumerate(CONFERENCES, start=1)]})
         choice = ask("Select a conference:").lower()
         if choice in ("b", "back", ""):
             return
@@ -322,6 +328,26 @@ def show_standings(league: League, conferences):
                     + ("" if started else " · no games yet: ordered by prestige"), C.GRAY))
         import ui as _u
         _u.footer(_u.key("#", "team page"), _u.key("S#", "that team's schedule"), _u.key("B", "back", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                me = getattr(league, "user_team", None)
+                blocks, n = [], 0
+                for conf in conferences:
+                    divs = []
+                    for div in league.divisions(conf):
+                        rows = []
+                        for team in league.standings(conf, div):
+                            n += 1
+                            rows.append({"n": n, "school": team.school, "rank": league.rankings.rank_of(team),
+                                         "conf": team.conf_record, "all": team.record, "prs": team.prestige,
+                                         "me": team is me})
+                        divs.append({"name": div or "", "rows": rows})
+                    blocks.append({"name": league.conference_full_name(conf),
+                                   "color": webview._color(league, type("T", (), {"conference": conf})()), "divs": divs})
+                webview.emit("standings", {"confs": blocks, "started": started})
+            except Exception:
+                pass
         choice = ask("Select:").strip().lower()
         if not choice or choice == "b":
             return
@@ -373,6 +399,7 @@ def team_view(league: League, team: Team):
               f"{k('F')} Facilities   {k('J')} Team builder")
         print(f"   {paint('HISTORY ', C.GRAY)}{paint('[Y]', C.BGREEN, C.BOLD)} Full program history   {k('V')} Rivalries   "
               f"{k('I')} Instant classics   {k('E')} Record book   {k('G')} Hall of Fame   {paint('[B]', C.GRAY, C.BOLD)} Back")
+        _wv_team(league, team)
         choice = ask("Select:").lower()
         if choice in ("b", "back", ""):
             return
@@ -506,7 +533,28 @@ def depth_chart(league: League, team: Team):
                        "[R] reset this position to overall") + " · [B] back", C.GRAY))
         if msg:
             print(paint("   " + msg, C.BCYAN, C.BOLD))
-            msg = ""
+        import webview
+        if webview.on():
+            try:
+                rows = []
+                for i, p in enumerate(players, 1):
+                    r = {"i": i, "id": webview.pid(p), "num": p.number, "name": p.name, "yr": p.class_label,
+                         "ovr": webview.plain(scout.ovr(p)) if hide else p.overall, "starter": i <= starts.get(pos, 1),
+                         "hurt": webview.plain(status_text(p, short=True)) if p.inj_games > 0 else ""}
+                    if hide:
+                        r["practice"] = prac.get(id(p), ("", 0))[0]
+                    else:
+                        ap, ao = p.best_alternate()
+                        r["alt"] = f"{ap} {ao}"
+                    rows.append(r)
+                webview.emit("depth2", {"school": team.school, "pos": pos, "posName": POSITION_NAMES[pos],
+                                        "positions": list(POSITIONS), "starts": starts.get(pos, 1), "hide": hide,
+                                        "base": f"{pb.PERSONNEL_NAMES.get(base, base)} ({scheme})", "rows": rows,
+                                        "ideas": [{"key": f"s{i}", "text": f"Move #{p.number} {p.name} from {q} to {to} — {why}"}
+                                                  for i, (p, q, to, why, _) in enumerate(ideas, 1)], "msg": msg})
+            except Exception:
+                pass
+        msg = ""
         raw = ask("Depth chart:").strip()
         c = raw.lower()
         parts = raw.split()
@@ -589,6 +637,46 @@ def _crowd_note(league, team):
     return paint(f"  · avg {avg:,} ({fill * 100:.0f}%), {sold} sellout{'s' if sold != 1 else ''}", C.GRAY)
 
 
+_TP = {}
+
+
+def _wv_team(league, team):
+    import webview
+    if not webview.on():
+        return
+    try:
+        import facilities as fa
+        import team_momentum
+        from models import Coach
+        f = fa.ensure(team)
+        coach = team.coach
+        ratings = []
+        for k in Team.RATING_KEYS:
+            v = team.ratings[k]
+            if k == "facilities":
+                v = round((f["recruiting"] * 0.4 + f["training"] * 0.3 + f["stadium"] * 0.3) * 10)
+            ratings.append({"label": Team.RATING_LABELS[k], "v": v})
+        d = {"rank": league.rankings.rank_of(team), "full": team.full_name, "chant": team.chant,
+             "color": webview._color(league, team), "mine": _is_mine(league, team),
+             "info": [[l, v] for l, v in _TP.get("info", [])], "summary": [[l, webview.plain(v)] for l, v in _TP.get("summary", [])],
+             "facilities": [{"k": fa.SHORT[k], "v": f[k], "grade": fa.grade(f[k])} for k in fa.KINDS],
+             "ratings": ratings, "titles": ps.titles_for(league, team.school),
+             "history": [{"yr": r[0], "rec": f"{r[1]}-{r[2]}", "conf": f"{r[3]}-{r[4]} {r[6] if len(r) > 6 else team.conference}",
+                          "ach": list(r[5]) if len(r) > 5 and r[5] else []}
+                         for r in [x for x in team.historical_records if x[0] >= 2026][-5:]][::-1],
+             "form": webview.plain(team_momentum.line(team)) if team.wins + team.losses and not getattr(team, "fcs", False) else "",
+             "injuries": [{"id": webview.pid(p), "pos": p.position, "name": p.name, "status": webview.plain(status_text(p))}
+                          for p in team.injured()[:8]]}
+        if coach is not None:
+            from traits import blurbs as _blurbs
+            d["coach"] = {"name": coach.name, "ratings": [{"label": Coach.RATING_LABELS[k], "v": coach.ratings[k]} for k in Coach.RATING_KEYS],
+                          "traits": [n for n, _ in _blurbs(coach)] if labels(coach) else [],
+                          "style": f"{coach.offense_scheme} offense · {coach.defense_scheme} defense"}
+        webview.emit("team", d)
+    except Exception:
+        pass
+
+
 def _print_team_page(league: League, team: Team):
     color = league.conference_color(team.conference)
 
@@ -668,6 +756,7 @@ def _print_team_page(league: League, team: Team):
         ("Offense", __import__("scout").team(team.offense_ovr)),
         ("Defense", __import__("scout").team(team.defense_ovr)),
     ]
+    _TP["info"], _TP["summary"] = list(info), list(summary)
     from ui import clip
     for (l1, v1), (l2, v2) in zip_longest(info, summary, fillvalue=("", "")):
         left = f"   {paint(f'{l1:<12}', C.GRAY)}{v1}"
@@ -907,6 +996,8 @@ def roster_view(league: League, team: Team):
                     "   K/P: PWR = leg strength, Seaboard = accuracy.   The sim carries the working roster: the two-deep and\n"
                     "   the young players behind it, not a 105-man camp roster.", C.GRAY))
         mine = _is_mine(league, team)
+        import webview
+        webview.roster(league, team)
         choice = ask("Jersey # for player card, [$] payroll & budget, [S] schedule"
                      + (", [H] depth chart" if mine else "") + ", or Enter to go back:")
         if not choice or choice.lower() == "b":
@@ -1140,9 +1231,13 @@ def player_card(league: League, p):
         team = getattr(p, "team", None)
         room = list(team.players_at(p.position)) if team is not None and p in team.roster else []
         if len(room) < 2:
+            import webview
+            webview.player(league, p)
             pause()
             return
         i = room.index(p)
+        import webview
+        webview.player(league, p, {"i": i + 1, "n": len(room)})
         c = ask(f"[N] next {p.position} ({i + 1} of {len(room)})   [P] previous   [Enter] back").strip().lower()
         if c == "n":
             p = room[(i + 1) % len(room)]
@@ -1307,6 +1402,12 @@ def rankings_menu(league: League):
               f"{paint('[7]', C.BYELLOW, C.BOLD)}  Strength of Schedule")
         print(f"   {paint('[E]', C.BCYAN, C.BOLD)}  Edit the rankings (Top 25 or Playoff Rankings)    "
               f"{paint('[B]', C.GRAY)}  Back")
+        import webview
+        webview.emit("rmenu", {"label": f"{league.year} · {label.title()}", "items": [
+            ["1", "Top 25", "the media poll"], ["2", "Golden Helmet race", "the best player in the country"],
+            ["3", "National champions", "every title since 1998"], ["4", "NP Playoff Rankings", "the committee's top 25"],
+            ["5", "Selection Committee", "who's in the room"], ["6", "Toughest places to play", "home fields, ranked"],
+            ["7", "Strength of schedule", "every program's slate"], ["E", "Edit the rankings", "Top 25 or Playoff Rankings"]]})
         choice = ask("Select:").lower()
         if choice in ("4", "5"):
             import committee_screens
@@ -1390,6 +1491,33 @@ def top_25(league: League):
         order = league.rankings.top()
         import ui as _u
         _u.footer(_u.key("#", "team page"), _u.key("S#", "that team's schedule"), _u.key("B", "back", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                r = league.rankings
+                me = getattr(league, "user_team", None)
+                rows = []
+                for i, team in enumerate(order, 1):
+                    before = r.previous_rank(team)
+                    played = [g for g in league.team_games(team) if g.played]
+                    last = ""
+                    won = None
+                    if played:
+                        g = played[-1]
+                        opp = g.opponent_of(team)
+                        won = g.winner is team
+                        orank = (getattr(g, "ranks", {}) or {}).get(opp)
+                        last = f"{g.score_for(team)}-{g.score_for(opp)} {'vs' if g.home is team else 'at'} {'#' + str(orank) + ' ' if orank else ''}{opp.school}"
+                    rows.append({"rank": i, "school": team.school, "nick": team.nickname, "conf": team.conference,
+                                 "record": team.record, "pts": getattr(r, "points", {}).get(team),
+                                 "first": getattr(r, "first_place", {}).get(team), "move": None if before is None else before - i,
+                                 "new": before is None, "last": last, "won": won, "me": team is me,
+                                 "color": webview._color(league, team)})
+                webview.emit("top25", {"title": f"{league.year} Top 25", "label": webview.plain(r.week and f"after week {r.week}" or "preseason"),
+                                       "rows": rows, "others": [f"{t.school} {p}" for t, p in (getattr(r, "others", None) or [])[:14]],
+                                       "voters": getattr(r, "VOTERS", 62)})
+            except Exception:
+                pass
         choice = ask("Select:").strip().lower()
         if choice.startswith("s") and choice[1:].isdigit() and 1 <= int(choice[1:]) <= len(order):
             schedule_view(league, order[int(choice[1:]) - 1])
@@ -1421,6 +1549,16 @@ def heisman_race(league: League):
                    f"{pad(paint(team_txt, color), 21)}{pad(_movement(i, before), 6)}{paint(blurb, C.GRAY)}", WIDTH))
     print(paint("\n   Voters weigh production, position, strength of schedule and how much his team wins.",
                 C.GRAY))
+    import webview
+    if webview.on():
+        try:
+            webview.emit("heisman", {"title": f"{league.year} Golden Helmet race", "label": label.title(), "rows": [
+                {"rank": i, "id": webview.pid(p), "name": p.name, "pos": p.position, "school": p.team.school,
+                 "trank": r.rank_of(p.team), "move": (None if r.heisman_movement(p) is None else r.heisman_movement(p) - i),
+                 "blurb": webview.plain(blurb), "color": webview._color(league, p.team)}
+                for i, (p, score, blurb) in enumerate(r.heisman, 1)]})
+        except Exception:
+            pass
     pause()
 
 
@@ -1455,6 +1593,11 @@ def champions_history(league: League):
         print(chunk)
     if any(c.real for c in history):
         print(paint("\n   Gold years were won in this world. 1998-2025 is the real record book you inherited.", C.GRAY))
+    import webview
+    webview.emit("champs", {"rows": [{"year": c.season, "school": c.champion, "record": c.record, "coach": c.coach,
+                                      "game": f"def. {c.runner_up} {c.score}-{c.opp_score}" + (f" ({c.note})" if c.note in ("OT", "2OT") else ""),
+                                      "mine": not c.real} for c in history],
+                            "counts": [[s, n] for s, n in most]})
     pause()
 
 
@@ -1633,6 +1776,26 @@ def week_scoreboard(league: League, week, conference=None, year=None):
         print(paint("\n   #rank at kickoff  ·  c conference  ·  N neutral site  ·  F vs FCS  ·  ! upset", C.GRAY))
         print(paint(f"   {len(games)} games  ·  [#] box score   [N] next week   [P] previous week   "
                     f"[W#] jump to week (W7)   [B] back", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                kr = league.rankings
+
+                def gr(g, n):
+                    k = _kickoff(g, kr)
+                    d = {"n": n, "mine": _mine(league, g), "played": bool(g.played), "neutral": bool(g.neutral),
+                         "away": g.away.school, "home": g.home.school, "ar": _try_rank(k, g.away), "hr": _try_rank(k, g.home),
+                         "box": bool(g.played and g.box is not None), "bowl": g.game_type if g.game_type != "Regular Season" else ""}
+                    if g.played:
+                        d.update(a=g.away_score, h=g.home_score, awayWon=g.winner is g.away)
+                    return d
+                done = [g for g in games if g.played]
+                webview.emit("scores", {"title": f"{year if past else league.year} · {league.week_name(week)}",
+                                        "scope": conference or "All games", "week": week,
+                                        "done": [gr(g, i) for i, g in enumerate(done, 1)],
+                                        "todo": [gr(g, None) for g in games if not g.played]})
+            except Exception:
+                pass
         choice = ask("Select:").lower()
         if choice == "n":
             week = min(18, week + 1)
@@ -1738,6 +1901,7 @@ def schedule_view(league: League, team: Team, year=None):
         if sline:
             print(sline + "\n")
         live = {t.school: t for t in league.teams}
+        wrows = []
         print(paint(f"   {'#':>2} {'WEEK':<9} {'OPPONENT':<24}{'RESULT':<11}"
                     + ("" if past else f"{'THEM':<10}" + (f"{'THEY LOOK':<14}{'OUTLOOK':<12}" if hide else
                                                       f"{'OVR':>4}  {'WIN %':>6}   ")) + "NOTE", C.GRAY, C.BOLD))
@@ -1747,6 +1911,7 @@ def schedule_view(league: League, team: Team, year=None):
             if not g:
                 if week <= REGULAR_SEASON_WEEKS and (not past or by_week):
                     print(paint(f"      {_wk(week)} BYE", C.GRAY))
+                    wrows.append({"bye": True, "wk": _wk(week).strip()})
                 continue
             opp = g.opponent_of(me)
             where = "vs" if g.home is me or g.neutral else "at"
@@ -1793,6 +1958,9 @@ def schedule_view(league: League, team: Team, year=None):
                     tags.append(paint(wxs, C.BCYAN))
                 print(f"   {num} {_wk(week)} {pad(truncate(opp_txt, 23), 24)}{res} {pad(score + ot, 9)}{them}"
                       + (look + pad("", 12 if hide else 9) if not past else "") + " ".join(tags))
+                wrows.append({"n": n, "wk": _wk(week).strip(), "opp": opp_txt, "won": won, "score": score + ot,
+                              "them": them, "look": look, "tags": [t for t in tags], "played": True,
+                              "box": g.box is not None})
             else:
                 import carousel as cz
                 try:
@@ -1807,6 +1975,8 @@ def schedule_view(league: League, team: Team, year=None):
                     tags.append(paint(wxs, C.BCYAN))
                 print(f"   {num} {_wk(week)} {pad(truncate(opp_txt, 23), 24)}{paint(pad('—', 11), C.GRAY)}{them}"
                       f"{look}{wp}{' '.join(tags)}")
+                wrows.append({"n": n, "wk": _wk(week).strip(), "opp": opp_txt, "played": False, "them": them,
+                              "look": look, "wp": wp, "wpv": locals().get("p"), "tags": [t for t in tags]})
         if past and not by_week:
             print(paint(f"   {team.school} has no games on file for {year}.", C.GRAY))
         years = [y for y in archive.seasons(league) if archive.games_for(league, y, team.school)]
@@ -1816,6 +1986,18 @@ def schedule_view(league: League, team: Team, year=None):
                     if numbered else []),
                   _u.key("O", "another team's schedule"), _u.key("Y", "another season") if years else "",
                   _u.key("S", "strength of schedule"), _u.key("B", "back", C.GRAY))
+        import webview
+        if webview.on():
+            for r in wrows:
+                for k in ("them", "look", "wp"):
+                    if k in r:
+                        r[k] = webview.plain(r[k])
+                r["tags"] = [webview.plain(t) for t in r.get("tags", [])]
+                if not isinstance(r.get("wpv"), (int, float)):
+                    r.pop("wpv", None)
+            webview.schedule(league, team, year, wrows,
+                             (f"{rec[1]}-{rec[2]}" if past and rec else team.record),
+                             (f"{rec[3]}-{rec[4]}" if past and rec else ("" if past else team.conf_record)), sline)
         choice = ask("Select:").lower().replace(" ", "")
         pick = numbered.get(int(choice[1:])) if choice[:1] in ("t", "s") and choice[1:].isdigit() else None
         if pick is not None:
@@ -2018,6 +2200,8 @@ def _matchup_card(league, g, idx, total, last):
     import hotseat
     mine = getattr(league, "user_team", None) in (g.home, g.away) and getattr(league, "mode", None) == "career" \
         and not hotseat.neutral()
+    import webview
+    webview.matchup(league, g, mine)
     if mine:
         return "mine"                                    # your game gets its own menu (_your_game)
     if getattr(league, "mode", None) == "spectator" and not g.played:
@@ -2077,6 +2261,10 @@ def _your_game_mode(league, g):
               f"{paint(blurb, C.GRAY)}{mark}")
     print(paint("   During a game: at every quarter break you can skip a quarter, skip to the final, change the\n"
                 "   speed, or switch between big moments and every snap. [S] mid-drive hands it to your staff.", C.GRAY))
+    import webview
+    webview.opts("How do you want to play it?", [(k, label + ("  ★" if k == last_key else ""), blurb)
+                                                  for k, (mode_, label, blurb) in YOUR_MODES.items()],
+                 "At every quarter break you can skip ahead, change the speed, or switch between big moments and every snap.")
     c = ask(f"Select (Enter = {YOUR_MODES[last_key][1]}):").strip()
     mode = YOUR_MODES.get(c or last_key, YOUR_MODES[last_key])[0]
     if hvh and mode in ("full", "moments"):
@@ -2088,6 +2276,7 @@ def _your_game_mode(league, g):
     if mode != "sim":
         sp = st.get("game_speed", "3" if mode != "watch" else "2")
         print("   Speed:  " + "   ".join(f"{paint(f'[{k}]', C.BYELLOW, C.BOLD)} {name}" for k, (name, _) in SPEEDS.items()))
+        webview.opts("Game speed", [(k, name + ("  ★" if k == sp else ""), "") for k, (name, _) in SPEEDS.items()])
         choice = ask(f"Select (Enter = {SPEEDS[sp][0]}):").strip() or sp
         choice = choice if choice in SPEEDS else sp
         st["game_speed"] = choice
@@ -2108,6 +2297,8 @@ def _your_game_mode(league, g):
             opts.append("[O] you call offense, DC defense")
         if not (mine_def and not mine_off):
             opts.append("[D] you call defense, OC offense")
+        webview.opts(f"Play-calling: offense — {who('off')} · defense — {who('def')}",
+                     [(o[1:o.index("]")], o[o.index("]") + 2:], "") for o in opts])
         d = ask("  ·  ".join(opts) + ":").strip().lower()
         if d in ("b", "o", "d"):
             staff.set_calls(t, off="HC" if d in ("b", "o") else "OC", df="HC" if d in ("b", "d") else "DC")
@@ -2322,6 +2513,13 @@ def _quick_final(league, g):
         for sq, sc, team, what in scoring:
             qq = f"Q{sq}" if sq <= 4 else "OT"
             print(f"     {paint(f'{qq} {sc // 60}:{sc % 60:02d}', C.GRAY)}  {pad(team.school, 20)}{paint(str(what), C.GRAY)}")
+    import webview
+    if webview.on():
+        webview.emit("final", {"won": won, "us": {"school": t.school, "score": g.score_for(t), "color": webview._color(league, t)},
+                               "them": {"school": o.school, "score": g.score_for(o), "color": webview._color(league, o)},
+                               "scoring": [{"q": f"Q{sq}" if sq <= 4 else "OT", "clock": f"{sc // 60}:{sc % 60:02d}",
+                                            "team": team.school, "mine": team is t, "what": webview.plain(what)}
+                                           for sq, sc, team, what in scoring], "box": g.box is not None})
     if ask("\n  [B] box score, Enter to continue:").strip().lower() == "b":
         show_box_score(league, g)
     import postgame
@@ -2479,9 +2677,29 @@ def show_box_score(league, g):
         print(pad(paint(ps.banner(g), C.BYELLOW, C.BOLD), WIDTH, "center"))
         print(pad(paint(ps.site_line(g), C.GRAY), WIDTH, "center"))
     print()
-    for line in box_score_lines(g.box):
+    lines = box_score_lines(g.box)
+    for line in lines:
         print(line)
+    import webview
+    if webview.on():
+        try:
+            def side(t, sc):
+                return {"school": t.school, "abbr": getattr(t, "abbr", t.school[:4]), "score": sc,
+                        "color": webview._color(league, t) if hasattr(t, "conference") else None,
+                        "won": g.winner is t if getattr(g, "winner", None) is not None else False}
+            webview.emit("box", {"away": side(away, g.away_score), "home": side(home, g.home_score), "at": at,
+                                 "banner": webview.plain(getattr(g, "banner", "") or (ps.banner(g) if ps.is_postseason(g) else "")),
+                                 "lines": list(lines)})
+        except Exception:
+            pass
     pause()
+
+
+def _try_rank(r, t):
+    try:
+        return r.rank_of(t)
+    except Exception:
+        return None
 
 
 def week_results(league: League, games):
@@ -2541,6 +2759,25 @@ def week_results(league: League, games):
               + paint(" for the book (a classic or an upset for the ages)", C.GRAY)
               + (paint("  ·  ", C.GRAY) + paint("▶", C.BYELLOW, C.BOLD) + paint(" your game", C.GRAY) if mine else "")
               + paint("\n   Poll ranks are as of kickoff.", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                kr = league.rankings
+
+                def wr(n, g):
+                    k = _kickoff(g, kr)
+                    return {"n": n, "mine": _mine(league, g), "box": g.box is not None, "neutral": bool(g.neutral),
+                            "away": g.away.school, "home": g.home.school, "a": g.away_score, "h": g.home_score,
+                            "ar": _try_rank(k, g.away), "hr": _try_rank(k, g.home), "awayWon": g.winner is g.away,
+                            "tag": webview.plain(_post_tag(g))}
+                webview.emit("results", {"title": f"{league.year} · {league.week_name(league.week)}",
+                                         "rows": [wr(n, g) for n, g in enumerate(games, 1)],
+                                         "classics": [webview.plain(c["headline"]) for c in cl[:4]],
+                                         "injuries": [f"{t.abbr} {p.position} {p.name} — {d}, " +
+                                                      ("out for the season" if n >= 99 else f"out {n} game{'s' if n != 1 else ''}")
+                                                      for t, p, d, n in hurt[:6]]})
+            except Exception:
+                pass
         choice = ask("Game # for box score, Enter to continue:")
         if not choice:
             return

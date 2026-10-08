@@ -456,4 +456,6 @@ def show(sim, ctl=None, side=None, narr=None, force=False):
     with ui.allow_width(width):                    # the tablet is laid out to its width: never fold it
         for ln in body:
             print(ln)
+    import webview
+    webview.game(sim, ctl, side, narr)
     return True

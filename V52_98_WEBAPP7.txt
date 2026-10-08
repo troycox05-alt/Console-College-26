@@ -1,0 +1,12 @@
+Console College 26 — v52.98 · Web app, stage 7
+==============================================
+New hand-built screens:
+  My career (record, coach overall, titles, hot-seat and AD-trust meters, contract, AD goals,
+  career numbers, coaching tree / develop / profile / staff buttons, your story)
+  NP playoff rankings (committee average, first-place ballots, poll rank, projected or seeded
+  field with automatic bids, movement; tap a team for the committee's ballots)
+  Practice report (position battles, position-room buttons) and each position room (every
+  player's week in practice and the staff's read)
+  Recruiting news (commits, flips, visits, rating changes, crystal balls, colour-tagged)
+
+Changed: career.py, committee_screens.py, practice.py, recruiting_screens.py, gui/native.js, gui/native.css

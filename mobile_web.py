@@ -110,9 +110,10 @@ def _page(index_html):
     """gui/index.html with the phone viewport, home-screen tags, mobile.css and mobile.js added."""
     html = index_html.replace('<meta name="viewport" content="width=device-width, initial-scale=1">', _MOBILE_HEAD)
     html = html.replace('<link rel="stylesheet" href="style.css">',
-                        '<link rel="stylesheet" href="style.css">\n<link rel="stylesheet" href="mobile.css">')
+                        '<link rel="stylesheet" href="style.css">\n<link rel="stylesheet" href="mobile.css">\n'
+                        '<link rel="stylesheet" href="native.css">')
     html = html.replace('<script src="app.js"></script>',
-                        '<script src="mobile.js"></script>\n<script src="app.js"></script>')
+                        '<script src="mobile.js"></script>\n<script src="app.js"></script>\n<script src="native.js"></script>')
     return html
 
 

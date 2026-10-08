@@ -59,6 +59,9 @@ def _choose_plan(league, team):
     print()
     for k, (_, name, desc) in EMPHASES.items():
         print(f"   {paint(f'[{k}]', C.BYELLOW, C.BOLD)} {paint(name, C.BWHITE, C.BOLD)} — {desc}")
+    import webview
+    webview.emit("spring", {"school": team.school, "year": league.year,
+                            "options": [{"key": k, "name": n, "desc": dsc} for k, (_, n, dsc) in EMPHASES.items()]})
     ch = ask("Spring emphasis (Enter = Fundamentals):").strip()
     emphasis, name, _ = EMPHASES.get(ch, EMPHASES["1"])
     sp["emphasis"] = emphasis

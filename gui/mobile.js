@@ -28,5 +28,15 @@
       line.setAttribute("enterkeyhint", "send"); line.placeholder = "Type an answer, or tap a key"; }
     const copy = document.getElementById("copy");
     if (copy) copy.textContent = "Copy";
+    // App / Classic: the new native screens, or the original text screens.
+    if (copy && !document.getElementById("natv")) {
+      const b = document.createElement("button");
+      b.id = "natv";
+      b.title = "Switch between the app screens and the classic text screens";
+      copy.parentNode.insertBefore(b, copy);
+      const label = () => { b.textContent = (typeof S !== "undefined" && S.prefs.native === false) ? "App" : "Classic"; };
+      b.onclick = () => { S.prefs.native = S.prefs.native === false ? true : false; savePrefs(); label(); S.dirty = true; };
+      setTimeout(label, 600);
+    }
   });
 })();

@@ -333,7 +333,13 @@ def run(league, g):
         print(paint(f"   Your halftime call: {call['adjust']}", C.GRAY)
               + paint(f"   First half {a1}-{b1} · second half {a2}-{b2}", col))
     ctx = {"league": league, "team": team, "opp": f["opp"], "qb": f["qb"], "won": f["won"], "underdog": False}
+    import webview
+    webview.emit("presser", {"title": f"Postgame · {team.school} {f['pf']}, {f['opp'].school} {f['pa']}",
+                             "intro": "The podium. The locker room, the AD and the recruits are listening.",
+                             "half": (f"Your halftime call: {ht[0]['adjust']} · first half {ht[1][0]}-{ht[1][1]}, "
+                                      f"second half {ht[2][0]}-{ht[2][1]}") if ht else ""})
     said, total = podium.run(league, [(text, answers) for _, text, answers in qs], "post", ctx)
     print()
     print(podium.summary(total))
+    webview.emit("sum", {"text": webview.plain(podium.summary(total))}, add=True)
     pause()

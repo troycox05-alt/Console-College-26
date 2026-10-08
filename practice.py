@@ -454,6 +454,15 @@ def screen(league, team=None):
         print(rule())
         if msg:
             print(paint("   " + msg, C.BCYAN)); msg = ""
+        import webview
+        if webview.on():
+            try:
+                webview.emit("practice", {"school": team.school, "when": when.title(),
+                                          "battles": [{"pos": pos, "text": webview.plain(txt)} for pos, a, b, txt in bs],
+                                          "groups": [{"key": str(i), "label": label} for i, (_, label) in enumerate(GROUPS, 1)],
+                                          "msg": webview.plain(msg)})
+            except Exception:
+                pass
         c = ask("A position group #, [D] depth chart, Enter = back:").strip().lower()
         if c in ("", "b"):
             return
@@ -482,6 +491,19 @@ def _room(league, team, group):
         print(paint(f"       {text}", C.BCYAN))
         for ln in textwrap.wrap(report(p, league.week), 88):
             print(paint(f"       {ln}", C.GRAY))
+    import webview
+    if webview.on():
+        try:
+            rows = []
+            for i, p in enumerate(team.players_at(pos)):
+                text, form = prac.get(id(p), ("", 0.0))
+                tr, _ = trend(p)
+                rows.append({"i": i + 1, "id": webview.pid(p), "name": p.name, "yr": p.class_label,
+                             "ovr": webview.plain(scout.ovr(p)), "trend": webview.plain(tr), "form": round(form, 1),
+                             "text": webview.plain(text), "report": webview.plain(report(p, league.week))})
+            webview.emit("proom", {"label": label, "rows": rows})
+        except Exception:
+            pass
     pause()
 
 

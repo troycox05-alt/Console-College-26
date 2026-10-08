@@ -230,6 +230,10 @@ class Controller:
         print(f"   {paint('[1]', C.BYELLOW)} rest of this drive   {paint('[2]', C.BYELLOW)} end of the quarter   "
               f"{paint('[3]', C.BYELLOW)} end of the half   {paint('[4]', C.BYELLOW)} rest of the game   "
               f"{paint('[B]', C.BYELLOW)} switch to {swap}")
+        import webview
+        webview.opts("Hand it to the staff until…", [("1", "End of this drive", ""), ("2", "End of the quarter", ""),
+                                                      ("3", "End of the half", ""), ("4", "The rest of the game", ""),
+                                                      ("b", f"Switch to {swap}", "")])
         c = ask("Hand it to the staff until:").strip().lower()
         if c == "b":
             self.mode = "moments" if self.mode == "full" else "full"
@@ -372,6 +376,7 @@ class Controller:
                      f"{paint('[H/N/M]', C.BYELLOW)} tempo", f"{paint('[S]', C.BYELLOW)} sim ahead",
                      f"{paint('[B]', C.BYELLOW)} substitutions", f"{paint('[G]', C.BYELLOW)} orders"]
             print("   " + "   ".join(opts))
+            wv_fourth = {}
             if sim.down == 4 and sim.quarter <= 4:
                 fakes = [f"{paint('[X]', C.BYELLOW)} fake punt ({sideline.fake_words(sideline.fake_odds(sim, 'fake_punt'))})"]
                 if fg_dist <= 60:
@@ -379,6 +384,42 @@ class Controller:
                                  f"({sideline.fake_words(sideline.fake_odds(sim, 'fake_fg'))})")
                 chart = sideline.fourth_chart(sim)
                 print("   " + "   ".join(fakes) + paint(f"   ·   the chart says: {sideline.CHOICE_WORDS[chart]}", C.GRAY))
+                wv_fourth = {"chart": sideline.CHOICE_WORDS[chart],
+                             "fakes": [{"key": "x", "label": "Fake punt", "odds": sideline.fake_words(sideline.fake_odds(sim, "fake_punt"))}]
+                             + ([{"key": "z", "label": "Fake field goal", "odds": sideline.fake_words(sideline.fake_odds(sim, "fake_fg"))}]
+                                if fg_dist <= 60 else [])}
+            self._wv_call(sim, "offense", rec, fg_dist=fg_dist, fourth=wv_fourth)
+
+    def _wv_call(self, sim, side, rec, fg_dist=0, fourth=None, personnel="", calls=None):
+        import webview
+        if not webview.on():
+            return
+        try:
+            t, o = self.team, sim.other(self.team)
+            down = {1: "1st", 2: "2nd", 3: "3rd", 4: "4th"}.get(sim.down, "")
+            togo = "goal" if 100 - sim.yardline <= sim.togo else sim.togo
+            import staff
+            caller = staff.play_caller(t, "off" if side == "offense" else "def")
+            d = {"side": side, "rec": rec, "down": down, "togo": togo, "timeouts": sim.timeouts[t],
+                 "spot": webview.plain(_spot(sim, t) if side == "offense" else _spot(sim, o, "their")),
+                 "tempo": self.tempo, "scheme": caller.offense_scheme if side == "offense" else caller.defense_scheme,
+                 "fourth": sim.down == 4 and side == "offense", "fg": fg_dist, "extra": fourth or {}, "personnel": personnel}
+            try:
+                import weather
+                c = weather.now(sim)
+                if c is not None:
+                    tl = weather.tail(sim, t)
+                    d["wx"] = f"{c['temp']}°" + (f" · wind {c['wind']} " + ("at your back" if tl >= 4 else "in your face" if tl <= -4 else "across")
+                                                 if c["wind"] >= 8 else " · calm")
+            except Exception:
+                pass
+            if calls is not None:
+                mine = pb.DEFENSE_SCHEMES.get(caller.defense_scheme, {})
+                d["calls"] = [{"key": str(i), "name": x.name, "desc": _def_desc(x), "star": x.name in mine}
+                              for i, x in enumerate(calls, 1)]
+            webview.emit("call", d, add=True)
+        except Exception:
+            pass
 
     def _offense_key(self, sim, c):
         """One key from the offense prompt. Returns an action, None (staff), or 'again'."""
@@ -450,6 +491,12 @@ class Controller:
                                  f"{paint(pad(truncate(_play_desc(p), 21), 21), C.GRAY)}")
             print("   " + "   ".join(cells))
         print(paint("   ★ = in your scheme's playbook", C.GRAY))
+        import webview
+        if webview.on():
+            webview.emit("plays", {"kind": kind, "down": down, "togo": sim.togo, "spot": webview.plain(_spot(sim, t)),
+                                   "us": t.school, "them": o.school, "su": sim.score[t], "so": sim.score[o],
+                                   "plays": [{"key": str(i), "name": p.name, "desc": _play_desc(p), "star": p.name in scheme}
+                                             for i, p in enumerate(plays, 1)]})
         c = ask("Play # (Enter = back):").strip()
         if c.isdigit() and 1 <= int(c) <= len(plays):
             return plays[int(c) - 1]
@@ -502,6 +549,7 @@ class Controller:
               f"{paint('[L]', C.BYELLOW)} list calls   {paint('[T]', C.BYELLOW)} timeout   "
               f"{paint('[S]', C.BYELLOW)} sim ahead   {paint('[B]', C.BYELLOW)} substitutions   "
               f"{paint('[O]', C.BYELLOW)} let the DC call the rest   {paint('[G]', C.BYELLOW)} orders")
+        self._wv_call(sim, "defense", staff_call.name, personnel=personnel, calls=calls)
         while True:
             c = ask("Call:").strip().lower()
             if c == "":

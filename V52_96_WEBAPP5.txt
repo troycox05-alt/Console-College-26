@@ -1,0 +1,14 @@
+Console College 26 — v52.96 · Web app, stage 5
+==============================================
+New hand-built screens:
+  Team page (any program): header with prestige / team / offense, the program facts, roster /
+    schedule / depth / sim-strategy buttons, facilities, program-rating bars, head coach ratings,
+    recent seasons, injury report, and every other team-page link as a chip
+  Football budget: the budget, this season's spending meter, every line item with its note, next
+    season's NIL pool down to AVAILABLE, top NIL deals, buyouts, and payroll / every program /
+    facilities / find money buttons
+  Conference standings: conferences as colored buttons; the standings table with rank, conference
+    and overall record, prestige, your team highlighted, tap a team for its page
+Auto layout: padded keys like [ 1] are now recognized, so menus that use them become buttons too.
+
+Changed: screens.py, finance_screens.py, gui/native.js, gui/native.css

@@ -479,6 +479,8 @@ class Show:
         print(f"  {paint(pad(lab + ':', LABEL_W), color, C.BOLD)}{body[0]}")
         for line in body[1:]:
             print(" " * (LABEL_W + 2) + line)
+        import webview
+        webview.say(key, lab, text)
         if self.speed:
             time.sleep(self.speed * (0.6 + len(text) / 160))
 
@@ -524,6 +526,9 @@ class Show:
                         C.BWHITE, C.BOLD), WIDTH, "center"))
         print(rule("═", C.BYELLOW))
         print(paint(f"   Show speed: {settings.load()['gameday_speed'].title()}   (change it in Settings)", C.GRAY))
+        import webview
+        webview.show_open(settings.show_name(), L.week_name(L.week), self.F['town'],
+                          f"{self.rn(a)} {'vs' if g.neutral else 'at'} {self.rn(h)}", self.F['stadium'])
         extras = self._pick_extras()
         try:
             self.cold_open()
@@ -1266,6 +1271,7 @@ class Show:
                 if (k, g) not in self.table:
                     self.table[(k, g)] = pick(L, k, g)[0]
         games.sort(key=lambda g: (getattr(g, "date", None) or 0, getattr(g, "kick", None) or 0))
+        prow = []
         print()
         import broadcast
         from ui import short_name
@@ -1290,11 +1296,16 @@ class Show:
             k = broadcast.clock(g.kick) if getattr(g, "kick", None) is not None else ""
             day = broadcast.DAYS[g.date.weekday()] if getattr(g, "date", None) and g.date != self.g.date else ""
             print(f"   {paint(pad((day + ' ' if day else '') + k, 13), C.GRAY)}{pad(label, 35)}{''.join(cells)}")
+            prow.append({"kick": (day + " " if day else "") + k, "game": label, "picks": [c.strip() for c in cells]})
             if self.speed:
                 time.sleep(self.speed * 0.6)
         print()
         print(paint(f"   {self.rn(self.g.away)} {'vs' if self.g.neutral else 'at'} {self.rn(self.g.home)}: "
                     f"the picks come at the end of the show.", C.GRAY))
+        import webview
+        webview.picks([settings.last_name(k) for k in gc.ORDER], prow,
+                      f"{self.rn(self.g.away)} {'vs' if self.g.neutral else 'at'} {self.rn(self.g.home)}: "
+                      f"the picks come at the end of the show.")
         rec = standings(L)
         if any(w + l for _, w, l in rec):
             line = "   ".join(f"{settings.last_name(k)} {w}-{l}" for k, w, l in rec)

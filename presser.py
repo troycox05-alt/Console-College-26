@@ -564,11 +564,16 @@ def press_conference(league, team, g):
     clear()
     print(title_bar("THURSDAY  ·  PRESS CONFERENCE"))
     print(paint("\n   Cameras up. Every answer has an upside and a cost — read the line under it.", C.GRAY))
+    import webview
+    webview.emit("presser", {"title": "Thursday · Press conference",
+                             "intro": "Cameras up. Every answer has an upside and a cost — read the line under it."})
     ctx = {"league": league, "team": team, "opp": s["opp"], "qb": s["qb"], "underdog": s["wp"] < 0.45,
            "won": None}
     said, total = podium.run(league, qs, "thu", ctx)
     print()
     print(podium.summary(total))
+    import webview
+    webview.emit("sum", {"text": webview.plain(podium.summary(total))}, add=True)
     pause()
     eff["said"] = said
     return eff

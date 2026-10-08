@@ -236,7 +236,7 @@ def settings_menu(league=None):
                         value=_chip(s.get("team_theme", True)), **W))
         print(menu_item("C", "Auto copy output", "every screen to the clipboard (for chatbots)",
                         value=_chip(s.get("auto_copy", False)), **W))
-        print(menu_item("X", "Download team context", "write a coach-safe .txt packet for your current program",
+        print(menu_item("X", "Copy team context", "a coach-safe packet for your current program, to the clipboard",
                         value=paint("READY" if getattr(league, "user_team", None) is not None else "—", C.BWHITE, C.BOLD), **W))
         footer(key("#", "change a setting"), back_key())
         choice = ask("Select:").lower()
@@ -321,11 +321,23 @@ def settings_menu(league=None):
                 continue
             try:
                 import team_context
-                path, n = team_context.export(league, team)
-                print(paint(f"\n   Team context downloaded: {path}", C.BGREEN))
-                print(paint(f"   {n:,} lines · coach-safe view only · no hidden player ratings.", C.GRAY))
+                import ui as _ui
+                text = team_context.build(league, team)
+                n = len(text.splitlines())
+                hook = getattr(_ui, "CLIP", [None])[0]
+                if hook is not None:                       # the window / phone: the page copies it
+                    hook(text)
+                    print(paint("\n   Team context is ready \u2014 tap Copy in the box that opened.", C.BGREEN))
+                else:
+                    import screen_copy
+                    if screen_copy.copy(text):
+                        print(paint("\n   Team context copied to the clipboard.", C.BGREEN))
+                    else:                                  # no clipboard tool here: fall back to the file
+                        path, n = team_context.export(league, team)
+                        print(paint(f"\n   No clipboard on this system \u2014 saved it instead: {path}", C.BYELLOW))
+                print(paint(f"   {n:,} lines \u00b7 coach-safe view only \u00b7 no hidden player ratings.", C.GRAY))
             except Exception as e:
-                print(paint(f"\n   Couldn't write the team context file: {e}", C.BRED))
+                print(paint(f"\n   Couldn't build the team context: {e}", C.BRED))
             pause()
 
 

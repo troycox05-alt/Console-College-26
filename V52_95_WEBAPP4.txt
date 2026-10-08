@@ -1,0 +1,12 @@
+Console College 26 — v52.95 · Web app, stage 4: every screen
+============================================================
+* Every screen that doesn't have a hand-built app screen is now laid out app-style automatically:
+  the title bar becomes a header, sections and boxed panels become cards, menu rows become big
+  buttons with their descriptions, rows of commands become button chips, tables stay aligned in a
+  scrollable block, and prose wraps at a readable size. Covers the main-screen tabs 4-8, rankings,
+  standings, settings, budget, staff, carousel, signing day, awards, spring ball, media center,
+  career, team pages, AD mode, new-game setup and everything else.
+* New hand-built screens: title screen, Friday game plan, halftime adjustments, the final score.
+* [Classic] in the top bar still switches everything back to the text screens.
+
+Changed: title.py, week.py, halftime.py, screens.py, gui/app.js, gui/native.js, gui/native.css

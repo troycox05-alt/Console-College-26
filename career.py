@@ -1098,6 +1098,35 @@ def career_screen(league):
               f"{paint('[P]', C.BYELLOW)} full coach profile   {paint('[S]', C.BYELLOW)} my staff")
         print(f"   {paint('[M]', C.BYELLOW)} budget & NIL   {paint('[F]', C.BYELLOW)} facilities   "
               f"{paint('[L]', C.BYELLOW)} difficulty   {paint('[R]', C.BRED)} retire   {paint('[B]', C.GRAY)} back")
+        import webview
+        if webview.on():
+            try:
+                import finance as fi
+                from traits import COACH_TRAITS
+                d = {"name": coach.name, "where": where, "bg": bg_, "age": coach.age, "ovr": coach.overall,
+                     "difficulty": difficulty.name(coach), "rec": car, "live": bool(live),
+                     "rep": [COACH_TRAITS[t][0] for t in coach.traits if t in COACH_TRAITS],
+                     "story": [[yr, webview.plain(text)] for yr, text in reversed(story)],
+                     "bank": webview.plain(fi_money(coach.bank)), "points": tp, "spent": skills._st(coach)["spent"],
+                     "color": webview._color(league, team) if team is not None else None, "hasTeam": team is not None}
+                if team is not None:
+                    import ad_trust
+                    tv = ad_trust.get(coach, team)
+                    d.update(seat=coach.seat, seatWord=webview.plain(cs.seat_tag(coach)),
+                             ad=f"{team.ad['name']} ({cz.AD_STYLES[team.ad['style']][0]})", trust=round(tv),
+                             trustWord=ad_trust.word(tv),
+                             trustLog=[f"{why} ({dd:+.0f})" for dd, why in reversed(ad_trust.lines(coach, team, 3))])
+                    k = fi.contract(coach)
+                    if k:
+                        d.update(contract=webview.plain(fi.deal_line(k, league)), owed=fi.money(fi.owed(coach, league), exact=True))
+                    try:
+                        d["goals"] = [{"text": webview.plain(g.get("text", "")), "status": g.get("status", ""), "note": webview.plain(g.get("note", ""))}
+                                      for g in (__import__("gui_data").coach_card(league, team) or {}).get("goals", [])]
+                    except Exception:
+                        pass
+                webview.emit("career", d)
+            except Exception:
+                pass
         choice = ask("Select:").lower()
         if choice == "t":
             skills.tree_screen(league)

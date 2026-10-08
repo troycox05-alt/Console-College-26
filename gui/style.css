@@ -347,3 +347,15 @@ button.primary:disabled, .agrid button:disabled { opacity: .4; cursor: not-allow
 .minimeter { width: 70px; height: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; flex: none; align-self: center; }
 .minimeter i { display: block; height: 100%; }
 #t-rec .label::after { content: none; }
+
+/* copy box (Settings → Copy team context) */
+#clipbox { position: fixed; inset: 0; z-index: 20; display: none; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.55); padding: 16px; }
+#clipbox .clipsheet { background: var(--panel, #111821); border: 1px solid var(--line, #243140); border-radius: 12px;
+  width: min(640px, 100%); max-height: 85vh; display: flex; flex-direction: column; gap: 10px; padding: 14px; }
+#clipbox .cliphead { display: flex; gap: 6px; align-items: baseline; }
+#clipbox textarea { flex: 1; min-height: 200px; width: 100%; box-sizing: border-box; resize: none; font: 12px ui-monospace, Menlo, Consolas, monospace;
+  background: var(--bg, #0b0f14); color: inherit; border: 1px solid var(--line, #243140); border-radius: 8px; padding: 8px; }
+#clipbox .clipbtns { display: flex; gap: 8px; justify-content: flex-end; }
+#clipbox .clipbtns button { min-height: 40px; padding: 6px 18px; }
+#clipbox .clipbtns button.primary { width: auto; flex: 1; }

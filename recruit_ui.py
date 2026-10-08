@@ -564,6 +564,17 @@ def signing_day_live(league, report, team=None):
     slow = c == "w"
     clear()
     print(title_bar(f"NATIONAL SIGNING DAY  ·  {report.year}", C.BYELLOW))
+    import webview
+    webview.emit("signing", {"year": report.year, "school": team.school if team is not None else ""})
+
+    def wv_pick(x, yours):
+        r, pick = x["r"], x["pick"]
+        fav = x.get("fav")
+        webview.emit("pick", {"name": r.player.name, "stars": r.stars, "pos": r.position, "origin": webview.plain(rp.origin_line(r)),
+                              "kind": x["kind"], "hats": [h.school for h in x["hats"]], "pick": pick.school,
+                              "mineWin": pick is team, "mineLoss": team in x["hats"] and pick is not team,
+                              "fav": fav.school if fav is not None else "", "favMe": fav is team,
+                              "why": x.get("why") or "", "yours": yours}, add=True)
 
     def beat(t):
         if slow:
@@ -576,6 +587,7 @@ def signing_day_live(league, report, team=None):
         if x["kind"] == "signed":
             col = C.BGREEN if x["pick"] is team else C.GRAY
             print(paint(f"      Signs with {x['pick'].school}, as expected.", col))
+            wv_pick(x, yours)
             return
         hats = x["hats"]
         print(paint("      On the table: " + "  ·  ".join(h.school for h in hats), C.GRAY), flush=True)
@@ -598,6 +610,7 @@ def signing_day_live(league, report, team=None):
                         C.BRED if x["fav"] is team else C.GRAY, C.BOLD if x["fav"] is team else ""))
         elif x["fav"] is not None and x["fav"] is not pick and x["kind"] == "pick" and x["fav"] in hats:
             print(paint(f"      A surprise — {x['fav'].school} was the favorite.", C.GRAY))
+        wv_pick(x, yours)
         beat(0.6)
 
     if mine:
@@ -615,6 +628,8 @@ def signing_day_live(league, report, team=None):
         print(paint(f"   {len(flips)} signing-day flip{'s' if len(flips) != 1 else ''} nationally: "
                     + ", ".join(f"{r.player.name} ({a.school} → {b.school})" for r, a, b in flips[:5]), C.BMAGENTA))
     lost = [(r, why) for r, fav, why in getattr(report, "blocked", []) if fav is team] + list(getattr(report, "cut", []))
+    webview.emit("sdend", {"flips": [f"{r.player.name} ({a.school} → {b.school})" for r, a, b in flips[:5]], "nflips": len(flips),
+                           "lost": [f"{r.stars}★ {r.position} {r.player.name}: {why}" for r, why in lost]}, add=True)
     if lost:
         print()
         print(section("WHO YOU COULDN'T TAKE", C.BRED))

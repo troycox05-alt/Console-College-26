@@ -11,6 +11,8 @@ const screenEl = $("screen"), wrapEl = $("screenwrap"), quickEl = $("quick"), ba
 const S = {
   since: 0,
   screens: [""],          // raw text of each screen (a clear starts a new one)
+  views: [null],          // native web screens (webview.py): the data each screen sent, if any
+  marks: [0],             // where the text after that view starts (prompts, notes under the native screen)
   view: null,             // null = live; otherwise an index into screens
   waiting: false,
   prompt: "",
@@ -37,6 +39,7 @@ async function api(path, body) {
 
 async function poll() {
   try {
+    const catchUp = S.since === 0;               // the first poll replays old events: don't reopen old copy boxes
     const d = await api(`/poll?since=${S.since}`);
     if (d && d.error === "login") { location.reload(); return; }
     for (const [seq, kind, text] of d.events) {
@@ -47,6 +50,15 @@ async function poll() {
       else if (kind === "wait") { S.prompt = text; refreshState(); }
       else if (kind === "done") S.done = true;
       else if (kind === "restart") { location.reload(); return; }
+      else if (kind === "clip") { if (!catchUp) showClip(text); }
+      else if (kind === "view" || kind === "add") {
+        try {
+          const v = JSON.parse(text), i = S.screens.length - 1;
+          if (kind === "view") S.views[i] = { kind: v.kind, data: v.data, adds: [] };
+          else if (S.views[i]) S.views[i].adds.push(v);
+          S.marks[i] = S.screens[i].length;
+        } catch (e) { /* a view that doesn't parse: the text is still there */ }
+      }
     }
     if (d.events.length) S.dirty = true;
     if (d.waiting !== S.waiting) { S.waiting = d.waiting; S.dirty = true; }
@@ -58,8 +70,12 @@ async function poll() {
 function cur(text) { S.screens[S.screens.length - 1] += text; }
 function newScreen() {
   S.screens.push("");
+  S.views.push(null);
+  S.marks.push(0);
   if (S.screens.length > MAX_SCREENS) {
     S.screens.shift();
+    S.views.shift();
+    S.marks.shift();
     if (S.view !== null) S.view = Math.max(0, S.view - 1);
   }
 }
@@ -251,6 +267,26 @@ function draw() {
   const idx = live ? S.screens.length - 1 : S.view;
   let raw = S.screens[idx] || "";
   const full = raw;
+  // A native web screen (native.js) replaces the text the game printed for it; anything printed
+  // after it (prompts, notes) still shows underneath as text.
+  const nv = S.views[idx];
+  const useNative = !!(nv && window.NATIVE && window.NATIVE.has(nv.kind) && S.prefs.native !== false);
+  if (useNative) {
+    window.NATIVE.render(nv, live);
+    raw = raw.slice(S.marks[idx] || 0).split("\n")            // drop divider lines: they wrap into noise on a phone
+      .filter((l) => { const t = strip(l); return !t.trim() || !/^[\s─━═▀▄_\-·]+$/.test(t); })
+      .join("\n").replace(/^\s*\n/, "");
+  }
+  else if (window.NATIVE && window.NATIVE.auto && MOBILE && S.prefs.native !== false && raw.trim()) {
+    window.NATIVE.auto(raw, idx, live);                          // any other screen: laid out app-style
+    raw = "";
+  }
+  else if (window.NATIVE) window.NATIVE.hide();
+  window.NV_NOQUICK = useNative && ["game", "plays", "matchup"].includes(nv.kind);   // its own buttons cover every key
+  wrapEl.classList.toggle("native", useNative || (raw === "" && !!window.NATIVE && !document.getElementById("native").hidden));
+  const slot = useNative ? document.getElementById("nv-tail") : null;   // a native screen can say where its text goes
+  if (slot) { if (screenEl.parentElement !== slot) slot.appendChild(screenEl); }
+  else if (screenEl.parentElement !== wrapEl) wrapEl.appendChild(screenEl);
   // Keep the active prompt in the game screen.  The old window removed it from
   // here and squeezed only its final line into the bottom input bar, which hid
   // long questions/options.  The bar is now just the typing control.
@@ -306,7 +342,7 @@ function foldCommands(raw) {
 
 function quickButtons(raw) {
   quickEl.innerHTML = "";
-  if (!MOBILE) return;            // desktop: the auto button row is gone (it guessed wrong and got in the way);
+  if (!MOBILE || window.NV_NOQUICK) return;            // desktop: the auto button row is gone (it guessed wrong and got in the way);
                                   // phones keep it — the on-screen [keys] are too small to hit with a thumb
   if (!raw || !S.waiting) return;
   const found = new Map();
@@ -983,3 +1019,35 @@ setInterval(refreshState, 2000);
   refreshState();
   requestAnimationFrame(draw);
 })();
+
+
+// ═══ Copy box (Settings → Copy team context) ═══════════════════════════════
+// Browsers (iPhone Safari especially) only allow copying from a tap, so the game hands the text over
+// and this box gives you the button to tap.
+function showClip(text) {
+  let box = document.getElementById("clipbox");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "clipbox";
+    box.innerHTML = '<div class="clipsheet"><div class="cliphead"><b>Team context</b><span id="clipn" class="muted"></span></div>' +
+      '<textarea id="cliptext" readonly></textarea>' +
+      '<div class="clipbtns"><button id="clipgo" class="primary">Copy</button><button id="clipclose">Close</button></div></div>';
+    document.body.appendChild(box);
+    document.getElementById("clipclose").onclick = () => { box.style.display = "none"; };
+    document.getElementById("clipgo").onclick = async () => {
+      const ta = document.getElementById("cliptext"), t = ta.value, b = document.getElementById("clipgo");
+      let ok = false;
+      try { if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(t); ok = true; } } catch (e) { ok = false; }
+      if (!ok) {
+        try { ta.removeAttribute("readonly"); ta.focus(); ta.setSelectionRange(0, t.length); ok = document.execCommand("copy"); }
+        catch (e) { ok = false; } finally { ta.setAttribute("readonly", ""); }
+      }
+      b.textContent = ok ? "Copied \u2713" : "Select all and copy";
+      if (ok) setTimeout(() => { box.style.display = "none"; b.textContent = "Copy"; }, 900);
+    };
+  }
+  document.getElementById("cliptext").value = text;
+  document.getElementById("clipn").textContent = " \u00b7 " + text.split("\n").length.toLocaleString() + " lines";
+  document.getElementById("clipgo").textContent = "Copy";
+  box.style.display = "flex";
+}

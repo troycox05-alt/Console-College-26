@@ -14,8 +14,18 @@ from recruiting_data import PERSONALITIES
 from ui import C, WIDTH, ask, bar, clear, pad, paint, pause, rating, rule, section, title_bar, truncate
 
 
+_WV = {"sec": "", "rows": []}
+
+
+def _sec(text, color):
+    _WV["sec"] = text
+    return section(text, color)
+
+
 def _row(label, who, amount, note="", color=C.BWHITE, exact=True):
     """Two decimals on millions, so the pieces add up to the totals on screen."""
+    _WV["rows"].append({"sec": _WV["sec"], "label": label, "who": who, "amount": fi.money(amount, exact=exact),
+                        "note": note, "neg": amount < 0, "tone": {C.BRED: "bad", C.BGREEN: "good", C.BCYAN: "info"}.get(color, "")})
     return (f"   {paint(pad(label, 16), C.GRAY)}{pad(truncate(who, 34), 35)}"
             f"{pad(paint(fi.money(amount, exact=exact), color, C.BOLD), 10, 'right')}   {paint(note, C.GRAY)}")
 
@@ -44,7 +54,9 @@ def budget_screen(league, team):
         print()
 
         # ── this season ──────────────────────────────────────────────────
+        _WV["rows"] = []
         print(section(f"THIS SEASON  ·  {yr}", color))
+        _WV["sec"] = f"This season · {yr}"
         spent = 0
         for label, c in (("Head coach", team.coach), ("Off. coord.", getattr(team, "oc", None)),
                          ("Def. coord.", getattr(team, "dc", None))):
@@ -88,6 +100,7 @@ def budget_screen(league, team):
         cycle = league.recruiting
         print()
         print(section(f"NIL FOR NEXT SEASON  ·  THE {yr + 1} CLASS", color))
+        _WV["sec"] = f"NIL for next season · the {yr + 1} class"
         pool = fi.nil_pool(league, team)
         ret = fi.roster_nil(team, returning=True)
         seniors = nil_now - ret
@@ -140,6 +153,24 @@ def budget_screen(league, team):
         print(f"   {paint('[P]', C.BYELLOW)} full payroll   {paint('[L]', C.BYELLOW)} every program's budget   "
               f"{paint('[F]', C.BYELLOW)} facilities   {paint('[R]', C.BYELLOW)} find money / rebalance   "
               f"{paint('[B]', C.GRAY)} back")
+        import webview
+        if webview.on():
+            try:
+                import scout
+                webview.emit("budget", {
+                    "school": team.school, "year": yr, "budget": fi.money(b), "rank": fi.budget_rank(league, team),
+                    "of": len(league.teams), "ad": f"{team.ad['name']} ({cz.AD_STYLES[style][0]})",
+                    "adBlurb": fi.AD_CONTRACT[style]["blurb"],
+                    "trend": (f"{tr[2]:+.1f}% for {tr[0]}" + (f" — {tr[3]}" if tr[3] else "")) if tr else "",
+                    "trendUp": bool(tr and tr[2] > 0), "spent": fi.money(spent, exact=True), "pct": round(pct),
+                    "left": fi.money(left, exact=True), "over": left < 0, "available": fi.money(avail),
+                    "rows": list(_WV["rows"]), "color": webview._color(league, team),
+                    "top": [{"id": webview.pid(p), "name": p.name, "pos": p.position, "yr": p.class_label,
+                             "ovr": webview.plain(scout.ovr_short(p)), "nil": fi.money(fi.player_nil(p))} for p in top],
+                    "buyouts": [{"name": o["name"], "role": staff.ROLE_SHORT.get(o["role"], o["role"]),
+                                 "per": fi.money(o["per_year"]), "span": f"{o['start']}–{o['end']}"} for o in outs]})
+            except Exception:
+                pass
         choice = ask("Select:").strip().lower()
         if choice == "r":
             import budget_fix
@@ -198,6 +229,19 @@ def payroll(league, team):
         print(paint(f"\n   Page {page + 1}/{pages}.  ⇄ transfer · THRU = the last season he can be paid (eligibility runs out)."
                     f"\n   NIL deals are fixed once signed. Seniors' deals come off after the season; a player who enters"
                     f"\n   the portal takes nothing with him.", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                webview.emit("payroll", {"school": team.school, "total": fi.money(total), "page": page + 1, "pages": pages,
+                                         "rows": [{"id": webview.pid(p), "pos": p.position, "num": p.number, "name": p.name,
+                                                   "yr": p.class_label, "ovr": webview.plain(scout.ovr_short(p)),
+                                                   "nil": fi.money(fi.player_nil(p)) if fi.player_nil(p) else "",
+                                                   "share": f"{fi.player_nil(p) / total * 100:.1f}%" if total and fi.player_nil(p) else "",
+                                                   "thru": str(league.year + max(0, 3 - p.year)) if fi.player_nil(p) else "",
+                                                   "tr": bool(_transfer_from(p)), "walkon": bool(getattr(p, "walk_on", False))}
+                                                  for p in chunk]})
+            except Exception:
+                pass
         choice = ask("[N] next  [P] previous  [B] back:").strip().lower()
         if choice == "n" and page + 1 < pages:
             page += 1

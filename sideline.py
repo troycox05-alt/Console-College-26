@@ -1667,6 +1667,10 @@ def try_choice(sim, team, staff_two):
         "   staff: " + ("go for two" if staff_two else "kick it"), C.BCYAN))
     print("   " + "   ".join([_k("Enter", "staff's call", C.BGREEN), _k("K", "kick"), _k("2", "go for two"),
                               _k("R", "two, your run"), _k("P", "two, your pass")]))
+    import webview
+    webview.opts(f"The try · {_qc(sim)} · " + (f"up {d}" if d > 0 else f"down {-d}" if d < 0 else "tied"),
+                 [("Enter", "Staff's call", "go for two" if staff_two else "kick it"), ("k", "Kick it", ""), ("2", "Go for two", ""),
+                  ("r", "Two — your run", ""), ("p", "Two — your pass", "")])
     c = ask("The try:").strip().lower()
     two, action = staff_two, None
     if c == "k":

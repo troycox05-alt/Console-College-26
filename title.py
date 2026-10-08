@@ -81,6 +81,18 @@ def main_menu_screen():
         print(center(paint("─" * 72, "\033[38;5;238m")))
         print(center(paint(msg, C.BYELLOW) if msg else paint(f"{VERSION}  ·  138 FBS programs  ·  every snap simulated",
                                                               "\033[38;5;240m")))
+        import webview
+        if webview.on():
+            webview.emit("title", {
+                "version": VERSION, "msg": webview.plain(msg),
+                "cont": {"who": saves._who(latest) or latest["name"], "status": latest["status"],
+                         "ago": _ago(latest["saved_at"])} if latest else None,
+                "saves": len(found), "items": [
+                    {"key": "2", "label": "New Game", "desc": "coach a program, run one as AD, or watch it all"},
+                    {"key": "3", "label": "Load Game", "desc": f"{len(found)} saved game{'s' if len(found) != 1 else ''}" if found else "nothing saved yet", "off": not found},
+                    {"key": "4", "label": "Settings", "desc": "universe, the show, the sideline, difficulty, routines"},
+                    {"key": "5", "label": "Manual", "desc": "everything, start to finish — searchable"},
+                    {"key": "6", "label": "About", "desc": "how it works, your saves"}]})
         msg = ""
         c = ask("Select:").strip().lower()
         if c in ("1", "c", "continue") or (c == "" and latest):

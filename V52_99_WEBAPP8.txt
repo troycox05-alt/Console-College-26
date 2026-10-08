@@ -1,0 +1,12 @@
+Console College 26 — v52.99 · Web app, stage 8
+==============================================
+New hand-built screens:
+  Staff room (every chair with ratings, pay, specialty; Profile / Negotiate / Promote / Fire on each,
+  Hire on an open chair)
+  Awards season (the trophy winner, freshman and coach of the year, best at every position,
+  first- and second-team All-America; tap a player for his card)
+  Pro draft (round tabs, by school, your picks)
+  National signing day (each decision as a card: the hats on the table, the pick in big letters,
+  flips, why your first choice slipped away; streams live when you watch it live)
+
+Changed: awards_screens.py, recruit_ui.py, staff_room.py, gui/native.js, gui/native.css

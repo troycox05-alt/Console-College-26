@@ -74,6 +74,20 @@ def playoff_rankings(league):
                     f"; * = conference champion's automatic bid.  #1 = first-place ballots.", C.GRAY))
         print(rule())
         print(paint("   [#] how every member ranked that team   [M] the committee   [E] edit these rankings   [B] back", C.GRAY))
+        import webview
+        if webview.on():
+            try:
+                me = getattr(league, "user_team", None)
+                webview.emit("cfp", {"title": f"{league.year} NP Rankings", "label": label.title(), "tag": tag,
+                                     "weight": int(cm.COMMITTEE_WEIGHT * 100), "rows": [
+                    {"rank": i, "school": t.school, "conf": t.conference, "record": t.record,
+                     "move": None if c.previous_rank(t) is None else c.previous_rank(t) - i, "new": c.previous_rank(t) is None,
+                     "avg": round(c.avg.get(t, 0), 1), "firsts": sum(1 for b in ballots.values() if b and b[0] is t),
+                     "poll": league.rankings.rank_of(t), "seed": seeds.get(t), "auto": t in auto, "me": t is me,
+                     "color": webview._color(league, t)} for i, t in enumerate(order, 1)],
+                    "next": [f"{t.school} ({t.record})" for t in out]})
+            except Exception:
+                pass
         choice = ask("Select:").strip().lower()
         if choice.isdigit() and 1 <= int(choice) <= len(order):
             team_votes(league, order[int(choice) - 1])

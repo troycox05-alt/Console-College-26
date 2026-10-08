@@ -8,6 +8,7 @@ them. Hours are the constraint on every screen: the header always tells you
 what you have left this week, and actions you can't afford are grayed out.
 """
 from collections import Counter
+import re
 
 from recruiting_data import (ACTIONS, CLASS_SIZE, PERSONALITIES, PRIORITY_LABELS, STATES)
 from recruiting import STAR_TALENT
@@ -100,6 +101,53 @@ def _hub_panels(league, team):
             news_panel(league, 49))
 
 
+def _wv_hub(league, team, readonly):
+    import webview
+    if not webview.on():
+        return
+    try:
+        import compliance
+        import finance as fi
+        import recruit_plus as rp
+        cycle = league.recruiting
+        commits = cycle.commitments(team)
+        needs = cycle._needs(team)
+        signed = Counter(r.position for r in commits)
+        on_board = Counter(r.position for r in team.recruiting_targets if r.committed_to is not team)
+        d = {"school": team.school, "classYear": league.year + 1, "status": webview.plain(league.status),
+             "rank": cycle.class_rank(team), "commits": len(commits), "cap": compliance.class_cap(team, league),
+             "avg": round(sum(r.stars for r in commits) / len(commits), 2) if commits else 0,
+             "hours": cycle.remaining_hours(team), "hoursTotal": cycle.hours_for(team),
+             "hoursWhy": webview.plain(cycle.hours_explained(team)), "contact": league.week == 0,
+             "nil": fi.money(fi.available(league, team)), "board": len(team.recruiting_targets),
+             "needs": [{"pos": p, "got": signed[p], "want": needs.get(p, 0), "board": on_board[p]}
+                       for p in ROSTER_SIZE if needs.get(p, 0) > 0],
+             "top": [{"name": r.name, "pos": r.position, "stars": r.stars, "standing": r.standing(team)}
+                     for r in cycle.board_for(team)[:6]],
+             "news": [{"kind": k, "text": webview.plain(t)} for _, k, t in cycle.news[:7]],
+             "readonly": bool(readonly), "week": league.week, "color": webview._color(league, team)}
+        if not readonly:
+            steps, _ = rp.plan(cycle, team)
+            d["orders"] = {"queued": len(rp.queue(cycle, team)), "run": sum(1 for _, _, _, x in steps if x),
+                           "cut": sum(1 for _, s, _, _ in steps if s.startswith("cut"))}
+        webview.emit("rhub", d)
+    except Exception:
+        pass
+
+
+def _wv_row(league, team, r, i):
+    import recruit_plus as rp
+    import scout
+    lo, hi = r.scouting_range(team)
+    pc = rp.public_commit(r, team)
+    return {"i": i, "rank": r.national_rank, "name": r.name, "pos": r.position, "stars": r.stars,
+            "home": {"juco": "JC", "intl": "INT"}.get(getattr(r, "kind", "hs"), r.home_state),
+            "proj": scout.proj_short(lo, hi).strip(), "standing": r.standing(team) if r.interest.get(team) else "NO CONTACT",
+            "interest": round(r.interest.get(team, 0)), "board": r in team.recruiting_targets,
+            "mine": r.committed_to is team, "commit": (pc.school if pc is not None and pc is not team else ""),
+            "offer": team in r.offers}
+
+
 def news_panel(league, w):
     lines = []
     for wk, kind, text in league.recruiting.news[:7]:
@@ -156,6 +204,7 @@ def recruiting_menu(league):
         items.append(key("B", "back", C.GRAY))
         for ln in command_bar(items):
             print(ln)
+        _wv_hub(league, team, readonly)
         choice = ask("Select:").lower()
         if choice in ("o", "t") and not readonly:
             import gray_area
@@ -554,7 +603,22 @@ def finder(league, team, suggested=False, preset=None):
             print(ln)
         if msg:
             print(paint("  " + msg, C.BGREEN, C.BOLD))
-            msg = ""
+        import webview
+        if webview.on():
+            try:
+                rows = []
+                for i, r in enumerate(chunk, page * per + 1):
+                    row = _wv_row(league, team, r, i)
+                    if f["sort"] == "fit":
+                        row["why"] = [t for t, _ in suggestion(league, team, r)[1][:3]]
+                    rows.append(row)
+                webview.emit("rlist", {"title": title, "count": len(results), "filters": webview.plain(_filter_chips(f)),
+                                       "sort": SORTS[f["sort"]], "hours": cycle.remaining_hours(team),
+                                       "board": len(team.recruiting_targets), "page": page + 1, "pages": pages,
+                                       "rows": rows, "readonly": bool(readonly), "msg": msg})
+            except Exception:
+                pass
+        msg = ""
         c = ask("Select:").strip().lower()
         if c in ("", "b"):
             return
@@ -666,7 +730,28 @@ def board_screen(league, team):
             print(ln)
         if msg:
             print(paint("  " + msg, C.BCYAN, C.BOLD))
-            msg = ""
+        import webview
+        if webview.on():
+            try:
+                import recruit_plus as rp
+                rows = []
+                for i, r in enumerate(board, 1):
+                    row = _wv_row(league, team, r, i)
+                    ld = r.leader()
+                    row["leader"] = row["commit"] or (ld.school if ld else "")
+                    row["leaderMe"] = bool(r.committed_to is team or (not row["commit"] and ld is team))
+                    row["nil"] = webview.plain(_nil_cell(cycle, team, r))
+                    row["queued"] = any(e["r"] is r for e in rp.queue(cycle, team))
+                    row["visit"] = team in rp.ov_of(r)
+                    rows.append(row)
+                webview.emit("rboard", {"school": team.school, "hours": hrs, "hoursTotal": tot,
+                                        "nil": fi.money(fi.available(league, team)),
+                                        "needs": webview.plain(_needs_line(league, team)),
+                                        "sort": {"rank": "national rank", "pos": "position", "standing": "your standing"}[sort],
+                                        "rows": rows, "readonly": bool(readonly), "msg": msg})
+            except Exception:
+                pass
+        msg = ""
         choice = ask("Select:").lower()
         if readonly and choice and choice[0] in "fgd$q":
             continue
@@ -840,7 +925,32 @@ def recruit_card(league, team, recruit):
             print(ln)
         if msg:
             print(paint("  " + msg, C.BCYAN, C.BOLD))
-            msg = ""
+        import webview
+        if webview.on():
+            try:
+                d = {"name": r.name, "pos": r.position, "stars": r.stars, "rank": r.national_rank,
+                     "state": STATES[r.home_state][0], "size": webview.plain(size),
+                     "tags": [webview.plain(tag)] if webview.plain(tag) else [],
+                     "extras": [webview.plain(x) for x in extras],
+                     "proj": webview.plain(__import__("scout").proj(lo, hi)), "scouted": r.scout[team],
+                     "wants": [PRIORITY_LABELS[p] if p in known else None for p in r.priorities],
+                     "reads": PERSONALITIES[r.personality]["label"] if r.scout[team] >= 2 else "",
+                     "standing": st, "offered": team in r.offers, "offers": len(r.offers),
+                     "race": [{"school": t.school, "v": round(r.interest[t]), "me": t is team,
+                               "color": webview._color(league, t),
+                               "commit": bool(r.committed_to is t and rp.public_commit(r, team) is t)} for t in tops],
+                     "raceMax": round(top_val), "nil": [webview.plain(x) for x in finance_screens.nil_lines(league, team, r)],
+                     "hours": hrs, "actions": [{"key": str(i), "label": ACTIONS[k][0], "cost": ACTIONS[k][1],
+                                                "ok": hrs >= ACTIONS[k][1] and not readonly} for i, k in enumerate(keys, 1)],
+                     "promise": promises.KINDS[mine_pr["kind"]][0] if mine_pr else "",
+                     "room": webview.plain(promises.room_line(team, r)),
+                     "story": [{"wk": wk, "text": webview.plain(line)} for wk, line in reversed(story)],
+                     "queued": nq, "visit": team in rp.ov_of(r), "onBoard": on_board,
+                     "readonly": bool(readonly), "msg": msg}
+                webview.emit("rcard", d)
+            except Exception:
+                pass
+        msg = ""
         choice = ask("Select:").lower()
         if readonly or choice in ("", "b"):
             return
@@ -944,6 +1054,20 @@ def class_view(league, team):
                                           for r in group[extra:extra + 3]))
     print()
     top = sorted(league.teams, key=lambda t: -cycle.class_score(t))[:10]
+    import webview
+    if webview.on():
+        try:
+            webview.emit("rclass", {
+                "school": team.school, "year": league.year + 1, "commits": len(commits),
+                "cap": compliance.class_cap(team, league), "avg": round(avg, 2), "rank": cycle.class_rank(team),
+                "momentum": round(mom), "momWord": rp.momentum_word(mom), "needs": webview.plain(_needs_line(league, team)),
+                "groups": [{"pos": pos, "players": [{"name": r.name, "stars": r.stars, "state": r.home_state}
+                                                    for r in by_pos[pos]]} for pos in ROSTER_SIZE if by_pos.get(pos)],
+                "top": [{"school": t.school, "n": len(cycle.commitments(t)), "me": t is team,
+                         "avg": round(sum(x.stars for x in cycle.commitments(t)) / max(1, len(cycle.commitments(t))), 2)}
+                        for t in top]})
+        except Exception:
+            pass
     print(section("NATIONAL CLASS RANKINGS", C.BCYAN))
     for i, t in enumerate(top, 1):
         k = cycle.commitments(t)
@@ -1017,4 +1141,7 @@ def news_screen(league):
         tag = {"commit": paint("COMMIT", C.BGREEN), "flip": paint("FLIP  ", C.BRED), "visit": paint("VISIT ", C.BCYAN),
                "rating": paint("RATING", C.BYELLOW), "cb": paint("CRYSTL", C.BMAGENTA)}.get(kind, paint("NEWS  ", C.GRAY))
         print(f"   {paint(f'Wk {week:<3}', C.GRAY)}{tag}  {text}")
+    import webview
+    webview.emit("rnews", {"title": f"{league.year + 1} recruiting news",
+                           "rows": [{"wk": w, "kind": k, "text": webview.plain(t)} for w, k, t in cycle.news[:40]]})
     pause()

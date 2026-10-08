@@ -1,0 +1,16 @@
+Console College 26 — v53.01 · Game Day, all app
+===============================================
+* Your call is an app panel: down, distance and spot, timeouts, tempo, scheme and weather; big Run /
+  Pass buttons and a "Staff's call: …" button; on fourth down Punt / Field goal (with the distance),
+  the fakes with their odds and what the chart says; chips for kneel, timeout, the three tempos, sim
+  ahead, substitutions and orders.
+* Defense: the staff's call button and every defensive call as a tappable card (★ = your scheme's
+  playbook, the staff's pick outlined), plus timeout / sim ahead / subs / orders / crowd / hand it to the DC.
+* Run and pass play lists are grids of tappable plays.
+* The last play's result sits right under the field. The booth (play-by-play and analyst) streams in
+  as a chat, quarter breaks are banners, and every in-game choice (how to play it, speed, who calls
+  plays, the try, sim-ahead, between-quarters) is a set of buttons.
+* The game's own text is tucked into "Full broadcast text" at the bottom; the duplicate key row is
+  hidden on game screens.
+
+Changed: webview.py, screens.py, coach_mode.py, sideline.py, commentary.py, gui/app.js, gui/native.js, gui/native.css

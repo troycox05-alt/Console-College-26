@@ -4,6 +4,7 @@ The depth room deliberately uses the same panel/chip/footer vocabulary as the
 rest of Console College.  It is information-dense, but should feel like a
 football staff room rather than a debug list.
 """
+import re
 import textwrap
 
 from ui import (C, WIDTH, ask, chip, clear, columns, footer, key, meter, pad,
@@ -277,6 +278,44 @@ def _show_room(league, team, pos, camp_mode, msg=""):
     return cur, n
 
 
+def _wv_room(league, team, pos, camp_mode, cur, n, ideas, msg):
+    import webview
+    if not webview.on():
+        return
+    try:
+        import depth_staff, morale, scout
+        staff_order = depth_staff.order(league, team, pos, "blend")
+        total = len(cur)
+        rows = []
+        for i, p in enumerate(cur, 1):
+            cr, ct = depth_staff.take(league, team, p, pos, "coord")
+            pr, pt = depth_staff.take(league, team, p, pos, "pos")
+            br = staff_order.index(p) + 1 if p in staff_order else i
+            form = depth_staff.camp_form(league, team, p)
+            r = {"i": i, "id": webview.pid(p), "num": p.number, "name": p.name, "yr": p.class_label,
+                 "ovr": webview.plain(scout.ovr_tag(p)), "morale": round(morale.get(p)), "starter": i <= n,
+                 "staff": br, "coord": cr, "posc": pr, "move": i - br, "split": abs(cr - pr) >= 2,
+                 "coordNote": ct, "posNote": pt, "form": round(form, 1), "formWord": webview.plain(_form_label(form)),
+                 "hurt": p.inj_games > 0, "traits": [label for _, label, _ in _trait_descriptions(p)]}
+            if camp_mode:
+                r["camp"] = [round(x[1], 1) for x in depth_staff.camp(league, team).get(id(p), [])]
+            else:
+                r["film"] = [round(x) for x in depth_staff.recent(p)]
+                r["filmWord"] = webview.plain(_film_label(depth_staff.recent_delta(p)))
+            rows.append(r)
+        evc = depth_staff.evaluator(team, pos, "coord")
+        evp = depth_staff.evaluator(team, pos, "pos")
+        webview.emit("depth", {"school": team.school, "pos": pos, "posName": POSITION_NAMES[pos], "n": n,
+                               "camp": bool(camp_mode), "total": total, "rows": rows, "msg": msg,
+                               "coord": {"name": evc["name"], "lean": str(evc["lean"])},
+                               "posCoach": {"name": evp["name"], "lean": str(evp["lean"])},
+                               "ideas": [{"i": k, "name": p.name, "old": old, "new": new, "why": why}
+                                         for k, (p, old, new, why) in enumerate(ideas, 1)],
+                               "color": webview._color(league, team)})
+    except Exception:
+        pass
+
+
 def room(league, team, pos, camp_mode=True):
     """Run one position room. In-season navigation returns next/prev/back."""
     import depth_staff, depth, practice
@@ -287,7 +326,7 @@ def room(league, team, pos, camp_mode=True):
 
     while True:
         cur, n = _show_room(league, team, pos, camp_mode, msg)
-        msg = ""
+        msg_shown, msg = msg, ""
         ideas = [x for x in depth.move_ideas(league, team) if x[1] == pos]
         if ideas:
             print()
@@ -309,10 +348,21 @@ def room(league, team, pos, camp_mode=True):
                    key("N", "Next room"), key("PREV", "Previous room"), key("Enter", "Back", C.GRAY))
             prompt = "Choose an action — S switch · C/P staff board · L staff decides · X position change · N/PREV rooms · Enter back:"
 
+        _wv_room(league, team, pos, camp_mode, cur, n, ideas, msg_shown)
         c = ask(prompt).strip().lower()
         if not c or c in ("b", "back"):
             depth_staff.react_to_change(league, team, pos, before)
             return "done" if camp_mode else "back"
+        mv = re.match(r"^(u|up|d|dn|down)\s*(\d+)$", c)
+        if mv:                                            # one-tap moves (the web app's ↑ / ↓ buttons)
+            room_ = list(team.players_at(pos))
+            k = int(mv.group(2)) - 1
+            j = k - 1 if mv.group(1).startswith("u") else k + 1
+            if 0 <= k < len(room_) and 0 <= j < len(room_):
+                room_[k], room_[j] = room_[j], room_[k]
+                depth_staff.apply_order(team, pos, room_)
+                msg = f"Moved {room_[j].name} {'up' if j < k else 'down'} to #{j + 1}."
+            continue
         if not camp_mode and c in ("n", "next"):
             depth_staff.react_to_change(league, team, pos, before)
             return "next"

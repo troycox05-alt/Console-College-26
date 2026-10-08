@@ -222,6 +222,12 @@ BRIDGE = Bridge()
 LAN = None                           # (the old Hot Seat network mode was removed; always None)
 
 
+def _view_hook(kind, text):
+    if getattr(BRIDGE.local, "buf", None) is not None:
+        return                       # a captured pop-up (a player card): its screen isn't the game's screen
+    BRIDGE.push(kind, text)
+
+
 def install():
     """Must run before any game module is imported."""
     builtins.input = BRIDGE.input
@@ -230,6 +236,9 @@ def install():
     ui.clear = BRIDGE.clear          # every `from ui import clear` made after this gets the window version
     ui.WINDOW[0] = True              # footers are marked (the window keeps them on screen)
     ui.wipe_history = BRIDGE.wipe    # Hot Seat: the pass screen forgets what came before it
+    ui.CLIP[0] = lambda text: BRIDGE.push("clip", text)   # Copy team context: the page puts it on the clipboard
+    import webview
+    webview.HOOK[0] = _view_hook                                   # native web screens (webview.py)
     import faces
     faces.TRUECOLOR = True           # the window draws 24-bit color (and the faces' half-blocks) itself
 
@@ -423,7 +432,13 @@ def card(pid, c=None):
     if ch is None:
         return {"ok": False, "text": "Hang on — the game is busy. Try again in a second."}
     import screens
-    return {"ok": True, "text": _as(ch, lambda: BRIDGE.capture(lambda: screens.player_card(lg, p)))}
+    out = {"ok": True, "text": _as(ch, lambda: BRIDGE.capture(lambda: screens.player_card(lg, p)))}
+    try:
+        import webview
+        out["data"] = webview.player_data(lg, p)          # the web app draws the card from this
+    except Exception:
+        pass
+    return out
 
 
 def load_prefs():

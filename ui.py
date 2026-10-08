@@ -386,6 +386,7 @@ def back_key(label="Back"):
 
 
 WINDOW = [False]                    # set by play.py: the window shows commands as buttons of its own
+CLIP = [None]                       # set by play.py: hand text to the window, which copies it to that device's clipboard
 
 
 def command_bar(items, width=WIDTH):

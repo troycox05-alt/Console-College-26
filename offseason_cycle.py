@@ -264,8 +264,8 @@ def _open_spring(league, rng, report):
                 spring_form = 0.0
             # A player who lost ground all spring is far more likely to use the second window; a breakout is steadier.
             stock = max(-0.02, min(0.05, -spring_form * 0.018))
-            odds = base * 0.20 + (0.015 if spring_buried else 0.0) + stock
-            if rng.random() < min(.18, max(0.0, odds)):
+            odds = base * 0.28 + (0.02 if spring_buried else 0.0) + stock
+            if rng.random() < min(.22, max(0.0, odds)):
                 e = portal.PortalEntry(player, team, portal.reason_for(team, player, rank, rng), rank)
                 report.entries.append(e)
                 report.by_team_out[team].append(e)
@@ -273,6 +273,18 @@ def _open_spring(league, rng, report):
                 player.team = None
                 player.nil_before_portal = getattr(player, "nil", 0)
                 player.nil = 0
+    # Nobody signed them in the winter: they're still in the portal, and cheaper now.
+    winter = league.__dict__.get("last_portal")
+    if winter is not None and getattr(winter, "year", None) == report.year:
+        for old in list(getattr(winter, "unsigned", None) or []):
+            p = old.player
+            if old.destination is not None or getattr(p, "team", None) is not None or p.overall < 45:
+                continue
+            if any(e.player is p for e in report.entries):
+                continue
+            e = portal.PortalEntry(p, old.origin, "still unsigned from the winter window", old.depth)
+            e.priority = getattr(old, "priority", e.priority)
+            report.entries.append(e)                     # not in by_team_out: he left his school in the winter
     report.entries.sort(key=lambda e: -e.overall)
 
 

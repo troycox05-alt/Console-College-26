@@ -1,0 +1,9 @@
+Console College 26 — v53.00 · Web app, stage 9
+==============================================
+New hand-built screens:
+  Coaching tree (points, branches as buttons with every perk's status) and each branch (perks by
+  tier with costs, forks, what each does; tap to learn)
+  Spring ball plan (each emphasis as a button with what it does)
+  A-Day (Blue vs White scoreboard, snapshot, standouts, box-score / continue buttons)
+
+Changed: skills.py, spring_cycle.py, offseason_cal.py, gui/native.js, gui/native.css

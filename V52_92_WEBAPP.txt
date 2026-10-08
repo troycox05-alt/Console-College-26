@@ -1,0 +1,16 @@
+Console College 26 — v52.92 · Web app, stage 1
+===============================================
+The web version (mobile_web.py / Railway) now draws real app screens for:
+  Main screen (Home, Schedule and Team tabs) · Roster · Full schedule · Week hub (pregame) ·
+  Matchup card · Game Day (scoreboard, drawn field, drive, clipboard, play-by-play, scoring, stats) ·
+  The Saturday show (crew dialogue and picks)
+
+The game engine is unchanged: each of those screens also sends its data (webview.py) and the page
+(gui/native.js) draws it. Buttons send the same keys as the terminal. Anything printed after a
+screen (prompts, play calls) still shows underneath. [Classic] in the top bar switches back to the
+text screens. Screens not converted yet show the classic text view. The desktop window and the
+terminal are untouched.
+
+New:     webview.py, gui/native.js, gui/native.css
+Changed: play.py, dashboard.py, screens.py, week.py, tabletview.py, gameday_show.py, mobile_web.py,
+         gui/app.js, gui/mobile.js

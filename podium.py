@@ -223,6 +223,12 @@ def run(league, questions, when, ctx):
                     h = __import__("re").sub(r"(?<!every )Saturday", "next Saturday", h)
                 print("                 " + h + tail + again)
         dflt = next((i for i, a in enumerate(answers) if a[0] == "measured"), 0)
+        import webview
+        if webview.on():
+            webview.emit("q", {"q": webview.plain(text), "follow": "Follow-up" in webview.plain(text),
+                               "options": [{"key": str(i), "tone": tone, "ans": ans,
+                                            "hint": webview.plain(hint(b)) if show else "", "default": i - 1 == dflt}
+                                           for i, ((tone, ans, extra), b) in enumerate(zip(answers, bundles), 1)]}, add=True)
         c = ask(f"Your answer (Enter = {answers[dflt][0]}):").strip()
         if c.isdigit() and 1 <= int(c) <= len(answers):
             k = int(c) - 1
@@ -239,6 +245,8 @@ def run(league, questions, when, ctx):
         if got:
             line += " " + " ".join(got)
         print(paint("   → " + line, C.BCYAN))
+        import webview
+        webview.emit("a", {"tone": tone, "ans": ans, "line": webview.plain(line)}, add=True)
         fol = _follow_key(extra)
         if fol and not asked_follow:
             q = followup(fol, ctx)

@@ -43,6 +43,7 @@ STARTER_DEPTH = {"QB": 1, "RB": 2, "WR": 3, "TE": 2, "OL": 5, "DL": 4, "LB": 3, 
 ROUNDS = 3                       # the window reopens: standards drop each time through
 LAND_RATE = 0.88                 # by the end, most of the portal has found somewhere
 MAX_INCOMING = 8                 # a staff can only rebuild so much in one window
+USER_PULL = 0.95                 # how much a coach's portal work (pitches, visit) moves his decision
 
 
 class PortalEntry:
@@ -77,7 +78,8 @@ class PortalEntry:
 
 # What he's shopping for. It decides most of where he goes — pitch to it.
 PRIORITY_WORD = {"playing_time": "a starting job", "winning": "a winner", "money": "the best NIL deal",
-                 "scheme_fit": "the right scheme", "proximity": "closer to home", "development": "getting to the NFL"}
+                 "scheme_fit": "the right scheme", "proximity": "closer to home", "development": "getting to the NFL",
+                 "program": "a big-time program"}
 PORTAL_STYLE_WORD = {"reload": "Reload (buys starters)", "rebuild": "Rebuild (volume, young players)",
                      "hs": "High-school first (rarely shops)", "balanced": "Balanced"}
 
@@ -95,6 +97,46 @@ def priority_for(reason, player):
     if getattr(player, "overall", 0) >= 78 and getattr(player, "year", 0) >= 2:
         return "development"
     return "playing_time"
+
+
+SECOND_CHOICES = ("playing_time", "winning", "money", "scheme_fit", "proximity", "development", "program")
+
+
+def second_priority(entry):
+    """The other thing he cares about. Not public: contact or a visit finds it out."""
+    first = getattr(entry, "priority", None)
+    p = entry.player
+    r = random.Random(f"portal2nd:{p.first_name}:{p.last_name}:{getattr(p, 'home_state', '')}")
+    opts = [k for k in SECOND_CHOICES if k != first]
+    w = [1.0] * len(opts)
+    for i, k in enumerate(opts):
+        if k == "money" and "mercenary" in getattr(p, "traits", []):
+            w[i] = 3.0
+        if k == "development" and getattr(p, "overall", 0) >= 75:
+            w[i] = 2.0
+        if k == "proximity" and "family" in (getattr(entry, "reason", "") or ""):
+            w[i] = 3.0
+    return r.choices(opts, weights=w)[0]
+
+
+class _Mid:
+    """An rng that always rolls the middle — for a staff's read of a decision, not the decision itself."""
+    @staticmethod
+    def uniform(a, b):
+        return (a + b) / 2
+
+    @staticmethod
+    def random():
+        return 0.5
+
+
+def user_mult(team, interest):
+    """What a coach's work on a transfer is worth. A small program's pitch has to work harder."""
+    return 1 + USER_PULL * interest * (0.7 + 0.3 * min(1.0, getattr(team, "prestige", 60) / 70))
+
+
+def steady_choice(league, team, entry):
+    return player_choice(league, league.recruiting, team, entry, _Mid)
 
 
 def portal_style(team):
@@ -429,31 +471,37 @@ def _portal_round(league, rng, report, remaining, incoming, room_left, rnd):
         best = max(cash.values(), default=0)
         money_x = 2.0 if getattr(entry, "priority", None) == "money" else 1.0
         scores = [(player_choice(league, cycle, t, entry, rng)
-                   * (1 + 0.55 * users[t]["interest"].get(entry, 0) if t in users else 1)
+                   * (user_mult(t, users[t]["interest"].get(entry, 0)) if t in users else 1)
                    * finance.portal_pull(cash[t], best, entry.player) ** money_x
                    * (1 + tamper_pull(entry, t)), t)
                   for t in shortlist]
         scores.sort(key=lambda x: -x[0])
         pick = scores[0][1]
-        entry.player.nil = cash.get(pick, 0)                 # the deal comes with the move
-        report.deals[entry] = entry.player.nil
         if pick not in users:
-            money_left[pick] -= entry.player.nil
-        entry.suitors = [t for _, t in scores[:4]]
-        entry.destination = pick
-        pick.add_player(entry.player)
-        entry.player.transfers = getattr(entry.player, "transfers", 0) + 1
-        entry.player.prev_school = entry.origin.school
-        entry.player.events[report.year].append(f"Transferred to {pick.school} from {entry.origin.school}")
-        entry.player.transfer_from = entry.origin.school
-        # A fresh start counts for something: he chose this one himself.
-        entry.player.fit_bonus = round(clamp(entry.player.fit_bonus + 0.03, 0.90, 1.14), 3)
+            money_left[pick] -= cash.get(pick, 0)
+        sign(report, entry, pick, cash.get(pick, 0), suitors=[t for _, t in scores[:4]])
         incoming[pick] += 1
         dirty.add(id(pick))
-        report.moves.append((entry, pick))
-        report.by_team_in[pick].append(entry)
         landed += 1
     return landed
+
+
+def sign(report, entry, team, nil=0, suitors=None):
+    """He picks a school: the move, the deal and the paperwork. Used by the market's rounds and by a
+    coach who closes him early (Push for a commitment in the portal window)."""
+    entry.player.nil = nil or 0                       # the deal comes with the move
+    report.__dict__.setdefault("deals", {})[entry] = entry.player.nil
+    entry.suitors = list(suitors) if suitors else [team]
+    entry.destination = team
+    team.add_player(entry.player)
+    entry.player.transfers = getattr(entry.player, "transfers", 0) + 1
+    entry.player.prev_school = entry.origin.school
+    entry.player.events[report.year].append(f"Transferred to {team.school} from {entry.origin.school}")
+    entry.player.transfer_from = entry.origin.school
+    # A fresh start counts for something: he chose this one himself.
+    entry.player.fit_bonus = round(clamp(entry.player.fit_bonus + 0.03, 0.90, 1.14), 3)
+    report.moves.append((entry, team))
+    report.by_team_in[team].append(entry)
 
 
 def fill_gaps(team, report, rng):

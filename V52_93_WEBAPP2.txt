@@ -1,0 +1,9 @@
+Console College 26 — v52.93 · Web app, stage 2: recruiting and the transfer portal
+==================================================================================
+New app screens on the web version:
+  Recruiting hub · Recruit finder (with one-tap "+ Board") · Your board (NIL / order / drop per row) ·
+  Recruit card (the race, staff actions with hour costs, scouting, NIL, promises, story) · Your class
+  Transfer portal board · Portal player card (grade buttons for every pitch angle, standing, timeline,
+  contact / visit / offer / NIL / push to commit) · Your players in the portal
+
+Changed: recruiting_screens.py, portal_screens.py, gui/native.js, gui/native.css

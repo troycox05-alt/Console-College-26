@@ -67,6 +67,31 @@ def _show(league, team):
           f"{paint('[P#]', C.BYELLOW)} promote a position coach to coordinator   {paint('[V#]', C.BYELLOW)} profile")
     print(f"   {paint('[N1/N2]', C.BYELLOW)} negotiate a coordinator's deal (extension, pay it back, a title)")
     print(f"   {paint('[C]', C.BYELLOW)} play-calling & autopilot   {paint('[Enter]', C.GRAY)} done")
+    import webview
+    if webview.on():
+        try:
+            rows = []
+            for i, role in enumerate(("OC", "DC"), 1):
+                c = getattr(team, "oc" if role == "OC" else "dc", None)
+                r = {"n": i, "role": "Off. coordinator" if role == "OC" else "Def. coordinator", "coord": True}
+                if c is not None:
+                    r.update(name=c.name, age=c.age, ovr=c.overall, dev=_side_avg(c, role), rec=c.ratings["recruiting"],
+                             pot=staff.potential_word(c), pay=fi.money(fi.salary(c)) if fi.contract(c) else "",
+                             calls=staff.calls(team)["off" if role == "OC" else "def"] == role, ahc=bool(c.__dict__.get("ahc_title")))
+                rows.append(r)
+            for i, g in enumerate(poscoach.GROUPS, 3):
+                c = room.get(g)
+                r = {"n": i, "role": poscoach.TITLE[g].capitalize()}
+                if c is not None:
+                    yrs = max(0, league.year + 1 - (c.since or league.year + 1))
+                    r.update(name=c.name, age=c.age, ovr=c.overall, dev=c.dev, rec=c.rec, eye=c.eye, pot=poscoach.potential(c),
+                             pay=fi.money(poscoach.salary(c, team)), kind=c.kind, spec=webview.plain(poscoach.spec_line(c)),
+                             yrs=yrs, unhappy=bool(c.unhappy))
+                rows.append(r)
+            webview.emit("staff", {"school": team.school, "hc": team.coach.name, "rows": rows,
+                                   "payroll": f"{fi.money(abs(d))} {'over' if d >= 0 else 'under'} a standard room", "over": d > 0})
+        except Exception:
+            pass
 
 
 def _slot(n):

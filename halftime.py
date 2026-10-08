@@ -113,6 +113,17 @@ def ask_coach(sim):
         print()
         for r in reads:
             print(paint("   Staff: " + r, C.BCYAN))
+    import webview
+    if webview.on():
+        try:
+            from commentary import clock_str
+            webview.emit("half", {"us": {"school": team.school, "score": us, "stats": ts}, "them": {"school": opp.school, "score": them, "stats": os_},
+                                  "scoring": [{"q": e[0], "clock": clock_str(e[1]), "team": e[2].school, "mine": e[2] is team,
+                                               "what": webview.plain(e[3])} for e in plays[-8:]],
+                                  "plan": [{"label": l_, "verdict": webview.plain(v_)} for l_, v_, _ in (check or [])],
+                                  "reads": list(reads)})
+        except Exception:
+            pass
     diff = us - them
     off_keys = ["staff", "run", "air"]
     off_keys.append("protect" if diff > 0 else "broke" if diff < 0 else "protect")
@@ -127,6 +138,8 @@ def ask_coach(sim):
         for i, k in enumerate(keys, 1):
             label, _, parts = ADJUST[k]
             print(f"   {paint(f'[{i}]', C.BYELLOW, C.BOLD)} {pad(label, 22)} {_line(parts)}")
+        webview.emit("opts", {"title": title.replace("  ·  ", " · "), "options": [
+            {"key": str(i), "label": ADJUST[k][0], "line": webview.plain(_line(ADJUST[k][2]))} for i, k in enumerate(keys, 1)]}, add=True)
         c = ask(f"{side} in the second half (Enter = trust the staff):").strip()
         picks.append(keys[int(c) - 1] if c.isdigit() and 1 <= int(c) <= len(keys) else "staff")
     pick = tuple(picks)
@@ -139,10 +152,16 @@ def ask_coach(sim):
         if parts is None:
             parts = [(None, f"{int(odds * 100)}%: big lift / else: the room tightens up")]
         print(f"   {paint(f'[{i}]', C.BYELLOW, C.BOLD)} {pad(label, 42)} {_line(parts)}")
+    webview.emit("opts", {"title": "The message", "options": [
+        {"key": str(i), "label": MESSAGE[k][0],
+         "line": webview.plain(_line(MESSAGE[k][1] if MESSAGE[k][1] is not None else
+                                     [(None, f"{int(odds * 100)}%: big lift / else: the room tightens up")]))}
+        for i, k in enumerate(msgs, 1)]}, add=True)
     c = ask("What do you tell them? (Enter = let the coordinators talk):").strip()
     say = msgs[int(c) - 1] if c.isdigit() and 1 <= int(c) <= len(msgs) else "none"
     result = apply(sim, team, pick, say, odds)
     print(paint("   → " + result, C.BCYAN))
+    webview.emit("res", {"text": webview.plain(result)}, add=True)
     print()
 
 
