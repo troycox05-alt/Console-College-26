@@ -239,6 +239,13 @@ class League:
 
     def start_week(self):
         """Moves to the next week; returns its games in the order they kick off."""
+        for t in self.teams:                        # nobody kicks off without a head coach
+            if getattr(t, "coach", None) is None:
+                try:
+                    import carousel as _cz
+                    _cz.name_interim(self, t)
+                except Exception:
+                    pass
         import sportsbook
         sportsbook.before_week(self)                # the window closes this week's lines
         import world_rules
@@ -266,6 +273,13 @@ class League:
 
     def play_game(self, game, narrator=None):
         game._kicked = True                       # the window closes this game's lines
+        for t in (game.home, game.away):          # a job that opened in the offseason and never got filled:
+            if getattr(t, "coach", None) is None and t in self.teams:
+                try:                              # the coordinator with the better résumé runs it, as an interim
+                    import carousel as _cz
+                    _cz.name_interim(self, t)
+                except Exception:
+                    pass
         on = self.__dict__.get("online")
         if on and on.get("started"):              # online: every copy plays this game the same way
             self.rng.seed(f"{self.seed}:{self.year}:{self.week}:{game.home.school}:{game.away.school}")
