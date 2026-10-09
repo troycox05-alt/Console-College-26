@@ -65,7 +65,24 @@ def _game_loop():
     page always has a game behind it — your saves are untouched."""
     while True:
         play.BRIDGE.done = False
+        play.BRIDGE.crashed = None
         play.run_game()
+        if getattr(play.BRIDGE, "crashed", None):
+            # Keep the error on screen (screenshot it!) and save it; restart only when the player says so.
+            try:
+                folder = DATA_DIR or HERE
+                with open(os.path.join(folder, "last_crash.txt"), "w", encoding="utf-8") as f:
+                    f.write(time.strftime("%Y-%m-%d %H:%M:%S") + "\n" + play.BRIDGE.crashed)
+            except Exception:
+                pass
+            play.BRIDGE.push("out", "\n  Screenshot this and send it over. Then press Enter to restart the game.\n", aud="*")
+            while not play.BRIDGE.main.q.empty():          # taps sent before the crash don't count
+                try:
+                    play.BRIDGE.main.q.get_nowait()
+                except Exception:
+                    break
+            play.BRIDGE.done = False
+            play.BRIDGE.input("Press Enter to restart:")    # wait for the player (the page shows Continue)
         time.sleep(1.5)                               # let the page read the goodbye
         with play.BRIDGE.lock:
             play.BRIDGE.events = []

@@ -636,7 +636,14 @@ def run_game():
         pass
     except Exception:
         import traceback
-        BRIDGE.push("out", "\n\n  Something went wrong:\n\n" + traceback.format_exc(), aud="*")
+        tb = traceback.format_exc()
+        BRIDGE.crashed = tb
+        try:                                             # the host's logs (Railway: Deploy Logs) get it too
+            sys.__stderr__.write("\n=== CONSOLE COLLEGE CRASH ===\n" + tb + "\n")
+            sys.__stderr__.flush()
+        except Exception:
+            pass
+        BRIDGE.push("out", "\n\n  Something went wrong:\n\n" + tb, aud="*")
         BRIDGE.push("out", "\n  Your last autosave is safe. Close the window and start again.\n", aud="*")
     finally:
         BRIDGE.done = True

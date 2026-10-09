@@ -2065,6 +2065,9 @@ def end_of_season(league, rng):
     ovrs = league_ovrs(league)
     for team in league.teams:
         coach = team.coach
+        if coach is None:                              # already open (his coach left mid-cycle): it's filled below
+            team.coach_changed = True
+            continue
         if is_interim(coach):
             end_interim(league, team)                  # the job opens; the interim is a candidate for it
             continue
