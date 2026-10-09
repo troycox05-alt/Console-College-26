@@ -87,8 +87,11 @@ def blend(hc_value, coord_value, weight):
 def dev_rating(team, coach, position):
     """Development rating for a position: the head coach's, blended with the
     coordinator who runs that side of the ball."""
-    base = coach.dev_rating_for(position)
     c = side_coach(team, position) if team is not None else None
+    if coach is None:                                     # no head coach right now (the job is open): the staff carries it
+        base = c.dev_rating_for(position) if c is not None else 60
+    else:
+        base = coach.dev_rating_for(position)
     import skills
     w = DEV_WEIGHT * (1.5 if team is not None and skills.team_has(team, "staff_developer") else 1.0)
     v = blend(base, c.dev_rating_for(position) if c else None, w)

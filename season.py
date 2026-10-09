@@ -1013,6 +1013,8 @@ def off_carousel(league, rng, ctx):
     import carousel
     if hasattr(league, "carousel") and world_rules.enabled(league, "carousel"):
         carousel.end_of_season(league, rng)          # coaches judged, fired, hired before the portal opens
+        if any(t.coach is None for t in league.teams):
+            carousel.fill_openings(league, rng)      # a head coach hired away late (as a coordinator): fill that job too
         report.carousel = league.carousel.get(league.year, [])
     _YEAR[0] = ctx["next_year"]
 
