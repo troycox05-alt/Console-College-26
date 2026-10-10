@@ -1097,6 +1097,7 @@ def career_screen(league):
         print(f"   {paint('[D]', C.BGREEN, C.BOLD)} develop your coach ({dev_note})   "
               f"{paint('[P]', C.BYELLOW)} full coach profile   {paint('[S]', C.BYELLOW)} my staff")
         print(f"   {paint('[M]', C.BYELLOW)} budget & NIL   {paint('[F]', C.BYELLOW)} facilities   "
+              f"{paint('[K]', C.BYELLOW)} change my schemes   "
               f"{paint('[L]', C.BYELLOW)} difficulty   {paint('[R]', C.BRED)} retire   {paint('[B]', C.GRAY)} back")
         import webview
         if webview.on():
@@ -1108,7 +1109,9 @@ def career_screen(league):
                      "rep": [COACH_TRAITS[t][0] for t in coach.traits if t in COACH_TRAITS],
                      "story": [[yr, webview.plain(text)] for yr, text in reversed(story)],
                      "bank": webview.plain(fi_money(coach.bank)), "points": tp, "spent": skills._st(coach)["spent"],
-                     "color": webview._color(league, team) if team is not None else None, "hasTeam": team is not None}
+                     "color": webview._color(league, team) if team is not None else None, "hasTeam": team is not None,
+                     "schemes": f"{coach.offense_scheme} · {coach.defense_scheme}",
+                     "installs": __import__("scheme_change").status_lines(team) if team is not None else []}
                 if team is not None:
                     import ad_trust
                     tv = ad_trust.get(coach, team)
@@ -1138,6 +1141,9 @@ def career_screen(league):
         elif choice == "f" and team is not None:
             import finance_screens
             finance_screens.facilities_screen(league, team)
+        elif choice == "k" and team is not None:
+            import scheme_change
+            scheme_change.screen(league, coach, team)
         elif choice == "p":
             cs.coach_view(league, coach)
         elif choice == "l":

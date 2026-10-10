@@ -292,6 +292,9 @@ class League:
         facilities.set_attendance(self, game)     # who showed up: the crowd is the home-field edge
         game._injuries_enabled = world_rules.enabled(self, "injuries")
         sim = simulate_game(game, self.rng, narrator)
+        import scheme_change
+        for t in (game.home, game.away):
+            scheme_change.after_game(t)           # another game of reps in a new system
         if world_rules.enabled(self, "weather"):
             weather.record(self, game)                # the weather book: the snow games, the cold ones
         import rivalries

@@ -302,8 +302,86 @@ def build(league, team):
         for e in career_log[-80:]:
             lines.append("- " + _clean(e))
 
+    _around_the_country(lines, league, team)
+
     lines.extend(["", "END OF TEAM CONTEXT", f"Generated {datetime.now().strftime('%Y-%m-%d %H:%M')}"])
     return "\n".join(lines).rstrip() + "\n"
+
+
+def _around_the_country(lines, league, team):
+    """Public league tables: the media Top 25, the playoff rankings, the trophy race, every conference."""
+    def safe(fn):
+        try:
+            fn()
+        except Exception as e:                       # one missing table shouldn't cost the rest
+            lines.append(f"  (unavailable: {e})")
+
+    r = league.rankings
+
+    def poll():
+        _section(lines, f"MEDIA TOP 25 · {league.year} · " + (f"after week {r.week}" if getattr(r, "week", 0) else "preseason"))
+        pts = getattr(r, "points", {}) or {}
+        firsts = getattr(r, "first_place", {}) or {}
+        for i, t in enumerate(r.top(), 1):
+            before = r.previous_rank(t)
+            mv = "new" if before is None else (f"+{before - i}" if before > i else (f"{before - i}" if before < i else "="))
+            extra = f" · {pts[t]} pts" if t in pts else ""
+            extra += f" ({firsts[t]} first)" if firsts.get(t) else ""
+            mark = "  <- you" if t is team else ""
+            lines.append(f"{i:>3}. {t.school} ({t.record}, {t.conference}) [{mv}]{extra}{mark}")
+        others = getattr(r, "others", None) or []
+        if others:
+            lines.append("  Also receiving votes: " + ", ".join(f"{t.school} {p}" for t, p in others[:15]))
+
+    def playoff():
+        import committee as cm
+        c = cm.get(league)
+        _section(lines, "PLAYOFF RANKINGS (SELECTION COMMITTEE)")
+        if not c.released or c.year != league.year:
+            lines.append(f"  Not released yet — the committee's first rankings come out after week {cm.FIRST_RELEASE}.")
+            return
+        try:
+            import committee_screens
+            seeds, auto = committee_screens._field(league)
+        except Exception:
+            seeds, auto = {}, set()
+        for i, t in enumerate(c.order[:25], 1):
+            before = c.previous_rank(t)
+            mv = "new" if before is None else (f"+{before - i}" if before > i else (f"{before - i}" if before < i else "="))
+            seed = f" · seed {seeds[t]}{'*' if t in auto else ''}" if t in seeds else ""
+            mark = "  <- you" if t is team else ""
+            lines.append(f"{i:>3}. {t.school} ({t.record}, {t.conference}) [{mv}] committee avg {c.avg.get(t, 0):.1f}{seed}{mark}")
+        lines.append("  * automatic bid (conference champion)")
+
+    def heisman():
+        _section(lines, "GOLDEN HELMET (HEISMAN) RACE")
+        race = list(getattr(r, "heisman", None) or [])
+        if not race:
+            lines.append("  No race yet — it starts once games are played.")
+            return
+        for i, (p, score, blurb) in enumerate(race, 1):
+            rk = r.rank_of(p.team)
+            mark = "  <- yours" if p.team is team else ""
+            lines.append(f"{i:>3}. {p.name}, {p.position}, {('#' + str(rk) + ' ') if rk else ''}{p.team.school} — {_clean(blurb)}{mark}")
+
+    def standings():
+        from league import CONFERENCES
+        _section(lines, f"CONFERENCE STANDINGS · {league.year}")
+        for short, full, _color in CONFERENCES:
+            teams = league.conference_teams(short)
+            if not teams:
+                continue
+            lines.extend(["", full + ":"])
+            for div in league.divisions(short):
+                if div:
+                    lines.append(f"  {div} division:")
+                for i, t in enumerate(league.standings(short, div), 1):
+                    rk = r.rank_of(t)
+                    mark = "  <- you" if t is team else ""
+                    lines.append(f"  {i:>2}. {('#' + str(rk) + ' ') if rk else ''}{t.school}  conf {t.conf_record} · overall {t.record}{mark}")
+
+    for fn in (poll, playoff, heisman, standings):
+        safe(fn)
 
 
 def export(league, team=None):

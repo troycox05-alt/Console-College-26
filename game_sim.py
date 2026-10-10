@@ -153,6 +153,9 @@ class GameSim:
                 self.form[t] += difficulty.form(t)             # how hard you chose the job to be
             if t.coach is not None and not getattr(t, "fcs", False):
                 self.form[t] += (getattr(t.coach, "fit_with", None) or {}).get(t.school, 0.0)   # coach and place
+            if t.__dict__.get("scheme_installs"):
+                import scheme_change
+                self.form[t] += scheme_change.penalty(t)        # still learning a new system
             if not self.neutral and not getattr(self.home, "fcs", False):
                 import stadium                                  # the building: the home locker room, the visitors' one
                 self.form[t] += stadium.home_edge(self.home) if t is self.home else -stadium.visitor_penalty(self.home)
